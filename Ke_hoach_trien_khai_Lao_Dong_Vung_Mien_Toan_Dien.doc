@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Kế hoạch triển khai Lao Động Vùng Miền Toàn Diện</title>
+<style>
+body {
+    font-family: Calibri, Arial, sans-serif;
+    margin: 40px;
+    color: #333333;
+}
+h1, h2, h3, h4 {
+    font-family: Calibri, Arial, sans-serif;
+}
+</style>
+</head>
+<body>
+
+<div style="background-color: #f9f9f9; border-left: 6px solid #0056b3; padding: 15px; margin-bottom: 25px;">
+    <p><strong>Chào chị Uyên.</strong> Để toàn bộ hệ thống và nhân sự vận hành dự án "Lao Động – vùng miền" (đặc biệt là Nhóm nội dung số đa nền tảng) nắm bắt chính xác hiện trạng, tôi đã hệ thống hóa quy trình xuất bản thực tế thành <strong>Bản mô tả Đặc tả Quy trình Biên tập & Phân phối Nội dung</strong>.</p>
+    <p>Bản mô tả này không chỉ ghi nhận luồng đi của tin bài mà còn trực tiếp chỉ ra các <strong>điểm mù</strong> cần khắc phục khi ráp nối quy trình này vào mô hình 4 lớp tag phục vụ chiến lược local landing pages.</p>
+    <p>Chị có thể đưa nguyên bản mô tả dưới đây vào tài liệu định hướng (Context Document) cho dự án.</p>
+</div>
+
+<hr style='border: 1px solid #ccc; margin: 40px 0;' />
+<h1 style="color: #002D62; font-family: Calibri, sans-serif; border-bottom: 2px solid #002D62; padding-bottom: 5px;">1. CHIẾN LƯỢC PHÂN PHỐI NỘI DUNG VÀ KẾ HOẠCH PILOT 90 NGÀY</h1>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">Dự án <strong>Lao Động – vùng miền</strong> được xây dựng nhằm mục đích tối ưu hóa tài nguyên nội dung địa phương sẵn có của tòa soạn mà không tăng tải sản xuất cơ bản, đồng thời thiết lập các landing page có tính cấu trúc cao nhằm phục vụ độc giả địa bàn và tạo dòng doanh thu mới.</p>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">---</p>
+<h2 style="color: #4682B4; font-family: Calibri, sans-serif; margin-top: 20px;">1. PHÂN TÍCH ĐA CHIỀU (MÔ HÌNH 3 TẦNG × 5 GÓC NHÌN)</h2>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">Để đảm bảo dự án thực thi hiệu quả và không trượt thành một dự án "SEO spam/doorway", tòa soạn sẽ áp dụng mô hình phân tầng địa lý:</p>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;"><ul><li><strong>Tầng nền (Khu vực/VPTT)</strong>: Mở mặc định, đại diện cho 6 Văn phòng thường trú (VPTT).</li>
+<li><strong>Tầng tăng trưởng (Tỉnh/Thành pilot)</strong>: Chỉ mở index khi có đủ mật độ bài viết (tối thiểu 15 bài/tháng) và có mô tả biên tập độc nhất.</li>
+<li><strong>Tầng dữ liệu (Các tỉnh/thành còn lại)</strong>: Gắn tag lưu trữ nội bộ, áp dụng `noindex` công khai cho đến khi đạt đủ độ dày dữ liệu.</li></ul></p>
+<h3 style="color: #5F9EA0; font-family: Calibri, sans-serif; margin-top: 15px;">Bảng phân tích đa chiều 5 góc nhìn vận hành</h3>
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%; font-family: Calibri, sans-serif; font-size: 13px; margin: 15px 0; border: 1px solid #ddd;"><tr style="background-color: #002D62; color: white; font-weight: bold;"><th>Tầng / Góc nhìn</th><th>Ban Lãnh đạo</th><th>Bộ phận Kinh doanh</th><th>Văn phòng Thường trú</th><th>Phóng viên Địa phương</th><th>IT & Kỹ thuật</th></tr><tr><td><strong>Tầng nền</strong> <em>(Khu vực)</em></td><td><strong>KPI</strong>: Tăng footprint thương hiệu & quản lý hiệu quả hoạt động vùng miền.<br><strong>Rủi ro</strong>: Nội dung quá rộng, loãng bản sắc từng tỉnh.</td><td><strong>KPI</strong>: Bán các gói thương mại vùng miền lớn (sponsorship lớn/SOV).<br><strong>Hạn chế</strong>: Khó bán cho doanh nghiệp vừa và nhỏ chỉ có nhu cầu địa bàn tỉnh.</td><td><strong>KPI</strong>: Chủ trì quản lý chất lượng chung toàn cụm.<br><strong>Ma sát</strong>: Phân bổ tài nguyên curation giữa các tỉnh trong khu vực.</td><td><strong>Lợi ích</strong>: Bài viết được phân phối diện rộng hơn.<br><strong>Thao tác</strong>: Gắn tag VPTT mặc định theo cấu trúc tổ chức.</td><td><strong>Hệ thống</strong>: Thiết lập template chung cho 6 khu vực.<br><strong>SEO</strong>: Khai báo Breadcrumb và phân cấp logic nhất quán.</td></tr><tr><td><strong>Tầng tăng trưởng</strong> <em>(Tỉnh pilot)</em></td><td><strong>KPI</strong>: Tăng trưởng traffic tự nhiên & chuyển đổi số địa phương.<br><strong>Ngưỡng</strong>: Chỉ mở khi duyệt đủ chất lượng biên tập.</td><td><strong>KPI</strong>: Khai thác gói tài trợ địa phương, quảng cáo du lịch, tuyển dụng, BĐS.<br><strong>Ràng buộc</strong>: Tuyệt đối tách bạch nội dung tài trợ và biên tập.</td><td><strong>KPI</strong>: Trực tiếp chịu trách nhiệm curate nội dung tiêu điểm (Top Stories) hằng ngày.<br><strong>Thao tác</strong>: Duyệt bài thủ công lên vị trí Hero.</td><td><strong>Lợi ích</strong>: Tăng uy tín cá nhân gắn với địa bàn tác nghiệp.<br><strong>Thao tác</strong>: Gắn đủ 4 lớp tag cho từng bài viết.</td><td><strong>Hệ thống</strong>: Tự động hóa việc gom feed theo tag. Cấp quyền Override UI cho Trưởng VPTT.<br><strong>SEO</strong>: Bật index, quản lý canonical sạch.</td></tr><tr><td><strong>Tầng dữ liệu</strong> <em>(Tỉnh còn lại)</em></td><td><strong>KPI</strong>: Tích lũy dữ liệu, theo dõi tín hiệu nhu cầu thị trường.<br><strong>Ràng buộc</strong>: Khóa index để tránh án phạt doorway page.</td><td><strong>KPI</strong>: Không thương mại hóa độc lập.<br><strong>Hành động</strong>: Gom chung vào gói bán hàng vùng miền lớn.</td><td><strong>KPI</strong>: Theo dõi chất lượng bài viết của tỉnh để chuẩn bị kế hoạch nâng cấp lên tầng 2.</td><td><strong>Lợi ích</strong>: Bài viết được gom tự động, lưu trữ khoa học.<br><strong>Thao tác</strong>: Gắn tag đầy đủ theo đúng thực tế.</td><td><strong>Hệ thống</strong>: Áp dụng thẻ `noindex, follow` tự động cho toàn bộ landing page ở tầng này.<br><strong>SEO</strong>: Đảm bảo crawler vẫn quét được liên kết.</td></tr></table>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">---</p>
+<h2 style="color: #4682B4; font-family: Calibri, sans-serif; margin-top: 20px;">2. BẢNG PHÂN VAI TRÁCH NHIỆM RACI</h2>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">Bảng phân định trách nhiệm cho các nhân sự chủ chốt trong dự án:</p>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;"><ul><li><strong>R</strong> (Responsible): Người thực hiện công việc.</li>
+<li><strong>A</strong> (Accountable): Người chịu trách nhiệm cuối cùng (duy nhất 1 vai trò).</li>
+<li><strong>C</strong> (Consulted): Người được tham vấn ý kiến.</li>
+<li><strong>I</strong> (Informed): Người nhận thông tin sau khi hoàn thành.</li></ul></p>
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%; font-family: Calibri, sans-serif; font-size: 13px; margin: 15px 0; border: 1px solid #ddd;"><tr style="background-color: #002D62; color: white; font-weight: bold;"><th>Giai đoạn & Nhiệm vụ chính</th><th>Ban Lãnh đạo</th><th>Trưởng Ban Sản phẩm</th><th>Thư ký Tòa soạn / Pháp chế</th><th>Bộ phận IT</th><th>Trưởng VPTT</th><th>Đội ngũ Phóng viên</th><th>Bộ phận Kinh doanh</th></tr><tr><td><strong>1. Phê duyệt Taxonomy & Từ điển địa danh</strong></td><td><strong>A</strong></td><td><strong>R</strong></td><td><strong>C</strong></td><td><strong>I</strong></td><td><strong>C</strong></td><td><strong>I</strong></td><td><strong>I</strong></td></tr><tr><td><strong>2. Triển khai Tagging Pipeline & CMS Override</strong></td><td><strong>I</strong></td><td><strong>C</strong></td><td><strong>I</strong></td><td><strong>R</strong> / <strong>A</strong></td><td><strong>C</strong></td><td><strong>I</strong></td><td><strong>I</strong></td></tr><tr><td><strong>3. Biên soạn nội dung mô tả Landing Page</strong></td><td><strong>I</strong></td><td><strong>A</strong></td><td><strong>C</strong></td><td><strong>I</strong></td><td><strong>R</strong></td><td><strong>R</strong></td><td><strong>I</strong></td></tr><tr><td><strong>4. Duyệt mở index/noindex landing tỉnh</strong></td><td><strong>A</strong></td><td><strong>R</strong></td><td><strong>C</strong></td><td><strong>R</strong></td><td><strong>I</strong></td><td><strong>I</strong></td><td><strong>I</strong></td></tr><tr><td><strong>5. Cập nhật Tiêu điểm (Top Stories) hằng ngày</strong></td><td><strong>I</strong></td><td><strong>I</strong></td><td><strong>A</strong></td><td><strong>I</strong></td><td><strong>R</strong></td><td><strong>I</strong></td><td><strong>I</strong></td></tr><tr><td><strong>6. Gắn tag 4 lớp khi xuất bản bài viết</strong></td><td><strong>I</strong></td><td><strong>I</strong></td><td><strong>A</strong></td><td><strong>I</strong></td><td><strong>C</strong></td><td><strong>R</strong></td><td><strong>I</strong></td></tr><tr><td><strong>7. Thiết kế & Đóng gói Gói thương mại</strong></td><td><strong>A</strong></td><td><strong>C</strong></td><td><strong>C</strong></td><td><strong>I</strong></td><td><strong>I</strong></td><td><strong>I</strong></td><td><strong>R</strong></td></tr><tr><td><strong>8. Xử lý sửa bài / Đính chính thông tin</strong></td><td><strong>I</strong></td><td><strong>I</strong></td><td><strong>A</strong> / <strong>R</strong></td><td><strong>I</strong></td><td><strong>R</strong></td><td><strong>R</strong></td><td><strong>I</strong></td></tr></table>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">---</p>
+<h2 style="color: #4682B4; font-family: Calibri, sans-serif; margin-top: 20px;">3. BACKLOG NHIỆM VỤ ƯU TIÊN (MUST / SHOULD / COULD)</h2>
+<h3 style="color: #5F9EA0; font-family: Calibri, sans-serif; margin-top: 15px;">Must-Have (Bắt buộc phải làm ngay trong 30 ngày đầu)</h3>
+<p style="margin: 3px 0;"><span style="color: #ccc; font-weight: bold;">☐</span> Thiết lập Từ điển thực thể địa danh chuẩn (Canonical Place Dictionary) để thống nhất định danh.</p>
+<p style="margin: 3px 0;"><span style="color: #ccc; font-weight: bold;">☐</span> Nâng cấp CMS hỗ trợ 4 lớp tag địa phương và tạo giao diện Override UI cho Biên tập viên.</p>
+<p style="margin: 3px 0;"><span style="color: #ccc; font-weight: bold;">☐</span> Áp dụng quy tắc Canonical URL duy nhất cho bài viết, cấm việc nhân bản URL bài viết dưới các danh mục khác nhau.</p>
+<p style="margin: 3px 0;"><span style="color: #ccc; font-weight: bold;">☐</span> Tự động hóa cơ chế `noindex` đối với các landing page tỉnh/thành chưa đạt chuẩn chất lượng.</p>
+<p style="margin: 3px 0;"><span style="color: #ccc; font-weight: bold;">☐</span> Soạn thảo quy chế phân tách rõ ràng giữa nội dung biên tập và nội dung quảng cáo/tài trợ, chuẩn hóa nhãn gắn (Labeling).</p>
+<h3 style="color: #5F9EA0; font-family: Calibri, sans-serif; margin-top: 15px;">Should-Have (Cần làm trong 60 ngày tiếp theo)</h3>
+<p style="margin: 3px 0;"><span style="color: #ccc; font-weight: bold;">☐</span> Dựng Dashboard theo dõi hiệu quả theo thời gian thực (Organic traffic, Tỷ lệ lỗi index, Tốc độ Core Web Vitals).</p>
+<p style="margin: 3px 0;"><span style="color: #ccc; font-weight: bold;">☐</span> Tích hợp News Sitemap tự động cập nhật bài viết mới trong vòng 48 giờ.</p>
+<p style="margin: 3px 0;"><span style="color: #ccc; font-weight: bold;">☐</span> Tổ chức các buổi đào tạo quy chuẩn gắn tag cho 100% phóng viên và biên tập viên thường trú.</p>
+<p style="margin: 3px 0;"><span style="color: #ccc; font-weight: bold;">☐</span> Đóng gói tài liệu Media Kit chuẩn, loại bỏ các cam kết thao túng thứ hạng Google.</p>
+<h3 style="color: #5F9EA0; font-family: Calibri, sans-serif; margin-top: 15px;">Could-Have (Xem xét triển khai sau giai đoạn pilot)</h3>
+<p style="margin: 3px 0;"><span style="color: #ccc; font-weight: bold;">☐</span> Thiết lập công cụ gợi ý nội dung tự động dựa trên địa lý người dùng (Geo-targeting recommendation).</p>
+<p style="margin: 3px 0;"><span style="color: #ccc; font-weight: bold;">☐</span> Triển khai bản tin email (Local Newsletter) hoặc thông báo đẩy (Push notification) phân cấp theo vùng.</p>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">---</p>
+<h2 style="color: #4682B4; font-family: Calibri, sans-serif; margin-top: 20px;">4. CHI TIẾT LỘ TRÌNH PILOT 12 TUẦN (90 NGÀY)</h2>
+<h3 style="color: #5F9EA0; font-family: Calibri, sans-serif; margin-top: 15px;">Chi tiết các mốc bàn giao và tiêu chí nghiệm thu (UAT)</h3>
+<h4 style="color: #333333; font-family: Calibri, sans-serif; margin-top: 10px;">Tuần 1 - 2: Audit dữ liệu và Thống nhất Taxonomy</h4>
+<ul><li><strong>Hành động</strong>: Audit kho bài viết 12 tháng gần nhất để đo lường mật độ bài viết theo từng tỉnh. Thống nhất danh sách địa danh chuẩn.</li>
+<li><strong>Kết quả bàn giao</strong>: Từ điển địa danh Canonical Place Dictionary v1.0. Danh sách 6 tỉnh pilot đã chốt (Hà Nội, TP.HCM, Nghệ An, Quảng Ninh, Đà Nẵng, Cần Thơ).</li>
+<li><strong>Tiêu chí UAT</strong>: 100% biến thể tên địa bàn (Ví dụ: "TP HCM", "Sài Gòn", "Thành phố Hồ Chí Minh") được map về duy nhất một ID thực thể.</li></ul>
+<h4 style="color: #333333; font-family: Calibri, sans-serif; margin-top: 10px;">Tuần 3 - 4: Nâng cấp CMS và Dựng Template</h4>
+<ul><li><strong>Hành động</strong>: Tích hợp 4 lớp tag vào giao diện soạn thảo. Lập trình 2 template landing page (Template Vùng và Template Tỉnh).</li>
+<li><strong>Kết quả bàn giao</strong>: Hệ thống CMS v2.0 (giao diện tag mới). Bản demo tĩnh của landing page.</li>
+<li><strong>Tiêu chí UAT</strong>: </li></ul>
+    1. Giao diện CMS không cho phép xuất bản bài viết nếu chưa chọn trường `Responsible Office`.
+    2. URL của bài viết hiển thị đồng nhất ở dạng self-canonical.
+<h4 style="color: #333333; font-family: Calibri, sans-serif; margin-top: 10px;">Tuần 5 - 6: Cài đặt UAT nội bộ, Đào tạo & Kiểm duyệt Pháp lý</h4>
+<ul><li><strong>Hành động</strong>: Chạy thử nghiệm gắn tag tự động trên môi trường staging. Đào tạo nghiệp vụ cho phóng viên và VPTT. Rà soát pháp lý với Luật Báo chí mới.</li>
+<li><strong>Kết quả bàn giao</strong>: Tài liệu SOP hướng dẫn nhanh (1 trang cheat sheet). Báo cáo kiểm định pháp lý của Thư ký tòa soạn.</li>
+<li><strong>Tiêu chí UAT</strong>: 95% nhân sự VPTT vượt qua bài kiểm tra gắn tag thử nghiệm trên 10 bài viết mẫu.</li></ul>
+<h4 style="color: #333333; font-family: Calibri, sans-serif; margin-top: 10px;">Tuần 7 - 8: Launch mềm (Soft Launch)</h4>
+<ul><li><strong>Hành động</strong>: Mở public 6 landing page tỉnh pilot và 6 landing page vùng/VPTT. Giữ noindex cho 57 tỉnh còn lại.</li>
+<li><strong>Kết quả bàn giao</strong>: Hệ thống landing page chạy chính thức trên domain chính. XML News Sitemap riêng cho vùng miền hoạt động.</li>
+<li><strong>Tiêu chí UAT</strong>: </li></ul>
+    1. Công cụ Rich Results Test trả về kết quả 100% hợp lệ cho schema `NewsArticle` và `BreadcrumbList`.
+    2. Điểm Core Web Vitals trên thiết bị di động của các landing page đạt > 80 điểm.
+<h4 style="color: #333333; font-family: Calibri, sans-serif; margin-top: 10px;">Tuần 9 - 10: Vận hành Kinh doanh và Tối ưu hóa</h4>
+<ul><li><strong>Hành động</strong>: VPTT bắt đầu cập nhật tiêu điểm hằng ngày. Phòng kinh doanh chào bán thử nghiệm gói sponsorship trên 6 địa bàn pilot.</li>
+<li><strong>Kết quả bàn giao</strong>: Hợp đồng sponsorship thử nghiệm. Dashboard theo dõi hiệu năng vùng miền đi vào hoạt động.</li>
+<li><strong>Tiêu chí UAT</strong>: Không có phản hồi tiêu cực nào từ độc giả về mật độ quảng cáo. Các quảng cáo xuất hiện đúng vị trí quy định và có nhãn rõ ràng.</li></ul>
+<h4 style="color: #333333; font-family: Calibri, sans-serif; margin-top: 10px;">Tuần 11 - 12: Đánh giá và Quyết định Scale-up</h4>
+<ul><li><strong>Hành động</strong>: Tổng hợp dữ liệu từ Dashboard. Rà soát rủi ro pháp lý thực tế. Lập tờ trình Tổng biên tập.</li>
+<li><strong>Kết quả bàn giao</strong>: Báo cáo tổng kết Pilot 90 ngày (Go/No-Go Memo).</li>
+<li><strong>Tiêu chí UAT</strong>: Đạt hoặc vượt tối thiểu 80% các chỉ số đo lường hiệu năng đề ra trong kế hoạch.</li></ul>
+
+<hr style='border: 1px solid #ccc; margin: 40px 0;' />
+<h1 style="color: #002D62; font-family: Calibri, sans-serif; border-bottom: 2px solid #002D62; padding-bottom: 5px;">2. SOP BIÊN TẬP VÀ QUY TRÌNH VẬN HÀNH NỘI DUNG ĐỊA PHƯƠNG</h1>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">Tài liệu này đặc tả quy chuẩn tác nghiệp, phân loại (taxonomy) bài viết và vận hành nội dung số cho dự án <strong>Lao Động – vùng miền</strong>. Mục tiêu tối thượng là đảm bảo chất lượng thông tin, tăng tỷ lệ tuần hoàn (recirculation), ngăn ngừa rủi ro Doorway Pages và tuân thủ Luật Báo chí Việt Nam.</p>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">---</p>
+<h2 style="color: #4682B4; font-family: Calibri, sans-serif; margin-top: 20px;">1. QUY CHUẨN GẮN TAG PHÂN LOẠI 4 LỚP</h2>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">Mọi bài viết xuất bản liên quan đến yếu tố địa lý bắt buộc phải được gắn tag theo mô hình 4 lớp dưới đây. Không được bỏ sót hoặc gộp các lớp.</p>
+<pre style="background-color: #f4f4f4; border: 1px solid #ddd; padding: 10px; font-family: Consolas, monospace; font-size: 11px;">
+┌─────────────────────────────────────────────────────────────────┐
+│                       BÀI VIẾT XUẤT BẢN                         │
+└────────────────────────────────┬────────────────────────────────┘
+                                 │
+         ┌───────────────────────┼───────────────────────┐
+         ▼                       ▼                       ▼
+┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
+│ Headline Place  │     │ In-text Places  │     │ Affected Areas  │
+│ (1 thực thể)    │     │ (n thực thể)    │     │ (n thực thể)    │
+└────────┬────────┘     └────────┬────────┘     └────────┬────────┘
+         │                       │                       │
+         └───────────────────────┼───────────────────────┘
+                                 │
+                                 ▼
+                        ┌─────────────────┐
+                        │  Resp. Office   │
+                        │ (1 Văn phòng)   │
+                        └─────────────────┘
+</pre>
+<h3 style="color: #5F9EA0; font-family: Calibri, sans-serif; margin-top: 15px;">Chi tiết định nghĩa và quy tắc áp dụng</h3>
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%; font-family: Calibri, sans-serif; font-size: 13px; margin: 15px 0; border: 1px solid #ddd;"><tr style="background-color: #002D62; color: white; font-weight: bold;"><th>Lớp Tag</th><th>Đối tượng & Phạm vi</th><th>Quy tắc gắn bắt buộc</th><th>Mục tiêu SEO & Trải nghiệm</th></tr><tr><td><strong>1. Headline Place</strong></td><td>Địa danh trung tâm của bài viết, thường xuất hiện ở tiêu đề hoặc dòng đầu tiên (dateline).</td><td><strong>Tối đa 1 tag</strong>. Chỉ gắn khi địa danh này quyết định bản chất của tin tức.</td><td>Xác định tiêu đề động cho module, định vị SEO meta title cho bài viết.</td></tr><tr><td><strong>2. In-text Places</strong></td><td>Các địa danh được nhắc đến trong nội dung thân bài nhưng không phải tiêu điểm chính.</td><td><strong>Không giới hạn</strong>. Gắn tự động qua NER (Nhận diện thực thể) trên CMS, phóng viên rà soát lại.</td><td>Phục vụ các công cụ tìm kiếm nội bộ và widget liên kết bài viết liên quan.</td></tr><tr><td><strong>3. Affected Areas</strong></td><td>Vùng chịu tác động thực tế của sự kiện (dự án giao thông đi qua nhiều tỉnh, thiên tai...).</td><td><strong>Từ 0 đến 5 tag</strong>. Có thể khác hoàn toàn với địa bàn viết bài (Headline Place).</td><td>Đẩy bài viết về landing page của các địa phương bị ảnh hưởng để phục vụ độc giả.</td></tr><tr><td><strong>4. Responsible Office</strong></td><td>Văn phòng thường trú (VPTT) hoặc Phòng ban chịu trách nhiệm tác nghiệp và nội dung.</td><td><strong>Bắt buộc duy nhất 1 tag</strong> trong 6 VPTT của Báo Lao Động.</td><td>Phân định trách nhiệm xử lý, tính KPI sản lượng/chất lượng cho từng VPTT.</td></tr></table>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">---</p>
+<h2 style="color: #4682B4; font-family: Calibri, sans-serif; margin-top: 20px;">2. QUY TẮC ĐỒNG NHẤT THỰC THỂ (CANONICAL PLACES DICTIONARY)</h2>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">Để tránh hiện tượng chia nhỏ URL hoặc phân tán dòng traffic, CMS áp dụng bảng ánh xạ thực thể chuẩn dưới đây:</p>
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%; font-family: Calibri, sans-serif; font-size: 13px; margin: 15px 0; border: 1px solid #ddd;"><tr style="background-color: #002D62; color: white; font-weight: bold;"><th>ID Thực thể</th><th>Tên hiển thị chuẩn</th><th>Slug URL</th><th>VPTT Quản lý</th><th>Từ khóa đồng nghĩa (Aliases) được ánh xạ tự động</th></tr><tr><td><strong>PL-HAN</strong></td><td>Hà Nội</td><td>`ha-noi`</td><td>VPTT Hà Nội</td><td>Hà Thành, HN, Thủ đô Hà Nội, TP Hà Nội, Ha Noi</td></tr><tr><td><strong>PL-SGN</strong></td><td>TP. Hồ Chí Minh</td><td>`tp-hcm`</td><td>VPTT Miền Nam</td><td>Sài Gòn, TP.HCM, Thành phố Hồ Chí Minh, TPHCM</td></tr><tr><td><strong>PL-NAN</strong></td><td>Nghệ An</td><td>`nghe-an`</td><td>VPTT Bắc Trung Bộ</td><td>Vinh, Tỉnh Nghệ An, Nghe An</td></tr><tr><td><strong>PL-QNH</strong></td><td>Quảng Ninh</td><td>`quang-ninh`</td><td>VPTT Quảng Ninh</td><td>Hạ Long, Đất mỏ, Tỉnh Quảng Ninh, Quang Ninh</td></tr><tr><td><strong>PL-DAD</strong></td><td>Đà Nẵng</td><td>`da-nang`</td><td>VPTT Miền Trung</td><td>Đà Thành, TP Đà Nẵng, Da Nang</td></tr><tr><td><strong>PL-VLO</strong></td><td>Vĩnh Long</td><td>`vinh-long`</td><td>VPTT Đồng bằng Sông Cửu Long</td><td>Tỉnh Vĩnh Long, Vinh Long</td></tr></table>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;"><em>Nguyên tắc hệ thống</em>: Khi phóng viên gõ bất kỳ từ khóa nào trong danh mục "Aliases", CMS sẽ tự động quy đổi về ID thực thể chuẩn.</p>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">---</p>
+<h2 style="color: #4682B4; font-family: Calibri, sans-serif; margin-top: 20px;">3. SOP KIỂM SOÁT CHẤT LƯỢNG LANDING PAGE (CHỐNG DOORWAY PAGES)</h2>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">Một landing page tỉnh/thành chỉ được phép công khai index lên Google khi và chỉ khi đạt đầy đủ các tiêu chuẩn cấu trúc nội dung dưới đây:</p>
+<h3 style="color: #5F9EA0; font-family: Calibri, sans-serif; margin-top: 15px;">Checklist Tiêu chuẩn Landing Page Địa phương</h3>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;"><p style="margin: 3px 0;"><span style="color: #ccc; font-weight: bold;">☐</span> <strong>Mô tả biên tập độc nhất (Editorial Description)</strong>: Có đoạn giới thiệu viết tay từ 120 đến 250 từ nêu rõ đặc điểm, nhịp tin cốt lõi của địa phương. <strong>Cấm copy-paste</strong> hoặc sử dụng AI spin content hàng loạt giữa các tỉnh.</p>
+<p style="margin: 3px 0;"><span style="color: #ccc; font-weight: bold;">☐</span> <strong>Mô-đun Tiêu điểm (Top Stories) thủ công</strong>: Có tối thiểu 3 bài viết tiêu điểm do Trưởng VPTT trực tiếp chọn lọc (không dùng cơ chế tự động lấy bài mới nhất).</p>
+<p style="margin: 3px 0;"><span style="color: #ccc; font-weight: bold;">☐</span> <strong>Mật độ bài viết tối thiểu</strong>: Landing page phải có tối thiểu <strong>15 bài viết chất lượng</strong> có tag tương ứng trong vòng 30 ngày gần nhất. Nếu thấp hơn, hệ thống tự động gán thẻ `noindex`.</p>
+<p style="margin: 3px 0;"><span style="color: #ccc; font-weight: bold;">☐</span> <strong>Thanh điều hướng rõ ràng (Breadcrumb)</strong>: Có Breadcrumb dạng: `Trang chủ > Vùng miền > [Tên Vùng] > [Tên Tỉnh/Thành]`.</p>
+<p style="margin: 3px 0;"><span style="color: #ccc; font-weight: bold;">☐</span> <strong>Nhãn quảng cáo minh bạch</strong>: Khu vực dành cho quảng cáo/tài trợ nằm ngoài luồng tin biên tập và ghi rõ nhãn "Thông tin doanh nghiệp".</p></p>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">---</p>
+<h2 style="color: #4682B4; font-family: Calibri, sans-serif; margin-top: 20px;">4. QUY TRÌNH VÒNG ĐỜI NỘI DUNG VÀ REPUBLISHING (LIFECYCLE SOP)</h2>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">Để đảm bảo tính toàn vẹn dữ liệu và tuân thủ Google News, tòa soạn quy định chặt chẽ cách xử lý các trường hợp cập nhật thông tin:</p>
+<pre style="background-color: #f4f4f4; border: 1px solid #ddd; padding: 10px; font-family: Consolas, monospace; font-size: 11px;">
+                  ┌──────────────────────────────┐
+                  │ Yêu cầu cập nhật nội dung    │
+                  └──────────────┬───────────────┘
+                                 │
+         ┌───────────────────────┴───────────────────────┐
+         ▼                                               ▼
+┌──────────────────────────────┐               ┌──────────────────────────────┐
+│  Lỗi chính tả, lỗi nhỏ       │               │  Diễn biến mới / Sửa lớn     │
+└────────┬─────────────────────┘               └────────┬─────────────────────┘
+         │                                              │
+         ▼                                              ▼
+┌──────────────────────────────┐               ┌──────────────────────────────┐
+│ - Giữ nguyên URL             │               │ - Giữ nguyên URL             │
+│ - Sửa nội dung trực tiếp     │               │ - Cập nhật dateModified      │
+│ - Không đổi ngày xuất bản    │               │ - Thêm dòng "Cập nhật lúc..."│
+└──────────────────────────────┘               └──────────────────────────────┘
+</pre>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">1.  <strong>Sửa lỗi chính tả/Lỗi cú pháp</strong>:
+    *   Giữ nguyên URL. Sửa trực tiếp. Không thay đổi ngày giờ xuất bản và không khai báo `dateModified`.
+2.  <strong>Cập nhật thông tin quan trọng / Diễn biến mới</strong>:
+    *   <strong>Giữ nguyên URL bài viết gốc</strong>. Tuyệt đối không xóa bài cũ để đăng lại bài mới cùng nội dung (Republish).
+    *   Cập nhật nội dung trong bài, thay đổi tag `dateModified` trong cấu trúc Schema JSON-LD.
+    <em>   Ghi rõ ở đầu hoặc cuối bài viết: </em>"Bài viết được cập nhật lúc [Giờ] ngày [Ngày] để bổ sung thông tin về..."*
+3.  <strong>Xử lý thông tin sai sự thật (Đính chính / Cải chính)</strong>:
+    *   Tuân thủ nghiêm ngặt Luật Báo chí: Thực hiện cải chính, xin lỗi.
+    *   Với báo điện tử, giữ nguyên URL bài viết cũ nhưng thay thế nội dung bằng văn bản đính chính chính thức hoặc gỡ bỏ thông tin sai lệch và ghi rõ lý do điều chỉnh. Không tự ý xóa trang (lỗi 404) khi chưa có phê duyệt từ Ban Biên tập.</p>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">---</p>
+<h2 style="color: #4682B4; font-family: Calibri, sans-serif; margin-top: 20px;">5. QUY TRÌNH PHÊ DUYỆT VÀ ESCALATION PATH</h2>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">Quy trình phối hợp giải quyết khi phát hiện lỗi hệ thống hoặc xung đột lợi ích:</p>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;"><ul><li><strong>Lỗi gắn tag</strong>: Phóng viên phát hiện sửa trực tiếp qua CMS -> Nếu bài đã xuất bản quá 24 giờ, phải báo Thư ký tòa soạn duyệt sửa để cập nhật sitemap.</li>
+<li><strong>Yêu cầu gỡ bài / Sửa bài từ phía thương mại (Doanh nghiệp/Nhà tài trợ)</strong>:</li></ul>
+    <em>   </em>Quy tắc cứng*: Phòng Kinh doanh không được tự ý hứa hẹn hay yêu cầu gỡ/sửa nội dung biên tập.
+    <em>   </em>Đường leo thang (Escalation Path)*: Yêu cầu từ đối tác -> Gửi đến Phòng Kinh doanh -> Trình Ban Biên tập duyệt -> Thư ký tòa soạn thực hiện nếu lý do hợp lý về mặt pháp lý/sự thật. Cấm tuyệt đối can thiệp kỹ thuật trực tiếp từ IT hoặc kinh doanh.</p>
+<hr style='border: 1px solid #ccc; margin: 40px 0;' />
+<h1 style="color: #002D62; font-family: Calibri, sans-serif; border-bottom: 2px solid #002D62; padding-bottom: 5px;">3. ĐẶC TẢ KỸ THUẬT VÀ PHƯƠNG ÁN TỐI ƯU SEO</h1>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">Tài liệu này cung cấp các hướng dẫn kỹ thuật chi tiết dành cho đội ngũ phát triển IT và chuyên gia SEO của Báo Lao Động để triển khai dự án <strong>Lao Động – vùng miền</strong>.</p>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">---</p>
+<h2 style="color: #4682B4; font-family: Calibri, sans-serif; margin-top: 20px;">1. CẤU TRÚC ĐƯỜNG DẪN (URL CONVENTIONS) VÀ CANONICAL</h2>
+<h3 style="color: #5F9EA0; font-family: Calibri, sans-serif; margin-top: 15px;">Quy ước đặt tên URL (URL Naming Rules)</h3>
+Toàn bộ hệ thống landing page sử dụng chung một cấu trúc thư mục (namespace) trên domain chính để giữ sức mạnh liên kết:
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;"><ul><li><strong>Landing Page Vùng miền</strong>: `https://laodong.vn/vung-mien/[slug-vung]/`</li></ul>
+    <em>   </em>Ví dụ*: `https://laodong.vn/vung-mien/bac-trung-bo/`
+<ul><li><strong>Landing Page Tỉnh/Thành</strong>: `https://laodong.vn/vung-mien/[slug-tinh]/`</li></ul>
+    <em>   </em>Ví dụ*: `https://laodong.vn/vung-mien/nghe-an/`
+    <em>   </em>Lưu ý*: Không lồng ghép dạng `/bac-trung-bo/nghe-an/` để tránh URL quá dài và vỡ cấu trúc khi thay đổi phân chia địa giới hành chính.
+<ul><li><strong>URL Bài viết (Article URL)</strong>: Giữ nguyên cấu trúc URL mặc định của Báo Lao Động.</li></ul>
+    <em>   </em>Quy tắc cứng*: Một bài viết chỉ có một URL duy nhất và cố định suốt vòng đời. Không tạo thêm URL phụ khi bài viết hiển thị trên các landing page vùng miền khác nhau.</p>
+<h3 style="color: #5F9EA0; font-family: Calibri, sans-serif; margin-top: 15px;">Quy tắc Canonicalization (Rel="canonical")</h3>
+Để tránh lỗi nội dung trùng lặp (Duplicate Content):
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;"><ul><li><strong>Trên trang bài viết</strong>: Thẻ `<link rel="canonical" href="[URL bài viết gốc]" />` tự trỏ về chính nó (Self-canonical).</li>
+<li><strong>Trên các trang Landing Page</strong>: Thẻ canonical trỏ về URL chuẩn của landing page đó.</li>
+<li><strong>Tham số lọc / Phân trang</strong>: Nếu có URL dạng `https://laodong.vn/vung-mien/nghe-an/?page=2` hoặc `?filter=cong-doan`, thẻ canonical bắt buộc phải trỏ về URL gốc: `https://laodong.vn/vung-mien/nghe-an/`.</li></ul></p>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">---</p>
+<h2 style="color: #4682B4; font-family: Calibri, sans-serif; margin-top: 20px;">2. ĐẶC TẢ CẤU TRÚC DỮ LIỆU (STRUCTURED DATA SCHEMAS)</h2>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">CMS phải tự động nhúng các đoạn mã JSON-LD chuẩn dưới đây vào mã nguồn HTML trước khi xuất bản.</p>
+<h3 style="color: #5F9EA0; font-family: Calibri, sans-serif; margin-top: 15px;">A. Schema NewsArticle cho trang bài viết</h3>
+<pre style="background-color: #f4f4f4; border: 1px solid #ddd; padding: 10px; font-family: Consolas, monospace; font-size: 11px;">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://laodong.vn/cong-doan/tin-tuc-cong-doan-nghe-an-123456.ldo"
+  },
+  "headline": "Tiêu đề bài viết về công đoàn Nghệ An",
+  "image": [
+    "https://laodong.vn/images/size-16x9/anh-dai-dien-1200px.jpg"
+  ],
+  "datePublished": "2026-05-29T08:00:00+07:00",
+  "dateModified": "2026-05-29T10:30:00+07:00",
+  "author": {
+    "@type": "Person",
+    "name": "Nguyễn Văn A",
+    "url": "https://laodong.vn/tac-gia/nguyen-van-a.ldo"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Báo Lao Động",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://laodong.vn/static/images/logo.png"
+    }
+  },
+  "description": "Mô tả tóm tắt nội dung bài viết tin tức địa phương..."
+}
+</pre>
+<h3 style="color: #5F9EA0; font-family: Calibri, sans-serif; margin-top: 15px;">B. Schema BreadcrumbList cho trang Landing Page Tỉnh</h3>
+<pre style="background-color: #f4f4f4; border: 1px solid #ddd; padding: 10px; font-family: Consolas, monospace; font-size: 11px;">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Trang chủ",
+      "item": "https://laodong.vn/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Vùng miền",
+      "item": "https://laodong.vn/vung-mien/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Nghệ An",
+      "item": "https://laodong.vn/vung-mien/nghe-an/"
+    }
+  ]
+}
+</pre>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">---</p>
+<h2 style="color: #4682B4; font-family: Calibri, sans-serif; margin-top: 20px;">3. KIẾN TRÚC HỆ THỐNG GỢI Ý (TECHNICAL ARCHITECTURE)</h2>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">Hệ thống quản lý tin vùng miền được triển khai theo mô hình phân tách giữa nhập liệu và hiển thị:</p>
+<pre style="background-color: #f4f4f4; border: 1px solid #ddd; padding: 10px; font-family: Consolas, monospace; font-size: 11px;">
+[Phóng viên/BTV] ──► [CMS Editor UI (Tagging v4)] ──► [Taxonomy Service (Place DB)]
+                                                              │
+                                                              ▼
+[Google Crawler] ◄── [Sitemap & HTML Generator] ◄── [Search/Index Layer (Elasticsearch)]
+</pre>
+<h3 style="color: #5F9EA0; font-family: Calibri, sans-serif; margin-top: 15px;">Các thành phần cốt lõi:</h3>
+1.  <strong>Taxonomy Service</strong>: Cơ sở dữ liệu lưu trữ cấu trúc cây địa danh (Vùng -> Tỉnh -> Huyện) và ánh xạ từ khóa đồng nghĩa (Aliases).
+2.  <strong>Tagging Pipeline</strong>: Bộ lọc tự động quét nội dung bài viết và gợi ý tag địa lý (Confidence Score > 80%).
+3.  <strong>Override UI</strong>: Giao diện trên CMS cho phép phóng viên hoặc thư ký tòa soạn gỡ bỏ tag sai hoặc thêm tag `Affected Areas` thủ công.
+4.  <strong>Sitemap Generator</strong>: Tự động sinh file `sitemap-news.xml` chứa danh sách bài viết vùng miền xuất bản trong 48 giờ qua, phục vụ riêng cho Google News crawler.
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">---</p>
+<h2 style="color: #4682B4; font-family: Calibri, sans-serif; margin-top: 20px;">4. THIẾT KẾ DASHBOARD GIÁM SÁT CHI TIẾT (KPI DASHBOARD)</h2>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">Bộ chỉ số đo lường hiệu năng dự án bao gồm 5 nhóm chính:</p>
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%; font-family: Calibri, sans-serif; font-size: 13px; margin: 15px 0; border: 1px solid #ddd;"><tr style="background-color: #002D62; color: white; font-weight: bold;"><th>Nhóm KPI</th><th>Chỉ số thành phần</th><th>Tần suất</th><th>Mục tiêu kỹ thuật & Vận hành</th></tr><tr><td><strong>1. Quality (Chất lượng)</strong></td><td>- Độ chính xác của tag tự động gợi ý.<br>- % bài viết gắn đủ 4 lớp tag.<br>- Tỷ lệ landing page đạt chuẩn nội dung tối thiểu.</td><td>Hằng tuần</td><td>Đảm bảo hệ thống phân loại chính xác, giảm thiểu công sức chỉnh sửa thủ công.</td></tr><tr><td><strong>2. Impact (Hiệu năng)</strong></td><td>- Organic Sessions vào hệ thống landing page.<br>- Số lượt click từ Google News và Discover.<br>- Pages/Session và tỷ lệ click-through (CTR) nội bộ.</td><td>Hằng ngày</td><td>Đo lường mức độ tương tác và khả năng thu hút độc giả của sản phẩm mới.</td></tr><tr><td><strong>3. Commerce (Doanh thu)</strong></td><td>- Tỷ lệ lấp đầy (Fill rate) quảng cáo trên landing page.<br>- SOV (Share of Voice) bán được.<br>- Doanh thu bình quân trên mỗi địa bàn.</td><td>Hằng tháng</td><td>Đo lường hiệu quả thương mại hóa của dự án.</td></tr><tr><td><strong>4. Risk (Rủi ro)</strong></td><td>- Số lượng trang bị cảnh báo "thin content" (trang mỏng).<br>- Tỷ lệ lỗi 404 / Lỗi redirect vòng.<br>- Tốc độ tải trang di động (Core Web Vitals - LCP, CLS, FID).</td><td>Thời gian thực</td><td>Cảnh báo sớm các lỗi kỹ thuật và nguy cơ bị phạt thuật toán Google.</td></tr><tr><td><strong>5. Operations (Vận hành)</strong></td><td>- Thời gian trung bình để Trưởng VPTT duyệt bài tiêu điểm.<br>- Tỷ lệ phản hồi chỉnh sửa tag từ các văn phòng thường trú.</td><td>Hằng tuần</td><td>Đo lường mức độ thích nghi của tòa soạn với quy trình vận hành mới.</td></tr></table>
+
+<hr style='border: 1px solid #ccc; margin: 40px 0;' />
+<h1 style="color: #002D62; font-family: Calibri, sans-serif; border-bottom: 2px solid #002D62; padding-bottom: 5px;">4. MÔ HÌNH THƯƠNG MẠI HÓA VÀ NGUYÊN TẮC PHÂN TÁCH BIÊN TẬP - QUẢNG CÁO</h1>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">Tài liệu này xác định phương án khai thác thương mại, phân chia vị trí quảng cáo (inventory) trên hệ thống landing page và quy định ranh giới đạo đức nghề nghiệp giữa hoạt động kinh doanh báo chí với công tác biên tập của Báo Lao Động.</p>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">---</p>
+<h2 style="color: #4682B4; font-family: Calibri, sans-serif; margin-top: 20px;">1. PHÂN BỔ VỊ TRÍ QUẢNG CÁO (INVENTORY MAP)</h2>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">Hệ thống landing page địa phương được thiết kế hướng tới sự cân bằng giữa trải nghiệm đọc của người dùng và hiệu suất quảng cáo. Các vị trí quảng cáo được phân cấp rõ ràng:</p>
+<pre style="background-color: #f4f4f4; border: 1px solid #ddd; padding: 10px; font-family: Consolas, monospace; font-size: 11px;">
+┌──────────────────────────────────────────────────────────┐
+│                      HEADER BANNER                       │
+├──────────────────────────────────────────────────────────┤
+│ [Logo Báo Lao Động]      Vùng miền > Bắc Trung Bộ > Nghệ An│
+├──────────────────────────────────────────────────────────┤
+│                                                          │
+│   H1: TRANG TIN NGHỆ AN                                  │
+│   [Editorial Description: Giới thiệu địa phương...]       │
+│                                                          │
+├───────────────────────────────┬──────────────────────────┤
+│                               │                          │
+│   [TOP STORIES - BIÊN TẬP]   │    [SPONSORSHIP LOGO]    │
+│   - Bài tiêu điểm 1           │    "Đồng hành cùng..."   │
+│   - Bài tiêu điểm 2           │                          │
+│   - Bài tiêu điểm 3           │    [BOX STICKY BANNER]   │
+│                               │    Kích thước 300x600    │
+│                               │                          │
+├───────────────────────────────┴──────────────────────────┤
+│   [WIDGET TIN TỨC TỰ ĐỘNG THEO TAG]                       │
+│   ...                                                    │
+├──────────────────────────────────────────────────────────┤
+│                      FOOTER BANNER                       │
+└──────────────────────────────────────────────────────────┘
+</pre>
+<h3 style="color: #5F9EA0; font-family: Calibri, sans-serif; margin-top: 15px;">Chi tiết phân cấp các vị trí quảng cáo</h3>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;"><ul><li><strong>Vị trí Top Billboard (Header)</strong>: Hiển thị ở đầu trang, kích thước lớn. Thích hợp cho nhận diện thương hiệu quy mô lớn.</li>
+<li><strong>Vị trí Sponsor Logo</strong>: Đặt cạnh tiêu đề trang hoặc khối Tiêu điểm. Ghi rõ "Đơn vị đồng hành: [Logo Thương hiệu]".</li>
+<li><strong>Vị trí Box Sticky (Right Sidebar)</strong>: Bám dọc màn hình khi người dùng cuộn chuột trên phiên bản Desktop.</li>
+<li><strong>Vị trí Native Ad Placement</strong>: Nằm xen kẽ giữa các khối tin tự động, giới hạn tối đa <strong>1 vị trí</strong> trên mỗi màn hình cuộn và bắt buộc phải có nhãn phân biệt.</li></ul></p>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">---</p>
+<h2 style="color: #4682B4; font-family: Calibri, sans-serif; margin-top: 20px;">2. THIẾT KẾ 3 GÓC BÁN HÀNG THƯƠNG MẠI MẪU (COMMERCIAL PACKAGES)</h2>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">Tòa soạn áp dụng mô hình bán hàng dựa trên ngữ cảnh địa bàn (Geo-Contextual targeting), loại bỏ việc bán CPM/Banner xả kho giá thấp:</p>
+<h3 style="color: #5F9EA0; font-family: Calibri, sans-serif; margin-top: 15px;">A. Gói 1: Sponsorship Địa bàn (Độc quyền Thương hiệu Vùng/Tỉnh)</h3>
+<ul><li><strong>Khách hàng mục tiêu</strong>: Các tập đoàn lớn muốn thống lĩnh nhận diện thương hiệu tại một tỉnh hoặc khu vực (ví dụ: Ngân hàng, Doanh nghiệp BĐS lớn, Hãng xe).</li>
+<li><strong>Inventory bàn giao</strong>: Độc quyền hiển thị Sponsor Logo đầu trang + Chiếm 50% Share of Voice (SOV) của các vị trí Banner trên landing page tỉnh đó.</li>
+<li><strong>KPI cam kết</strong>: Tần suất hiển thị (Impressions), tỷ lệ hiển thị màn hình (Viewability > 70%).</li></ul>
+<h3 style="color: #5F9EA0; font-family: Calibri, sans-serif; margin-top: 15px;">B. Gói 2: Cụm vùng chuyên đề (Multi-local Campaigns)</h3>
+<ul><li><strong>Khách hàng mục tiêu</strong>: Các hãng bán lẻ, logistics, chuỗi giáo dục muốn kích hoạt chiến dịch quảng bá tại các vùng thị trường mục tiêu (ví dụ: Cụm Miền Trung, Cụm Đồng bằng sông Cửu Long).</li>
+<li><strong>Inventory bàn giao</strong>: Banner hiển thị đồng loạt trên 1 landing page vùng và 5-10 landing page tỉnh thuộc vùng quản lý.</li>
+<li><strong>KPI cam kết</strong>: Số lượt truy cập trang đích (Engaged Sessions), tỷ lệ nhấp chuột (CTR).</li></ul>
+<h3 style="color: #5F9EA0; font-family: Calibri, sans-serif; margin-top: 15px;">C. Gói 3: Đồng hành nội dung chuyên đề (Branded Content Series)</h3>
+<ul><li><strong>Khách hàng mục tiêu</strong>: Doanh nghiệp muốn định vị dẫn dắt thị trường thông qua các tuyến nội dung hữu ích (ví dụ: Doanh nghiệp công nghệ tài trợ chuyên đề "Chuyển đổi số doanh nghiệp Nghệ An").</li>
+<li><strong>Inventory bàn giao</strong>: Tài trợ một widget nội dung chuyên biệt trên landing page. Bài viết quảng cáo nằm trong chuyên đề này nhưng tách biệt với dòng tin thời sự.</li>
+<li><strong>KPI cam kết</strong>: Chiều sâu cuộn trang (Scroll depth), thời gian đọc trung bình (Time on page > 90s).</li></ul>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">---</p>
+<h2 style="color: #4682B4; font-family: Calibri, sans-serif; margin-top: 20px;">3. NGUYÊN TẮC PHÂN TÁCH BIÊN TẬP VÀ KINH DOANH (SEPARATION RULES)</h2>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">Để bảo vệ thương hiệu và tuân thủ Luật Quảng cáo, Luật Báo chí Việt Nam, tòa soạn thiết lập "Bức tường lửa" (Firewall Policy) như sau:</p>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">1.  <strong>Dán nhãn minh bạch (Labeling Standards)</strong>:
+    *   Mọi nội dung có thu tiền từ doanh nghiệp dưới bất kỳ hình thức nào (quảng cáo, PR, tài tài trợ, hợp tác truyền thông) bắt buộc phải gắn một trong các nhãn hiển thị rõ ràng: <strong>"Thông tin doanh nghiệp"</strong>, <strong>"Nội dung tài trợ"</strong>, hoặc <strong>"Quảng cáo"</strong>.
+    *   Kích thước chữ nhãn dán không nhỏ hơn 10px, màu sắc tương phản rõ so với nền trang.
+2.  <strong>Giới hạn quyền can thiệp hiển thị</strong>:
+    *   Bộ phận Kinh doanh <strong>không có quyền</strong> can thiệp vào thứ tự hiển thị của các bài viết trong khối Tiêu điểm (Top Stories) hay dòng tin tự động trên landing page.
+    *   Trưởng VPTT và Thư ký tòa soạn là những người duy nhất quyết định bài viết nào được lên trang bìa dựa trên giá trị thông tin báo chí.
+3.  <strong>Cấm tuyệt đối các hành vi trục lợi SEO</strong>:
+    *   Không được phép tạo các "landing page tỉnh/thành giả dạng" chỉ nhằm mục đích bán link liên kết (backlink SEO) cho các trang web cá cược, tài chính đen hoặc hàng giả.
+    *   Không được cấu hình redirect landing page báo chí sang trang web của doanh nghiệp.</p>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">---</p>
+<h2 style="color: #4682B4; font-family: Calibri, sans-serif; margin-top: 20px;">4. DỰ THẢO KHUNG NỘI DUNG MEDIA KIT TIÊU CHUẨN</h2>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">Tài liệu chào bán dịch vụ (Media Kit) dành cho đội ngũ Sales của Báo Lao Động phải tuân thủ nghiêm ngặt các quy tắc truyền thông lành mạnh:</p>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;"><em>   <strong>Không hứa hẹn thứ hạng tìm kiếm</strong>: Tuyệt đối cấm sử dụng các thuật ngữ như: </em>"Cam kết đứng Top 1 Google Search"<em>, </em>"Đẩy bài viết lên Google News trong 5 phút"<em>, </em>"Đảm bảo hiển thị trên Google Discover"*.
+<ul><li><strong>Thay thế bằng chỉ số báo chí số chuẩn</strong>: Media Kit chỉ tập trung cam kết các chỉ số thực tế đo lường được trên hệ thống của tòa soạn như:</li></ul>
+    *   Lượng độc giả truy cập độc nhất (Unique Users) theo vùng địa lý.
+    *   Tỷ lệ xem quảng cáo thực tế (Viewable Impressions).
+    *   Thời gian tương tác của độc giả trên trang (Engagement Time).
+<em>   <strong>Tuyên bố miễn trừ trách nhiệm</strong>: Media kit phải có dòng lưu ý pháp lý: </em>"Báo Lao Động bảo lưu quyền từ chối đăng tải các nội dung quảng cáo không phù hợp với tôn chỉ mục đích báo chí hoặc vi phạm Luật Báo chí, Luật Quảng cáo Việt Nam, kể cả khi hợp đồng kinh tế đã được ký kết."*</p>
+<hr style='border: 1px solid #ccc; margin: 40px 0;' />
+<h1 style="color: #002D62; font-family: Calibri, sans-serif; border-bottom: 2px solid #002D62; padding-bottom: 5px;">5. RISK REGISTER (BẢNG QUẢN TRỊ RỦI RO DỰ ÁN VÙNG MIỀN)</h1>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">Tài liệu này tổng hợp toàn bộ các rủi ro kỹ thuật, pháp lý, vận hành và biên tập có thể phát sinh trong quá trình triển khai dự án <strong>Lao Động – vùng miền</strong>, cùng các biện pháp giảm thiểu tương ứng nhằm bảo vệ an toàn thương hiệu.</p>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">---</p>
+<h2 style="color: #4682B4; font-family: Calibri, sans-serif; margin-top: 20px;">1. MA TRẬN PHÂN TÍCH RỦI RO (RISK MATRIX)</h2>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;"><ul><li><strong>Mức độ tác động (Impact - I)</strong>: 1 (Thấp) đến 5 (Rất nghiêm trọng)</li>
+<li><strong>Khả năng xảy ra (Likelihood - L)</strong>: 1 (Hiếm khi) đến 5 (Rất dễ xảy ra)</li>
+<li><strong>Điểm rủi ro (Score)</strong> = I × L (Từ 1 đến 25)</li></ul></p>
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%; font-family: Calibri, sans-serif; font-size: 13px; margin: 15px 0; border: 1px solid #ddd;"><tr style="background-color: #002D62; color: white; font-weight: bold;"><th>Mã</th><th>Tên Rủi ro</th><th>L</th><th>I</th><th>Điểm</th><th>Người chịu trách nhiệm</th><th>Biện pháp giảm thiểu & Hành động khắc phục</th></tr><tr><td><strong>R-SEO-01</strong></td><td><strong>Án phạt Doorway Pages từ Google</strong><br>(Tạo hàng loạt trang tỉnh giống nhau chỉ khác tên địa danh).</td><td>4</td><td>5</td><td><strong>20</strong></td><td>IT Lead / SEO Specialist</td><td>- Khóa index mặc định (`noindex, follow`) đối với tất cả các tỉnh có mật độ bài thấp.<br>- Bắt buộc có mô tả biên tập viết tay khác biệt cho mỗi landing page tỉnh được index.</td></tr><tr><td><strong>R-SEO-02</strong></td><td><strong>Site Reputation Abuse</strong><br>(Bị Google phạt do đăng tải nội dung quảng cáo mỏng hoặc spam link trên domain uy tín).</td><td>3</td><td>5</td><td><strong>15</strong></td><td>Ban Biên tập / Thư ký Tòa soạn</td><td>- Quy định vùng cấm thương mại.<br>- Mọi bài viết PR phải qua quy trình kiểm duyệt chất lượng biên tập như tin thường.<br>- Sử dụng thuộc tính `rel="sponsored"` hoặc `rel="nofollow"` cho các link quảng cáo ngoài.</td></tr><tr><td><strong>R-NEWS-01</strong></td><td><strong>Mất hiển thị trên Google News / Top Stories</strong><br>(Do vi phạm các nguyên tắc về ngày giờ hoặc trùng lặp URL).</td><td>3</td><td>4</td><td><strong>12</strong></td><td>IT Lead</td><td>- Đảm bảo cấu trúc datePublished và dateModified chính xác.<br>- Giữ URL bài viết cố định, không tạo bản sao bài viết để đăng lại dưới URL mới.</td></tr><tr><td><strong>R-LEGAL-01</strong></td><td><strong>Vi phạm Luật Báo chí 2016/2025</strong><br>(Nhầm lẫn chuyên trang pháp lý với chuyên mục tổ chức nội dung nội bộ).</td><td>2</td><td>5</td><td><strong>10</strong></td><td>Thư ký Tòa soạn / Pháp chế</td><td>- Thống nhất gọi sản phẩm là "Chuyên mục Vùng miền" hoặc "Trang tin địa phương".<br>- Tránh thiết lập giao diện giống như một trang báo độc lập (subdomain riêng, ban biên tập riêng) nếu chưa đăng ký giấy phép chuyên trang.</td></tr><tr><td><strong>R-LEGAL-02</strong></td><td><strong>Vi phạm Luật Quảng cáo</strong><br>(Quảng cáo không có nhãn nhận diện rõ ràng, quảng cáo sai sự thật).</td><td>3</td><td>4</td><td><strong>12</strong></td><td>Trưởng Phòng Kinh doanh</td><td>- Bắt buộc hiển thị nhãn "Thông tin doanh nghiệp" rõ ràng trên mọi tin bài tài trợ.<br>- Thư ký tòa soạn rà soát nội dung bài PR trước khi xuất bản để chặn quảng cáo lừa đảo.</td></tr><tr><td><strong>R-PRIV-01</strong></td><td><strong>Vi phạm Luật Bảo vệ dữ liệu cá nhân 2025</strong><br>(Tracking vị trí địa lý của người dùng không xin phép).</td><td>3</td><td>4</td><td><strong>12</strong></td><td>IT Lead</td><td>- Khi áp dụng Geo-targeting để gợi ý tin tức, phải có popup thông báo thu thập vị trí và nút cho phép người dùng từ chối (Opt-out).</td></tr><tr><td><strong>R-EDIT-01</strong></td><td><strong>Bào mòn chất lượng biên tập (Editorial Capture)</strong><br>(Sản xuất bài viết theo đơn đặt hàng thương mại núp bóng tin biên tập).</td><td>2</td><td>5</td><td><strong>10</strong></td><td>Ban Biên tập</td><td>- Thiết lập ranh giới cứng: Phòng kinh doanh bán inventory quảng cáo, không bán nội dung bài viết biên tập.<br>- VPTT có quyền từ chối đưa bài PR của khách hàng vào khối Tiêu điểm (Top Stories).</td></tr><tr><td><strong>R-OP-01</strong></td><td><strong>Quá tải vận hành thường trú</strong><br>(Trưởng văn phòng bận tác nghiệp, không cập nhật landing page).</td><td>4</td><td>3</td><td><strong>12</strong></td><td>Trưởng các VPTT</td><td>- Tự động hóa 80% luồng tin hiển thị trên landing page bằng thuật toán tag.<br>- Thiết lập ca trực cập nhật khối Tiêu điểm cố định hằng tuần.</td></tr></table>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">---</p>
+<h2 style="color: #4682B4; font-family: Calibri, sans-serif; margin-top: 20px;">2. BIỆN PHÁP CHỦ ĐỘNG PHÒNG NGỪA THEO PHÂN NHÓM NHÂN SỰ</h2>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">Để giảm thiểu các rủi ro trên một cách triệt để, từng bộ phận trong tòa soạn phải thực thi nghiêm ngặt các quy định phòng ngừa:</p>
+<h3 style="color: #5F9EA0; font-family: Calibri, sans-serif; margin-top: 15px;">Đội ngũ Kỹ thuật & IT</h3>
+<ul><li><strong>Hành động phòng ngừa</strong>: Lập trình công cụ tự động quét lỗi Schema và thẻ canonical hằng ngày. Thiết lập cơ chế tự động khóa index (noindex) cho bất kỳ landing page nào có Core Web Vitals rơi vào vùng Đỏ (LCP > 4s) hoặc có số bài viết mới dưới ngưỡng 10 bài/tháng.</li></ul>
+<h3 style="color: #5F9EA0; font-family: Calibri, sans-serif; margin-top: 15px;">Ban Biên tập & Thư ký Tòa soạn</h3>
+<ul><li><strong>Hành động phòng ngừa</strong>: Tổ chức hội đồng nghiệm thu (UAT) chất lượng landing page trước khi cho phép IT mở index. Xây dựng bộ quy chế xử phạt nội bộ đối với các phóng viên cố tình gắn sai tag địa lý để chạy KPI sản lượng.</li></ul>
+<h3 style="color: #5F9EA0; font-family: Calibri, sans-serif; margin-top: 15px;">Văn phòng Thường trú (VPTT)</h3>
+<ul><li><strong>Hành động phòng ngừa</strong>: Trưởng văn phòng thường trực tiếp ký duyệt danh sách bài viết tiêu điểm (Top Stories) hằng ngày trên landing page khu vực của mình. Chịu trách nhiệm trực tiếp trước Tổng biên tập về tính xác thực địa bàn của luồng tin hiển thị.</li></ul>
+<h3 style="color: #5F9EA0; font-family: Calibri, sans-serif; margin-top: 15px;">Bộ phận Kinh doanh & Sales</h3>
+<ul><li><strong>Hành động phòng ngừa</strong>: Chỉ bán các gói sản phẩm quảng cáo dựa trên danh sách inventory đã được IT phê duyệt kỹ thuật. Không tự ý thương thảo thêm các điều khoản cam kết hiển thị ngoài luồng quy định (ví dụ: cam kết giữ bài PR trên mục Tiêu điểm 3 ngày liên tục).</li></ul>
+
+<hr style='border: 1px solid #ccc; margin: 40px 0;' />
+<h1 style="color: #002D62; font-family: Calibri, sans-serif; border-bottom: 2px solid #002D62; padding-bottom: 5px;">6. ĐẶC TẢ QUY TRÌNH TÒA SOẠN VÀ CƠ CHẾ SEO TAG CỦA BÁO LAO ĐỘNG</h1>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">Tài liệu này mô tả chi tiết cơ chế hoạt động thực tế của Tòa soạn Báo Lao Động (quy trình xuất bản tin bài 5 bước) và cơ chế phối hợp gắn tag địa phương giữa Phóng viên, Thư ký tòa soạn và Ban CNTT. Đây là tài liệu nền tảng giúp "cấy não" và đồng bộ tư duy cho trợ lý AI.</p>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">---</p>
+<h2 style="color: #4682B4; font-family: Calibri, sans-serif; margin-top: 20px;">1. QUY TRÌNH XUẤT BẢN TIN BÀI 5 BƯỚC (EDITORIAL WORKFLOW)</h2>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">Mọi tin bài xuất bản trên Báo Lao Động (áp dụng thống nhất trên phạm vi toàn quốc và tất cả các ban chuyên môn/VPTT) đều phải tuân thủ nghiêm ngặt quy trình phê duyệt khép kín dưới đây:</p>
+<pre style="background-color: #f4f4f4; border: 1px solid #ddd; padding: 10px; font-family: Consolas, monospace; font-size: 11px;">
+[1. Phóng viên] (Viết & gắn tag v1)
+       │
+       ▼
+[2. Lãnh đạo VPTT / Ban Chuyên môn] (Duyệt sơ bộ & định hướng)
+       │
+       ▼
+[3. Biên tập viên] (Rà soát & tối ưu nội dung)
+       │
+       ▼
+[4. Thư ký Tòa soạn] (Kiểm duyệt kỹ thuật, pháp lý & tiêu đề)
+       │
+       ▼
+[5. Ban Biên tập / Lãnh đạo Báo] (Phê duyệt xuất bản)
+       │
+       ▼
+[Xuất bản lên trang laodong.vn]
+       │
+       ▼
+[Ban CNTT (IT)] (Hỗ trợ tối ưu SEO tag sau xuất bản)
+</pre>
+<h3 style="color: #5F9EA0; font-family: Calibri, sans-serif; margin-top: 15px;">Chi tiết vai trò hành động trong quy trình:</h3>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">1.  <strong>Bước 1: Phóng viên (Tác giả)</strong>
+    *   <strong>Nhiệm vụ</strong>: Thu thập thông tin, viết bài.
+    *   <strong>Thao tác kỹ thuật</strong>:
+        <em>   Viết định danh địa bàn (Dateline) ở ngay đầu thân bài (ví dụ: </em>"NGHỆ AN - ..."<em>, </em>"HÀ NỘI - ..."*).
+        *   Gắn các SEO tag ban đầu (Lớp 1: Headline place, Lớp 2: In-text places, Lớp 3: Affected areas) trên CMS.
+2.  <strong>Bước 2: Lãnh đạo VPTT / Lãnh đạo Ban chuyên môn</strong>
+    *   <strong>Nhiệm vụ</strong>: Duyệt tính thời sự, định hướng đề tài và xác định trách nhiệm địa bàn tác nghiệp.
+    *   <strong>Thao tác kỹ thuật</strong>: Xác nhận hoặc chỉnh sửa trường `Responsible Office` (Lớp 4).
+3.  <strong>Bước 3: Biên tập viên</strong>
+    *   <strong>Nhiệm vụ</strong>: Biên sửa câu từ, sửa lỗi ngữ pháp, căn chỉnh hình ảnh đại diện đúng kích thước chuẩn (tối thiểu 1200px).
+4.  <strong>Bước 4: Thư ký Tòa soạn (TKTS)</strong>
+    *   <strong>Nhiệm vụ</strong>: Gác cổng pháp lý (Luật Báo chí, Luật Quảng cáo), kiểm duyệt tiêu đề phù hợp, rà soát tính nhất quán của hệ thống tag và canonical URL trước khi xuất bản.
+5.  <strong>Bước 5: Lãnh đạo Báo (Ban Biên tập)</strong>
+    *   <strong>Nhiệm vụ</strong>: Quyết định xuất bản chính thức lên trang chủ hoặc trang chuyên mục.
+6.  <strong>Sau xuất bản: Ban CNTT (IT) hỗ trợ</strong>
+    *   <strong>Nhiệm vụ</strong>: Quét lỗi kỹ thuật sau khi bài lên trang.
+    *   <strong>Thao tác kỹ thuật</strong>: Tối ưu SEO tag (nếu phát hiện phóng viên gắn thiếu từ khóa hot hoặc sai thực thể), sửa lỗi redirect, giám sát Core Web Vitals của landing page chứa bài viết.</p>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">---</p>
+<h2 style="color: #4682B4; font-family: Calibri, sans-serif; margin-top: 20px;">2. CƠ CHẾ GẮN ĐỊNH DANH ĐỊA PHƯƠNG (DATELINE) THỰC TẾ</h2>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">Trên Báo Lao Động, mỗi bài viết thời sự địa phương luôn đi kèm tiền tố định danh địa danh viết hoa ở đầu bài viết để tạo thói quen tiếp nhận cho độc giả:</p>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;"><em>   </em>Mẫu bài viết thực tế*:
+    > <strong>NGHỆ AN -</strong> Sáng ngày 29.5, Liên đoàn Lao động tỉnh Nghệ An đã tổ chức chương trình đối thoại trực tiếp giữa người lao động và người sử dụng lao động...
+<em>   </em>Cơ chế tự động hóa*: CMS sẽ quét tiền tố định danh địa phương này ở đầu bài viết để tự động gợi ý tag `Headline Place` tương ứng trong Taxonomy Service (Ví dụ: Chữ "NGHỆ AN -" sẽ tự động kích hoạt gợi ý tag `Nghệ An` với độ tin cậy Confidence Score = 99%).</p>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">---</p>
+<h2 style="color: #4682B4; font-family: Calibri, sans-serif; margin-top: 20px;">3. PHÂN ĐỊNH TRÁCH NHIỆM SEO TAG GIỮA PHÓNG VIÊN VÀ IT</h2>
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%; font-family: Calibri, sans-serif; font-size: 13px; margin: 15px 0; border: 1px solid #ddd;"><tr style="background-color: #002D62; color: white; font-weight: bold;"><th>Bộ phận thực hiện</th><th>Vai trò trong quy trình SEO Tag</th><th>Công cụ hỗ trợ trên CMS</th></tr><tr><td><strong>Phóng viên (Chủ động)</strong></td><td>- Gắn tag trực tiếp khi viết bài.<br>- Nắm rõ bối cảnh thực tế sự kiện để gắn các tag thuộc lớp `Affected areas` (Ví dụ: bão đổ bộ Nghệ An nhưng ảnh hưởng trực tiếp tới Hà Tĩnh, Thanh Hóa).</td><td>- Ô tìm kiếm tag thông minh (Auto-suggest).<br>- Checklist các thực thể địa phương thuộc VPTT phụ trách.</td></tr><tr><td><strong>Ban CNTT / IT (Hỗ trợ sau)</strong></td><td>- Quét tự động kho bài viết sau khi lên trang.<br>- Sửa đổi, bổ sung tag hàng loạt khi có chủ đề/sự kiện lớn (Topic Clustering).<br>- Tối ưu hóa metadata, thẻ canonical và schema cấu trúc JSON-LD.</td><td>- Dashboard kiểm toán SEO tag.<br>- Công cụ Audit lỗi trùng lặp URL.<br>- Tool đồng bộ thực thể Canonical Place Map.</td></tr></table>
+
+<hr style='border: 1px solid #ccc; margin: 40px 0;' />
+<h1 style="color: #002D62; font-family: Calibri, sans-serif; border-bottom: 2px solid #002D62; padding-bottom: 5px;">7. TÀI LIỆU CHUẨN HÓA QUY TRÌNH TRIỂN KHAI DỰ ÁN "LAO ĐỘNG – VÙNG MIỀN"</h1>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">Bộ khung quy trình triển khai chi tiết này được thiết kế đặc thù để Nhóm nội dung số đa nền tảng có thể trực tiếp giám sát, giao việc cho các bộ phận liên quan (Công nghệ, Văn phòng thường trú, Kinh doanh) và kiểm soát rủi ro hệ thống.</p>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">---</p>
+<h3 style="color: #5F9EA0; font-family: Calibri, sans-serif; margin-top: 15px;">1. Decision Log (Hồ sơ Quyết định & Giả định đầu vào)</h3>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">Trước khi khởi động, dự án sẽ vận hành trên các giả định và quyết định cứng sau đây để tránh rủi ro "scaled content" (sản xuất nội dung hàng loạt kém chất lượng):</p>
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%; font-family: Calibri, sans-serif; font-size: 13px; margin: 15px 0; border: 1px solid #ddd;"><tr style="background-color: #002D62; color: white; font-weight: bold;"><th>Hạng mục</th><th>Trạng thái</th><th>Chi tiết quyết định / Giả định</th></tr><tr><td><strong>Phạm vi triển khai</strong></td><td><strong>Chốt cứng</strong></td><td>Không phủ toàn bản đồ ngay. Áp dụng chiến lược "density-first", đi theo mô hình 3 tầng (Tầng nền, Tầng tăng trưởng, Tầng dữ liệu).</td></tr><tr><td><strong>Địa bàn Pilot</strong></td><td><em>Giả định</em></td><td>Lựa chọn 6–12 tỉnh/thành có mật độ bài viết hiện hữu cao nhất và nhu cầu độc giả lớn để chạy thử nghiệm.</td></tr><tr><td><strong>Hệ thống CMS</strong></td><td><strong>Chốt cứng</strong></td><td>CMS tự phát triển (In-house) hoặc mã nguồn mở có toàn quyền can thiệp code (PHP/NodeJS/Go), cho phép tùy biến sâu giao diện soạn thảo và schemas.</td></tr><tr><td><strong>Cơ chế gắn tag</strong></td><td><strong>Chốt cứng</strong></td><td>Gắn tag hoàn toàn bằng tay: Phóng viên tự tìm kiếm và chọn tag từ danh sách có sẵn trên CMS, không sử dụng thuật toán tự động.</td></tr><tr><td><strong>Cấu trúc URL</strong></td><td><strong>Chốt cứng</strong></td><td>Bài viết giữ nguyên URL duy nhất, vĩnh viễn (Self-canonical). Không republish bài dưới URL mới.</td></tr><tr><td><strong>Phân quyền hiển thị</strong></td><td><strong>Chốt cứng</strong></td><td>Trưởng Văn phòng Thường trú (VPTT) được phân quyền chủ động chọn và duyệt hiển thị Top Stories của tỉnh/vùng mình quản lý.</td></tr><tr><td><strong>Ngưỡng mở Index</strong></td><td><strong>Chốt cứng</strong></td><td>Chỉ mở index cho các landing page tỉnh đạt tối thiểu <strong>100 tin bài/tháng</strong> để đảm bảo tính tươi mới và tránh rủi ro Doorway Pages.</td></tr><tr><td><strong>Ranh giới thương mại</strong></td><td><strong>Chốt cứng</strong></td><td>Inventory quảng cáo độc lập hoàn toàn với luồng tin chính. Bắt buộc có nhãn "Tài trợ" theo quy định pháp luật hiện hành.</td></tr></table>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">---</p>
+<h3 style="color: #5F9EA0; font-family: Calibri, sans-serif; margin-top: 15px;">2. Lộ trình Triển khai Pilot 90 ngày (SOP Cốt lõi)</h3>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">Quy trình này chia làm 4 giai đoạn, bám sát vòng đời phát triển từ dữ liệu, kỹ thuật đến thương mại hóa.</p>
+<h4 style="color: #333333; font-family: Calibri, sans-serif; margin-top: 10px;">Giai đoạn 1: Thiết lập nền móng dữ liệu (Tuần 1–2)</h4>
+<ul><li><strong>Audit bài viết</strong>: Quét toàn bộ kho dữ liệu hiện tại để đánh giá mật độ bài viết theo địa phương.</li>
+<li><strong>Chốt Taxonomy</strong>: Ban hành từ điển thực thể địa danh (Canonical Place Dictionary) với các trường bắt buộc (place_id, slug, display_name, aliases).</li>
+<li><strong>Chốt danh sách Pilot</strong>: Quyết định 6-12 địa bàn (Tầng tăng trưởng) và thiết lập mô tả biên tập tối thiểu 120-250 từ cho từng landing.</li></ul>
+<h4 style="color: #333333; font-family: Calibri, sans-serif; margin-top: 10px;">Giai đoạn 2: Tích hợp Kỹ thuật & Tagging UI (Tuần 3–6)</h4>
+<ul><li><strong>Xây dựng Tagging UI trên CMS</strong>: Tích hợp các trường chọn 4 lớp tag (Headline place, In-text places, Affected areas, Responsible office) thân thiện và dễ tìm kiếm nhất cho phóng viên.</li>
+<li><strong>Phát triển Template</strong>: Dựng 2-3 landing page template tích hợp BreadcrumbList schema, đảm bảo tối ưu Core Web Vitals (CWV) trên mobile.</li>
+<li><strong>UAT (User Acceptance Testing)</strong>: Chạy thử nghiệm quy trình gắn tag thủ công, kiểm tra luồng phân phối tự động lên landing mockup.</li></ul>
+<h4 style="color: #333333; font-family: Calibri, sans-serif; margin-top: 10px;">Giai đoạn 3: Soft Launch & Tối ưu (Tuần 7–10)</h4>
+<ul><li><strong>Go-live giới hạn</strong>: Mở index cho các landing Tầng nền (Khu vực) và Tầng tăng trưởng (Pilot) đạt tối thiểu <strong>100 tin bài/tháng</strong> và đạt đủ tiêu chuẩn biên tập. Các trang dưới 100 bài bị khóa bằng thẻ `noindex, follow`.</li>
+<li><strong>Kiểm soát chất lượng (Editorial QA)</strong>: Trưởng VP thường trú vận hành cơ chế chọn Top Stories thủ công hằng ngày cho địa bàn của mình.</li>
+<li><strong>Thương mại hóa thử nghiệm</strong>: Khởi chạy 2-3 gói tài trợ an toàn (Brand-safe local context) tại các vị trí đã quy hoạch, đo lường Viewability và rủi ro ad-clutter.</li></ul>
+<h4 style="color: #333333; font-family: Calibri, sans-serif; margin-top: 10px;">Giai đoạn 4: Đánh giá & Phán quyết (Tuần 11–12)</h4>
+<ul><li><strong>Review Dashboard</strong>: Đối chiếu KPI (Organic sessions, Recirculation, Tag precision).</li>
+<li><strong>Go/No-go Memo</strong>: Ban lãnh đạo quyết định duy trì, mở rộng thêm tỉnh/thành mới, hoặc cắt bỏ các trang không đạt chuẩn.</li></ul>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">---</p>
+<h3 style="color: #5F9EA0; font-family: Calibri, sans-serif; margin-top: 15px;">3. Ma trận Phân quyền Trách nhiệm (RACI)</h3>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">Mọi đầu việc phải được xác định rõ người chịu trách nhiệm, tránh dẫm chân lên nhau.</p>
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%; font-family: Calibri, sans-serif; font-size: 13px; margin: 15px 0; border: 1px solid #ddd;"><tr style="background-color: #002D62; color: white; font-weight: bold;"><th>Hạng mục Công việc</th><th>Lãnh đạo BBT</th><th>Nhóm ND Số (Product/SEO)</th><th>VP Thường trú</th><th>CNTT (Dev/IT)</th><th>Kinh doanh (Sales)</th></tr><tr><td><strong>Phê duyệt danh sách Landing Pilot</strong></td><td><strong>A</strong> (Accountable)</td><td><strong>R</strong> (Responsible)</td><td><strong>C</strong> (Consulted)</td><td>I (Informed)</td><td>I</td></tr><tr><td><strong>Xây dựng Taxonomy & Tagging Rules</strong></td><td>I</td><td><strong>R/A</strong></td><td>C</td><td><strong>C</strong></td><td>I</td></tr><tr><td><strong>Phát triển Landing Template & Schema</strong></td><td>I</td><td><strong>C</strong></td><td>I</td><td><strong>R/A</strong></td><td>I</td></tr><tr><td><strong>Chọn bài Top Stories trên Landing</strong></td><td>I</td><td>C</td><td><strong>R/A</strong></td><td>I</td><td>I</td></tr><tr><td><strong>Bán gói Sponsorship theo địa bàn</strong></td><td>I</td><td>C</td><td>I</td><td>I</td><td><strong>R/A</strong></td></tr><tr><td><strong>Phê duyệt duyệt ngoại lệ (Vùng cấm)</strong></td><td><strong>R/A</strong></td><td>C</td><td>C</td><td>I</td><td>C</td></tr></table>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;"><em>(R: Chịu trách nhiệm làm; A: Có quyền quyết định cuối cùng; C: Được tham vấn; I: Được thông báo)</em></p>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">---</p>
+<h3 style="color: #5F9EA0; font-family: Calibri, sans-serif; margin-top: 15px;">4. Phản biện & Quản trị Điểm mù Hệ thống</h3>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;">Để hệ thống không trượt khỏi quỹ đạo chất lượng, cần thiết lập ngay các chốt chặn sau:</p>
+<p style="font-family: Calibri, sans-serif; line-height: 1.5; color: #333333;"><em>   <strong>Lỗ hổng "Over-tagging" của phóng viên</strong>: Phóng viên có xu hướng gắn mọi tag địa danh xuất hiện trong bài để tăng view. <strong>Khắc phục</strong>: Hệ thống CMS chỉ tự động lấy địa danh ở đầu câu (Headline place) làm phân loại chính. Mọi can thiệp bằng tay vào </em>Affected areas* phải được cảnh báo nội bộ nếu tỷ lệ sai lệch (bounce rate trên landing) tăng vọt.
+<ul><li><strong>Sức ép từ Kinh doanh mở "Trang mỏng"</strong>: Khi khách hàng muốn tài trợ ở một tỉnh chưa đủ lượng tin bài (Tầng dữ liệu). <strong>Khắc phục</strong>: Nguyên tắc chốt cứng - Tuyệt đối không mở index landing vì lý do Sales. Nếu có cam kết, khách hàng chỉ được mua Inventory ở Tầng nền (Khu vực lớn).</li>
+<li><strong>Xung đột Tag cập nhật muộn (SEO Lag)</strong>: Nếu khâu gắn tag phụ thuộc vào độ trễ của kỹ thuật hậu kiểm, landing địa phương sẽ toàn tin cũ. <strong>Khắc phục</strong>: Shift-left SEO. Buộc module Tagging Pipeline phải đề xuất tag tự động ngay trên màn hình soạn thảo của phóng viên trước khi bấm gửi duyệt.</li></ul></p>
+</body>
+</html>
