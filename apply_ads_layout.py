@@ -1757,7 +1757,7 @@ if len(infra_articles) < 5:
             infra_articles.append(a)
 
 infra_hero = infra_articles[0]
-infra_list = infra_articles[1:5]
+infra_list = infra_articles[1:4]
 
 # Hero format badge (alternating Video / Infographic based on ID)
 hero_badge = "📹 Video" if infra_hero['id'] % 2 == 0 else "📊 Infographic"
