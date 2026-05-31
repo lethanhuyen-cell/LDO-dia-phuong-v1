@@ -65,6 +65,212 @@ ad_styles = """
             z-index: 99;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
+        .infra-block {
+            background-color: #f9f9f9;
+            border: 1px solid #eef1f5;
+            border-radius: 8px;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            margin-top: 20px;
+        }
+        .infra-heading-container {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid #e1251b;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+        .infra-heading-tag {
+            background-color: #e1251b;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 3px;
+            text-transform: uppercase;
+            margin-right: 10px;
+        }
+        .infra-heading {
+            font-size: 18px;
+            font-weight: bold;
+            color: #c00000;
+            margin: 0;
+            text-transform: uppercase;
+        }
+        .infra-grid {
+            display: grid;
+            grid-template-columns: 6fr 4fr;
+            gap: 20px;
+        }
+        .infra-hero-card {
+            position: relative;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .infra-hero-img-container {
+            position: relative;
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+        }
+        .infra-hero-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .infra-hero-img-container img:hover {
+            transform: scale(1.03);
+        }
+        .infra-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(192, 0, 0, 0.9);
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 4px 8px;
+            border-radius: 3px;
+            z-index: 5;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .infra-hero-body {
+            padding: 15px;
+        }
+        .infra-hero-title {
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 1.4;
+            margin: 0 0 8px 0;
+        }
+        .infra-hero-title a {
+            color: #111;
+            text-decoration: none;
+        }
+        .infra-hero-title a:hover {
+            color: #c00000;
+        }
+        .infra-hero-excerpt {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.5;
+            margin: 0;
+        }
+        .infra-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .infra-list-item {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 12px;
+        }
+        .infra-list-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .infra-list-title {
+            font-size: 13.5px;
+            font-weight: bold;
+            line-height: 1.4;
+            margin: 0 0 5px 0;
+        }
+        .infra-list-title a {
+            color: #333;
+            text-decoration: none;
+        }
+        .infra-list-title a:hover {
+            color: #c00000;
+        }
+        .infra-list-meta {
+            font-size: 11px;
+            color: #888;
+            display: flex;
+            gap: 10px;
+        }
+        .infra-list-excerpt {
+            font-size: 12px;
+            color: #666;
+            margin: 4px 0 0 0;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Mobile specific styles (Carousel) */
+        @media (max-width: 850px) {
+            .infra-grid {
+                display: none !important;
+            }
+            .infra-carousel-container {
+                display: flex !important;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                scroll-behavior: smooth;
+                gap: 12px;
+                padding-bottom: 10px;
+                -webkit-overflow-scrolling: touch;
+            }
+            .infra-carousel-container::-webkit-scrollbar {
+                display: none;
+            }
+            .infra-carousel-card {
+                flex: 0 0 80%; /* Peek design: 15-20% cut-off */
+                scroll-snap-align: start;
+                background-color: #ffffff;
+                border: 1px solid #ddd;
+                border-radius: 6px;
+                overflow: hidden;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+                display: flex;
+                flex-direction: column;
+            }
+            .infra-carousel-img-container {
+                position: relative;
+                width: 100%;
+                height: 150px;
+                overflow: hidden;
+            }
+            .infra-carousel-img-container img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .infra-carousel-body {
+                padding: 12px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                flex-grow: 1;
+            }
+            .infra-carousel-title {
+                font-size: 13px;
+                font-weight: bold;
+                line-height: 1.4;
+                margin: 0 0 6px 0;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+            .infra-carousel-title a {
+                color: #111;
+                text-decoration: none;
+            }
+        }
+        @media (min-width: 851px) {
+            .infra-carousel-container {
+                display: none !important;
+            }
+        }
     }
 </style>
 <!-- WALLPAPER AD SLOTS -->
@@ -228,6 +434,8 @@ middle_part = """
                     </div>
                 </div>
             </div>
+
+            PLACEHOLDER_STATIC_INFRASTRUCTURE
 
             <!-- AD SLOT 03: MID-PAGE BANNER (728x90) -->
             <div style="width: 100%; max-width: 1000px; margin: 20px auto; text-align: center; font-family: Arial, sans-serif; position: relative;">
@@ -1499,6 +1707,23 @@ middle_part = """
         document.getElementById('schema-modal').style.display = 'none';
     }
 
+    function initInfraCarouselAutoplay() {
+        const carousel = document.querySelector('.infra-carousel-container');
+        if (!carousel) return;
+        let slideIndex = 0;
+        
+        setInterval(() => {
+            const cards = carousel.querySelectorAll('.infra-carousel-card');
+            if (cards.length <= 1) return;
+            slideIndex = (slideIndex + 1) % cards.length;
+            const cardWidth = cards[0].offsetWidth + 12; // width + gap
+            carousel.scrollTo({
+                left: cardWidth * slideIndex,
+                behavior: 'smooth'
+            });
+        }, 5000);
+    }
+
     window.addEventListener('DOMContentLoaded', () => {
         populateCuratorOptions();
         renderMainCover();
@@ -1508,11 +1733,118 @@ middle_part = """
         updateSchemaMarkup();
         changeDistrictPrices('caugiay');
         fetchHanoiWeather();
+        initInfraCarouselAutoplay();
     });
 </script>
 """
 
 # Replace placeholder
+# Filter infrastructure articles
+infra_keywords = ["vành đai", "cầu", "đường", "thi công", "quy hoạch", "hạ tầng", "giao thông", "gpmb", "giải phóng mặt bằng"]
+infra_articles = []
+for a in articles:
+    title_lower = a['title'].lower()
+    excerpt_lower = a['excerpt'].lower()
+    if any(k in title_lower or k in excerpt_lower for k in infra_keywords):
+        # Avoid duplicating the main featured story
+        if a['id'] != articles[0]['id']:
+            infra_articles.append(a)
+
+# Fallbacks if database has too few matches
+if len(infra_articles) < 5:
+    for a in articles:
+        if a not in infra_articles and a['id'] != articles[0]['id']:
+            infra_articles.append(a)
+
+infra_hero = infra_articles[0]
+infra_list = infra_articles[1:5]
+
+# Hero format badge (alternating Video / Infographic based on ID)
+hero_badge = "📹 Video" if infra_hero['id'] % 2 == 0 else "📊 Infographic"
+
+# Generate Desktop Left Hero Column
+static_hero_html = f"""
+                    <div class="infra-hero-card">
+                        <div class="infra-hero-img-container">
+                            <span class="infra-badge">{hero_badge}</span>
+                            <a href="{infra_hero['url']}" target="_blank">
+                                <img src="{infra_hero['image']}" alt="{infra_hero['title']}">
+                            </a>
+                        </div>
+                        <div class="infra-hero-body">
+                            <h3 class="infra-hero-title">
+                                <a href="{infra_hero['url']}" target="_blank">{infra_hero['title']}</a>
+                            </h3>
+                            <p class="infra-hero-excerpt">{infra_hero['excerpt']}</p>
+                        </div>
+                    </div>
+"""
+
+# Generate Desktop Right List Column
+static_list_items_html = ""
+for item in infra_list:
+    static_list_items_html += f"""
+                        <div class="infra-list-item">
+                            <h4 class="infra-list-title">
+                                <a href="{item['url']}" target="_blank">{item['title']}</a>
+                            </h4>
+                            <div class="infra-list-meta">
+                                <span>📅 {item['date']}</span>
+                                <span>📍 {item['district']}</span>
+                            </div>
+                            <p class="infra-list-excerpt">{item['excerpt']}</p>
+                        </div>
+"""
+
+# Generate Mobile Carousel slides (right-most peeks by 15-20% through class widths)
+static_carousel_html = ""
+for i, item in enumerate(infra_articles[:4]):
+    badge_label = "📹 Video" if i % 2 == 0 else "📊 Infographic"
+    static_carousel_html += f"""
+                <div class="infra-carousel-card">
+                    <div class="infra-carousel-img-container">
+                        <span class="infra-badge">{badge_label}</span>
+                        <a href="{item['url']}" target="_blank">
+                            <img src="{item['image']}" alt="{item['title']}">
+                        </a>
+                    </div>
+                    <div class="infra-carousel-body">
+                        <h4 class="infra-carousel-title">
+                            <a href="{item['url']}" target="_blank">{item['title']}</a>
+                        </h4>
+                    </div>
+                </div>
+"""
+
+# Assemble full block HTML
+static_infra_html = f"""
+            <!-- CHUYỂN ĐỘNG HẠ TẦNG MODULE -->
+            <div class="infra-block">
+                <div class="infra-heading-container">
+                    <span class="infra-heading-tag">Đô thị</span>
+                    <h2 class="infra-heading">Chuyển động Hạ tầng</h2>
+                </div>
+                
+                <!-- Desktop Grid Layout (6:4 Split) -->
+                <div class="infra-grid">
+                    <div class="pl">
+                        {static_hero_html}
+                    </div>
+                    <div class="pr">
+                        <div class="infra-list">
+                            {static_list_items_html}
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mobile Carousel Layout -->
+                <div class="infra-carousel-container" style="display: none;">
+                    {static_carousel_html}
+                </div>
+            </div>
+"""
+
+middle_part = middle_part.replace("PLACEHOLDER_STATIC_INFRASTRUCTURE", static_infra_html)
 middle_part = middle_part.replace("PLACEHOLDER_RAW_ARTICLES", js_all_articles_str)
 
 # Combine HTML parts

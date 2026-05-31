@@ -407,6 +407,44 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
                 </div>
             </div>
 
+            <!-- BLOCK 2: MEDIA SECTION -->
+            <div class="blk-media m-top-20" style="background-color: #eee; border-radius: 8px; padding: 20px; font-family: Arial, sans-serif;">
+                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #c00000; padding-bottom: 8px; margin-bottom: 15px;">
+                    <h2 style="font-size: 20px; font-weight: bold; color: #c00000; margin: 0; text-transform: uppercase;">Media Hà Nội</h2>
+                    <div style="display: flex; gap: 15px; font-size: 12px; font-weight: bold;">
+                        <span style="color:#555;">Lao Động TV</span>
+                        <span style="color:#555;">Hyper Text</span>
+                        <span style="color:#555;">Photo</span>
+                        <span style="color:#555;">Podcast</span>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 15px;" class="columns-layout">
+                    <!-- Left: TV Frame -->
+                    <div style="background-color: #ffffff; padding: 15px; border-radius: 6px; border: 1px solid #ddd; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div style="background: linear-gradient(135deg, #ccc 0%, #999 50%, #bbb 100%); padding: 10px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                            <div style="background-color: #000; width: 100%; height: 180px; border-radius: 6px; overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center;">
+                                <img src="https://media-cdn-v2.laodong.vn/laodong/2.0.0.35/images/logo/ldo_red.png" height="50" style="opacity: 0.8;" id="tv-player-img">
+                                <div style="position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.7); color: #fff; padding: 2px 6px; font-size: 10px; border-radius: 3px; font-weight: bold;">LIVE</div>
+                            </div>
+                            <div style="text-align: center; color: #333; font-size: 10px; font-weight: bold; margin-top: 5px; text-shadow: 1px 1px 1px #fff; letter-spacing: 2px;">LAODONG TV</div>
+                        </div>
+                        <div style="margin-top: 10px; border-top: 1px solid #eee; padding-top: 10px;">
+                            <span style="font-size: 11px; background-color: #c00000; color: #fff; font-weight: bold; padding: 2px 6px; text-transform: uppercase;">Lịch phát sóng:</span>
+                            <marquee style="font-size: 12px; color: #333; margin-top: 5px; font-weight: bold;" scrollamount="3">09:00 - Tin tức cập nhật sáng Thủ đô  |  12:00 - Bản tin Lao động Công đoàn Hà Nội  |  20:00 - Bản tin Thời sự Tổng hợp Hà Nội 24h</marquee>
+                        </div>
+                    </div>
+                    
+                    <!-- Middle & Right: Media Cards -->
+                    <div style="display: flex; flex-direction: column; gap: 10px;" id="media-col-1">
+                        <!-- JS populated -->
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 10px;" id="media-col-2">
+                        <!-- JS populated -->
+                    </div>
+                </div>
+            </div>
+
             
             <!-- CHUYỂN ĐỘNG HẠ TẦNG MODULE -->
             <div class="infra-block">
@@ -548,44 +586,6 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
                 </div>
             </div>
 
-
-            <!-- BLOCK 2: MEDIA SECTION -->
-            <div class="blk-media m-top-20" style="background-color: #eee; border-radius: 8px; padding: 20px; font-family: Arial, sans-serif;">
-                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #c00000; padding-bottom: 8px; margin-bottom: 15px;">
-                    <h2 style="font-size: 20px; font-weight: bold; color: #c00000; margin: 0; text-transform: uppercase;">Media Hà Nội</h2>
-                    <div style="display: flex; gap: 15px; font-size: 12px; font-weight: bold;">
-                        <span style="color:#555;">Lao Động TV</span>
-                        <span style="color:#555;">Hyper Text</span>
-                        <span style="color:#555;">Photo</span>
-                        <span style="color:#555;">Podcast</span>
-                    </div>
-                </div>
-                
-                <div style="display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 15px;" class="columns-layout">
-                    <!-- Left: TV Frame -->
-                    <div style="background-color: #ffffff; padding: 15px; border-radius: 6px; border: 1px solid #ddd; display: flex; flex-direction: column; justify-content: space-between;">
-                        <div style="background: linear-gradient(135deg, #ccc 0%, #999 50%, #bbb 100%); padding: 10px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
-                            <div style="background-color: #000; width: 100%; height: 180px; border-radius: 6px; overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center;">
-                                <img src="https://media-cdn-v2.laodong.vn/laodong/2.0.0.35/images/logo/ldo_red.png" height="50" style="opacity: 0.8;" id="tv-player-img">
-                                <div style="position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.7); color: #fff; padding: 2px 6px; font-size: 10px; border-radius: 3px; font-weight: bold;">LIVE</div>
-                            </div>
-                            <div style="text-align: center; color: #333; font-size: 10px; font-weight: bold; margin-top: 5px; text-shadow: 1px 1px 1px #fff; letter-spacing: 2px;">LAODONG TV</div>
-                        </div>
-                        <div style="margin-top: 10px; border-top: 1px solid #eee; padding-top: 10px;">
-                            <span style="font-size: 11px; background-color: #c00000; color: #fff; font-weight: bold; padding: 2px 6px; text-transform: uppercase;">Lịch phát sóng:</span>
-                            <marquee style="font-size: 12px; color: #333; margin-top: 5px; font-weight: bold;" scrollamount="3">09:00 - Tin tức cập nhật sáng Thủ đô  |  12:00 - Bản tin Lao động Công đoàn Hà Nội  |  20:00 - Bản tin Thời sự Tổng hợp Hà Nội 24h</marquee>
-                        </div>
-                    </div>
-                    
-                    <!-- Middle & Right: Media Cards -->
-                    <div style="display: flex; flex-direction: column; gap: 10px;" id="media-col-1">
-                        <!-- JS populated -->
-                    </div>
-                    <div style="display: flex; flex-direction: column; gap: 10px;" id="media-col-2">
-                        <!-- JS populated -->
-                    </div>
-                </div>
-            </div>
 
             <!-- AD SLOT 03: MID-PAGE BANNER (728x90) -->
             <div style="width: 100%; max-width: 1000px; margin: 20px auto; text-align: center; font-family: Arial, sans-serif; position: relative;">
