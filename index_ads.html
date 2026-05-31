@@ -86,6 +86,212 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
             z-index: 99;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
+        .infra-block {
+            background-color: #f9f9f9;
+            border: 1px solid #eef1f5;
+            border-radius: 8px;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            margin-top: 20px;
+        }
+        .infra-heading-container {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid #e1251b;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+        .infra-heading-tag {
+            background-color: #e1251b;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 3px;
+            text-transform: uppercase;
+            margin-right: 10px;
+        }
+        .infra-heading {
+            font-size: 18px;
+            font-weight: bold;
+            color: #c00000;
+            margin: 0;
+            text-transform: uppercase;
+        }
+        .infra-grid {
+            display: grid;
+            grid-template-columns: 6fr 4fr;
+            gap: 20px;
+        }
+        .infra-hero-card {
+            position: relative;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .infra-hero-img-container {
+            position: relative;
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+        }
+        .infra-hero-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .infra-hero-img-container img:hover {
+            transform: scale(1.03);
+        }
+        .infra-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(192, 0, 0, 0.9);
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 4px 8px;
+            border-radius: 3px;
+            z-index: 5;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .infra-hero-body {
+            padding: 15px;
+        }
+        .infra-hero-title {
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 1.4;
+            margin: 0 0 8px 0;
+        }
+        .infra-hero-title a {
+            color: #111;
+            text-decoration: none;
+        }
+        .infra-hero-title a:hover {
+            color: #c00000;
+        }
+        .infra-hero-excerpt {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.5;
+            margin: 0;
+        }
+        .infra-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .infra-list-item {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 12px;
+        }
+        .infra-list-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .infra-list-title {
+            font-size: 13.5px;
+            font-weight: bold;
+            line-height: 1.4;
+            margin: 0 0 5px 0;
+        }
+        .infra-list-title a {
+            color: #333;
+            text-decoration: none;
+        }
+        .infra-list-title a:hover {
+            color: #c00000;
+        }
+        .infra-list-meta {
+            font-size: 11px;
+            color: #888;
+            display: flex;
+            gap: 10px;
+        }
+        .infra-list-excerpt {
+            font-size: 12px;
+            color: #666;
+            margin: 4px 0 0 0;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Mobile specific styles (Carousel) */
+        @media (max-width: 850px) {
+            .infra-grid {
+                display: none !important;
+            }
+            .infra-carousel-container {
+                display: flex !important;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                scroll-behavior: smooth;
+                gap: 12px;
+                padding-bottom: 10px;
+                -webkit-overflow-scrolling: touch;
+            }
+            .infra-carousel-container::-webkit-scrollbar {
+                display: none;
+            }
+            .infra-carousel-card {
+                flex: 0 0 80%; /* Peek design: 15-20% cut-off */
+                scroll-snap-align: start;
+                background-color: #ffffff;
+                border: 1px solid #ddd;
+                border-radius: 6px;
+                overflow: hidden;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+                display: flex;
+                flex-direction: column;
+            }
+            .infra-carousel-img-container {
+                position: relative;
+                width: 100%;
+                height: 150px;
+                overflow: hidden;
+            }
+            .infra-carousel-img-container img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .infra-carousel-body {
+                padding: 12px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                flex-grow: 1;
+            }
+            .infra-carousel-title {
+                font-size: 13px;
+                font-weight: bold;
+                line-height: 1.4;
+                margin: 0 0 6px 0;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+            .infra-carousel-title a {
+                color: #111;
+                text-decoration: none;
+            }
+        }
+        @media (min-width: 851px) {
+            .infra-carousel-container {
+                display: none !important;
+            }
+        }
     }
 </style>
 <!-- WALLPAPER AD SLOTS -->
@@ -157,42 +363,13 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
                     <div class="blk-10-1">
                         <!-- Left Subcover: 2 stacked stories -->
                         <div class="pl p-subcover" id="subcover-container">
-            <article class="v4 nm-001 item n-1">
-                <a class="link-img" href="https://laodong.vn/thoi-su/ha-noi-dang-day-manh-phat-trien-nha-o-xa-hoi-nha-o-cho-thue-1709499.ldo" target="_blank">
-                    <figure class="_thumb">
-                        <img src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=800&q=80" class="img-art lazyloaded" style="opacity: 1 !important; object-fit: cover;" alt="Hà Nội đang đẩy mạnh phát triển nhà ở xã hội, nhà ở cho thuê" width="300" height="186">
-                    </figure>
-                </a>
-                <a class="link-title" href="https://laodong.vn/thoi-su/ha-noi-dang-day-manh-phat-trien-nha-o-xa-hoi-nha-o-cho-thue-1709499.ldo" target="_blank">
-                    <h2 class="title prefix-icon">Hà Nội đang đẩy mạnh phát triển nhà ở xã hội, nhà ở cho thuê</h2>
-                </a>
-            </article>
-            <article class="v4 nm-001 item n-2">
-                <a class="link-img" href="https://laodong.vn/su-kien-binh-luan/cac-lo-nhin-an-chua-benh-moc-len-o-ha-noi-co-quan-quan-ly-o-dau-1708865.ldo" target="_blank">
-                    <figure class="_thumb">
-                        <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=800&q=80" class="img-art lazyloaded" style="opacity: 1 !important; object-fit: cover;" alt="Các lò nhịn ăn chữa bệnh mọc lên ở Hà Nội, cơ quan quản lý ở đâu?" width="300" height="186">
-                    </figure>
-                </a>
-                <a class="link-title" href="https://laodong.vn/su-kien-binh-luan/cac-lo-nhin-an-chua-benh-moc-len-o-ha-noi-co-quan-quan-ly-o-dau-1708865.ldo" target="_blank">
-                    <h2 class="title prefix-icon">Các lò nhịn ăn chữa bệnh mọc lên ở Hà Nội, cơ quan quản lý ở đâu?</h2>
-                </a>
-            </article>
-</div>
+                            <!-- JS populated -->
+                        </div>
                         
                         <!-- Center Main Cover: 1 giant spotlight story -->
                         <div class="pr p-cover" id="main-cover-container">
-            <article class="v4 cv-001">
-                <a class="link-img" href="https://laodong.vn/thoi-su/cong-an-ha-noi-thang-cap-bac-ham-nang-luong-cho-hon-5000-can-bo-chien-si-1709840.ldo" target="_blank">
-                    <figure class="_thumb">
-                        <img src="https://images.unsplash.com/photo-1509060464153-4466739f88c0?auto=format&fit=crop&w=800&q=80" class="img-art lazyloaded" style="opacity: 1 !important; object-fit: cover;" alt="Công an Hà Nội thăng cấp bậc hàm, nâng lương cho hơn 5.000 cán bộ, chiến sĩ" width="560" height="348">
-                    </figure>
-                </a>
-                <a class="link-title" href="https://laodong.vn/thoi-su/cong-an-ha-noi-thang-cap-bac-ham-nang-luong-cho-hon-5000-can-bo-chien-si-1709840.ldo" target="_blank">
-                    <h2 class="title cover prefix-icon">Công an Hà Nội thăng cấp bậc hàm, nâng lương cho hơn 5.000 cán bộ, chiến sĩ</h2>
-                </a>
-                <div class="chapeau ellipsis fade-out">Hà Nội - Hơn 5.000 cán bộ, chiến sĩ Công an thành phố được thăng cấp bậc hàm, nâng lương năm 2026.</div>
-            </article>
-</div>
+                            <!-- JS populated -->
+                        </div>
                     </div>
                 </div>
                 
@@ -201,63 +378,8 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
                     <div class="p-tieudiem">
                         <div style="font-size: 13px; font-weight: bold; color: #c00000; text-transform: uppercase; margin-bottom: 12px; border-bottom: 2px solid #c00000; padding-bottom: 5px;">Tiêu điểm Hà Nội</div>
                         <div id="spotlight-container">
-            <article class="v4 p2c m001 n-1">
-                <div class="pl">
-                    <a class="link-img" href="https://laodong.vn/thoi-su/xay-dung-luc-luong-vu-trang-vung-manh-san-sang-bao-ve-thu-do-ha-noi-trong-moi-tinh-huong-1708741.ldo" target="_blank">
-                        <figure class="_thumb">
-                            <img src="https://images.unsplash.com/photo-1599707367072-cd6ada2bc375?auto=format&fit=crop&w=800&q=80" class="img-art lazyloaded" style="opacity: 1 !important; object-fit: cover;" alt="Xây dựng lực lượng vũ trang vững mạnh, sẵn sàng bảo vệ Thủ đô Hà Nội trong mọi tình huống" width="159" height="93">
-                        </figure>
-                    </a>
-                </div>
-                <div class="pr">
-                    <a class="link-title" href="https://laodong.vn/thoi-su/xay-dung-luc-luong-vu-trang-vung-manh-san-sang-bao-ve-thu-do-ha-noi-trong-moi-tinh-huong-1708741.ldo" target="_blank">
-                        <h2 class="title prefix-icon">Xây dựng lực lượng vũ trang vững mạnh, sẵn sàng bảo vệ Thủ đô Hà Nội trong mọi tình huống</h2>
-                    </a>
-                </div>
-            </article>
-            <article class="v4 p2c m001 n-2">
-                <div class="pl">
-                    <a class="link-img" href="https://laodong.vn/thoi-su/cong-bo-nhieu-quyet-dinh-ve-cong-tac-can-bo-tai-ha-noi-1707679.ldo" target="_blank">
-                        <figure class="_thumb">
-                            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80" class="img-art lazyloaded" style="opacity: 1 !important; object-fit: cover;" alt="Công bố nhiều quyết định về công tác cán bộ tại Hà Nội" width="159" height="93">
-                        </figure>
-                    </a>
-                </div>
-                <div class="pr">
-                    <a class="link-title" href="https://laodong.vn/thoi-su/cong-bo-nhieu-quyet-dinh-ve-cong-tac-can-bo-tai-ha-noi-1707679.ldo" target="_blank">
-                        <h2 class="title prefix-icon">Công bố nhiều quyết định về công tác cán bộ tại Hà Nội</h2>
-                    </a>
-                </div>
-            </article>
-            <article class="v4 p2c m001 n-3">
-                <div class="pl">
-                    <a class="link-img" href="https://laodong.vn/thoi-su/ha-noi-day-nhanh-tien-do-vanh-dai-4-1710001.ldo" target="_blank">
-                        <figure class="_thumb">
-                            <img src="https://images.unsplash.com/photo-1509060464153-4466739f88c0?auto=format&fit=crop&w=800&q=80" class="img-art lazyloaded" style="opacity: 1 !important; object-fit: cover;" alt="Hà Nội khẩn trương hoàn thành giải phóng mặt bằng dự án Vành đai 4" width="159" height="93">
-                        </figure>
-                    </a>
-                </div>
-                <div class="pr">
-                    <a class="link-title" href="https://laodong.vn/thoi-su/ha-noi-day-nhanh-tien-do-vanh-dai-4-1710001.ldo" target="_blank">
-                        <h2 class="title prefix-icon"><span style="background-color: #ffeef0; color: #d71920; border: 1px solid #ffccd0; padding: 1px 4px; font-size: 9px; margin-right: 5px; border-radius: 2px; font-weight: bold; vertical-align: middle;">TÀI TRỢ</span>Hà Nội khẩn trương hoàn thành giải phóng mặt bằng dự án Vành đai 4</h2>
-                    </a>
-                </div>
-            </article>
-            <article class="v4 p2c m001 n-4">
-                <div class="pl">
-                    <a class="link-img" href="https://laodong.vn/thoi-su/ha-noi-kiem-tra-pccc-chung-cu-mini-1710002.ldo" target="_blank">
-                        <figure class="_thumb">
-                            <img src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=800&q=80" class="img-art lazyloaded" style="opacity: 1 !important; object-fit: cover;" alt="Hà Nội tăng cường kiểm tra phòng cháy chữa cháy tại chung cư mini" width="159" height="93">
-                        </figure>
-                    </a>
-                </div>
-                <div class="pr">
-                    <a class="link-title" href="https://laodong.vn/thoi-su/ha-noi-kiem-tra-pccc-chung-cu-mini-1710002.ldo" target="_blank">
-                        <h2 class="title prefix-icon">Hà Nội tăng cường kiểm tra phòng cháy chữa cháy tại chung cư mini</h2>
-                    </a>
-                </div>
-            </article>
-</div>
+                            <!-- JS populated -->
+                        </div>
                         
                         <!-- AD SLOT 02: SIDEBAR RECTANGLE (300x250) -->
                         <div style="width: 100%; margin: 15px 0; font-family: Arial, sans-serif; position: relative;">
@@ -274,16 +396,158 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
                         <div style="margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px;">
                             <div style="border-left: 3px solid #c00000; padding-left: 8px; margin-bottom: 10px;">
                                 <strong style="font-size: 12px; text-transform: uppercase; color: #c00000;">Sự kiện bình luận</strong>
-                                <a href="https://laodong.vn/thoi-su/ha-noi-dang-day-manh-phat-trien-nha-o-xa-hoi-nha-o-cho-thue-1709499.ldo" style="display: block; font-size: 13px; font-weight: bold; color: #333; margin-top: 4px; text-decoration: none;" id="sidebar-commentary-title" target="_blank">Hà Nội đang đẩy mạnh phát triển nhà ở xã hội, nhà ở cho thuê</a>
+                                <a href="https://laodong.vn" style="display: block; font-size: 13px; font-weight: bold; color: #333; margin-top: 4px; text-decoration: none;" id="sidebar-commentary-title">...</a>
                             </div>
                             <div style="border-left: 3px solid #002d62; padding-left: 8px;">
                                 <strong style="font-size: 12px; text-transform: uppercase; color: #002d62;">Người Việt tử tế</strong>
-                                <a href="https://laodong.vn/photo/bau-troi-ha-noi-mu-mit-tam-nhin-han-che-trong-gio-cao-diem-chieu-295-1710419.ldo" style="display: block; font-size: 13px; font-weight: bold; color: #333; margin-top: 4px; text-decoration: none;" id="sidebar-kindness-title" target="_blank">Bầu trời Hà Nội mù mịt, tầm nhìn hạn chế trong giờ cao điểm chiều 29.5</a>
+                                <a href="https://laodong.vn" style="display: block; font-size: 13px; font-weight: bold; color: #333; margin-top: 4px; text-decoration: none;" id="sidebar-kindness-title">...</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            
+            <!-- CHUYỂN ĐỘNG HẠ TẦNG MODULE -->
+            <div class="infra-block">
+                <div class="infra-heading-container">
+                    <span class="infra-heading-tag">Đô thị</span>
+                    <h2 class="infra-heading">Chuyển động Hạ tầng</h2>
+                </div>
+                
+                <!-- Desktop Grid Layout (6:4 Split) -->
+                <div class="infra-grid">
+                    <div class="pl">
+                        
+                    <div class="infra-hero-card">
+                        <div class="infra-hero-img-container">
+                            <span class="infra-badge">📊 Infographic</span>
+                            <a href="https://laodong.vn/thoi-su/ha-noi-day-nhanh-tien-do-vanh-dai-4-1710001.ldo" target="_blank">
+                                <img src="https://images.unsplash.com/photo-1509060464153-4466739f88c0?auto=format&fit=crop&w=800&q=80" alt="Hà Nội khẩn trương hoàn thành giải phóng mặt bằng dự án Vành đai 4">
+                            </a>
+                        </div>
+                        <div class="infra-hero-body">
+                            <h3 class="infra-hero-title">
+                                <a href="https://laodong.vn/thoi-su/ha-noi-day-nhanh-tien-do-vanh-dai-4-1710001.ldo" target="_blank">Hà Nội khẩn trương hoàn thành giải phóng mặt bằng dự án Vành đai 4</a>
+                            </h3>
+                            <p class="infra-hero-excerpt">UBND Thành phố chỉ đạo các quận, huyện tập trung tháo gỡ vướng mắc về giá đền bù đất để bàn giao 100% mặt bằng sạch phục vụ thi công tuyến đường huyết mạch đúng tiến độ.</p>
+                        </div>
+                    </div>
+
+                    </div>
+                    <div class="pr">
+                        <div class="infra-list">
+                            
+                        <div class="infra-list-item">
+                            <h4 class="infra-list-title">
+                                <a href="https://laodong.vn/video-xa-hoi/thi-cong-ngay-dem-tren-cong-truong-thoat-nuoc-gan-1000-ti-dong-o-long-bien-1710013.ldo" target="_blank">Thi công ngày đêm trên công trường thoát nước gần 1.000 tỉ đồng ở Long Biên</a>
+                            </h4>
+                            <div class="infra-list-meta">
+                                <span>📅 17/05/2026 10:15</span>
+                                <span>📍 Long biên</span>
+                            </div>
+                            <p class="infra-list-excerpt">Hà Nội - Dự án xây dựng tuyến mương Việt Hưng - Cầu Bây và hồ điều hòa Cự Khối đang tăng tốc thi công để đảm bảo về đích...</p>
+                        </div>
+
+                        <div class="infra-list-item">
+                            <h4 class="infra-list-title">
+                                <a href="https://laodong.vn/xa-hoi/mua-lon-chieu-285-nhieu-tuyen-duong-quanh-my-dinh-ngap-sau-1709927.ldo" target="_blank">Mưa lớn chiều 28.5, nhiều tuyến đường quanh Mỹ Đình ngập sâu</a>
+                            </h4>
+                            <div class="infra-list-meta">
+                                <span>📅 15/05/2026 10:15</span>
+                                <span>📍 Mỹ đình</span>
+                            </div>
+                            <p class="infra-list-excerpt">Hà Nội - Trận mưa lớn kèm sấm chớp chiều 28.5 khiến nhiều tuyến đường quanh sân vận động Mỹ Đình ngập cục bộ, giao thông ùn tắc trong giờ...</p>
+                        </div>
+
+                        <div class="infra-list-item">
+                            <h4 class="infra-list-title">
+                                <a href="https://laodong.vn/xa-hoi/586-cong-trinh-o-noi-do-ha-noi-duoc-pha-do-de-lam-duong-vanh-dai-25-1709890.ldo" target="_blank">586 công trình ở nội đô Hà Nội được phá dỡ để làm đường Vành đai 2,5</a>
+                            </h4>
+                            <div class="infra-list-meta">
+                                <span>📅 23/05/2026 10:15</span>
+                                <span>📍 Hà Nội</span>
+                            </div>
+                            <p class="infra-list-excerpt">Hà Nội - Hàng trăm công trình trong phạm vi dự án đường Vành đai 2,5 đoạn Nguyễn Trãi - Đầm Hồng đã được phá dỡ để phục vụ công...</p>
+                        </div>
+
+                        <div class="infra-list-item">
+                            <h4 class="infra-list-title">
+                                <a href="https://laodong.vn/photo/mua-lon-kem-sam-chop-khien-duong-pho-ha-noi-un-tac-ngap-ung-1709879.ldo" target="_blank">Mưa lớn kèm sấm chớp khiến đường phố Hà Nội ùn tắc, ngập úng</a>
+                            </h4>
+                            <div class="infra-list-meta">
+                                <span>📅 29/05/2026 10:15</span>
+                                <span>📍 Hà Nội</span>
+                            </div>
+                            <p class="infra-list-excerpt">Hà Nội - Chiều tối 28.5, Thủ đô xuất hiện mưa giông kèm sấm sét khiến nhiều nơi bị ngập, giao thông ùn tắc kéo dài.</p>
+                        </div>
+
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mobile Carousel Layout -->
+                <div class="infra-carousel-container" style="display: none;">
+                    
+                <div class="infra-carousel-card">
+                    <div class="infra-carousel-img-container">
+                        <span class="infra-badge">📹 Video</span>
+                        <a href="https://laodong.vn/thoi-su/ha-noi-day-nhanh-tien-do-vanh-dai-4-1710001.ldo" target="_blank">
+                            <img src="https://images.unsplash.com/photo-1509060464153-4466739f88c0?auto=format&fit=crop&w=800&q=80" alt="Hà Nội khẩn trương hoàn thành giải phóng mặt bằng dự án Vành đai 4">
+                        </a>
+                    </div>
+                    <div class="infra-carousel-body">
+                        <h4 class="infra-carousel-title">
+                            <a href="https://laodong.vn/thoi-su/ha-noi-day-nhanh-tien-do-vanh-dai-4-1710001.ldo" target="_blank">Hà Nội khẩn trương hoàn thành giải phóng mặt bằng dự án Vành đai 4</a>
+                        </h4>
+                    </div>
+                </div>
+
+                <div class="infra-carousel-card">
+                    <div class="infra-carousel-img-container">
+                        <span class="infra-badge">📊 Infographic</span>
+                        <a href="https://laodong.vn/video-xa-hoi/thi-cong-ngay-dem-tren-cong-truong-thoat-nuoc-gan-1000-ti-dong-o-long-bien-1710013.ldo" target="_blank">
+                            <img src="https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=800&q=80" alt="Thi công ngày đêm trên công trường thoát nước gần 1.000 tỉ đồng ở Long Biên">
+                        </a>
+                    </div>
+                    <div class="infra-carousel-body">
+                        <h4 class="infra-carousel-title">
+                            <a href="https://laodong.vn/video-xa-hoi/thi-cong-ngay-dem-tren-cong-truong-thoat-nuoc-gan-1000-ti-dong-o-long-bien-1710013.ldo" target="_blank">Thi công ngày đêm trên công trường thoát nước gần 1.000 tỉ đồng ở Long Biên</a>
+                        </h4>
+                    </div>
+                </div>
+
+                <div class="infra-carousel-card">
+                    <div class="infra-carousel-img-container">
+                        <span class="infra-badge">📹 Video</span>
+                        <a href="https://laodong.vn/xa-hoi/mua-lon-chieu-285-nhieu-tuyen-duong-quanh-my-dinh-ngap-sau-1709927.ldo" target="_blank">
+                            <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80" alt="Mưa lớn chiều 28.5, nhiều tuyến đường quanh Mỹ Đình ngập sâu">
+                        </a>
+                    </div>
+                    <div class="infra-carousel-body">
+                        <h4 class="infra-carousel-title">
+                            <a href="https://laodong.vn/xa-hoi/mua-lon-chieu-285-nhieu-tuyen-duong-quanh-my-dinh-ngap-sau-1709927.ldo" target="_blank">Mưa lớn chiều 28.5, nhiều tuyến đường quanh Mỹ Đình ngập sâu</a>
+                        </h4>
+                    </div>
+                </div>
+
+                <div class="infra-carousel-card">
+                    <div class="infra-carousel-img-container">
+                        <span class="infra-badge">📊 Infographic</span>
+                        <a href="https://laodong.vn/xa-hoi/586-cong-trinh-o-noi-do-ha-noi-duoc-pha-do-de-lam-duong-vanh-dai-25-1709890.ldo" target="_blank">
+                            <img src="https://images.unsplash.com/photo-1473163928189-364b2c4e1135?auto=format&fit=crop&w=800&q=80" alt="586 công trình ở nội đô Hà Nội được phá dỡ để làm đường Vành đai 2,5">
+                        </a>
+                    </div>
+                    <div class="infra-carousel-body">
+                        <h4 class="infra-carousel-title">
+                            <a href="https://laodong.vn/xa-hoi/586-cong-trinh-o-noi-do-ha-noi-duoc-pha-do-de-lam-duong-vanh-dai-25-1709890.ldo" target="_blank">586 công trình ở nội đô Hà Nội được phá dỡ để làm đường Vành đai 2,5</a>
+                        </h4>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+
 
             <!-- BLOCK 2: MEDIA SECTION -->
             <div class="blk-media m-top-20" style="background-color: #eee; border-radius: 8px; padding: 20px; font-family: Arial, sans-serif;">
@@ -315,37 +579,11 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
                     
                     <!-- Middle & Right: Media Cards -->
                     <div style="display: flex; flex-direction: column; gap: 10px;" id="media-col-1">
-            <div style="background-color:#ffffff; border:1px solid #ddd; border-radius:4px; padding:10px; display:flex; gap:10px;">
-                <div style="width:100px; height:65px; overflow:hidden; border-radius:3px; flex-shrink:0; position:relative;">
-                    <img src="https://images.unsplash.com/photo-1509060464153-4466739f88c0?auto=format&fit=crop&w=800&q=80" style="width:100%; height:100%; object-fit:cover;">
-                    <div style="position:absolute; bottom:3px; left:3px; color:red; font-size:12px;"><i class="fa fa-video-camera"></i></div>
-                </div>
-                <a href="https://laodong.vn/thoi-su/ha-noi-day-nhanh-tien-do-vanh-dai-4-1710001.ldo" target="_blank" style="text-decoration:none; font-size:12px; font-weight:bold; color:#111; line-height:1.3; display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical; overflow:hidden;">Hà Nội khẩn trương hoàn thành giải phóng mặt bằng dự án Vành đai 4</a>
-            </div>
-            <div style="background-color:#ffffff; border:1px solid #ddd; border-radius:4px; padding:10px; display:flex; gap:10px;">
-                <div style="width:100px; height:65px; overflow:hidden; border-radius:3px; flex-shrink:0; position:relative;">
-                    <img src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=800&q=80" style="width:100%; height:100%; object-fit:cover;">
-                    <div style="position:absolute; bottom:3px; left:3px; color:red; font-size:12px;"><i class="fa fa-video-camera"></i></div>
-                </div>
-                <a href="https://laodong.vn/thoi-su/ha-noi-kiem-tra-pccc-chung-cu-mini-1710002.ldo" target="_blank" style="text-decoration:none; font-size:12px; font-weight:bold; color:#111; line-height:1.3; display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical; overflow:hidden;">Hà Nội tăng cường kiểm tra phòng cháy chữa cháy tại chung cư mini</a>
-            </div>
-</div>
+                        <!-- JS populated -->
+                    </div>
                     <div style="display: flex; flex-direction: column; gap: 10px;" id="media-col-2">
-            <div style="background-color:#ffffff; border:1px solid #ddd; border-radius:4px; padding:10px; display:flex; gap:10px;">
-                <div style="width:100px; height:65px; overflow:hidden; border-radius:3px; flex-shrink:0; position:relative;">
-                    <img src="https://images.unsplash.com/photo-1473163928189-364b2c4e1135?auto=format&fit=crop&w=800&q=80" style="width:100%; height:100%; object-fit:cover;">
-                    <div style="position:absolute; bottom:3px; left:3px; color:red; font-size:12px;"><i class="fa fa-video-camera"></i></div>
-                </div>
-                <a href="https://laodong.vn/photo/bau-troi-ha-noi-mu-mit-tam-nhin-han-che-trong-gio-cao-diem-chieu-295-1710419.ldo" target="_blank" style="text-decoration:none; font-size:12px; font-weight:bold; color:#111; line-height:1.3; display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical; overflow:hidden;">Bầu trời Hà Nội mù mịt, tầm nhìn hạn chế trong giờ cao điểm chiều 29.5</a>
-            </div>
-            <div style="background-color:#ffffff; border:1px solid #ddd; border-radius:4px; padding:10px; display:flex; gap:10px;">
-                <div style="width:100px; height:65px; overflow:hidden; border-radius:3px; flex-shrink:0; position:relative;">
-                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" style="width:100%; height:100%; object-fit:cover;">
-                    <div style="position:absolute; bottom:3px; left:3px; color:red; font-size:12px;"><i class="fa fa-video-camera"></i></div>
-                </div>
-                <a href="https://laodong.vn/xa-hoi/hieu-qua-tu-mo-hinh-to-hanh-chinh-cong-xung-kich-tai-ha-noi-1710291.ldo" target="_blank" style="text-decoration:none; font-size:12px; font-weight:bold; color:#111; line-height:1.3; display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical; overflow:hidden;">Hiệu quả từ mô hình Tổ hành chính công xung kích tại Hà Nội</a>
-            </div>
-</div>
+                        <!-- JS populated -->
+                    </div>
                 </div>
             </div>
 
@@ -3280,6 +3518,23 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
         document.getElementById('schema-modal').style.display = 'none';
     }
 
+    function initInfraCarouselAutoplay() {
+        const carousel = document.querySelector('.infra-carousel-container');
+        if (!carousel) return;
+        let slideIndex = 0;
+        
+        setInterval(() => {
+            const cards = carousel.querySelectorAll('.infra-carousel-card');
+            if (cards.length <= 1) return;
+            slideIndex = (slideIndex + 1) % cards.length;
+            const cardWidth = cards[0].offsetWidth + 12; // width + gap
+            carousel.scrollTo({
+                left: cardWidth * slideIndex,
+                behavior: 'smooth'
+            });
+        }, 5000);
+    }
+
     window.addEventListener('DOMContentLoaded', () => {
         populateCuratorOptions();
         renderMainCover();
@@ -3289,6 +3544,7 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
         updateSchemaMarkup();
         changeDistrictPrices('caugiay');
         fetchHanoiWeather();
+        initInfraCarouselAutoplay();
     });
 </script>
 <footer><div class="footer-a"><div class="wrapper"><div class="rw-1 text-center"><div class="socials"><a href="https://www.facebook.com/laodongonline" target="_blank" class="item fa fa-facebook"></a> <a href="https://zalo.me/1953123341318396123" target="_blank" class="item img-icon"> <img src="https://media-cdn-v2.laodong.vn/laodong/2.0.0.35/images/icons/zalo-icon-64-60.png" height="30" width="32" style="margin-top:-2px"> </a> <a href="https://news.google.com/publications/CAAiEMd7LKx8SFheC7cdYmUKIisqFAgKIhDHeyysfEhYXgu3HWJlCiIr?hl=vi&amp;gl=VN&amp;ceid=VN%3Avi" target="_blank" class="item img-icon"> <img src="https://media-cdn-v2.laodong.vn/laodong/2.0.0.35/images/icons/google-news-icon-64-60.png" height="30" width="32" style="margin-top:-2px"> </a> <a href="https://www.youtube.com/channel/UCr8i-5AIxdiJbI0HdGdUzIA" target="_blank" class="item fa fa-youtube"></a> <a href="mailto:toasoan@laodong.com.vn" class="item fa fa-envelope"></a> <a href="https://laodong.vn/rss" class="item fa fa-rss"></a></div></div><div class="rw-2"><div class="align-items-start cl1"><a href="https://laodong.vn/" target="_self"> <img src="https://media-cdn-v2.laodong.vn/laodong/2.0.0.35/images/logo/ldo_red.png" class="logo-tv" alt="BÁO LAO ĐỘNG" width="210" height="52"> </a></div><div class="cl2"><p>Xuất bản số Báo Lao Động đầu tiên vào ngày 14.8.1929<p><strong>CƠ QUAN CỦA TỔNG LIÊN ĐOÀN LAO ĐỘNG VIỆT NAM</strong><p>Giấy phép số 346/GP-BTTTT do Bộ TTTT cấp ngày 08.07.2022<br> Tổng Biên tập: Nguyễn Ngọc Hiển<p>Địa chỉ liên hệ:<br> Số 6 Phạm Văn Bạch, phường Cầu Giấy, Thành phố Hà Nội</div><div class="cl3"><dl class="title-1"><dt>Thông tin liên hệ:</dt></dl><dl><dt class="title-2">Tòa soạn:<dd>(+84 24) 38252441 - 35330305</dl><dl><dt class="title-2">Báo điện tử:<dd>ĐT: (+84 24) 38303044 <br> Email: toasoan@laodong.com.vn</dl><dl><dt class="title-2">Quảng cáo:<dd>(+84 24) 39232694 (Báo in) <br> (+84 24) 35335237 (online)<br></dl><dl><dt>Đường dây nóng: 096 8383388 * Bạn đọc: (+84 24) 35335235</dt></dl></div></div><div class="rw-3"><div class="download-app text-center"><a href="https://play.google.com/store/apps/details?id=com.ninepoints.ldo.reader" title="Tải ứng dụng Báo Lao Động App"> <img data-src="https://media-cdn-v2.laodong.vn/laodong/2.0.0.35/images/a-download-icon.png" class="lazyload" alt="Tải ứng dụng Báo Lao Động App" width="149" height="31"> </a> <a href="https://apps.apple.com/vn/app/báo-lao-động-app/id1328195523?l=vi" title="Tải ứng dụng Báo Lao Động App"> <img data-src="https://media-cdn-v2.laodong.vn/laodong/2.0.0.35/images/i-download-icon.png" class="lazyload" alt="Tải ứng dụng Báo Lao Động App" width="149" height="31"> </a> <a href="https://laodong.vn//www.dmca.com/Protection/Status.aspx?ID=2a0ef338-d2a6-4097-82db-8db6522e77c5" title="DMCA.com Protection Status" class="dmca-badge"> <img src="https://images.dmca.com/Badges/dmca_copyright_protected150c.png?ID=2a0ef338-d2a6-4097-82db-8db6522e77c5" alt="DMCA.com Protection Status"> </a><script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"></script></div></div></div><div class="power">Báo Lao Động giữ bản quyền nội dung trên website này. Báo điện tử Lao Động được phát triển bởi Lao Động Technologies © {{vm.currentDate | date:'yyyy'}} - Version: 2.0.0.35.61</div></div></footer>
