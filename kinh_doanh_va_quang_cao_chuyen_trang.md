@@ -71,7 +71,16 @@ Mô hình thương mại hóa hệ thống trang tin địa phương được th
     15. Entertainment Showtimes (Lịch diễn Nhà hát Lớn, CGV)
     16. Interactive Poll (Bỏ phiếu biểu đồ động)
     17. Labor Rights Calculator (Tính lương tăng ca)
-*   **Đóng gói tài liệu:** Hoàn thiện và lưu trữ Kế hoạch kinh doanh V2 tại [Ke_hoach_kinh_doanh_tong_the_v2.md](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/Ke_Hoach_Kinh_Doanh/Ke_hoach_kinh_doanh_tong_the_v2.md).
+    - Cập nhật nhật ký công việc và đóng gói thành công **Kế hoạch Kinh doanh V2 (30.05.2026)** tại thư mục `Ke_Hoach_Kinh_Doanh`.
+*   **Mở rộng chiến lược kinh doanh**: Bổ sung chiến lược tiếp cận tệp khách hàng "đuôi dài" (Long-tail) bị bỏ sót bao gồm SMEs, hộ kinh doanh cá thể, làng nghề truyền thống và các nhà hàng ẩm thực địa phương.
+
+### Ngày 31/05/2026: Tích hợp Widget Thời tiết Hà Nội thời gian thực
+*   **Nội dung xử lý**: Tích hợp hộp tiện ích Thời tiết Hà Nội vào thanh đầu trang song hành cùng Breadcrumbs và ngày tháng tiêu chuẩn Việt Nam.
+*   **Chi tiết giải pháp công nghệ**:
+    - Thiết kế widget bằng HTML/CSS mang phong cách hiện đại (glassmorphism nhẹ).
+    - Lập trình JavaScript kết nối với API thời tiết Open-Meteo cập nhật nhiệt độ, độ ẩm và trạng thái thời tiết động (☀️, ⛅, 🌦️, 🌫️...) theo thời gian thực của khu vực Hà Nội.
+    - Cập nhật danh mục kiểm đếm từ 17 lên **18 sản phẩm & widget thương mại hóa**.
+*   **Đóng gói tài liệu**: Cập nhật Kế hoạch kinh doanh V2 và chạy lưu trữ dự phòng `run_backup.py`.
 
 ---
 

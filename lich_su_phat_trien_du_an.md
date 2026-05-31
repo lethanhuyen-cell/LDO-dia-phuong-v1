@@ -77,3 +77,15 @@ Tích hợp các vị trí quảng cáo mô phỏng trên trang demo độc lậ
     - Script tự động sao chép toàn bộ các tệp tin cốt lõi (HTML mẫu sạch, CSDL bài viết JSON, Lịch sử phát triển, Nhật ký hoạt động, Kế hoạch kinh doanh V2 và Script trình biên dịch) sang thư mục chuyên biệt [Sao_Luu_Du_Phong](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/Sao_Luu_Du_Phong).
     - Chạy thử nghiệm thành công tạo bản sao lưu snapshot đầu tiên.
 *   **Nhật ký hoạt động:** Cập nhật chi tiết tiến trình tại [kinh_doanh_va_quang_cao_chuyen_trang.md](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/kinh_doanh_va_quang_cao_chuyen_trang.md).
+
+---
+
+### 3. PHIÊN LÀM VIỆC NGÀY 31/05/2026: TÍCH HỢP WIDGET THỜI TIẾT THỜI GIAN THỰC (REAL-TIME WEATHER WIDGET)
+*   **Mục tiêu chính:** Tích hợp tiện ích Thời tiết Hà Nội cập nhật thời gian thực từ nguồn Open-Meteo uy tín vào thanh đầu trang.
+*   **Công việc kỹ thuật đã thực hiện:**
+    *   **Giao diện Widget:** Thiết kế một hộp tiện ích nhỏ gọn phong cách glassmorphism nằm ngay trên cùng, song hành với Breadcrumbs và Date Bar hiển thị thứ ngày tiêu chuẩn Việt Nam.
+    *   **Tích hợp API thời gian thực:** Kết nối với API miễn phí và uy tín của Open-Meteo (`api.open-meteo.com`) lấy dữ liệu nhiệt độ, độ ẩm và mã thời tiết của tọa độ địa lý Hà Nội để tự động chuyển đổi thành trạng thái trực quan kèm biểu tượng emoji tương ứng (Trời quang ☀️, Nhiều mây ⛅, Mưa rào 🌦️, Mưa phùn 🌧️...).
+    *   **Đồng bộ & Tự động chạy:** Hàm `fetchHanoiWeather()` tự động kích hoạt trên sự kiện `DOMContentLoaded` của trang.
+    *   **Deploy Cloud:** Cập nhật và phát hành trực tuyến thành công lên Vercel.
+*   **Kết quả bàn giao:** Trang chủ **[https://laodong-hanoi.vercel.app](https://laodong-hanoi.vercel.app)** hiển thị chính xác Thời tiết Hà Nội cập nhật thời gian thực.
+

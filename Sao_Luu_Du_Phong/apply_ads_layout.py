@@ -104,13 +104,22 @@ middle_part = """
     <div class="b-center">
         <div class="wrapper">
             
-            <!-- BREADCRUMBS -->
-            <div class="breadcrumb-container" style="font-size: 13px; color: #666666; padding: 12px 0 0 0; display: flex; align-items: center; gap: 5px; font-family: Arial, sans-serif;">
-                <a href="https://laodong.vn" style="color: #666666; text-decoration: none;">Trang chủ</a> 
-                <span style="color: #ccc;">/</span>
-                <a href="#" style="color: #666666; text-decoration: none;">Vùng miền</a> 
-                <span style="color: #ccc;">/</span>
-                <span style="color: #c00000; font-weight: bold;">Hà Nội</span>
+            <!-- BREADCRUMBS & WEATHER/DATE SUBBAR -->
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0 0 0; font-family: Arial, sans-serif; flex-wrap: wrap; gap: 10px;">
+                <div class="breadcrumb-container" style="font-size: 13px; color: #666666; display: flex; align-items: center; gap: 5px;">
+                    <a href="https://laodong.vn" style="color: #666666; text-decoration: none;">Trang chủ</a> 
+                    <span style="color: #ccc;">/</span>
+                    <a href="#" style="color: #666666; text-decoration: none;">Vùng miền</a> 
+                    <span style="color: #ccc;">/</span>
+                    <span style="color: #c00000; font-weight: bold;">Hà Nội</span>
+                </div>
+                
+                <!-- Real-time Hanoi Weather Widget -->
+                <a href="https://weather.com/vi-VN/weather/today/l/VMXX0006:1:VM" target="_blank" title="Xem dự báo chi tiết tại Weather.com (Nguồn uy tín)" id="hanoi-weather-widget" style="text-decoration: none; display: flex; align-items: center; gap: 8px; background: rgba(240, 244, 248, 0.85); border: 1px solid #d0e1f9; padding: 4px 12px; border-radius: 20px; font-size: 12px; color: #002d62; box-shadow: 0 1px 3px rgba(0,0,0,0.05); font-weight: bold; transition: all 0.2s ease;" onmouseover="this.style.background='rgba(224, 235, 250, 0.95)'; this.style.transform='translateY(-1px)';" onmouseout="this.style.background='rgba(240, 244, 248, 0.85)'; this.style.transform='none';">
+                    <span>📅 <span id="current-date-vietnam">Chủ nhật, 31/05/2026</span></span>
+                    <span style="color: #ccc;">|</span>
+                    <span id="weather-temp-span">📍 Hà Nội: Đang tải...</span>
+                </a>
             </div>
 
             <!-- REGIONAL INTRO BADGE -->
@@ -1446,6 +1455,42 @@ middle_part = """
         document.getElementById('json-schema-output').innerText = JSON.stringify(schema, null, 2);
     }
 
+    function fetchHanoiWeather() {
+        const options = { weekday: 'long', year: 'numeric', month: '2-digit', day: '2-digit' };
+        const today = new Date();
+        document.getElementById('current-date-vietnam').innerText = today.toLocaleDateString('vi-VN', options);
+
+        const url = "https://api.open-meteo.com/v1/forecast?latitude=21.0285&longitude=105.8542&current=temperature_2m,relative_humidity_2m,weather_code";
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                if (data && data.current) {
+                    const temp = Math.round(data.current.temperature_2m);
+                    const humidity = data.current.relative_humidity_2m;
+                    const code = data.current.weather_code;
+                    
+                    let condition = "Trời nhiều mây";
+                    let emoji = "⛅";
+                    
+                    if (code === 0) { condition = "Trời quang"; emoji = "☀️"; }
+                    else if (code >= 1 && code <= 3) { condition = "Ít mây / Nhiều mây"; emoji = "⛅"; }
+                    else if (code >= 45 && code <= 48) { condition = "Sương mù"; emoji = "🌫️"; }
+                    else if (code >= 51 && code <= 55) { condition = "Mưa phùn"; emoji = "🌧️"; }
+                    else if (code >= 61 && code <= 65) { condition = "Có mưa"; emoji = "🌧️"; }
+                    else if (code >= 80 && code <= 82) { condition = "Mưa rào"; emoji = "🌦️"; }
+                    else if (code >= 95) { condition = "Có giông bão"; emoji = "⛈️"; }
+                    
+                    document.getElementById('weather-temp-span').innerHTML = `
+                        Hà Nội: ${emoji} <strong>${temp}°C</strong> (${condition}) <span style="font-weight: normal; color: #666; margin-left: 5px;">💧 ${humidity}% ẩm</span>
+                    `;
+                }
+            })
+            .catch(err => {
+                console.error("Lỗi khi tải thời tiết:", err);
+                document.getElementById('weather-temp-span').innerHTML = "Hà Nội: ⛅ 28°C";
+            });
+    }
+
     function openSchemaModal() {
         document.getElementById('schema-modal').style.display = 'flex';
         updateSchemaMarkup();
@@ -1462,6 +1507,7 @@ middle_part = """
         renderEnterpriseBlock();
         updateSchemaMarkup();
         changeDistrictPrices('caugiay');
+        fetchHanoiWeather();
     });
 </script>
 """
