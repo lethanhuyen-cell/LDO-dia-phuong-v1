@@ -397,14 +397,13 @@ middle_part = """
                         </div>
                         
                         <div style="margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px;">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 2px solid #c00000; padding-bottom: 5px;">
-                                <span style="font-size: 13px; font-weight: bold; color: #c00000; text-transform: uppercase;">Đọc nhiều nhất</span>
-                                <div id="most-read-dots" style="display: flex; gap: 6px; align-items: center;">
-                                    <!-- Populated dynamically -->
-                                </div>
+                            <div style="border-left: 3px solid #c00000; padding-left: 8px; margin-bottom: 10px;">
+                                <strong style="font-size: 12px; text-transform: uppercase; color: #c00000;">Sự kiện bình luận</strong>
+                                <a href="https://laodong.vn" style="display: block; font-size: 13px; font-weight: bold; color: #333; margin-top: 4px; text-decoration: none;" id="sidebar-commentary-title">...</a>
                             </div>
-                            <div id="most-read-container" style="position: relative; min-height: 250px; overflow: hidden;">
-                                <!-- JS populated -->
+                            <div style="border-left: 3px solid #002d62; padding-left: 8px;">
+                                <strong style="font-size: 12px; text-transform: uppercase; color: #002d62;">Người Việt tử tế</strong>
+                                <a href="https://laodong.vn" style="display: block; font-size: 13px; font-weight: bold; color: #333; margin-top: 4px; text-decoration: none;" id="sidebar-kindness-title">...</a>
                             </div>
                         </div>
                     </div>
@@ -1513,63 +1512,13 @@ middle_part = """
             </article>
         `;
 
-        const mostReadPool = hanoiArticles.filter(a => a.id !== centerArt.id).slice(0, 15);
-        let containerHtml = '';
-        let dotsHtml = '';
-        const slideCount = Math.ceil(mostReadPool.length / 5);
+        const commentArt = hanoiArticles.find(a => a.category === "Thời sự" && a.id !== centerArt.id) || hanoiArticles[10];
+        const kindnessArt = hanoiArticles.find(a => a.category === "Xã hội" && a.id !== centerArt.id) || hanoiArticles[12];
         
-        for (let s = 0; s < slideCount; s++) {
-            const slideArticles = mostReadPool.slice(s * 5, (s + 1) * 5);
-            let slideItemsHtml = '';
-            slideArticles.forEach((item, idx) => {
-                const globalIdx = s * 5 + idx + 1;
-                slideItemsHtml += `
-                    <div style="display: flex; gap: 8px; align-items: flex-start; padding-bottom: 8px; border-bottom: 1px dashed #eee; margin-top: 8px;">
-                        <span style="font-size: 14px; font-weight: bold; color: #c00000; min-width: 18px; text-align: center;">` + globalIdx + `</span>
-                        <a href="` + item.url + `" target="_blank" style="font-size: 12px; color: #333; text-decoration: none; font-weight: bold; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;" onmouseover="this.style.color='#c00000'" onmouseout="this.style.color='#333'">` + item.title + `</a>
-                    </div>
-                `;
-            });
-            
-            containerHtml += `
-                <div id="most-read-slide-` + s + `" class="most-read-slide" style="display: ` + (s === 0 ? 'block' : 'none') + `; opacity: ` + (s === 0 ? '1' : '0') + `; transition: opacity 0.4s ease;">
-                    ` + slideItemsHtml + `
-                </div>
-            `;
-            
-            dotsHtml += `
-                <span id="most-read-dot-` + s + `" onclick="switchMostReadSlide(` + s + `)" style="width: 8px; height: 8px; border-radius: 50%; background-color: ` + (s === 0 ? '#c00000' : '#ccc') + `; display: inline-block; cursor: pointer; transition: background-color 0.2s;"></span>
-            `;
-        }
-        
-        document.getElementById('most-read-container').innerHTML = containerHtml;
-        document.getElementById('most-read-dots').innerHTML = dotsHtml;
-        
-        if (!window.switchMostReadSlide) {
-            window.currentMostReadSlide = 0;
-            window.switchMostReadSlide = function(slideIndex) {
-                const slides = document.querySelectorAll('.most-read-slide');
-                slides.forEach((slide, idx) => {
-                    const el = document.getElementById('most-read-slide-' + idx);
-                    const dot = document.getElementById('most-read-dot-' + idx);
-                    if (idx === slideIndex) {
-                        el.style.display = 'block';
-                        setTimeout(() => { el.style.opacity = '1'; }, 20);
-                        if (dot) dot.style.backgroundColor = '#c00000';
-                    } else {
-                        el.style.opacity = '0';
-                        el.style.display = 'none';
-                        if (dot) dot.style.backgroundColor = '#ccc';
-                    }
-                });
-                window.currentMostReadSlide = slideIndex;
-            };
-            
-            setInterval(() => {
-                let nextSlide = (window.currentMostReadSlide + 1) % slideCount;
-                window.switchMostReadSlide(nextSlide);
-            }, 5000);
-        }
+        document.getElementById('sidebar-commentary-title').innerText = commentArt.title;
+        document.getElementById('sidebar-commentary-title').href = commentArt.url;
+        document.getElementById('sidebar-kindness-title').innerText = kindnessArt.title;
+        document.getElementById('sidebar-kindness-title').href = kindnessArt.url;
     }
 
     function renderMediaSection() {

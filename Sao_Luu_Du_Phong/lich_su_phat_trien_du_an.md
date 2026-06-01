@@ -89,3 +89,26 @@ Tích hợp các vị trí quảng cáo mô phỏng trên trang demo độc lậ
     *   **Deploy Cloud:** Cập nhật và phát hành trực tuyến thành công lên Vercel.
 *   **Kết quả bàn giao:** Trang chủ **[https://laodong-hanoi.vercel.app](https://laodong-hanoi.vercel.app)** hiển thị chính xác Thời tiết Hà Nội cập nhật thời gian thực.
 
+---
+
+### 4. PHIÊN LÀM VIỆC NGÀY 01/06/2026: TRIỂN KHAI HUB & SPOKE TP.HCM & ĐÔNG NAM BỘ & QUY TRÌNH URL REWRITE
+*   **Mục tiêu chính:** Triển khai hạ tầng dữ liệu và giao diện Hub & Spoke cho TP.HCM & Đông Nam Bộ; biên soạn và lưu trữ quy trình kỹ thuật URL Rewrite hệ thống.
+*   **Công việc kỹ thuật đã thực hiện:**
+    *   **Cào quét & Hợp nhất Dữ liệu:** Viết mã [scrape_tphcm_real.py](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/scrape_tphcm_real.py) cào quét sâu 64 bài viết thực tế phân bổ qua 8 chuyên mục chính của khu vực TP.HCM, Đồng Nai, Tây Ninh.
+    *   **Giao diện Hub & Spoke:** Xây dựng tab bar tương tác phía Client-side trên trang [demo_landing_page_tphcm.html](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/demo_landing_page_tphcm.html) cho phép chuyển đổi nhanh nội dung hiển thị giữa Hub (Toàn khu vực) và các Spoke (TP.HCM, Đồng Nai, Tây Ninh), tích hợp cơ chế fallback bù đắp tin bài tự động chống vỡ khung giao diện.
+    *   **Carousel Đọc nhiều nhất:** Thiết kế carousel 3 slide xoay vòng tự động (mỗi slide 5 bài viết) thay thế cho sidebar tĩnh cũ.
+    *   **Tích hợp Thời tiết & Tọa độ:** Cập nhật widget thời tiết đo đạc thời gian thực từ tọa độ TP.HCM và tích hợp bảng thông tin tag cắt điện vùng Đông Nam Bộ.
+    *   **Quy trình Kỹ thuật URL Rewrite:** Thiết kế giải pháp định tuyến ảo tại tầng Web Server (Nginx) giúp ánh xạ đường dẫn cực ngắn `laodong.vn/[spoke]` sang cấu trúc SEO Silo vật lý `laodong.vn/vung-mien/[hub]/[spoke]/` mà không thay đổi địa chỉ trên trình duyệt và không làm mất điểm SEO của tòa soạn.
+
+#### 📋 Quy trình Triển khai Kỹ thuật URL Rewrite ở tầng hệ thống
+1.  **Thiết lập Cấu trúc Vật lý (SEO Silo):** CMS lưu trữ bài viết và trang danh mục thực tế tại đường dẫn chuẩn phân cấp: `laodong.vn/vung-mien/[hub]/[spoke]/`.
+2.  **Áp dụng Định tuyến ảo (Short URL):** Cung cấp link ngắn `laodong.vn/[spoke]` (ví dụ: `laodong.vn/dongnai`) trên giao diện chia sẻ.
+3.  **Cấu hình Nginx Proxy Map (Định tuyến ngầm):**
+    *   Sử dụng cấu hình `map $uri $regional_spoke_uri` ở ngoài server block của Nginx để lưu trữ danh sách ánh xạ các Spoke thành đường dẫn vật lý dài. Việc này giúp Nginx biên dịch danh sách thành một bảng băm (Hash table), tối ưu hóa tốc độ tra cứu đạt mức $O(1)$.
+    *   Sử dụng lệnh `rewrite` nội bộ bên trong `location /` để chuyển hướng ngầm mà không đổi URL hiển thị trên thanh địa chỉ của trình duyệt.
+4.  **Khai báo Canonical & Breadcrumb JSON-LD:**
+    *   Tại mã nguồn trả về của trang Spoke ảo, thêm thẻ `<link rel="canonical" href="https://laodong.vn/vung-mien/[hub]/[spoke]/" />` để hướng dòng chảy SEO về cấu trúc vật lý chuẩn mực của Google.
+    *   Nhúng Schema JSON-LD BreadcrumbList đầy đủ 4 lớp nhằm khai báo chuẩn xác mối quan hệ phân cấp địa giới hành chính.
+5.  **Cấu hình Vercel (`vercel.json`):** Sử dụng khóa `"rewrites"` để ánh xạ thử nghiệm link ảo đến tệp giao diện động truyền tham số truy vấn (ví dụ: `/dongnai` -> `/demo_landing_page_tphcm.html?spoke=dongnai`).
+
+

@@ -85,28 +85,31 @@ Quy trình tối ưu kết hợp đặc tả kỹ thuật PRD (Cơ chế 4 lớp
    *   **Công thức tính điểm**:
        $$S = 10.0 \cdot C_{title} + 8.0 \cdot C_{tag} + 5.0 \cdot C_{summary} + 1.0 \cdot C_{body}$$
        *(Với $C$ là tần suất xuất hiện của từ khóa địa lý trong từng phần của bài viết. Ngưỡng tự động duyệt là $S \ge 15$).*
-   *   **Xử lý trùng lặp tên địa bàn (Ví dụ: Châu Thành - Long An vs Châu Thành - Tây Ninh)**: Đối chiếu chéo (Cross-reference) với các từ khóa bối cảnh phụ thuộc (Secondary Context Keywords) đặc trưng của tỉnh đi kèm để gán đúng tag Lớp 2.
+   *   **Xử lý trùng lặp tên địa bàn (Ví dụ: Châu Thành - Long An vs Châu Thành - Tây Ninh)**: Đối chiếu chéo (Cross-reference) với các từ khóa bối cảnh phụ thuộc (Secondary Context Keywords) đặc trưng của tỉnh đi kèm để gán đúng.
 
-### H. Kiến trúc Cấu trúc Mạng lưới Hub & Spoke Toàn Quốc (7 Văn phòng Thường trú)
-Đồng bộ hóa sơ đồ ánh xạ quản lý địa giới hành chính giữa trang cổng (Hub) và trang địa phương (Spoke) cho toàn hệ thống:
-1. **VP Tây Bắc Bộ (Hub)** ──► *Spokes:* Cao Bằng, Lạng Sơn, Lai Châu, Điện Biên, Sơn La, Lào Cai, Tuyên Quang, Phú Thọ, Thái Nguyên.
-2. **VP Đông Bắc Bộ (Hub)** ──► *Spokes:* Quảng Ninh, Hải Phòng, Hưng Yên, Ninh Bình.
-3. **VP Bắc Trung Bộ (Hub)** ──► *Spokes:* Thanh Hoá, Nghệ An, Hà Tĩnh, Thừa Thiên Huế, Quảng Trị.
-4. **VP Miền Trung (Hub)** ──► *Spokes:* Quảng Ngãi, Đà Nẵng, Gia Lai.
-5. **VP Tây Nguyên (Hub)** ──► *Spokes:* Lâm Đồng, Khánh Hoà, Đắk Lắk.
-6. **VP ĐBSCL (Hub)** ──► *Spokes:* Vĩnh Long, Cần Thơ, Cà Mau, Đồng Tháp, An Giang.
-7. **VP TPHCM & Đông Nam Bộ (Hub)** ──► *Spokes:* Tây Ninh, TP.HCM, Đồng Nai (cấu trúc sáp nhập mới).
+---
 
-*Quy tắc định tuyến (Routing Rule):* Mọi bài viết thuộc Spoke bất kỳ sẽ tự động được đồng bộ ngược lên Hub tương ứng thông qua quan hệ thừa kế Tag Lớp 4.
+### J. Cơ chế Cấu hình URL Rewrite & Định tuyến ảo cho Hub & Spoke
+Để giải quyết mâu thuẫn giữa việc giữ cấu trúc thư mục SEO phân cấp chuẩn mực cho Google và hiển thị URL ngắn gọn thân thiện cho độc giả:
+1.  **Phân mục vật lý (Physical SEO Silo):** Toàn bộ cấu trúc được lưu trữ dưới dạng `laodong.vn/vung-mien/[hub]/[spoke]/` (ví dụ: `laodong.vn/vung-mien/dong-nam-bo/dong-nai/`). Đây là đường dẫn thực tế duy nhất mà Google quét được, giúp bảo toàn cấu trúc phân cấp địa giới hành chính và tối ưu cấu trúc Silo.
+2.  **Định tuyến ảo rút ngắn (Short Virtual URL):** Độc giả truy cập qua link ảo cực ngắn `laodong.vn/[spoke]` (ví dụ: `laodong.vn/dongnai`).
+3.  **Quy trình định tuyến Web Server (Nginx Proxy Rewrite):**
+    *   **Nginx Map Table:** Sử dụng khối cấu hình `map $uri $regional_spoke_uri` bên ngoài khối `server` để lưu danh sách route ảo. Cơ chế này biên dịch dữ liệu thành bảng băm giúp tra cứu với tốc độ $O(1)$.
+    *   **Internal Rewrite:** Sử dụng chỉ thị `rewrite` trong khối `location /` của Nginx để chuyển hướng ngầm mà không đổi địa chỉ hiển thị trên trình duyệt (`PAGER` hoặc đổi URL hiển thị).
+    *   **Thẻ Canonical:** Trên các trang Spoke được trả về, bắt buộc nhúng thẻ `<link rel="canonical" href="https://laodong.vn/vung-mien/[hub]/[spoke]/" />` để chỉ định tuyệt đối cho Googlebot về trang vật lý chính thức, phòng ngừa lỗi trùng lặp nội dung (duplicate content).
+    *   **Breadcrumb JSON-LD:** Cung cấp BreadcrumbList 4 lớp rõ ràng trong Schema để Google nhận diện phân cấp địa lý.
 
-### I. Quy tắc Phân cấp & Kế thừa Địa giới sau Sáp nhập (Ông - Cha - Con - Cháu)
-Hệ thống tự động nhận diện và kế thừa ngược (bubble up) theo cây thư mục hành chính mới sau sáp nhập:
-- **Ông (Vùng thường trú/Hub)**: Đông Nam Bộ mới.
-- **Cha (Địa phương cấp Tỉnh sau sáp nhập)**: TPHCM mới (đã gộp Bình Dương, BRVT), Đồng Nai mới, Tây Ninh mới.
-- **Con (Quận/Huyện/Thành phố trực thuộc)**: Thủ Đức, Dĩ An, Biên Hòa, Trảng Bàng, Kiến Tường...
-- **Cháu (Phường/Xã/Thị trấn/Tuyến đường/Địa danh cụ thể)**: Phường An Phú, Làng nổi Tân Lập, KDL Đại Nam...
+---
 
-*Cơ chế tự động hóa:* Khi bài viết được gắn tag ở cấp **Cháu** (Ví dụ: `KDL Đại Nam`), hệ thống tự động suy luận logic phân cấp để gán các tag ở cấp cao hơn: **Con** (`Bến Cát`) ──► **Cha** (`TPHCM`) ──► **Ông** (`Đông Nam Bộ`). Quy tắc này áp dụng đồng nhất cho tất cả các tỉnh thành đã sáp nhập trên cả nước để đảm bảo không bị sót tin bài và gom tag chính xác tuyệt đối.
+### K. Tích hợp Chỉ số Cạnh tranh (PCI) & Đồng bộ Tiện ích Spoke (Spoke Context Sync)
+Để củng cố uy tín nội dung (EEAT) và đảm bảo tính nhất quán của giao diện khi người dùng chuyển đổi giữa các Spoke:
+1.  **Thiết kế Khung Chân dung Địa phương (Local Profile Card):** Tích hợp thông tin diện tích, dân số, GRDP tăng trưởng và số lượng KCN để vẽ chân dung địa bàn.
+2.  **Bộ chỉ số hành chính công chính thống:** Tải và trình diễn điểm số/vị trí xếp hạng PCI, PAPI, PAR Index để cung cấp dữ liệu tham chiếu xã hội chất lượng cao cho độc giả.
+3.  **Thuật toán Đồng bộ Khung Tiện ích khi Click Tab (Context Syncing):**
+    *   *Breadcrumbs:* Cập nhật thẻ breadcrumbs HTML dynamically phản ánh đúng phân cấp địa giới hành chính của Spoke được chọn.
+    *   *Weather:* Thay đổi tọa độ địa lý truyền vào hàm gọi API thời tiết (Ví dụ: Biên Hòa cho Đồng Nai, TP.HCM cho TP.HCM) và cập nhật hiển thị địa danh.
+    *   *Lịch cắt điện & Tags:* Đổi liên kết trỏ về tag chuyên đề "Lịch cắt điện [Tỉnh]" tương ứng trên domain chính laodong.vn.
+    *   *Profile Widget:* Cập nhật nội dung mô tả cấu trúc kinh tế và khuyến nghị cải thiện cho từng Spoke.
 
 ---
 
@@ -131,16 +134,26 @@ Hệ thống tự động nhận diện và kế thừa ngược (bubble up) the
 * **Nội dung:** 
   - Cập nhật thông tin phân cấp hành chính Hà Nội mới nhất sau khi sắp xếp (126 xã/phường, gồm 51 phường và 75 xã) và các quy tắc lọc loại trừ trùng lặp thực thể địa danh (Disambiguation Rules).
   - Viết và chạy thành công script cào bài viết tự động theo địa danh cấp xã/phường Hà Nội (`scrape_hanoi_local.py`).
-  - **Mới:** Tích hợp thành công dữ liệu ẩm thực - du lịch Hà Nội thực tế từ laodong.vn qua script `scrape_hanoi_handbook.py` để thay thế toàn bộ tít giả lập và link rỗng `#` tại khối "Cẩm nang Hà Nội: Ăn gì - Chơi gì - Ở đâu?".
-  - **Mới:** Đồng bộ hóa ảnh đại diện thực tế từ người dùng cho tin Công an Hà Nội, tích hợp hàng 3 bài viết dưới Main Cover và khắc phục lỗi co giãn ảnh bằng CSS Aspect-Ratio độc lập. Rà soát, ánh xạ lại toàn bộ ảnh gốc chất lượng cao cho các bài viết tiêu điểm.
+  - Tích hợp thành công dữ liệu ẩm thực - du lịch Hà Nội thực tế từ laodong.vn qua script `scrape_hanoi_handbook.py` để thay thế toàn bộ tít giả lập và link rỗng `#` tại khối "Cẩm nang Hà Nội: Ăn gì - Chơi gì - Ở đâu?".
+  - Đồng bộ hóa ảnh đại diện thực tế từ người dùng cho tin Công an Hà Nội, tích hợp hàng 3 bài viết dưới Main Cover và khắc phục lỗi co giãn ảnh bằng CSS Aspect-Ratio độc lập. Rà soát, ánh xạ lại toàn bộ ảnh gốc chất lượng cao cho các bài viết tiêu điểm.
 * **Kinh nghiệm rút ra:** 
   - Khi gom tin và gắn tag địa bàn cấp xã/huyện, cần rà soát ngữ cảnh cụ thể để tránh việc gom nhầm các địa phương trùng tên ở các tỉnh thành khác không thuộc Hà Nội.
   - Sử dụng CSS Grid kết hợp inline CSS với thuộc tính `aspect-ratio` và `object-fit: cover` là giải pháp chống méo, kéo dài ảnh triệt để nhất khi làm việc với các hệ thống template động chịu ảnh hưởng bởi CSS ngoài từ CDN.
   - Định kỳ rà soát các tệp ảnh mockup để phát hiện các trường hợp Unsplash ghi đè nhầm lên ảnh địa phương thực tế đã tối ưu trước đó.
 
 ### Ngày 01/06/2026:
-* **Nội dung:** Bắt đầu phiên làm việc ngày mới, sẵn sàng mở rộng và tiếp quản yêu cầu lập trình tiếp theo của người dùng.
-* **Kinh nghiệm rút ra:** Luôn tự động mở đọc `session_state.md` khi bắt đầu phiên mới để đồng bộ trạng thái và tiếp quản To-Do list liền mạch.
+* **Nội dung:** 
+  - Triển khai thành công kiến trúc Hub & Spoke bằng cơ chế Tab Bar động tại giao diện [demo_landing_page_tphcm.html](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/demo_landing_page_tphcm.html) cho TP.HCM & Đông Nam Bộ.
+  - Tối ưu hóa scraper quét tin bài thực tế và tích hợp carousel slide "Đọc nhiều nhất" gọn gàng ở sidebar (3 slide xoay vòng tự động).
+  - Thiết kế quy trình định tuyến ảo hệ thống bằng cơ chế URL Rewrite (tầng Nginx Proxy Map) và giải thích trực quan hóa mô hình Hub & Spoke URL.
+  - **Mới:** Tích hợp bộ số liệu Chỉ số cạnh tranh cấp tỉnh (PCI), PAPI, PAR Index và thông tin KCN vào cấu trúc "Chân dung Địa phương" ngay dưới thanh lọc địa bàn.
+  - **Mới:** Triển khai cơ chế đồng bộ khung tiện ích Spoke (Context Syncing) thay đổi đồng thời breadcrumbs, thời tiết và link chuyên đề cắt điện theo vị trí địa lý của Spoke đang hoạt động.
+* **Kinh nghiệm rút ra:**
+  - Đối với các Spoke có dữ liệu ít hơn Hub (như Tây Ninh, Đồng Nai), cơ chế trộn gộp (merge fallback) là rất cần thiết để đảm bảo hiển thị đủ nội dung lưới tin bài.
+  - Sử dụng `map` định tuyến trong Nginx thay thế `if` lồng nhau giúp cải thiện hiệu năng và bảo trì dễ dàng khi mở rộng ra 63 tỉnh thành.
+  - Thiết kế Spoke Context Sync đồng bộ thời gian thực giúp nâng cao độ chính xác về mặt logic địa lý, tạo cảm giác chuyên nghiệp khi người dùng tương tác chuyển đổi vùng.
+
+
 
 
 

@@ -124,3 +124,26 @@ Bộ chỉ số đo lường hiệu năng dự án bao gồm 5 nhóm chính:
 | **3. Commerce (Doanh thu)** | - Tỷ lệ lấp đầy (Fill rate) quảng cáo trên landing page.<br>- SOV (Share of Voice) bán được.<br>- Doanh thu bình quân trên mỗi địa bàn. | Hằng tháng | Đo lường hiệu quả thương mại hóa của dự án. |
 | **4. Risk (Rủi ro)** | - Số lượng trang bị cảnh báo "thin content" (trang mỏng).<br>- Tỷ lệ lỗi 404 / Lỗi redirect vòng.<br>- Tốc độ tải trang di động (Core Web Vitals - LCP, CLS, FID). | Thời gian thực | Cảnh báo sớm các lỗi kỹ thuật và nguy cơ bị phạt thuật toán Google. |
 | **5. Operations (Vận hành)** | - Thời gian trung bình để Trưởng VPTT duyệt bài tiêu điểm.<br>- Tỷ lệ phản hồi chỉnh sửa tag từ các văn phòng thường trú. | Hằng tuần | Đo lường mức độ thích nghi của tòa soạn với quy trình vận hành mới. |
+
+---
+
+## 5. TÍCH HỢP CHỈ SỐ CẢI CÁCH & CHÂN DUNG ĐỊA PHƯƠNG (LOCAL PROFILE & PCI DASHBOARD)
+
+Để nâng cao tính thẩm quyền (SEO Authority - E-E-A-T), lòng tin độc giả và hỗ trợ đàm phán chính trị địa phương, hệ thống chuyên trang tích hợp khối dữ liệu kinh tế - hành chính công chuẩn hóa.
+
+### A. Yêu cầu Cấu trúc Dữ liệu địa phương
+Mỗi trang Spoke phải được liên kết với một bản ghi dữ liệu hành chính bao gồm:
+1.  **Chân dung Địa phương (Local Profile):** Diện tích đất tự nhiên, dân số thực tế, tăng trưởng kinh tế (GRDP), số lượng Khu công nghiệp (KCN) tập trung đang hoạt động.
+2.  **Bộ chỉ số Cải cách & Cạnh tranh (Governance Indicators):**
+    *   *PCI (Provincial Competitiveness Index):* Điểm số và thứ hạng năng lực cạnh tranh cấp tỉnh (Nguồn VCCI).
+    *   *PAPI (Provincial Governance and Public Administration Performance Index):* Đánh giá hiệu quả quản trị và hành chính công.
+    *   *PAR Index / SIPAS:* Thứ hạng cải cách hành chính cấp tỉnh và độ hài lòng của người dân.
+3.  **Khuyến nghị & Điểm cần cải thiện:** Các điểm nghẽn hành chính công cần khắc phục dựa trên báo cáo phân tích chỉ số PCI (tạo công cụ phản biện giải pháp khách quan cho tòa soạn).
+
+### B. Quy tắc Đồng bộ Khung Tiện ích khi chuyển đổi Địa bàn (Spoke Context Sync)
+Để đảm bảo tính logic và trải nghiệm đồng nhất của người dùng, khi thao tác chuyển đổi Tab phân tuyến địa bàn (Hub sang Spoke hoặc ngược lại), hệ thống frontend bắt buộc phải kích hoạt cơ chế cập nhật đồng thời (Synchronized Updates):
+1.  **Cập nhật Breadcrumbs:** Thẻ breadcrumb động phải chèn thêm cấp Spoke tương ứng (Ví dụ: `Trang chủ / Vung miền / Đông Nam Bộ / Đồng Nai`).
+2.  **Cập nhật Weather Widget:** Thay đổi tọa độ địa lý (Latitude/Longitude) của widget thời tiết để gọi Open-Meteo API trả về thời tiết thực tế của tỉnh lỵ đó (không giữ tọa độ Hub trung tâm).
+3.  **Cập nhật Liên kết Tiện ích:** Các liên kết ngách như "Lịch cắt điện", "Điểm thi tuyển sinh"... phải được chuyển đổi URL trỏ sang tag chuyên đề riêng biệt của tỉnh đó trên trang chính Báo Lao Động.
+4.  **Cập nhật Profile & Indicators Widget:** Gọi hàm nạp lại số liệu diện tích, dân số, GRDP và xếp hạng PCI tương ứng của địa bàn được chọn.
+

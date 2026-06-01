@@ -317,12 +317,12 @@ middle_part = """
                     <span style="color: #ccc;">/</span>
                     <a href="#" style="color: #666666; text-decoration: none;">Vùng miền</a> 
                     <span style="color: #ccc;">/</span>
-                    <span style="color: #c00000; font-weight: bold;">TP.HCM & Đông Nam Bộ</span>
+                    <span id="dynamic-breadcrumb-spoke" style="color: #c00000; font-weight: bold;">TP.HCM & Đông Nam Bộ</span>
                 </div>
                 
                  <!-- Quick Links & Real-time TPHCM Weather Widget Grouped -->
                 <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-                    <a href="https://laodong.vn/tags/lich-cat-dien-tphcm-8542.ldo" target="_blank" style="text-decoration: none; font-size: 12px; color: #c00000; font-weight: bold; display: flex; align-items: center; gap: 3px;">⚡ Lịch cắt điện</a>
+                    <a id="dynamic-powercut-link" href="https://laodong.vn/tags/lich-cat-dien-tphcm-8542.ldo" target="_blank" style="text-decoration: none; font-size: 12px; color: #c00000; font-weight: bold; display: flex; align-items: center; gap: 3px;">⚡ Lịch cắt điện</a>
                     <span style="color: #ccc;">|</span>
                     <a href="https://laodong.vn/phap-luat/chinh-sach-moi" target="_blank" style="text-decoration: none; font-size: 12px; color: #002d62; font-weight: bold; display: flex; align-items: center; gap: 3px;">📋 Chính sách mới</a>
                     <span style="color: #ccc;">|</span>
@@ -361,6 +361,11 @@ middle_part = """
                         📍 Tây Ninh mới (Spoke)
                     </button>
                 </div>
+            </div>
+
+            <!-- DYNAMIC PROVINCIAL PROFILE & GOVERNANCE WIDGET -->
+            <div id="provincial-profile-widget" style="background-color: #ffffff; border: 1px solid #e3e3e3; border-left: 4px solid #002d62; padding: 15px 20px; margin-top: 15px; font-family: Arial, sans-serif; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: grid; grid-template-columns: 1.2fr 1.8fr; gap: 20px; align-items: start; box-sizing: border-box;">
+                <!-- JS populated dynamically -->
             </div>
 
             <!-- AD SLOT 01: TOP BILLBOARD (970x250) -->
@@ -568,7 +573,7 @@ middle_part = """
                             </div>
                             <h4 style="margin: 8px 0 0 0; font-size: 12px; font-weight: bold; line-height: 1.3;">
                                 <span style="color: #002d62; font-size: 9px; font-weight: bold; display: block; text-transform: uppercase; margin-bottom: 2px;">Cẩm nang Công nhân KCN</span>
-                                Danh sách nhà trọ an toàn, giá rẻ cho công nhân tại KCN Bắc Thăng Long năm 2026
+                                Danh sách nhà trọ an toàn, giá rẻ cho công nhân tại KCN Biên Hòa 2 & Amata năm 2026
                             </h4>
                         </div>
                         <!-- Item 2: Weekend Escape -->
@@ -579,7 +584,7 @@ middle_part = """
                             </div>
                             <h4 style="margin: 8px 0 0 0; font-size: 12px; font-weight: bold; line-height: 1.3;">
                                 <span style="color: #28a745; font-size: 9px; font-weight: bold; display: block; text-transform: uppercase; margin-bottom: 2px;">Trốn phố cuối tuần</span>
-                                Top 5 khu cắm trại và homestay dịch vụ xanh cực đẹp tại Ba Vì cho gia đình
+                                Top 5 địa điểm camping, khu sinh thái xanh mát mắt tại Đồng Nai lý tưởng cuối tuần
                             </h4>
                         </div>
                     </div>
@@ -595,8 +600,8 @@ middle_part = """
                             <div style="display: flex; justify-content: space-between; align-items: center; background-color: #fcfcfc; border: 1px solid #eee; padding: 8px 12px; border-radius: 4px; position: relative;">
                                 <span style="position: absolute; right: 85px; top: 12px; font-size: 7.5px; color: #d71920; border: 1px solid #d71920; padding: 1px 3px; border-radius: 2px; font-weight: bold; text-transform: uppercase;">Gấp</span>
                                 <div style="text-align: left;">
-                                    <strong style="font-size: 11.5px; color: #333; display: block;">Nhân viên lắp ráp linh kiện điện tử (KCN Bắc Thăng Long)</strong>
-                                    <span style="font-size: 9.5px; color: #666;">Công ty TNHH Canon Việt Nam | Thu nhập: 8.5 - 11 triệu VNĐ</span>
+                                    <strong style="font-size: 11.5px; color: #333; display: block;">Nhân viên lắp ráp linh kiện điện tử (KCN Amata, Biên Hòa)</strong>
+                                    <span style="font-size: 9.5px; color: #666;">Công ty TNHH Changshin Việt Nam | Thu nhập: 8.5 - 11 triệu VNĐ</span>
                                 </div>
                                 <a href="#" style="background-color: #c00000; color: #fff; text-decoration: none; font-size: 10px; font-weight: bold; padding: 5px 10px; border-radius: 3px;">Nộp hồ sơ</a>
                             </div>
@@ -604,7 +609,7 @@ middle_part = """
                             <div style="display: flex; justify-content: space-between; align-items: center; background-color: #fcfcfc; border: 1px solid #eee; padding: 8px 12px; border-radius: 4px;">
                                 <div style="text-align: left;">
                                     <strong style="font-size: 11.5px; color: #333; display: block;">Kỹ thuật viên vận hành máy tiện cơ khí CNC</strong>
-                                    <span style="font-size: 9.5px; color: #666;">Tập đoàn Cơ khí TP.HCM & Đông Nam Bộ (KCN Thạch Thất) | Thu nhập: 10 - 13.5 triệu VNĐ</span>
+                                    <span style="font-size: 9.5px; color: #666;">Tập đoàn Cơ khí Tân Bình (KCN Tân Bình, TP.HCM) | Thu nhập: 10 - 13.5 triệu VNĐ</span>
                                 </div>
                                 <a href="#" style="background-color: #c00000; color: #fff; text-decoration: none; font-size: 10px; font-weight: bold; padding: 5px 10px; border-radius: 3px;">Nộp hồ sơ</a>
                             </div>
@@ -621,7 +626,7 @@ middle_part = """
                             <!-- Seed Report 1 -->
                             <div style="background-color: #fafbfc; border: 1px solid #e9ecef; border-left: 3px solid #ffc107; padding: 8px 12px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center;">
                                 <div>
-                                    <strong style="font-size: 11px; color: #333; display: block;">Hố ga mất nắp gây nguy hiểm tại ngã tư Lê Văn Lương - Hoàng Minh Giám</strong>
+                                    <strong style="font-size: 11px; color: #333; display: block;">Hố ga mất nắp gây nguy hiểm tại ngã tư Nguyễn Thị Minh Khai - Cách Mạng Tháng Tám</strong>
                                     <span style="font-size: 9px; color: #666;">Độc giả 098****321 | ⏰ 15 phút trước</span>
                                 </div>
                                 <span style="background-color: #fff3cd; color: #856404; border: 1px solid #ffeeba; font-size: 9px; padding: 2px 6px; border-radius: 3px; font-weight: bold; flex-shrink: 0;">Đang xử lý</span>
@@ -629,7 +634,7 @@ middle_part = """
                             <!-- Seed Report 2 -->
                             <div style="background-color: #fafbfc; border: 1px solid #e9ecef; border-left: 3px solid #28a745; padding: 8px 12px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center;">
                                 <div>
-                                    <strong style="font-size: 11px; color: #333; display: block;">Rác thải sinh hoạt ùn ứ gây mùi hôi thối cạnh trường Tiểu học Dịch Vọng</strong>
+                                    <strong style="font-size: 11px; color: #333; display: block;">Rác thải sinh hoạt ùn ứ gây mùi hôi thối cạnh chợ Phạm Văn Hai, Tân Bình</strong>
                                     <span style="font-size: 9px; color: #666;">Độc giả 090****888 | ⏰ 2 giờ trước</span>
                                 </div>
                                 <span style="background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; font-size: 9px; padding: 2px 6px; border-radius: 3px; font-weight: bold; flex-shrink: 0;">Đã giải quyết</span>
@@ -645,50 +650,50 @@ middle_part = """
                         <!-- Simulated Directory Listing 1 -->
                         <div style="background: #fff; border: 1px solid #eee; border-left: 3px solid #b8860b; padding: 6px 10px; border-radius: 3px; position: relative;">
                             <span style="position: absolute; right: 5px; top: 5px; font-size: 7px; color: #c00000; font-weight: bold; border: 1px solid #c00000; padding: 1px 3px; border-radius: 2px;">Đã duyệt</span>
-                            <strong style="font-size: 11px; color: #333; display: block;">Nha khoa Quốc tế Hà Đông</strong>
-                            <span style="font-size: 9.5px; color: #666; display: block;">📍 145 Quang Trung, Hà Đông | ☎ 0988.xxx.xxx</span>
-                        </div>
-                        <!-- Simulated Directory Listing 2 -->
-                        <div style="background: #fff; border: 1px solid #eee; border-left: 3px solid #b8860b; padding: 6px 10px; border-radius: 3px; position: relative;">
-                            <span style="position: absolute; right: 5px; top: 5px; font-size: 7px; color: #c00000; font-weight: bold; border: 1px solid #c00000; padding: 1px 3px; border-radius: 2px;">Đã duyệt</span>
-                            <strong style="font-size: 11px; color: #333; display: block;">Trung tâm Gia sư Sư phạm thủ khoa</strong>
-                            <span style="font-size: 9.5px; color: #666; display: block;">📍 Ngõ 192 Lê Trọng Tấn, Thuận An | ☎ 0912.xxx.xxx</span>
-                        </div>
-                        <!-- Simulated Directory Listing 3 -->
-                        <div style="background: #fff; border: 1px solid #eee; border-left: 3px solid #b8860b; padding: 6px 10px; border-radius: 3px; position: relative;">
-                            <span style="position: absolute; right: 5px; top: 5px; font-size: 7px; color: #c00000; font-weight: bold; border: 1px solid #c00000; padding: 1px 3px; border-radius: 2px;">Đã duyệt</span>
-                            <strong style="font-size: 11px; color: #333; display: block;">Gốm sứ Bát Tràng chính gốc - Shop Lộc Phát</strong>
-                            <span style="font-size: 9.5px; color: #666; display: block;">📍 Chợ cổ Bát Tràng, Gia Lâm | ☎ 0945.xxx.xxx</span>
-                        </div>
-                        <!-- Simulated Directory Listing 4: Rescue -->
-                        <div style="background: #fff; border: 1px solid #eee; border-left: 3px solid #b8860b; padding: 6px 10px; border-radius: 3px; position: relative;">
-                            <span style="position: absolute; right: 5px; top: 5px; font-size: 7px; color: #c00000; font-weight: bold; border: 1px solid #c00000; padding: 1px 3px; border-radius: 2px;">Đã duyệt</span>
-                            <strong style="font-size: 11px; color: #333; display: block;">Cứu hộ Giao thông TP.HCM & Đông Nam Bộ 24/7 (Khu vực Thủ Đức - Biên Hòa)</strong>
-                            <span style="font-size: 9.5px; color: #666; display: block;">📍 12 Giảng Võ, Thủ Đức | ☎ 0904.xxx.xxx</span>
-                        </div>
-                        <!-- Simulated Directory Listing 5: Vocational -->
-                        <div style="background: #fff; border: 1px solid #eee; border-left: 3px solid #b8860b; padding: 6px 10px; border-radius: 3px; position: relative;">
-                            <span style="position: absolute; right: 5px; top: 5px; font-size: 7px; color: #c00000; font-weight: bold; border: 1px solid #c00000; padding: 1px 3px; border-radius: 2px;">Đã duyệt</span>
-                            <strong style="font-size: 11px; color: #333; display: block;">Trường Dạy nghề ẩm thực & pha chế chuyên nghiệp Hanoi Cook</strong>
-                            <span style="font-size: 9.5px; color: #666; display: block;">📍 89 Trần Phú, Hà Đông | ☎ 0916.xxx.xxx</span>
-                        </div>
-                        <!-- Simulated Directory Listing 6: Aesthetic -->
-                        <div style="background: #fff; border: 1px solid #eee; border-left: 3px solid #b8860b; padding: 6px 10px; border-radius: 3px; position: relative;">
-                            <span style="position: absolute; right: 5px; top: 5px; font-size: 7px; color: #c00000; font-weight: bold; border: 1px solid #c00000; padding: 1px 3px; border-radius: 2px;">Đã duyệt</span>
-                            <strong style="font-size: 11px; color: #333; display: block;">Viện Thẩm mỹ Công nghệ cao An Beauty</strong>
-                            <span style="font-size: 9.5px; color: #666; display: block;">📍 24 Kim Mã, Biên Hòa | ☎ 0989.xxx.xxx</span>
-                        </div>
-                        <!-- Simulated Directory Listing 7: Medical -->
-                        <div style="background: #fff; border: 1px solid #eee; border-left: 3px solid #b8860b; padding: 6px 10px; border-radius: 3px; position: relative;">
-                            <span style="position: absolute; right: 5px; top: 5px; font-size: 7px; color: #c00000; font-weight: bold; border: 1px solid #c00000; padding: 1px 3px; border-radius: 2px;">Đã duyệt</span>
-                            <strong style="font-size: 11px; color: #333; display: block;">Phòng khám Đông y gia truyền Lãn Ông Đường</strong>
-                            <span style="font-size: 9.5px; color: #666; display: block;">📍 Phố Lãn Ông, Hoàn Kiếm | ☎ 0973.xxx.xxx</span>
-                        </div>
-                        <!-- Simulated Directory Listing 8: Finance / Credit -->
-                        <div style="background: #fff; border: 1px solid #eee; border-left: 3px solid #b8860b; padding: 6px 10px; border-radius: 3px; position: relative;">
-                            <span style="position: absolute; right: 5px; top: 5px; font-size: 7px; color: #c00000; font-weight: bold; border: 1px solid #c00000; padding: 1px 3px; border-radius: 2px;">Đã duyệt</span>
-                            <strong style="font-size: 11px; color: #333; display: block;">Gói vay tín dụng ưu đãi hộ kinh doanh - HDBank Chi nhánh Quận 1</strong>
-                            <span style="font-size: 9.5px; color: #666; display: block;">📍 19 Duy Tân, Quận 1 | ☎ 0903.xxx.xxx</span>
+                            <strong style="font-size: 11px; color: #333; display: block;">Nha khoa Quốc tế Sài Gòn</strong>
+                                    <span style="font-size: 9.5px; color: #666; display: block;">📍 189 Nguyễn Thị Minh Khai, Quận 1 | ☎ 0988.xxx.xxx</span>
+                                </div>
+                                <!-- Simulated Directory Listing 2 -->
+                                <div style="background: #fff; border: 1px solid #eee; border-left: 3px solid #b8860b; padding: 6px 10px; border-radius: 3px; position: relative;">
+                                    <span style="position: absolute; right: 5px; top: 5px; font-size: 7px; color: #c00000; font-weight: bold; border: 1px solid #c00000; padding: 1px 3px; border-radius: 2px;">Đã duyệt</span>
+                                    <strong style="font-size: 11px; color: #333; display: block;">Trung tâm Gia sư Sư phạm thủ khoa TPHCM</strong>
+                                    <span style="font-size: 9.5px; color: #666; display: block;">📍 290 Điện Biên Phủ, Bình Thạnh | ☎ 0912.xxx.xxx</span>
+                                </div>
+                                <!-- Simulated Directory Listing 3 -->
+                                <div style="background: #fff; border: 1px solid #eee; border-left: 3px solid #b8860b; padding: 6px 10px; border-radius: 3px; position: relative;">
+                                    <span style="position: absolute; right: 5px; top: 5px; font-size: 7px; color: #c00000; font-weight: bold; border: 1px solid #c00000; padding: 1px 3px; border-radius: 2px;">Đã duyệt</span>
+                                    <strong style="font-size: 11px; color: #333; display: block;">Gốm sứ Bình Dương Minh Long chính gốc</strong>
+                                    <span style="font-size: 9.5px; color: #666; display: block;">📍 12 Đại lộ Bình Dương, Thuận An | ☎ 0945.xxx.xxx</span>
+                                </div>
+                                <!-- Simulated Directory Listing 4: Rescue -->
+                                <div style="background: #fff; border: 1px solid #eee; border-left: 3px solid #b8860b; padding: 6px 10px; border-radius: 3px; position: relative;">
+                                    <span style="position: absolute; right: 5px; top: 5px; font-size: 7px; color: #c00000; font-weight: bold; border: 1px solid #c00000; padding: 1px 3px; border-radius: 2px;">Đã duyệt</span>
+                                    <strong style="font-size: 11px; color: #333; display: block;">Cứu hộ Giao thông Đông Nam Bộ 24/7 (Khu vực Thủ Đức - Biên Hòa)</strong>
+                                    <span style="font-size: 9.5px; color: #666; display: block;">📍 102 Xa lộ Hà Nội, Thủ Đức | ☎ 0904.xxx.xxx</span>
+                                </div>
+                                <!-- Simulated Directory Listing 5: Vocational -->
+                                <div style="background: #fff; border: 1px solid #eee; border-left: 3px solid #b8860b; padding: 6px 10px; border-radius: 3px; position: relative;">
+                                    <span style="position: absolute; right: 5px; top: 5px; font-size: 7px; color: #c00000; font-weight: bold; border: 1px solid #c00000; padding: 1px 3px; border-radius: 2px;">Đã duyệt</span>
+                                    <strong style="font-size: 11px; color: #333; display: block;">Trường Dạy nghề ẩm thực & pha chế Netspace</strong>
+                                    <span style="font-size: 9.5px; color: #666; display: block;">📍 30 Nguyễn Văn Thủ, Quận 1 | ☎ 0916.xxx.xxx</span>
+                                </div>
+                                <!-- Simulated Directory Listing 6: Aesthetic -->
+                                <div style="background: #fff; border: 1px solid #eee; border-left: 3px solid #b8860b; padding: 6px 10px; border-radius: 3px; position: relative;">
+                                    <span style="position: absolute; right: 5px; top: 5px; font-size: 7px; color: #c00000; font-weight: bold; border: 1px solid #c00000; padding: 1px 3px; border-radius: 2px;">Đã duyệt</span>
+                                    <strong style="font-size: 11px; color: #333; display: block;">Viện Thẩm mỹ Công nghệ cao SeoulCenter</strong>
+                                    <span style="font-size: 9.5px; color: #666; display: block;">📍 375 Nguyễn Thượng Hiền, Quận 10 | ☎ 0989.xxx.xxx</span>
+                                </div>
+                                <!-- Simulated Directory Listing 7: Medical -->
+                                <div style="background: #fff; border: 1px solid #eee; border-left: 3px solid #b8860b; padding: 6px 10px; border-radius: 3px; position: relative;">
+                                    <span style="position: absolute; right: 5px; top: 5px; font-size: 7px; color: #c00000; font-weight: bold; border: 1px solid #c00000; padding: 1px 3px; border-radius: 2px;">Đã duyệt</span>
+                                    <strong style="font-size: 11px; color: #333; display: block;">Phòng khám Đông y gia truyền Vạn An Đường</strong>
+                                    <span style="font-size: 9.5px; color: #666; display: block;">📍 Trần Hưng Đạo, Quận 5 | ☎ 0973.xxx.xxx</span>
+                                </div>
+                                <!-- Simulated Directory Listing 8: Finance / Credit -->
+                                <div style="background: #fff; border: 1px solid #eee; border-left: 3px solid #b8860b; padding: 6px 10px; border-radius: 3px; position: relative;">
+                                    <span style="position: absolute; right: 5px; top: 5px; font-size: 7px; color: #c00000; font-weight: bold; border: 1px solid #c00000; padding: 1px 3px; border-radius: 2px;">Đã duyệt</span>
+                                    <strong style="font-size: 11px; color: #333; display: block;">Gói vay tín dụng ưu đãi hộ kinh doanh - HDBank Chi nhánh Quận 1</strong>
+                                    <span style="font-size: 9.5px; color: #666; display: block;">📍 19 Nguyễn Thị Minh Khai, Quận 1 | ☎ 0903.xxx.xxx</span>
                         </div>
                     </div>
                 </div>
@@ -703,10 +708,10 @@ middle_part = """
                         <div style="display: flex; align-items: center; gap: 5px;">
                             <span style="font-size: 11px; color: #555; font-weight: normal; text-transform: none;">Khu vực:</span>
                             <select id="price-district-select" onchange="changeDistrictPrices(this.value)" style="padding: 3px 8px; font-size: 11.5px; border: 1px solid #ccc; border-radius: 3px; font-weight: bold; color: #002d62;">
-                                <option value="hoankiem">Quận Hoàn Kiếm</option>
-                                <option value="quan1" selected>Quận Quận 1</option>
-                                <option value="hadong">Quận Hà Đông</option>
-                                <option value="bavi">Huyện Ba Vì</option>
+                                <option value="quan1" selected>Quận 1 (TP.HCM)</option>
+                                <option value="thuduc">TP. Thủ Đức</option>
+                                <option value="bienhoa">TP. Biên Hòa</option>
+                                <option value="tayninh">TP. Tây Ninh</option>
                             </select>
                         </div>
                     </div>
@@ -755,8 +760,8 @@ middle_part = """
                             </div>
                             <div style="flex-grow: 1;">
                                 <span style="background-color: #f5f5f5; color: #888; border: 1px solid #ddd; padding: 0 3px; font-size: 8px; font-weight: bold; border-radius: 2px; margin-right: 4px;">PR Pinned</span>
-                                <h4 style="margin: 0 0 3px 0; font-size: 12px; font-weight: bold; color: #111;">Hòa nhạc giao hưởng: "Đêm mùa thu TP.HCM & Đông Nam Bộ"</h4>
-                                <span style="font-size: 10.5px; color: #666; display: block;">📍 Nhà hát Lớn TP.HCM & Đông Nam Bộ | ⏰ 19:30 Tối nay</span>
+                                <h4 style="margin: 0 0 3px 0; font-size: 12px; font-weight: bold; color: #111;">Hòa nhạc giao hưởng: "Giai điệu Sài Gòn xanh"</h4>
+                                <span style="font-size: 10.5px; color: #666; display: block;">📍 Nhà hát Thành phố TP.HCM | ⏰ 19:30 Tối nay</span>
                             </div>
                             <a href="https://ticketbox.vn" target="_blank" style="background-color: #002d62; color: #fff; text-decoration: none; padding: 5px 10px; border-radius: 3px; font-size: 10px; font-weight: bold; flex-shrink: 0;">Đặt vé</a>
                         </div>
@@ -767,7 +772,7 @@ middle_part = """
                             </div>
                             <div style="flex-grow: 1;">
                                 <h4 style="margin: 0 0 3px 0; font-size: 12px; font-weight: bold; color: #111;">Kịch xiếc nghệ thuật: "Vòng quay diệu kỳ"</h4>
-                                <span style="font-size: 10.5px; color: #666; display: block;">📍 Rạp xiếc Trung ương | ⏰ 10:00 & 20:00 Ngày mai</span>
+                                <span style="font-size: 10.5px; color: #666; display: block;">📍 Rạp xiếc Công viên Gia Định | ⏰ 10:00 & 20:00 Ngày mai</span>
                             </div>
                             <a href="https://ticketbox.vn" target="_blank" style="background-color: #002d62; color: #fff; text-decoration: none; padding: 5px 10px; border-radius: 3px; font-size: 10px; font-weight: bold; flex-shrink: 0;">Đặt vé</a>
                         </div>
@@ -778,7 +783,7 @@ middle_part = """
                             </div>
                             <div style="flex-grow: 1;">
                                 <h4 style="margin: 0 0 3px 0; font-size: 12px; font-weight: bold; color: #111;">Biểu diễn Múa rối nước cổ truyền (Dành cho 1/6)</h4>
-                                <span style="font-size: 10.5px; color: #666; display: block;">📍 Nhà hát Múa rối nước Thăng Long | ⏰ 15:00 & 17:00</span>
+                                <span style="font-size: 10.5px; color: #666; display: block;">📍 Nhà hát Múa rối nước Rồng Vàng | ⏰ 15:00 & 17:00</span>
                             </div>
                             <a href="https://ticketbox.vn" target="_blank" style="background-color: #002d62; color: #fff; text-decoration: none; padding: 5px 10px; border-radius: 3px; font-size: 10px; font-weight: bold; flex-shrink: 0;">Đặt vé</a>
                         </div>
@@ -798,7 +803,7 @@ middle_part = """
                             <div style="border: 1px solid #eee; padding: 6px 10px; border-radius: 3px; display: flex; justify-content: space-between; align-items: center;">
                                 <div>
                                     <strong style="font-size: 11px; color: #333; display: block;">🎬 Điệp vụ bất khả thi: Tái sinh</strong>
-                                    <span style="font-size: 9px; color: #888;">CGV Vincom Bà Triệu | Suất: 18:30, 20:45</span>
+                                    <span style="font-size: 9px; color: #888;">CGV Vincom Đồng Khởi | Suất: 18:30, 20:45</span>
                                 </div>
                                 <span style="background-color: #28a745; color: #fff; font-size: 8px; padding: 2px 4px; border-radius: 2px; font-weight: bold;">Còn vé</span>
                             </div>
@@ -806,7 +811,7 @@ middle_part = """
                             <div style="border: 1px solid #eee; padding: 6px 10px; border-radius: 3px; display: flex; justify-content: space-between; align-items: center;">
                                 <div>
                                     <strong style="font-size: 11px; color: #333; display: block;">🎬 Kẻ hủy diệt mới (2D Vietsub)</strong>
-                                    <span style="font-size: 9px; color: #888;">Trung tâm Chiếu phim Quốc gia | Suất: 19:00, 21:30</span>
+                                    <span style="font-size: 9px; color: #888;">Lotte Cinema Cộng Hòa | Suất: 19:00, 21:30</span>
                                 </div>
                                 <span style="background-color: #dc3545; color: #fff; font-size: 8px; padding: 2px 4px; border-radius: 2px; font-weight: bold;">Sắp cháy vé</span>
                             </div>
@@ -943,7 +948,7 @@ middle_part = """
                                 </div>
                                 <div style="flex-grow: 1;">
                                     <span style="background-color: #f5f5f5; color: #888; border: 1px solid #ddd; padding: 0 3px; font-size: 8px; font-weight: bold; border-radius: 2px; margin-right: 4px;">PR</span>
-                                    <a href="#" style="font-size: 11.5px; font-weight: bold; color: #333; text-decoration: none; line-height: 1.3;">Review biệt thự sinh thái Ba Vì ngập tràn cây xanh dành cho kỳ nghỉ gia đình</a>
+                                    <a href="#" style="font-size: 11.5px; font-weight: bold; color: #333; text-decoration: none; line-height: 1.3;">Review khu nghỉ dưỡng sinh thái xanh mát cực chill tại Trảng Bom, Đồng Nai</a>
                                 </div>
                             </div>
                             <div style="display: flex; gap: 8px; align-items: center;">
@@ -951,7 +956,7 @@ middle_part = """
                                     <img src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=100&q=80" style="width: 100%; height: 100%; object-fit: cover;">
                                 </div>
                                 <div>
-                                    <a href="#" style="font-size: 11.5px; font-weight: bold; color: #333; text-decoration: none; line-height: 1.3;">Top khách sạn boutique mang đậm kiến trúc Pháp cổ ngay cạnh hồ Hoàn Kiếm</a>
+                                    <a href="#" style="font-size: 11.5px; font-weight: bold; color: #333; text-decoration: none; line-height: 1.3;">Top khách sạn boutique sang trọng mang đậm kiến trúc Đông Dương giữa lòng Quận 1</a>
                                 </div>
                             </div>
                         </div>
@@ -1272,27 +1277,27 @@ middle_part = """
     const districtPricesData = {
         quan1: [
             { name: "🥩 Thịt ba rọi heo sạch MEATDeli", normal: "135.000 đ/kg", winmart: "119.000 đ/kg", discount: "12%" },
-            { name: "🥬 Rau muống hữu cơ sông Hồng", normal: "15.000 đ/bó", winmart: "12.000 đ/bó", discount: "20%" },
-            { name: "🐟 Cá trắm đen tươi sống Ba Vì", normal: "110.000 đ/kg", winmart: "98.000 đ/kg", discount: "11%" },
-            { name: "🍚 Gạo tám thơm Điện Biên (Túi 5kg)", normal: "145.000 đ/túi", winmart: "128.000 đ/túi", discount: "12%" }
+            { name: "🥬 Rau muống sạch VietGAP Củ Chi", normal: "15.000 đ/kg", winmart: "12.000 đ/kg", discount: "20%" },
+            { name: "🐟 Cá lóc bông tươi sống Trị An", normal: "110.000 đ/kg", winmart: "98.000 đ/kg", discount: "11%" },
+            { name: "🍚 Gạo thơm ST25 Sóc Trăng (Túi 5kg)", normal: "145.000 đ/túi", winmart: "128.000 đ/túi", discount: "12%" }
         ],
-        hoankiem: [
-            { name: "🥩 Thịt ba rọi heo sạch MEATDeli", normal: "145.000 đ/kg", winmart: "122.000 đ/kg", discount: "15%" },
-            { name: "🥬 Rau muống hữu cơ sông Hồng", normal: "18.000 đ/bó", winmart: "13.000 đ/bó", discount: "27%" },
-            { name: "🐟 Cá trắm đen tươi sống Ba Vì", normal: "120.000 đ/kg", winmart: "105.000 đ/kg", discount: "12%" },
-            { name: "🍚 Gạo tám thơm Điện Biên (Túi 5kg)", normal: "150.000 đ/túi", winmart: "132.000 đ/túi", discount: "12%" }
+        thuduc: [
+            { name: "🥩 Thịt ba rọi heo sạch MEATDeli", normal: "140.000 đ/kg", winmart: "122.000 đ/kg", discount: "13%" },
+            { name: "🥬 Rau muống sạch VietGAP Củ Chi", normal: "16.000 đ/kg", winmart: "13.000 đ/kg", discount: "18%" },
+            { name: "🐟 Cá lóc bông tươi sống Trị An", normal: "115.000 đ/kg", winmart: "102.000 đ/kg", discount: "11%" },
+            { name: "🍚 Gạo thơm ST25 Sóc Trăng (Túi 5kg)", normal: "148.000 đ/túi", winmart: "130.000 đ/túi", discount: "12%" }
         ],
-        hadong: [
+        bienhoa: [
             { name: "🥩 Thịt ba rọi heo sạch MEATDeli", normal: "130.000 đ/kg", winmart: "115.000 đ/kg", discount: "11%" },
-            { name: "🥬 Rau muống hữu cơ sông Hồng", normal: "12.000 đ/bó", winmart: "10.000 đ/bó", discount: "16%" },
-            { name: "🐟 Cá trắm đen tươi sống Ba Vì", normal: "105.000 đ/kg", winmart: "95.000 đ/kg", discount: "9%" },
-            { name: "🍚 Gạo tám thơm Điện Biên (Túi 5kg)", normal: "140.000 đ/túi", winmart: "125.000 đ/túi", discount: "10%" }
+            { name: "🥬 Rau muống sạch VietGAP Củ Chi", normal: "14.000 đ/kg", winmart: "11.000 đ/kg", discount: "21%" },
+            { name: "🐟 Cá lóc bông tươi sống Trị An", normal: "105.000 đ/kg", winmart: "92.000 đ/kg", discount: "12%" },
+            { name: "🍚 Gạo thơm ST25 Sóc Trăng (Túi 5kg)", normal: "140.000 đ/túi", winmart: "125.000 đ/túi", discount: "10%" }
         ],
-        bavi: [
-            { name: "🥩 Thịt ba rọi heo sạch MEATDeli", normal: "120.000 đ/kg", winmart: "108.000 đ/kg", discount: "10%" },
-            { name: "🥬 Rau muống hữu cơ sông Hồng", normal: "10.000 đ/bó", winmart: "8.000 đ/bó", discount: "20%" },
-            { name: "🐟 Cá trắm đen tươi sống Ba Vì", normal: "90.000 đ/kg", winmart: "82.000 đ/kg", discount: "8%" },
-            { name: "🍚 Gạo tám thơm Điện Biên (Túi 5kg)", normal: "135.000 đ/túi", winmart: "120.000 đ/túi", discount: "11%" }
+        tayninh: [
+            { name: "🥩 Thịt ba rọi heo sạch MEATDeli", normal: "125.000 đ/kg", winmart: "110.000 đ/kg", discount: "12%" },
+            { name: "🥬 Rau muống sạch VietGAP Củ Chi", normal: "13.000 đ/kg", winmart: "10.000 đ/kg", discount: "23%" },
+            { name: "🐟 Cá lóc bông tươi sống Trị An", normal: "100.000 đ/kg", winmart: "88.000 đ/kg", discount: "12%" },
+            { name: "🍚 Gạo thơm ST25 Sóc Trăng (Túi 5kg)", normal: "138.000 đ/túi", winmart: "122.000 đ/túi", discount: "11%" }
         ]
     };
 
@@ -1796,12 +1801,12 @@ middle_part = """
         document.getElementById('json-schema-output').innerText = JSON.stringify(schema, null, 2);
     }
 
-    function fetchTPHCMWeather() {
+    function fetchTPHCMWeather(lat = 10.7769, lon = 106.7009, name = "TP.HCM & Đông Nam Bộ") {
         const options = { weekday: 'long', year: 'numeric', month: '2-digit', day: '2-digit' };
         const today = new Date();
         document.getElementById('current-date-vietnam').innerText = today.toLocaleDateString('vi-VN', options);
 
-        const url = "https://api.open-meteo.com/v1/forecast?latitude=10.7769&longitude=106.7009&current=temperature_2m,relative_humidity_2m,weather_code";
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,weather_code`;
         fetch(url)
             .then(response => response.json())
             .then(data => {
@@ -1822,14 +1827,113 @@ middle_part = """
                     else if (code >= 95) { condition = "Có giông bão"; emoji = "⛈️"; }
                     
                     document.getElementById('weather-temp-span').innerHTML = `
-                        TP.HCM & Đông Nam Bộ: ${emoji} <strong>${temp}°C</strong> (${condition}) <span style="font-weight: normal; color: #666; margin-left: 5px;">💧 ${humidity}% ẩm</span>
+                        ${name}: ${emoji} <strong>${temp}°C</strong> (${condition}) <span style="font-weight: normal; color: #666; margin-left: 5px;">💧 ${humidity}% ẩm</span>
                     `;
                 }
             })
             .catch(err => {
                 console.error("Lỗi khi tải thời tiết:", err);
-                document.getElementById('weather-temp-span').innerHTML = "TP.HCM & Đông Nam Bộ: ⛅ 28°C";
+                document.getElementById('weather-temp-span').innerHTML = `${name}: ⛅ 28°C`;
             });
+    }
+
+    const provincialProfiles = {
+        all: {
+            title: "TP.HCM & ĐÔNG NAM BỘ - ĐẦU TÀU KINH TẾ",
+            profileHtml: `
+                <div style="font-size: 11.5px; line-height: 1.6; color: #333;">
+                    • <strong>Tổng diện tích:</strong> 23.590 km² (Khu vực Đông Nam Bộ)<br>
+                    • <strong>Tổng dân số:</strong> 18.5 triệu người (Vùng công nghiệp lớn nhất cả nước)<br>
+                    • <strong>Quy mô kinh tế:</strong> Đóng góp khoảng 30% GDP và hơn 40% ngân sách quốc gia.<br>
+                    • <strong>Khu công nghiệp (KCN):</strong> Trên 80 KCN tập trung, thu hút dòng vốn FDI hàng đầu.
+                </div>
+            `,
+            indicatorHtml: `
+                <div style="font-size: 11.5px; line-height: 1.6; color: #333;">
+                    • <strong>Năng lực cạnh tranh (PCI):</strong> Dẫn đầu cả nước (Bà Rịa - Vũng Tàu, TP.HCM, Bình Dương nằm trong nhóm Rất tốt/Tốt).<br>
+                    • <strong>Hiệu quả quản trị hành chính công (PAPI):</strong> Đa số các tỉnh nằm trong nhóm Trung bình Cao trở lên.<br>
+                    • <strong>Thế mạnh:</strong> Hạ tầng kết nối cảng biển nước sâu, logistics quốc tế, công nghệ cao, thu hút đầu tư nước ngoài.
+                </div>
+            `
+        },
+        tphcm: {
+            title: "TP. HỒ CHÍ MINH - ĐÔ THỊ ĐẶC BIỆT",
+            profileHtml: `
+                <div style="font-size: 11.5px; line-height: 1.6; color: #333;">
+                    • <strong>Diện tích:</strong> 2.061 km² (Trung tâm kinh tế, văn hóa cả nước)<br>
+                    • <strong>Dân số thực tế:</strong> Hơn 9.4 triệu người (Mật độ dân số cao nhất cả nước)<br>
+                    • <strong>Quy mô kinh tế (GRDP):</strong> Dẫn đầu cả nước, chiếm tỷ trọng cao nhất trong các vùng kinh tế.<br>
+                    • <strong>Hạ tầng công nghiệp:</strong> 17 khu chế xuất, khu công nghiệp và khu công nghệ cao Thủ Đức.
+                </div>
+            `,
+            indicatorHtml: `
+                <div style="font-size: 11.5px; line-height: 1.6; color: #333;">
+                    • <strong>Chỉ số cạnh tranh cấp tỉnh (PCI 2025):</strong> Hạng 15/63 tỉnh thành (68.45 điểm) - Nhóm Tốt.<br>
+                    • <strong>Chỉ số hiệu quả quản trị (PAPI):</strong> Nằm trong nhóm Cao (Đánh giá tốt về cung ứng dịch vụ công).<br>
+                    • <strong>Cải cách hành chính (PAR Index):</strong> Xếp hạng 5 cả nước.<br>
+                    • <strong>Khuyến nghị cải thiện:</strong> Thủ tục tiếp cận đất đai cho DN, giảm thời gian giải quyết hồ sơ quy hoạch, giảm ùn tắc giao thông đô thị.
+                </div>
+            `
+        },
+        dongnai: {
+            title: "TỈNH ĐỒNG NAI - THỦ PHỦ CÔNG NGHIỆP MIỀN NAM",
+            profileHtml: `
+                <div style="font-size: 11.5px; line-height: 1.6; color: #333;">
+                    • <strong>Diện tích:</strong> 5.907 km² (Cửa ngõ kết nối Nam Trung Bộ và Tây Nguyên)<br>
+                    • <strong>Dân số:</strong> 3.3 triệu người (Hạng 2 toàn khu vực miền Nam)<br>
+                    • <strong>Quy mô kinh tế (GRDP):</strong> Nền kinh tế quy mô công nghiệp chế biến, chế tạo trọng điểm.<br>
+                    • <strong>Khu công nghiệp (KCN):</strong> 32 KCN đang hoạt động (Khu vực Biên Hòa, Long Thành, Nhơn Trạch, Trảng Bom).
+                </div>
+            `,
+            indicatorHtml: `
+                <div style="font-size: 11.5px; line-height: 1.6; color: #333;">
+                    • <strong>Chỉ số cạnh tranh cấp tỉnh (PCI 2025):</strong> Hạng 22/63 tỉnh thành (66.50 điểm) - Nhóm Khá.<br>
+                    • <strong>Chỉ số hiệu quả quản trị (PAPI):</strong> Nhóm Trung bình Cao.<br>
+                    • <strong>Cải cách hành chính (PAR Index):</strong> Xếp thứ 18 toàn quốc.<br>
+                    • <strong>Khuyến nghị cải thiện:</strong> Rút ngắn "Chi phí thời gian" thực hiện thủ tục hành chính, tối ưu quy trình cấp phép xây dựng cho dự án FDI.
+                </div>
+            `
+        },
+        tayninh: {
+            title: "TỈNH TÂY NINH - CỬA NGÕ GIAO THƯƠNG ĐÔNG TÂY",
+            profileHtml: `
+                <div style="font-size: 11.5px; line-height: 1.6; color: #333;">
+                    • <strong>Diện tích:</strong> 4.041 km² (Giáp ranh trực tiếp vương quốc Campuchia)<br>
+                    • <strong>Dân số:</strong> 1.2 triệu người (Mật độ dân số ở mức vừa phải)<br>
+                    • <strong>Đặc thù kinh tế:</strong> Nông nghiệp công nghệ cao kết hợp du lịch tâm linh di tích quốc gia Núi Bà Đen.<br>
+                    • <strong>Khu công nghiệp (KCN):</strong> 6 KCN quy mô lớn (KCN Phước Đông, KCN Trảng Bàng).
+                </div>
+            `,
+            indicatorHtml: `
+                <div style="font-size: 11.5px; line-height: 1.6; color: #333;">
+                    • <strong>Chỉ số cạnh tranh cấp tỉnh (PCI 2025):</strong> Hạng 19/63 tỉnh thành (67.10 điểm) - Nhóm Khá.<br>
+                    • <strong>Chỉ số hiệu quả quản trị (PAPI):</strong> Nhóm Trung bình Thấp.<br>
+                    • <strong>Cải cách hành chính (PAR Index):</strong> Xếp thứ 25 toàn quốc.<br>
+                    • <strong>Khuyến nghị cải thiện:</strong> Nâng cao hiệu quả chính sách "Hỗ trợ doanh nghiệp", tăng tính công khai minh bạch thông tin quy hoạch sử dụng đất đai.
+                </div>
+            `
+        }
+    };
+
+    function updateProvincialProfileWidget(province) {
+        const widget = document.getElementById('provincial-profile-widget');
+        if (!widget) return;
+        const profile = provincialProfiles[province] || provincialProfiles.all;
+        
+        widget.innerHTML = `
+            <div style="border-right: 1px solid #eee; padding-right: 20px;">
+                <h4 style="margin: 0 0 10px 0; font-size: 12px; font-weight: bold; color: #002d62; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;">
+                    📌 ${profile.title}
+                </h4>
+                ${profile.profileHtml}
+            </div>
+            <div>
+                <h4 style="margin: 0 0 10px 0; font-size: 12px; font-weight: bold; color: #c00000; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;">
+                    📊 CHỈ SỐ CẢI CÁCH & CẠNH TRANH CHÍNH THỐNG
+                </h4>
+                ${profile.indicatorHtml}
+            </div>
+        `;
     }
 
     function openSchemaModal() {
@@ -1858,17 +1962,34 @@ middle_part = """
         if (province === 'all') {
             tphcmArticles = [...originalTphcmArticles];
             document.querySelector('.tphcm-intro-badge h1').innerText = "TRANG THÔNG TIN ĐỊA BÀN TP.HCM & ĐÔNG NAM BỘ CỦA BÁO LAO ĐỘNG (BẢN QUY HOẠCH QUẢNG CÁO)";
+            document.getElementById('dynamic-breadcrumb-spoke').innerHTML = 'TP.HCM & Đông Nam Bộ';
+            document.getElementById('dynamic-powercut-link').href = 'https://laodong.vn/tags/lich-cat-dien-tphcm-8542.ldo';
+            document.getElementById('tphcm-weather-widget').href = 'https://weather.com/vi-VN/weather/today/l/VMXX0007:1:VM';
+            fetchTPHCMWeather(10.7769, 106.7009, 'TP.HCM & Đông Nam Bộ');
         } else if (province === 'tphcm') {
             tphcmArticles = originalTphcmArticles.filter(a => a.is_tphcm);
             document.querySelector('.tphcm-intro-badge h1').innerText = "PHÂN TUYẾN ĐỊA BÀN: TP. HỒ CHÍ MINH (GỒM BÌNH DƯƠNG, BÀ RỊA - VŨNG TÀU)";
+            document.getElementById('dynamic-breadcrumb-spoke').innerHTML = '<a href="#" onclick="filterSpokeProvince(\'all\')" style="color: #666666; text-decoration: none;">TP.HCM & Đông Nam Bộ</a> <span style="color: #ccc;">/</span> TP. Hồ Chí Minh';
+            document.getElementById('dynamic-powercut-link').href = 'https://laodong.vn/tags/lich-cat-dien-tphcm-8542.ldo';
+            document.getElementById('tphcm-weather-widget').href = 'https://weather.com/vi-VN/weather/today/l/VMXX0007:1:VM';
+            fetchTPHCMWeather(10.7769, 106.7009, 'TP. Hồ Chí Minh');
         } else if (province === 'dongnai') {
             tphcmArticles = originalTphcmArticles.filter(a => a.is_dongnai);
             document.querySelector('.tphcm-intro-badge h1').innerText = "PHÂN TUYẾN ĐỊA BÀN: TỈNH ĐỒNG NAI MỚI (GỒM ĐỒNG NAI & BÌNH PHƯỚC)";
+            document.getElementById('dynamic-breadcrumb-spoke').innerHTML = '<a href="#" onclick="filterSpokeProvince(\'all\')" style="color: #666666; text-decoration: none;">TP.HCM & Đông Nam Bộ</a> <span style="color: #ccc;">/</span> Đồng Nai';
+            document.getElementById('dynamic-powercut-link').href = 'https://laodong.vn/tags/lich-cat-dien-dong-nai-8588.ldo';
+            document.getElementById('tphcm-weather-widget').href = 'https://weather.com/vi-VN/weather/today/l/VMXX0004:1:VM';
+            fetchTPHCMWeather(10.9575, 106.8427, 'Đồng Nai');
         } else if (province === 'tayninh') {
             tphcmArticles = originalTphcmArticles.filter(a => a.is_tayninh);
             document.querySelector('.tphcm-intro-badge h1').innerText = "PHÂN TUYẾN ĐỊA BÀN: TỈNH TÂY NINH MỚI (GỒM TÂY NINH & LONG AN)";
+            document.getElementById('dynamic-breadcrumb-spoke').innerHTML = '<a href="#" onclick="filterSpokeProvince(\'all\')" style="color: #666666; text-decoration: none;">TP.HCM & Đông Nam Bộ</a> <span style="color: #ccc;">/</span> Tây Ninh';
+            document.getElementById('dynamic-powercut-link').href = 'https://laodong.vn/tags/lich-cat-dien-tay-ninh-8622.ldo';
+            document.getElementById('tphcm-weather-widget').href = 'https://weather.com/vi-VN/weather/today/l/VMXX0030:1:VM';
+            fetchTPHCMWeather(11.3121, 106.1009, 'Tây Ninh');
         }
 
+        updateProvincialProfileWidget(province);
         featuredArticleId = tphcmArticles[0] ? tphcmArticles[0].id : originalTphcmArticles[0].id;
         
         populateCuratorOptions();
@@ -1909,6 +2030,7 @@ middle_part = """
         updateSchemaMarkup();
         changeDistrictPrices('quan1');
         fetchTPHCMWeather();
+        updateProvincialProfileWidget('all');
         initInfraCarouselAutoplay();
     });
 </script>
