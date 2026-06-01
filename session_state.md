@@ -37,9 +37,11 @@
 ### 2. Việc đã hoàn thành trong phiên trước & hiện tại:
 - Sửa lỗi sập layout phần đầu trang (Float collapse) trên các file `demo_landing_page_tphcm.html`, `demo_landing_page_hanoi.html` bằng cách ghi đè thuộc tính flexbox tương thích cao cho `.blk-10-1`.
 - Cập nhật cả 2 script sinh giao diện `apply_tphcm_layout.py` và `apply_ads_layout.py` và chạy biên dịch lại toàn bộ trang demo để đồng bộ.
+- **Mới:** Triển khai giải pháp **Local Reader Mode (Modal Overlay)** đè lên các liên kết `laodong.vn`, giữ chân độc giả ở lại trang Hà Nội và cung cấp tin liên quan. Đã deploy thành công lên Vercel.
 
 ---
 
 ## 📝 Nhiệm vụ tiếp theo cần xử lý (To-Do List)
-- [ ] Theo dõi và tinh chỉnh thêm phản hồi của người dùng về tính thẩm mỹ của phần tiện ích.
+- [ ] Theo dõi phản hồi của người dùng về trải nghiệm giữ chân độc giả bằng Reader Modal.
+- [ ] Tinh chỉnh thêm phản hồi của người dùng về tính thẩm mỹ của phần tiện ích.
 

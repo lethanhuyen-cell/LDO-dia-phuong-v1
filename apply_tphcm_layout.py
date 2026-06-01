@@ -1447,10 +1447,19 @@ middle_part = """
         const spot2 = rightPool[4] || originalTphcmArticles[7];
         const spot3 = rightPool[5] || originalTphcmArticles[8];
         const spot4 = rightPool[6] || originalTphcmArticles[9];
-        const feed1 = rightPool[7] || originalTphcmArticles[10] || originalTphcmArticles[0];
-        const feed2 = rightPool[8] || originalTphcmArticles[11] || originalTphcmArticles[1];
-        const feed3 = rightPool[9] || originalTphcmArticles[12] || originalTphcmArticles[2];
-        const feed4 = rightPool[10] || originalTphcmArticles[13] || originalTphcmArticles[3];
+
+        // Gather all featured/cover/spotlight IDs to exclude them from other sections
+        const displayedIds = new Set([centerArt.id, sub1.id, sub2.id, bottom1.id, bottom2.id, bottom3.id, spot1.id, spot2.id, spot3.id, spot4.id]);
+
+        // Most Read Pool (15 items) - Must not duplicate featured/spotlight articles
+        const mostReadPool = tphcmArticles.filter(a => !displayedIds.has(a.id)).slice(0, 15);
+        const mostReadIds = new Set(mostReadPool.map(a => a.id));
+
+        // Latest News Feed (3 items) - Must not duplicate featured/spotlight AND must not duplicate most read
+        const latestNewsPool = tphcmArticles.filter(a => !displayedIds.has(a.id) && !mostReadIds.has(a.id));
+        const feed1 = latestNewsPool[0] || originalTphcmArticles[10];
+        const feed2 = latestNewsPool[1] || originalTphcmArticles[11];
+        const feed3 = latestNewsPool[2] || originalTphcmArticles[12];
 
         document.getElementById('main-cover-container').innerHTML = `
             <article class="v4 cv-001">
@@ -1623,7 +1632,7 @@ middle_part = """
             </article>
         `;
 
-        const mostReadPool = tphcmArticles.filter(a => a.id !== centerArt.id).slice(0, 15);
+
         let containerHtml = '';
         let dotsHtml = '';
         const slideCount = Math.ceil(mostReadPool.length / 5);
