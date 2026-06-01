@@ -292,6 +292,32 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
                 display: none !important;
             }
         }
+        
+        /* Flexbox Overrides to prevent Float collapse and optimize layout alignment at the top */
+        .blk-10-1 {
+            display: flex !important;
+            gap: 20px !important;
+            width: 100% !important;
+            clear: both !important;
+            margin-bottom: 15px !important;
+        }
+        .blk-10-1 .pl.p-subcover {
+            float: none !important;
+            width: 300px !important;
+            flex: 0 0 300px !important;
+            box-sizing: border-box !important;
+        }
+        .blk-10-1 .pr.p-cover {
+            float: none !important;
+            flex: 1 1 auto !important;
+            width: auto !important;
+            box-sizing: border-box !important;
+        }
+        .blk-10::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
     }
 </style>
 <!-- WALLPAPER AD SLOTS -->
@@ -6141,21 +6167,21 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
         } else if (province === 'tphcm') {
             tphcmArticles = originalTphcmArticles.filter(a => a.is_tphcm);
             document.querySelector('.tphcm-intro-badge h1').innerText = "PHÂN TUYẾN ĐỊA BÀN: TP. HỒ CHÍ MINH (GỒM BÌNH DƯƠNG, BÀ RỊA - VŨNG TÀU)";
-            document.getElementById('dynamic-breadcrumb-spoke').innerHTML = '<a href="#" onclick="filterSpokeProvince('all')" style="color: #666666; text-decoration: none;">TP.HCM & Đông Nam Bộ</a> <span style="color: #ccc;">/</span> TP. Hồ Chí Minh';
+            document.getElementById('dynamic-breadcrumb-spoke').innerHTML = `<a href="#" onclick="filterSpokeProvince('all')" style="color: #666666; text-decoration: none;">TP.HCM & Đông Nam Bộ</a> <span style="color: #ccc;">/</span> TP. Hồ Chí Minh`;
             document.getElementById('dynamic-powercut-link').href = 'https://laodong.vn/tags/lich-cat-dien-tphcm-8542.ldo';
             document.getElementById('tphcm-weather-widget').href = 'https://weather.com/vi-VN/weather/today/l/VMXX0007:1:VM';
             fetchTPHCMWeather(10.7769, 106.7009, 'TP. Hồ Chí Minh');
         } else if (province === 'dongnai') {
             tphcmArticles = originalTphcmArticles.filter(a => a.is_dongnai);
             document.querySelector('.tphcm-intro-badge h1').innerText = "PHÂN TUYẾN ĐỊA BÀN: TỈNH ĐỒNG NAI MỚI (GỒM ĐỒNG NAI & BÌNH PHƯỚC)";
-            document.getElementById('dynamic-breadcrumb-spoke').innerHTML = '<a href="#" onclick="filterSpokeProvince('all')" style="color: #666666; text-decoration: none;">TP.HCM & Đông Nam Bộ</a> <span style="color: #ccc;">/</span> Đồng Nai';
+            document.getElementById('dynamic-breadcrumb-spoke').innerHTML = `<a href="#" onclick="filterSpokeProvince('all')" style="color: #666666; text-decoration: none;">TP.HCM & Đông Nam Bộ</a> <span style="color: #ccc;">/</span> Đồng Nai`;
             document.getElementById('dynamic-powercut-link').href = 'https://laodong.vn/tags/lich-cat-dien-dong-nai-8588.ldo';
             document.getElementById('tphcm-weather-widget').href = 'https://weather.com/vi-VN/weather/today/l/VMXX0004:1:VM';
             fetchTPHCMWeather(10.9575, 106.8427, 'Đồng Nai');
         } else if (province === 'tayninh') {
             tphcmArticles = originalTphcmArticles.filter(a => a.is_tayninh);
             document.querySelector('.tphcm-intro-badge h1').innerText = "PHÂN TUYẾN ĐỊA BÀN: TỈNH TÂY NINH MỚI (GỒM TÂY NINH & LONG AN)";
-            document.getElementById('dynamic-breadcrumb-spoke').innerHTML = '<a href="#" onclick="filterSpokeProvince('all')" style="color: #666666; text-decoration: none;">TP.HCM & Đông Nam Bộ</a> <span style="color: #ccc;">/</span> Tây Ninh';
+            document.getElementById('dynamic-breadcrumb-spoke').innerHTML = `<a href="#" onclick="filterSpokeProvince('all')" style="color: #666666; text-decoration: none;">TP.HCM & Đông Nam Bộ</a> <span style="color: #ccc;">/</span> Tây Ninh`;
             document.getElementById('dynamic-powercut-link').href = 'https://laodong.vn/tags/lich-cat-dien-tay-ninh-8622.ldo';
             document.getElementById('tphcm-weather-widget').href = 'https://weather.com/vi-VN/weather/today/l/VMXX0030:1:VM';
             fetchTPHCMWeather(11.3121, 106.1009, 'Tây Ninh');

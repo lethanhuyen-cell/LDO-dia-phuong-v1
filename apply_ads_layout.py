@@ -271,6 +271,32 @@ ad_styles = """
                 display: none !important;
             }
         }
+        
+        /* Flexbox Overrides to prevent Float collapse and optimize layout alignment at the top */
+        .blk-10-1 {
+            display: flex !important;
+            gap: 20px !important;
+            width: 100% !important;
+            clear: both !important;
+            margin-bottom: 15px !important;
+        }
+        .blk-10-1 .pl.p-subcover {
+            float: none !important;
+            width: 300px !important;
+            flex: 0 0 300px !important;
+            box-sizing: border-box !important;
+        }
+        .blk-10-1 .pr.p-cover {
+            float: none !important;
+            flex: 1 1 auto !important;
+            width: auto !important;
+            box-sizing: border-box !important;
+        }
+        .blk-10::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
     }
 </style>
 <!-- WALLPAPER AD SLOTS -->

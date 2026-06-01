@@ -8,8 +8,8 @@
 ---
 
 ## 📅 Cập nhật cuối cùng
-- Thời gian: 2026-06-01T17:47:00+07:00
-- Trạng thái hiện tại: Đã xuất bản thành công giao diện demo chuyên trang TP.HCM & Đông Nam Bộ. Mọi liên kết, tiện ích thời tiết và dữ liệu mockup đã được cấu hình hoàn chỉnh.
+- Thời gian: 2026-06-01T20:15:00+07:00
+- Trạng thái hiện tại: Đã xử lý triệt để lỗi sập float layout tại phần đầu trang (blk-10-1) bằng flexbox, loại bỏ khoảng trắng thừa cho cả trang Hà Nội và TP.HCM.
 
 ---
 
@@ -35,12 +35,11 @@
   - [demo_landing_page_tphcm_ads.html](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/demo_landing_page_tphcm_ads.html)
 
 ### 2. Việc đã hoàn thành trong phiên trước & hiện tại:
-- Cấu hình tệp bài viết địa phương mới `tphcm_dongnambo_consolidated.json`.
-- Thiết lập kịch bản biên dịch layout tự động `apply_tphcm_layout.py`.
-- Xuất bản thành công trang demo giao diện sạch và bản tích hợp quảng cáo cho chuyên trang TP.HCM & Đông Nam Bộ.
+- Sửa lỗi sập layout phần đầu trang (Float collapse) trên các file `demo_landing_page_tphcm.html`, `demo_landing_page_hanoi.html` bằng cách ghi đè thuộc tính flexbox tương thích cao cho `.blk-10-1`.
+- Cập nhật cả 2 script sinh giao diện `apply_tphcm_layout.py` và `apply_ads_layout.py` và chạy biên dịch lại toàn bộ trang demo để đồng bộ.
 
 ---
 
 ## 📝 Nhiệm vụ tiếp theo cần xử lý (To-Do List)
-- [ ] Mở rộng kịch bản để hỗ trợ cấu hình dynamic routing tự động cho các VPTT tiếp theo toàn quốc.
+- [ ] Theo dõi và tinh chỉnh thêm phản hồi của người dùng về tính thẩm mỹ của phần tiện ích.
 
