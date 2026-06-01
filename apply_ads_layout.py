@@ -397,13 +397,9 @@ middle_part = """
                         </div>
                         
                         <div style="margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px;">
-                            <div style="border-left: 3px solid #c00000; padding-left: 8px; margin-bottom: 10px;">
-                                <strong style="font-size: 12px; text-transform: uppercase; color: #c00000;">Sự kiện bình luận</strong>
-                                <a href="https://laodong.vn" style="display: block; font-size: 13px; font-weight: bold; color: #333; margin-top: 4px; text-decoration: none;" id="sidebar-commentary-title">...</a>
-                            </div>
-                            <div style="border-left: 3px solid #002d62; padding-left: 8px;">
-                                <strong style="font-size: 12px; text-transform: uppercase; color: #002d62;">Người Việt tử tế</strong>
-                                <a href="https://laodong.vn" style="display: block; font-size: 13px; font-weight: bold; color: #333; margin-top: 4px; text-decoration: none;" id="sidebar-kindness-title">...</a>
+                            <div style="font-size: 13px; font-weight: bold; color: #c00000; text-transform: uppercase; margin-bottom: 12px; border-bottom: 2px solid #c00000; padding-bottom: 5px;">Đọc nhiều nhất</div>
+                            <div id="most-read-container" style="display: flex; flex-direction: column; gap: 10px;">
+                                <!-- JS populated -->
                             </div>
                         </div>
                     </div>
@@ -1512,13 +1508,17 @@ middle_part = """
             </article>
         `;
 
-        const commentArt = hanoiArticles.find(a => a.category === "Thời sự" && a.id !== centerArt.id) || hanoiArticles[10];
-        const kindnessArt = hanoiArticles.find(a => a.category === "Xã hội" && a.id !== centerArt.id) || hanoiArticles[12];
-        
-        document.getElementById('sidebar-commentary-title').innerText = commentArt.title;
-        document.getElementById('sidebar-commentary-title').href = commentArt.url;
-        document.getElementById('sidebar-kindness-title').innerText = kindnessArt.title;
-        document.getElementById('sidebar-kindness-title').href = kindnessArt.url;
+        const mostReadPool = hanoiArticles.filter(a => a.id !== centerArt.id).slice(0, 10);
+        let mostReadHtml = '';
+        mostReadPool.forEach((item, idx) => {
+            mostReadHtml += `
+                <div style="display: flex; gap: 8px; align-items: flex-start; padding-bottom: 8px; border-bottom: 1px dashed #eee; margin-top: 8px;">
+                    <span style="font-size: 14px; font-weight: bold; color: #c00000; min-width: 18px; text-align: center;">` + (idx + 1) + `</span>
+                    <a href="` + item.url + `" target="_blank" style="font-size: 12px; color: #333; text-decoration: none; font-weight: bold; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;" onmouseover="this.style.color='#c00000'" onmouseout="this.style.color='#333'">` + item.title + `</a>
+                </div>
+            `;
+        });
+        document.getElementById('most-read-container').innerHTML = mostReadHtml;
     }
 
     function renderMediaSection() {
