@@ -342,6 +342,27 @@ middle_part = """
                 <h1 style="font-size: 16px; font-weight: bold; color: #c00000; margin: 0; text-transform: uppercase; letter-spacing: 1px;">TRANG THÔNG TIN ĐỊA BÀN TP.HCM & ĐÔNG NAM BỘ CỦA BÁO LAO ĐỘNG (BẢN QUY HOẠCH QUẢNG CÁO)</h1>
             </div>
 
+            <!-- HUB & SPOKE PROVINCE FILTER TAB BAR (Option 3 Implementation) -->
+            <div style="background-color: #ffffff; border: 1px solid #e3e3e3; padding: 10px 15px; margin-top: 15px; font-family: Arial, sans-serif; border-radius: 4px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 1px 3px rgba(0,0,0,0.05); flex-wrap: wrap; gap: 10px;">
+                <div style="font-size: 12px; font-weight: bold; color: #555; text-transform: uppercase; display: flex; align-items: center; gap: 6px;">
+                    📂 Phân tuyến địa bàn (Hub & Spoke):
+                </div>
+                <div style="display: flex; gap: 8px;" id="hub-spoke-tabs">
+                    <button class="spoke-tab" onclick="filterSpokeProvince('all')" style="background-color: #c00000; color: #ffffff; border: 1px solid #c00000; padding: 6px 14px; border-radius: 3px; font-size: 12px; font-weight: bold; cursor: pointer; transition: all 0.2s;">
+                        🌐 Toàn bộ Đông Nam Bộ (Hub)
+                    </button>
+                    <button class="spoke-tab" onclick="filterSpokeProvince('tphcm')" style="background-color: #f7f7f7; color: #333; border: 1px solid #ddd; padding: 6px 14px; border-radius: 3px; font-size: 12px; font-weight: bold; cursor: pointer; transition: all 0.2s;">
+                        📍 TP. Hồ Chí Minh (Spoke)
+                    </button>
+                    <button class="spoke-tab" onclick="filterSpokeProvince('dongnai')" style="background-color: #f7f7f7; color: #333; border: 1px solid #ddd; padding: 6px 14px; border-radius: 3px; font-size: 12px; font-weight: bold; cursor: pointer; transition: all 0.2s;">
+                        📍 Đồng Nai mới (Spoke)
+                    </button>
+                    <button class="spoke-tab" onclick="filterSpokeProvince('tayninh')" style="background-color: #f7f7f7; color: #333; border: 1px solid #ddd; padding: 6px 14px; border-radius: 3px; font-size: 12px; font-weight: bold; cursor: pointer; transition: all 0.2s;">
+                        📍 Tây Ninh mới (Spoke)
+                    </button>
+                </div>
+            </div>
+
             <!-- AD SLOT 01: TOP BILLBOARD (970x250) -->
             <div style="width: 100%; max-width: 1000px; margin: 15px auto 0 auto; text-align: center; font-family: Arial, sans-serif; position: relative;">
                 <div style="position: absolute; top: 2px; left: 5px; font-size: 8px; color: #fff; background-color: #c00000; padding: 2px 5px; font-weight: bold; border-radius: 2px; z-index: 5;">QC GIẢ LẬP</div>
@@ -1348,7 +1369,8 @@ middle_part = """
 </div>
 
 <script>
-    const tphcmArticles = PLACEHOLDER_RAW_ARTICLES;
+    const originalTphcmArticles = PLACEHOLDER_RAW_ARTICLES;
+    let tphcmArticles = [...originalTphcmArticles];
 
     let featuredArticleId = tphcmArticles[0].id;
     let articlesVolume = 120;
@@ -1371,18 +1393,18 @@ middle_part = """
     }
 
     function renderMainCover() {
-        const centerArt = tphcmArticles.find(a => a.id === featuredArticleId) || tphcmArticles[0];
+        const centerArt = tphcmArticles.find(a => a.id === featuredArticleId) || tphcmArticles[0] || originalTphcmArticles[0];
         const leftSubPool = tphcmArticles.filter(a => a.id !== centerArt.id);
-        const sub1 = leftSubPool[0] || tphcmArticles[1];
-        const sub2 = leftSubPool[1] || tphcmArticles[2];
+        const sub1 = leftSubPool[0] || originalTphcmArticles[1];
+        const sub2 = leftSubPool[1] || originalTphcmArticles[2];
         const rightPool = tphcmArticles.filter(a => a.id !== centerArt.id && a.id !== sub1.id && a.id !== sub2.id);
-        const bottom1 = rightPool[0] || tphcmArticles[3];
-        const bottom2 = rightPool[1] || tphcmArticles[4];
-        const bottom3 = rightPool[2] || tphcmArticles[5];
-        const spot1 = rightPool[3] || tphcmArticles[6];
-        const spot2 = rightPool[4] || tphcmArticles[7];
-        const spot3 = rightPool[5] || tphcmArticles[8];
-        const spot4 = rightPool[6] || tphcmArticles[9];
+        const bottom1 = rightPool[0] || originalTphcmArticles[3];
+        const bottom2 = rightPool[1] || originalTphcmArticles[4];
+        const bottom3 = rightPool[2] || originalTphcmArticles[5];
+        const spot1 = rightPool[3] || originalTphcmArticles[6];
+        const spot2 = rightPool[4] || originalTphcmArticles[7];
+        const spot3 = rightPool[5] || originalTphcmArticles[8];
+        const spot4 = rightPool[6] || originalTphcmArticles[9];
 
         document.getElementById('main-cover-container').innerHTML = `
             <article class="v4 cv-001">
@@ -1573,7 +1595,10 @@ middle_part = """
     }
 
     function renderMediaSection() {
-        const mediaPool = tphcmArticles.filter(a => a.category === "Xã hội" || a.category === "Thời sự").slice(5, 10);
+        let mediaPool = tphcmArticles.filter(a => a.category === "Xã hội" || a.category === "Thời sự").slice(5, 10);
+        if (mediaPool.length < 4) {
+            mediaPool = originalTphcmArticles.filter(a => a.category === "Xã hội" || a.category === "Thời sự").slice(5, 10);
+        }
         if (mediaPool.length < 4) return;
 
         document.getElementById('media-col-1').innerHTML = `
@@ -1622,8 +1647,12 @@ middle_part = """
         const row2Categories = ["Công đoàn", "Bất động sản", "Văn hóa - Giải trí", "Thể thao"];
 
         function makeColumnHtml(categoryName) {
-            const catPool = tphcmArticles.filter(a => a.category === categoryName);
-            const mainCat = catPool[0] || tphcmArticles[12];
+            let catPool = tphcmArticles.filter(a => a.category === categoryName);
+            if (catPool.length < 5) {
+                const generalCatPool = originalTphcmArticles.filter(a => a.category === categoryName);
+                catPool = catPool.concat(generalCatPool.filter(ga => !catPool.some(ca => ca.id === ga.id))).slice(0, 5);
+            }
+            const mainCat = catPool[0] || originalTphcmArticles[12];
             const secondaryList = catPool.slice(1, 5);
             
             let listHtml = '';
@@ -1667,7 +1696,11 @@ middle_part = """
     }
 
     function renderEnterpriseBlock() {
-        const prPool = tphcmArticles.filter(a => a.category === "Kinh tế").slice(0, 5);
+        let prPool = tphcmArticles.filter(a => a.category === "Kinh tế").slice(0, 5);
+        if (prPool.length < 5) {
+            const generalPrPool = originalTphcmArticles.filter(a => a.category === "Kinh tế");
+            prPool = prPool.concat(generalPrPool.filter(gp => !prPool.some(p => p.id === gp.id))).slice(0, 5);
+        }
         let html = '';
         
         prPool.forEach(item => {
@@ -1806,6 +1839,49 @@ middle_part = """
     function closeSchemaModal() {
         document.getElementById('schema-modal').style.display = 'none';
     }
+
+    window.filterSpokeProvince = function(province) {
+        const tabs = document.querySelectorAll('.spoke-tab');
+        tabs.forEach(tab => {
+            tab.style.backgroundColor = '#f7f7f7';
+            tab.style.color = '#333';
+            tab.style.borderColor = '#ddd';
+        });
+        
+        const eventTarget = window.event ? window.event.target : null;
+        if (eventTarget) {
+            eventTarget.style.backgroundColor = '#c00000';
+            eventTarget.style.color = '#ffffff';
+            eventTarget.style.borderColor = '#c00000';
+        }
+
+        if (province === 'all') {
+            tphcmArticles = [...originalTphcmArticles];
+            document.querySelector('.tphcm-intro-badge h1').innerText = "TRANG THÔNG TIN ĐỊA BÀN TP.HCM & ĐÔNG NAM BỘ CỦA BÁO LAO ĐỘNG (BẢN QUY HOẠCH QUẢNG CÁO)";
+        } else if (province === 'tphcm') {
+            tphcmArticles = originalTphcmArticles.filter(a => a.is_tphcm);
+            document.querySelector('.tphcm-intro-badge h1').innerText = "PHÂN TUYẾN ĐỊA BÀN: TP. HỒ CHÍ MINH (GỒM BÌNH DƯƠNG, BÀ RỊA - VŨNG TÀU)";
+        } else if (province === 'dongnai') {
+            tphcmArticles = originalTphcmArticles.filter(a => a.is_dongnai);
+            document.querySelector('.tphcm-intro-badge h1').innerText = "PHÂN TUYẾN ĐỊA BÀN: TỈNH ĐỒNG NAI MỚI (GỒM ĐỒNG NAI & BÌNH PHƯỚC)";
+        } else if (province === 'tayninh') {
+            tphcmArticles = originalTphcmArticles.filter(a => a.is_tayninh);
+            document.querySelector('.tphcm-intro-badge h1').innerText = "PHÂN TUYẾN ĐỊA BÀN: TỈNH TÂY NINH MỚI (GỒM TÂY NINH & LONG AN)";
+        }
+
+        featuredArticleId = tphcmArticles[0] ? tphcmArticles[0].id : originalTphcmArticles[0].id;
+        
+        populateCuratorOptions();
+        renderMainCover();
+        renderMediaSection();
+        renderCategoryColumns();
+        renderEnterpriseBlock();
+        updateSchemaMarkup();
+        
+        if (window.switchMostReadSlide) {
+            window.switchMostReadSlide(0);
+        }
+    };
 
     function initInfraCarouselAutoplay() {
         const carousel = document.querySelector('.infra-carousel-container');
