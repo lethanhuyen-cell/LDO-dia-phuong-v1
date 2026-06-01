@@ -24,6 +24,39 @@ gtag('js',new Date());gtag('config','G-9XPGNV7HPY');gtag('config','G-RQZZ2QCVHK'
                 height: 100% !important;
             }
         }
+
+        /* Ticker strip animations and styles */
+        @keyframes ticker-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        #latest-news-ticker-container:hover {
+            animation-play-state: paused;
+        }
+        .ticker-link {
+            color: #333 !important;
+            text-decoration: none;
+            font-size: 13.5px;
+            font-family: Arial, sans-serif;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s ease;
+        }
+        .ticker-link:hover {
+            color: #c00000 !important;
+            text-decoration: underline;
+        }
+        .ticker-date {
+            color: #c00000;
+            font-size: 11px;
+            background: #fff5f5;
+            border: 1px solid #ffcccc;
+            border-radius: 3px;
+            padding: 1px 4px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body ng-app="web-app">
@@ -65,6 +98,18 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
                     <span style="color: #ccc;">|</span>
                     <span id="weather-temp-span">📍 Hà Nội: Đang tải...</span>
                 </a>
+            </div>
+
+            <!-- TICKER STRIP FOR LATEST NEWS -->
+            <div id="latest-news-ticker-bar" style="display: flex; align-items: center; background-color: #fff; border: 1px solid #eef1f5; border-left: 4px solid #c00000; border-radius: 4px; padding: 8px 15px; margin-top: 15px; font-family: Arial, sans-serif; box-shadow: 0 1px 3px rgba(0,0,0,0.02); overflow: hidden; gap: 15px; box-sizing: border-box;">
+                <div style="font-size: 12px; font-weight: bold; color: #c00000; text-transform: uppercase; white-space: nowrap; display: flex; align-items: center; gap: 5px;">
+                    ⚡ MỚI NHẤT:
+                </div>
+                <div style="flex-grow: 1; overflow: hidden; position: relative; height: 24px; display: flex; align-items: center;">
+                    <div id="latest-news-ticker-container" style="display: flex; gap: 30px; white-space: nowrap; position: absolute; left: 0; align-items: center; animation: ticker-scroll 35s linear infinite; height: 100%;">
+                        <!-- Populated dynamically via JS -->
+                    </div>
+                </div>
             </div>
 
             <!-- REGIONAL INTRO BADGE -->
@@ -2376,12 +2421,21 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
     }
 
     function openArticleReader(id) {
-        // Find matching article in the local list
-        const art = typeof hanoiArticles !== 'undefined' ? hanoiArticles.find(a => a.id === id) : articles.find(a => a.id === id);
+        let listPool = [];
+        if (typeof hanoiArticles !== 'undefined') {
+            listPool = hanoiArticles;
+        } else if (typeof originalTphcmArticles !== 'undefined') {
+            listPool = originalTphcmArticles;
+        } else if (typeof tphcmArticles !== 'undefined') {
+            listPool = tphcmArticles;
+        } else if (typeof articles !== 'undefined') {
+            listPool = articles;
+        }
+        
+        const art = listPool.find(a => a.id === id);
         if (!art) return;
         
         // Related articles filter
-        const listPool = typeof hanoiArticles !== 'undefined' ? hanoiArticles : articles;
         const related = listPool.filter(a => a.category === art.category && a.id !== art.id).slice(0, 3);
         let relatedHtml = '';
         related.forEach(item => {
@@ -2453,7 +2507,17 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
             
             // Check if this is an article link (ending with .ldo or containing -123456)
             if (link.href.endsWith('.ldo') || link.href.includes('.html') || re_check_article_id(link.href)) {
-                const listPool = typeof hanoiArticles !== 'undefined' ? hanoiArticles : articles;
+                let listPool = [];
+                if (typeof hanoiArticles !== 'undefined') {
+                    listPool = hanoiArticles;
+                } else if (typeof originalTphcmArticles !== 'undefined') {
+                    listPool = originalTphcmArticles;
+                } else if (typeof tphcmArticles !== 'undefined') {
+                    listPool = tphcmArticles;
+                } else if (typeof articles !== 'undefined') {
+                    listPool = articles;
+                }
+                
                 const article = listPool.find(a => a.url === link.href);
                 if (article) {
                     e.preventDefault();
@@ -2467,6 +2531,60 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
         return /-\d+/.test(url);
     }
 
+    function parseDateStr(str) {
+        if (!str) return new Date(0);
+        const parts = str.match(/(\d+)\/(\d+)\/(\d+)\s+(\d+):(\d+)/);
+        if (parts) {
+            return new Date(parseInt(parts[3]), parseInt(parts[2]) - 1, parseInt(parts[1]), parseInt(parts[4]), parseInt(parts[5]));
+        }
+        return new Date(str);
+    }
+
+    function renderLatestNewsTicker() {
+        let listPool = [];
+        if (typeof hanoiArticles !== 'undefined') {
+            listPool = hanoiArticles;
+        } else if (typeof originalTphcmArticles !== 'undefined') {
+            listPool = originalTphcmArticles;
+        } else if (typeof tphcmArticles !== 'undefined') {
+            listPool = tphcmArticles;
+        } else if (typeof articles !== 'undefined') {
+            listPool = articles;
+        }
+        
+        if (!listPool || listPool.length === 0) return;
+        
+        const sorted = [...listPool].sort((a, b) => parseDateStr(b.date) - parseDateStr(a.date));
+        const top7 = sorted.slice(0, 7);
+        
+        let tickerHtml = '';
+        top7.forEach((item, index) => {
+            let dateDisplay = '';
+            if (item.date) {
+                const parts = item.date.split(' ');
+                const timePart = parts[1] || '';
+                const datePart = parts[0] || '';
+                const dayMonth = datePart.split('/').slice(0, 2).join('/');
+                dateDisplay = `${timePart} - ${dayMonth}`;
+            }
+            
+            tickerHtml += `
+                <a href="${item.url}" onclick="openArticleReader(${item.id}); return false;" class="ticker-link">
+                    <span>${item.title}</span>
+                    ${dateDisplay ? `<span class="ticker-date">${dateDisplay}</span>` : ''}
+                </a>
+            `;
+            if (index < top7.length - 1) {
+                tickerHtml += `<span style="color: #ccc; margin: 0 5px;">•</span>`;
+            }
+        });
+        
+        const container = document.getElementById('latest-news-ticker-container');
+        if (container) {
+            container.innerHTML = tickerHtml + `<span style="color: #ccc; margin: 0 5px;">•</span>` + tickerHtml;
+        }
+    }
+
     window.addEventListener('DOMContentLoaded', () => {
         populateCuratorOptions();
         renderMainCover();
@@ -2475,6 +2593,7 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
         renderEnterpriseBlock();
         updateSchemaMarkup();
         fetchHanoiWeather();
+        renderLatestNewsTicker();
     });
 </script>
 

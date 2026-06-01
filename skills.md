@@ -148,14 +148,16 @@ Quy trình tối ưu kết hợp đặc tả kỹ thuật PRD (Cơ chế 4 lớp
   - Thiết kế quy trình định tuyến ảo hệ thống bằng cơ chế URL Rewrite (tầng Nginx Proxy Map) và giải thích trực quan hóa mô hình Hub & Spoke URL.
   - Tích hợp bộ số liệu Chỉ số cạnh tranh cấp tỉnh (PCI), PAPI, PAR Index và thông tin KCN vào cấu trúc "Chân dung Địa phương" ngay dưới thanh lọc địa bàn.
   - Triển khai cơ chế đồng bộ khung tiện ích Spoke (Context Syncing) thay đổi đồng thời breadcrumbs, thời tiết và link chuyên đề cắt điện theo vị trí địa lý của Spoke đang hoạt động.
-  - **Mới:** Thiết kế cơ chế giữ chân độc giả bằng giải pháp **Local Reader Mode (Modal Overlay)**. Đánh chặn các lượt click bài viết tới `laodong.vn` để hiển thị bản đọc nhanh trực quan ngay tại trang chuyên mục kèm sidebar gợi ý tin Hà Nội liên quan.
-  - **Mới (Nâng cấp full bài viết):** Viết script cào tin tức chi tiết `scrape_full_contents.py` tự động vượt rào bảo mật, giải quyết lazy-load ảnh, trích xuất sạch sẽ toàn bộ thẻ `<figure>`, `<p>`, `<a>` của bài viết gốc thông qua thuật toán đếm/cân bằng thẻ (tag-balancing) hiệu năng cao không cần dependencies. Tích hợp trực tiếp dữ liệu cào sâu vào cấu trúc JSON để modal xổ ra **full nội dung bài viết gốc** thay vì chỉ tóm tắt chapeau giả lập, giữ chân độc giả tối đa tại chuyên trang.
+  - **Mới (Nâng cấp tin mới nhất):** Thiết kế dải Tin mới nhất (Latest News Ticker Bar) nằm ngay dưới thanh Breadcrumbs theo phong cách CafeF. Sử dụng CSS Keyframe animation (`translateX(0)` sang `translateX(-50%)`) kết hợp nhân bản kép nội dung HTML danh sách 7 bài viết mới nhất để tạo hiệu ứng cuộn ngang vô hạn (seamless infinite marquee CSS) và dừng lại khi hover. Tích hợp trực tiếp sự kiện click trên thanh tin để mở bài đọc nhanh qua Local Reader Modal (Modal Overlay) giúp độc giả không bị điều hướng ra khỏi trang địa phương.
 * **Kinh nghiệm rút ra:**
   - Đối với các Spoke có dữ liệu ít hơn Hub (như Tây Ninh, Đồng Nai), cơ chế trộn gộp (merge fallback) là rất cần thiết để đảm bảo hiển thị đủ nội dung lưới tin bài.
   - Sử dụng `map` định tuyến trong Nginx thay thế `if` lồng nhau giúp cải thiện hiệu năng và bảo trì dễ dàng khi mở rộng ra 63 tỉnh thành.
   - Thiết kế Spoke Context Sync đồng bộ thời gian thực giúp nâng cao độ chính xác về mặt logic địa lý, tạo cảm giác chuyên nghiệp khi người dùng tương tác chuyển đổi vùng.
   - Sử dụng giải pháp Event Listener đánh chặn (Click Event Interceptor) ở cấp `document` giúp kiểm soát toàn bộ lượt click mà không cần can thiệp chỉnh sửa hàng chục chuỗi template HTML sinh động.
-  - Nên đưa trực tiếp các thẻ HTML & JavaScript bổ trợ cho Modal vào template sạch (`demo_landing_page_hanoi_clean.html`) để khi biên dịch layout tự động (chạy `apply_ads_layout.py` hoặc `apply_tphcm_layout.py`) không bị ghi đè mất mã nguồn tính năng modal reader.
+  - Nên đưa trực tiếp các thẻ HTML & JavaScript bổ trợ cho Modal và Ticker vào template sạch (`demo_landing_page_hanoi_clean.html`) để khi biên dịch layout tự động (chạy `apply_ads_layout.py` hoặc `apply_tphcm_layout.py`) không bị ghi đè mất mã nguồn tính năng.
+  - Cần chạy bypass execution policy của PowerShell (`powershell -ExecutionPolicy Bypass -Command "..."`) khi triển khai lệnh Node CLI (như `npx vercel`) trên hệ điều hành Windows để tránh lỗi phân quyền.
+  - Để đảm bảo hiệu ứng marquee chạy vô hạn không bị giật (jump) khi lặp lại, tổng chiều rộng nội dung của container con phải khớp chính xác với bước dịch chuyển của Keyframe (dịch chuyển đúng `-50%` của chiều rộng nhân bản kép).
+  - Tải tin và sắp xếp theo mốc thời gian thực tế giúp giao diện sống động và cập nhật liên tục đúng với tôn chỉ "Tin mới nhất".
 
 
 

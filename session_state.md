@@ -8,8 +8,8 @@
 ---
 
 ## 📅 Cập nhật cuối cùng
-- Thời gian: 2026-06-01T20:15:00+07:00
-- Trạng thái hiện tại: Đã xử lý triệt để lỗi sập float layout tại phần đầu trang (blk-10-1) bằng flexbox, loại bỏ khoảng trắng thừa cho cả trang Hà Nội và TP.HCM.
+- Thời gian: 2026-06-01T21:20:00+07:00
+- Trạng thái hiện tại: Đã hoàn thành việc thêm dải Tin mới nhất (Latest News Ticker Bar) ngay dưới thanh Breadcrumbs theo phong cách CafeF cho tất cả các trang địa phương (Hà Nội, TPHCM & Đông Nam Bộ).
 
 ---
 
@@ -34,14 +34,22 @@
   - [demo_landing_page_tphcm.html](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/demo_landing_page_tphcm.html)
   - [demo_landing_page_tphcm_ads.html](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/demo_landing_page_tphcm_ads.html)
 
-### 2. Việc đã hoàn thành trong phiên trước & hiện tại:
-- Sửa lỗi sập layout phần đầu trang (Float collapse) trên các file `demo_landing_page_tphcm.html`, `demo_landing_page_hanoi.html` bằng cách ghi đè thuộc tính flexbox tương thích cao cho `.blk-10-1`.
-- Cập nhật cả 2 script sinh giao diện `apply_tphcm_layout.py` và `apply_ads_layout.py` và chạy biên dịch lại toàn bộ trang demo để đồng bộ.
-- **Mới:** Triển khai giải pháp **Local Reader Mode (Modal Overlay)** đè lên các liên kết `laodong.vn`, giữ chân độc giả ở lại trang Hà Nội và cung cấp tin liên quan. Đã deploy thành công lên Vercel.
+- **Mới:** Triển khai thanh chạy tin mới nhất (Latest News Ticker Bar) gồm tiêu đề bài viết và nhãn thời gian, tự động chạy cuộn ngang vô hạn (seamless infinite marquee CSS) và dừng lại khi hover.
+- **Mới:** Biên dịch đồng bộ thanh chạy tin này cho toàn bộ các bản demo Hà Nội và TP.HCM qua các file Python (`apply_ads_layout.py`, `apply_tphcm_layout.py`, `apply_tphcm_layout_opt1.py`, `apply_tphcm_layout_opt2.py`).
+- **Mới:** Tích hợp trực tiếp sự kiện click trên thanh chạy tin để mở bài đọc nhanh qua Local Reader Modal (Modal Overlay) giúp độc giả không bị điều hướng ra khỏi trang địa phương.
+- **Mới:** Triển khai thành công và cập nhật lên Vercel production: https://laodong-hanoi.vercel.app
 
 ---
 
 ## 📝 Nhiệm vụ tiếp theo cần xử lý (To-Do List)
-- [ ] Theo dõi phản hồi của người dùng về trải nghiệm giữ chân độc giả bằng Reader Modal.
-- [ ] Tinh chỉnh thêm phản hồi của người dùng về tính thẩm mỹ của phần tiện ích.
+- [ ] Mở rộng kiểm thử hiển thị modal reader và ticker trên thiết bị di động để tối ưu trải nghiệm kéo cuộn.
+- [ ] Tích hợp tính năng lưu vị trí đọc (scroll restoration) khi đóng mở modal.e gốc `demo_landing_page_hanoi_clean.html` trước khi biên dịch hàng loạt.
+- **Mới:** Deploy thành công toàn bộ thay đổi lên Vercel production: https://laodong-hanoi.vercel.app
+
+---
+
+## 📝 Nhiệm vụ tiếp theo cần xử lý (To-Do List)
+- [ ] Mở rộng kiểm thử hiển thị modal reader trên thiết bị di động để tối ưu trải nghiệm kéo cuộn.
+- [ ] Tích hợp tính năng lưu vị trí đọc (scroll restoration) khi đóng mở modal.
+
 

@@ -24,6 +24,39 @@ gtag('js',new Date());gtag('config','G-9XPGNV7HPY');gtag('config','G-RQZZ2QCVHK'
                 height: 100% !important;
             }
         }
+
+        /* Ticker strip animations and styles */
+        @keyframes ticker-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        #latest-news-ticker-container:hover {
+            animation-play-state: paused;
+        }
+        .ticker-link {
+            color: #333 !important;
+            text-decoration: none;
+            font-size: 13.5px;
+            font-family: Arial, sans-serif;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s ease;
+        }
+        .ticker-link:hover {
+            color: #c00000 !important;
+            text-decoration: underline;
+        }
+        .ticker-date {
+            color: #c00000;
+            font-size: 11px;
+            background: #fff5f5;
+            border: 1px solid #ffcccc;
+            border-radius: 3px;
+            padding: 1px 4px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body ng-app="web-app">
@@ -317,6 +350,12 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
             content: "";
             display: table;
             clear: both;
+        }
+        @media (max-width: 850px) {
+            .most-read-slide {
+                grid-template-columns: 1fr !important;
+                gap: 10px !important;
+            }
         }
     }
 </style>

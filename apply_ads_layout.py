@@ -297,6 +297,12 @@ ad_styles = """
             display: table;
             clear: both;
         }
+        @media (max-width: 850px) {
+            .most-read-slide {
+                grid-template-columns: 1fr !important;
+                gap: 10px !important;
+            }
+        }
     }
 </style>
 <!-- WALLPAPER AD SLOTS -->
