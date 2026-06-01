@@ -86,6 +86,10 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
                             <!-- JS populated -->
                         </div>
                     </div>
+                    <!-- Row of 3 bottom stories -->
+                    <div class="subcover-bottom-row" id="subcover-bottom-row" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee;">
+                        <!-- JS populated -->
+                    </div>
                 </div>
                 
                 <!-- Right Side: 4 Spotlight stories with column headings (Sự kiện bình luận / Người Việt tử tế) -->
@@ -1973,10 +1977,13 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
         
         // 3. Right side: 4 spotlight articles
         const rightPool = hanoiArticles.filter(a => a.id !== centerArt.id && a.id !== sub1.id && a.id !== sub2.id);
-        const spot1 = rightPool[0] || hanoiArticles[3];
-        const spot2 = rightPool[1] || hanoiArticles[4];
-        const spot3 = rightPool[2] || hanoiArticles[5];
-        const spot4 = rightPool[3] || hanoiArticles[6];
+        const bottom1 = rightPool[0] || hanoiArticles[3];
+        const bottom2 = rightPool[1] || hanoiArticles[4];
+        const bottom3 = rightPool[2] || hanoiArticles[5];
+        const spot1 = rightPool[3] || hanoiArticles[6];
+        const spot2 = rightPool[4] || hanoiArticles[7];
+        const spot3 = rightPool[5] || hanoiArticles[8];
+        const spot4 = rightPool[6] || hanoiArticles[9];
 
         // Render main
         document.getElementById('main-cover-container').innerHTML = `
@@ -2015,6 +2022,39 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
                     <h2 class="title prefix-icon">` + sub2.title + `</h2>
                 </a>
             </article>
+        `;
+
+        document.getElementById('subcover-bottom-row').innerHTML = `
+            <div style="display: flex; flex-direction: column; width: 100%; box-sizing: border-box;">
+                <a href="` + bottom1.url + `" target="_blank" style="display: block; width: 100%; aspect-ratio: 16/10; overflow: hidden; border-radius: 4px; background-color: #f0f0f0;">
+                    <img src="` + bottom1.image + `" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='none'">
+                </a>
+                <a href="` + bottom1.url + `" target="_blank" style="text-decoration: none; display: block; margin-top: 8px;">
+                    <h3 style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.4; font-weight: bold; color: #111; margin: 0; transition: color 0.2s;" onmouseover="this.style.color='#c00000'" onmouseout="this.style.color='#111'">
+                        ` + bottom1.title + `
+                    </h3>
+                </a>
+            </div>
+            <div style="display: flex; flex-direction: column; width: 100%; box-sizing: border-box;">
+                <a href="` + bottom2.url + `" target="_blank" style="display: block; width: 100%; aspect-ratio: 16/10; overflow: hidden; border-radius: 4px; background-color: #f0f0f0;">
+                    <img src="` + bottom2.image + `" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='none'">
+                </a>
+                <a href="` + bottom2.url + `" target="_blank" style="text-decoration: none; display: block; margin-top: 8px;">
+                    <h3 style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.4; font-weight: bold; color: #111; margin: 0; transition: color 0.2s;" onmouseover="this.style.color='#c00000'" onmouseout="this.style.color='#111'">
+                        ` + bottom2.title + `
+                    </h3>
+                </a>
+            </div>
+            <div style="display: flex; flex-direction: column; width: 100%; box-sizing: border-box;">
+                <a href="` + bottom3.url + `" target="_blank" style="display: block; width: 100%; aspect-ratio: 16/10; overflow: hidden; border-radius: 4px; background-color: #f0f0f0;">
+                    <img src="` + bottom3.image + `" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='none'">
+                </a>
+                <a href="` + bottom3.url + `" target="_blank" style="text-decoration: none; display: block; margin-top: 8px;">
+                    <h3 style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.4; font-weight: bold; color: #111; margin: 0; transition: color 0.2s;" onmouseover="this.style.color='#c00000'" onmouseout="this.style.color='#111'">
+                        ` + bottom3.title + `
+                    </h3>
+                </a>
+            </div>
         `;
 
         // Render spotlights

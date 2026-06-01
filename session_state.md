@@ -8,8 +8,8 @@
 ---
 
 ## 📅 Cập nhật cuối cùng
-- **Thời gian:** 2026-05-29T23:18:00+07:00
-- **Trạng thái hiện tại:** Đã hoàn thành bộ cào tin tức mở rộng, đồng bộ hóa 100% dữ liệu thật về Hà Nội vào trang demo, sửa lỗi tràn layout và triển khai thành công lên Vercel.
+- Thời gian: 2026-06-01T17:47:00+07:00
+- Trạng thái hiện tại: Đã xuất bản thành công giao diện demo chuyên trang TP.HCM & Đông Nam Bộ. Mọi liên kết, tiện ích thời tiết và dữ liệu mockup đã được cấu hình hoàn chỉnh.
 
 ---
 
@@ -19,6 +19,10 @@
 - **Tài liệu Kỹ năng & Trạng thái làm việc:**
   - [session_state.md](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/session_state.md)
   - [skills.md](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/skills.md)
+- **Tài liệu mới vùng Đông Nam Bộ:**
+  - [tphcm_dongnambo_administrative_units.md](file:///C:/Users/Admin/.gemini/antigravity/brain/1be5f1f6-24da-484d-8983-4229c6fefd6f/tphcm_dongnambo_administrative_units.md)
+  - [tphcm_dongnambo_landmarks.md](file:///C:/Users/Admin/.gemini/antigravity/brain/1be5f1f6-24da-484d-8983-4229c6fefd6f/tphcm_dongnambo_landmarks.md)
+  - [tphcm_dongnambo_grouping_rules.md](file:///C:/Users/Admin/.gemini/antigravity/brain/1be5f1f6-24da-484d-8983-4229c6fefd6f/tphcm_dongnambo_grouping_rules.md)
 - **Chiến lược & Kế hoạch:**
   - [1_chien_luoc_va_ke_hoach_pilot.md](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/1_chien_luoc_va_ke_hoach_pilot.md)
   - [2_sop_bien_tap_va_van_hanh.md](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/2_sop_bien_tap_va_van_hanh.md)
@@ -26,23 +30,17 @@
 - **Kỹ thuật & SEO:**
   - [3_dac_ta_ky_thuat_va_seo.md](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/3_dac_ta_ky_thuat_va_seo.md)
   - [6_quy_trinh_toa_soan_va_seo_tag.md](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/6_quy_trinh_toa_soan_va_seo_tag.md)
-- **Thương mại hóa & Rủi ro:**
-  - [4_mo_hinh_thuong_mai_hoa.md](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/4_mo_hinh_thuong_mai_hoa.md)
-  - [5_risk_register.md](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/5_risk_register.md)
 - **Sản phẩm / Mockup:**
-  - [demo_landing_page_hanoi.html](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/demo_landing_page_hanoi.html)
-  - [index.html](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/index.html)
-  - `laodong_regional_landing_mockup.png`
+  - [demo_landing_page_tphcm.html](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/demo_landing_page_tphcm.html)
+  - [demo_landing_page_tphcm_ads.html](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/demo_landing_page_tphcm_ads.html)
 
 ### 2. Việc đã hoàn thành trong phiên trước & hiện tại:
-- Xây dựng chiến lược triển khai chi tiết dự án "Lao Động – vùng miền", bao gồm kế hoạch, tài liệu vận hành và SOP.
-- Tạo bản thiết kế demo HTML cho Landing Page Hà Nội.
-- **Mới:** Tích hợp thành công 1.512 bài viết thực tế về Hà Nội thông qua việc kiểm tra sâu nội dung trang chi tiết bài viết (detail page).
-- **Mới:** Đồng bộ hóa code, sửa lỗi tràn text layout trên cột chuyên mục và deploy lên Vercel.
-- **Mới:** Cập nhật kỹ năng vượt rào bảo mật và kỹ thuật cào bài báo chí vào [skills.md](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/skills.md).
+- Cấu hình tệp bài viết địa phương mới `tphcm_dongnambo_consolidated.json`.
+- Thiết lập kịch bản biên dịch layout tự động `apply_tphcm_layout.py`.
+- Xuất bản thành công trang demo giao diện sạch và bản tích hợp quảng cáo cho chuyên trang TP.HCM & Đông Nam Bộ.
 
 ---
 
 ## 📝 Nhiệm vụ tiếp theo cần xử lý (To-Do List)
-- [ ] Chờ hướng dẫn mở rộng sang các trang chuyên trang tỉnh/thành tiếp theo (ví dụ: TP.HCM, Nghệ An, Cần Thơ).
-- [ ] Tinh chỉnh giao diện dựa trên feedback tiếp theo của độc giả/biên tập viên.
+- [ ] Mở rộng kịch bản để hỗ trợ cấu hình dynamic routing tự động cho các VPTT tiếp theo toàn quốc.
+

@@ -5,7 +5,7 @@ import os
 sys.stdout.reconfigure(encoding='utf-8')
 
 # Read consolidated 100% Hanoi articles
-with open('c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING PAGE THƯỜNG TRÚ/hanoi_final_consolidated.json', 'r', encoding='utf-8') as f:
+with open('c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING PAGE THƯỜNG TRÚ/tphcm_dongnambo_consolidated.json', 'r', encoding='utf-8') as f:
     articles = json.load(f)
 
 js_all_articles_str = json.dumps(articles, ensure_ascii=False, indent=8)
@@ -317,7 +317,7 @@ middle_part = """
                     <span style="color: #ccc;">/</span>
                     <a href="#" style="color: #666666; text-decoration: none;">Vùng miền</a> 
                     <span style="color: #ccc;">/</span>
-                    <span style="color: #c00000; font-weight: bold;">Hà Nội</span>
+                    <span style="color: #c00000; font-weight: bold;">TP.HCM & Đông Nam Bộ</span>
                 </div>
                 
                 <!-- Quick Links & Real-time Hanoi Weather Widget Grouped -->
@@ -329,17 +329,17 @@ middle_part = """
                     <a href="https://laodong.vn/kinh-doanh/gia-vang" target="_blank" style="text-decoration: none; font-size: 12px; color: #b8860b; font-weight: bold; display: flex; align-items: center; gap: 3px;">🪙 Giá vàng</a>
                     <span style="color: #ccc;">|</span>
                     
-                    <a href="https://weather.com/vi-VN/weather/today/l/VMXX0006:1:VM" target="_blank" title="Xem dự báo chi tiết tại Weather.com (Nguồn uy tín)" id="hanoi-weather-widget" style="text-decoration: none; display: flex; align-items: center; gap: 8px; background: rgba(240, 244, 248, 0.85); border: 1px solid #d0e1f9; padding: 4px 12px; border-radius: 20px; font-size: 12px; color: #002d62; box-shadow: 0 1px 3px rgba(0,0,0,0.05); font-weight: bold; transition: all 0.2s ease;" onmouseover="this.style.background='rgba(224, 235, 250, 0.95)'; this.style.transform='translateY(-1px)';" onmouseout="this.style.background='rgba(240, 244, 248, 0.85)'; this.style.transform='none';">
+                    <a href="https://weather.com/vi-VN/weather/today/l/VMXX0006:1:VM" target="_blank" title="Xem dự báo chi tiết tại Weather.com (Nguồn uy tín)" id="tphcm-weather-widget" style="text-decoration: none; display: flex; align-items: center; gap: 8px; background: rgba(240, 244, 248, 0.85); border: 1px solid #d0e1f9; padding: 4px 12px; border-radius: 20px; font-size: 12px; color: #002d62; box-shadow: 0 1px 3px rgba(0,0,0,0.05); font-weight: bold; transition: all 0.2s ease;" onmouseover="this.style.background='rgba(224, 235, 250, 0.95)'; this.style.transform='translateY(-1px)';" onmouseout="this.style.background='rgba(240, 244, 248, 0.85)'; this.style.transform='none';">
                         <span>📅 <span id="current-date-vietnam">Chủ nhật, 31/05/2026</span></span>
                         <span style="color: #ccc;">|</span>
-                        <span id="weather-temp-span">📍 Hà Nội: Đang tải...</span>
+                        <span id="weather-temp-span">📍 TP.HCM & Đông Nam Bộ: Đang tải...</span>
                     </a>
                 </div>
             </div>
 
             <!-- REGIONAL INTRO BADGE -->
-            <div class="hanoi-intro-badge" style="background-color: #ffffff; border: 1px solid #e3e3e3; border-top: 3px solid #c00000; padding: 12px 15px; margin-top: 15px; font-family: Arial, sans-serif; border-radius: 4px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-                <h1 style="font-size: 16px; font-weight: bold; color: #c00000; margin: 0; text-transform: uppercase; letter-spacing: 1px;">TRANG THÔNG TIN ĐỊA BÀN HÀ NỘI CỦA BÁO LAO ĐỘNG (BẢN QUY HOẠCH QUẢNG CÁO)</h1>
+            <div class="tphcm-intro-badge" style="background-color: #ffffff; border: 1px solid #e3e3e3; border-top: 3px solid #c00000; padding: 12px 15px; margin-top: 15px; font-family: Arial, sans-serif; border-radius: 4px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                <h1 style="font-size: 16px; font-weight: bold; color: #c00000; margin: 0; text-transform: uppercase; letter-spacing: 1px;">TRANG THÔNG TIN ĐỊA BÀN TP.HCM & ĐÔNG NAM BỘ CỦA BÁO LAO ĐỘNG (BẢN QUY HOẠCH QUẢNG CÁO)</h1>
             </div>
 
             <!-- AD SLOT 01: TOP BILLBOARD (970x250) -->
@@ -379,7 +379,7 @@ middle_part = """
                 <!-- Right Side: Spotlight stories + Sidebar Ad -->
                 <div class="pr">
                     <div class="p-tieudiem">
-                        <div style="font-size: 13px; font-weight: bold; color: #c00000; text-transform: uppercase; margin-bottom: 12px; border-bottom: 2px solid #c00000; padding-bottom: 5px;">Tiêu điểm Hà Nội</div>
+                        <div style="font-size: 13px; font-weight: bold; color: #c00000; text-transform: uppercase; margin-bottom: 12px; border-bottom: 2px solid #c00000; padding-bottom: 5px;">Tiêu điểm TP.HCM & Đông Nam Bộ</div>
                         <div id="spotlight-container">
                             <!-- JS populated -->
                         </div>
@@ -413,7 +413,7 @@ middle_part = """
             <!-- BLOCK 2: MEDIA SECTION -->
             <div class="blk-media m-top-20" style="background-color: #eee; border-radius: 8px; padding: 20px; font-family: Arial, sans-serif;">
                 <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #c00000; padding-bottom: 8px; margin-bottom: 15px;">
-                    <h2 style="font-size: 20px; font-weight: bold; color: #c00000; margin: 0; text-transform: uppercase;">Media Hà Nội</h2>
+                    <h2 style="font-size: 20px; font-weight: bold; color: #c00000; margin: 0; text-transform: uppercase;">Media TP.HCM & Đông Nam Bộ</h2>
                     <div style="display: flex; gap: 15px; font-size: 12px; font-weight: bold;">
                         <span style="color:#555;">Lao Động TV</span>
                         <span style="color:#555;">Hyper Text</span>
@@ -434,7 +434,7 @@ middle_part = """
                         </div>
                         <div style="margin-top: 10px; border-top: 1px solid #eee; padding-top: 10px;">
                             <span style="font-size: 11px; background-color: #c00000; color: #fff; font-weight: bold; padding: 2px 6px; text-transform: uppercase;">Lịch phát sóng:</span>
-                            <marquee style="font-size: 12px; color: #333; margin-top: 5px; font-weight: bold;" scrollamount="3">09:00 - Tin tức cập nhật sáng Thủ đô  |  12:00 - Bản tin Lao động Công đoàn Hà Nội  |  20:00 - Bản tin Thời sự Tổng hợp Hà Nội 24h</marquee>
+                            <marquee style="font-size: 12px; color: #333; margin-top: 5px; font-weight: bold;" scrollamount="3">09:00 - Tin tức cập nhật sáng Thủ đô  |  12:00 - Bản tin Lao động Công đoàn TP.HCM & Đông Nam Bộ  |  20:00 - Bản tin Thời sự Tổng hợp TP.HCM & Đông Nam Bộ 24h</marquee>
                         </div>
                     </div>
                     
@@ -469,8 +469,8 @@ middle_part = """
                 <span style="font-weight: bold; font-size: 14px; letter-spacing: 1.5px; border-right: 2px solid rgba(255,255,255,0.3); padding-right: 20px; text-transform: uppercase;">Sự kiện</span>
                 <div style="display: flex; gap: 10px; flex-wrap: wrap;">
                     <span style="background-color: #ffffff; color: #002d62; padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: bold; cursor: pointer;">Đại hội XIV Công đoàn VN</span>
-                    <span style="background-color: rgba(255,255,255,0.15); color: #fff; padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: bold; cursor: pointer;">Quy hoạch Hà Nội</span>
-                    <span style="background-color: rgba(255,255,255,0.15); color: #fff; padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: bold; cursor: pointer;">Tuyển sinh lớp 10 Hà Nội</span>
+                    <span style="background-color: rgba(255,255,255,0.15); color: #fff; padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: bold; cursor: pointer;">Quy hoạch TP.HCM & Đông Nam Bộ</span>
+                    <span style="background-color: rgba(255,255,255,0.15); color: #fff; padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: bold; cursor: pointer;">Tuyển sinh lớp 10 TP.HCM & Đông Nam Bộ</span>
                     <span style="background-color: rgba(255,255,255,0.15); color: #fff; padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: bold; cursor: pointer;">Vành đai 4 Thủ đô</span>
                 </div>
             </div>
@@ -479,7 +479,7 @@ middle_part = """
             <div class="m-top-20" style="background-color: #fcf9f2; border: 1px solid #e5d3b3; border-top: 3px solid #b8860b; border-radius: 8px; padding: 20px; font-family: Arial, sans-serif;">
                 <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #b8860b; padding-bottom: 8px; margin-bottom: 15px;">
                     <h2 style="font-size: 16px; font-weight: bold; color: #7f0000; margin: 0; text-transform: uppercase; display: flex; align-items: center; gap: 8px;">
-                        <span>💎 Chuyên đề Đồng hành: HÀ NỘI 360°</span>
+                        <span>💎 Chuyên đề Đồng hành: TP.HCM & ĐÔNG NAM BỘ 360°</span>
                     </h2>
                     <span style="font-size: 11px; color: #666; font-weight: bold;">
                         Đồng hành bởi: <span style="color: #00458e; font-weight: 800;">VINFAST XANH</span>
@@ -506,7 +506,7 @@ middle_part = """
                         </div>
                         <h4 style="margin: 10px 0 0 0; font-size: 12.5px; font-weight: bold; line-height: 1.4; color: #111;">
                             <span style="color: #b8860b; font-size: 10px; font-weight: bold; display: block; text-transform: uppercase; margin-bottom: 2px;">Ẩm thực du lịch</span>
-                            Bản đồ ẩm thực phố cổ: Những món ăn sáng gia truyền nhất định phải thử tại Hà Nội
+                            Bản đồ ẩm thực phố cổ: Những món ăn sáng gia truyền nhất định phải thử tại TP.HCM & Đông Nam Bộ
                         </h4>
                     </div>
                     <!-- Card 3 -->
@@ -536,7 +536,7 @@ middle_part = """
             <div class="m-top-20" style="display: grid; grid-template-columns: 2fr 1fr; gap: 20px; font-family: Arial, sans-serif;" class="columns-layout">
                 <!-- Left: Worker Life, Weekend Escapes & Job Board -->
                 <div style="background-color: #ffffff; border: 1px solid #e3e3e3; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
-                    <div style="font-size: 14px; font-weight: bold; color: #002d62; text-transform: uppercase; border-bottom: 2px solid #002d62; padding-bottom: 6px; margin-bottom: 15px;">Dân sinh & Đời sống Hà Nội</div>
+                    <div style="font-size: 14px; font-weight: bold; color: #002d62; text-transform: uppercase; border-bottom: 2px solid #002d62; padding-bottom: 6px; margin-bottom: 15px;">Dân sinh & Đời sống TP.HCM & Đông Nam Bộ</div>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
                         <!-- Item 1: Worker Life -->
                         <div style="border: 1px solid #eee; border-radius: 4px; padding: 10px; position: relative;">
@@ -562,11 +562,11 @@ middle_part = """
                         </div>
                     </div>
                     
-                    <!-- JOB BOARD: VIỆC LÀM HÀ NỘI -->
+                    <!-- JOB BOARD: VIỆC LÀM TP.HCM & ĐÔNG NAM BỘ -->
                     <div style="border-top: 1px solid #eee; padding-top: 15px; margin-bottom: 15px;">
                         <div style="font-size: 13px; font-weight: bold; color: #c00000; text-transform: uppercase; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;">
-                            <span>💼 Việc làm tại Hà Nội (Tuyển dụng nhanh)</span>
-                            <span style="font-size: 9.5px; color: #666; font-weight: normal; text-transform: none;">Liên kết: Trung tâm Dịch vụ việc làm Hà Nội</span>
+                            <span>💼 Việc làm tại TP.HCM & Đông Nam Bộ (Tuyển dụng nhanh)</span>
+                            <span style="font-size: 9.5px; color: #666; font-weight: normal; text-transform: none;">Liên kết: Trung tâm Dịch vụ việc làm TP.HCM & Đông Nam Bộ</span>
                         </div>
                         <div style="display: flex; flex-direction: column; gap: 8px;">
                             <!-- Job 1 -->
@@ -582,7 +582,7 @@ middle_part = """
                             <div style="display: flex; justify-content: space-between; align-items: center; background-color: #fcfcfc; border: 1px solid #eee; padding: 8px 12px; border-radius: 4px;">
                                 <div style="text-align: left;">
                                     <strong style="font-size: 11.5px; color: #333; display: block;">Kỹ thuật viên vận hành máy tiện cơ khí CNC</strong>
-                                    <span style="font-size: 9.5px; color: #666;">Tập đoàn Cơ khí Hà Nội (KCN Thạch Thất) | Thu nhập: 10 - 13.5 triệu VNĐ</span>
+                                    <span style="font-size: 9.5px; color: #666;">Tập đoàn Cơ khí TP.HCM & Đông Nam Bộ (KCN Thạch Thất) | Thu nhập: 10 - 13.5 triệu VNĐ</span>
                                 </div>
                                 <a href="#" style="background-color: #c00000; color: #fff; text-decoration: none; font-size: 10px; font-weight: bold; padding: 5px 10px; border-radius: 3px;">Nộp hồ sơ</a>
                             </div>
@@ -630,7 +630,7 @@ middle_part = """
                         <div style="background: #fff; border: 1px solid #eee; border-left: 3px solid #b8860b; padding: 6px 10px; border-radius: 3px; position: relative;">
                             <span style="position: absolute; right: 5px; top: 5px; font-size: 7px; color: #c00000; font-weight: bold; border: 1px solid #c00000; padding: 1px 3px; border-radius: 2px;">Đã duyệt</span>
                             <strong style="font-size: 11px; color: #333; display: block;">Trung tâm Gia sư Sư phạm thủ khoa</strong>
-                            <span style="font-size: 9.5px; color: #666; display: block;">📍 Ngõ 192 Lê Trọng Tấn, Thanh Xuân | ☎ 0912.xxx.xxx</span>
+                            <span style="font-size: 9.5px; color: #666; display: block;">📍 Ngõ 192 Lê Trọng Tấn, Thuận An | ☎ 0912.xxx.xxx</span>
                         </div>
                         <!-- Simulated Directory Listing 3 -->
                         <div style="background: #fff; border: 1px solid #eee; border-left: 3px solid #b8860b; padding: 6px 10px; border-radius: 3px; position: relative;">
@@ -641,8 +641,8 @@ middle_part = """
                         <!-- Simulated Directory Listing 4: Rescue -->
                         <div style="background: #fff; border: 1px solid #eee; border-left: 3px solid #b8860b; padding: 6px 10px; border-radius: 3px; position: relative;">
                             <span style="position: absolute; right: 5px; top: 5px; font-size: 7px; color: #c00000; font-weight: bold; border: 1px solid #c00000; padding: 1px 3px; border-radius: 2px;">Đã duyệt</span>
-                            <strong style="font-size: 11px; color: #333; display: block;">Cứu hộ Giao thông Hà Nội 24/7 (Khu vực Đống Đa - Ba Đình)</strong>
-                            <span style="font-size: 9.5px; color: #666; display: block;">📍 12 Giảng Võ, Đống Đa | ☎ 0904.xxx.xxx</span>
+                            <strong style="font-size: 11px; color: #333; display: block;">Cứu hộ Giao thông TP.HCM & Đông Nam Bộ 24/7 (Khu vực Thủ Đức - Biên Hòa)</strong>
+                            <span style="font-size: 9.5px; color: #666; display: block;">📍 12 Giảng Võ, Thủ Đức | ☎ 0904.xxx.xxx</span>
                         </div>
                         <!-- Simulated Directory Listing 5: Vocational -->
                         <div style="background: #fff; border: 1px solid #eee; border-left: 3px solid #b8860b; padding: 6px 10px; border-radius: 3px; position: relative;">
@@ -654,7 +654,7 @@ middle_part = """
                         <div style="background: #fff; border: 1px solid #eee; border-left: 3px solid #b8860b; padding: 6px 10px; border-radius: 3px; position: relative;">
                             <span style="position: absolute; right: 5px; top: 5px; font-size: 7px; color: #c00000; font-weight: bold; border: 1px solid #c00000; padding: 1px 3px; border-radius: 2px;">Đã duyệt</span>
                             <strong style="font-size: 11px; color: #333; display: block;">Viện Thẩm mỹ Công nghệ cao An Beauty</strong>
-                            <span style="font-size: 9.5px; color: #666; display: block;">📍 24 Kim Mã, Ba Đình | ☎ 0989.xxx.xxx</span>
+                            <span style="font-size: 9.5px; color: #666; display: block;">📍 24 Kim Mã, Biên Hòa | ☎ 0989.xxx.xxx</span>
                         </div>
                         <!-- Simulated Directory Listing 7: Medical -->
                         <div style="background: #fff; border: 1px solid #eee; border-left: 3px solid #b8860b; padding: 6px 10px; border-radius: 3px; position: relative;">
@@ -665,24 +665,24 @@ middle_part = """
                         <!-- Simulated Directory Listing 8: Finance / Credit -->
                         <div style="background: #fff; border: 1px solid #eee; border-left: 3px solid #b8860b; padding: 6px 10px; border-radius: 3px; position: relative;">
                             <span style="position: absolute; right: 5px; top: 5px; font-size: 7px; color: #c00000; font-weight: bold; border: 1px solid #c00000; padding: 1px 3px; border-radius: 2px;">Đã duyệt</span>
-                            <strong style="font-size: 11px; color: #333; display: block;">Gói vay tín dụng ưu đãi hộ kinh doanh - HDBank Chi nhánh Cầu Giấy</strong>
-                            <span style="font-size: 9.5px; color: #666; display: block;">📍 19 Duy Tân, Cầu Giấy | ☎ 0903.xxx.xxx</span>
+                            <strong style="font-size: 11px; color: #333; display: block;">Gói vay tín dụng ưu đãi hộ kinh doanh - HDBank Chi nhánh Quận 1</strong>
+                            <span style="font-size: 9.5px; color: #666; display: block;">📍 19 Duy Tân, Quận 1 | ☎ 0903.xxx.xxx</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- BLOCK 5.7: BẢNG GIÁ THỊ TRƯỜNG DÂN SINH HÀ NỘI (MÔ PHỎNG TIẾP THỊ LIÊN KẾT & TÀI TRỢ SIÊU THỊ) -->
+            <!-- BLOCK 5.7: BẢNG GIÁ THỊ TRƯỜNG DÂN SINH TP.HCM & ĐÔNG NAM BỘ (MÔ PHỎNG TIẾP THỊ LIÊN KẾT & TÀI TRỢ SIÊU THỊ) -->
             <div class="m-top-20" style="display: grid; grid-template-columns: 2fr 1.2fr; gap: 20px; font-family: Arial, sans-serif;" class="columns-layout">
                 <!-- Left: Interactive Price Table -->
                 <div style="background-color: #ffffff; border: 1px solid #e3e3e3; border-radius: 8px; padding: 20px; box-sizing: border-box;">
                     <div style="font-size: 14px; font-weight: bold; color: #002d62; text-transform: uppercase; border-bottom: 2px solid #002d62; padding-bottom: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-                        <span>📊 Bảng giá thị trường dân sinh Hà Nội</span>
+                        <span>📊 Bảng giá thị trường dân sinh TP.HCM & Đông Nam Bộ</span>
                         <div style="display: flex; align-items: center; gap: 5px;">
                             <span style="font-size: 11px; color: #555; font-weight: normal; text-transform: none;">Khu vực:</span>
                             <select id="price-district-select" onchange="changeDistrictPrices(this.value)" style="padding: 3px 8px; font-size: 11.5px; border: 1px solid #ccc; border-radius: 3px; font-weight: bold; color: #002d62;">
                                 <option value="hoankiem">Quận Hoàn Kiếm</option>
-                                <option value="caugiay" selected>Quận Cầu Giấy</option>
+                                <option value="quan1" selected>Quận Quận 1</option>
                                 <option value="hadong">Quận Hà Đông</option>
                                 <option value="bavi">Huyện Ba Vì</option>
                             </select>
@@ -709,19 +709,19 @@ middle_part = """
                     <span style="position: absolute; top: 10px; left: 10px; background: rgba(192,0,0,0.85); color: #fff; font-size: 7px; font-weight: bold; padding: 2px 5px; border-radius: 2px; z-index: 2;">QC GIẢ LẬP</span>
                     <div style="text-align: center; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; gap: 10px;">
                         <span style="font-size: 11px; font-weight: bold; color: #d71920; letter-spacing: 1px; text-transform: uppercase;">Đồng hành chuyên mục</span>
-                        <h4 style="margin: 0; font-size: 16px; font-weight: 800; color: #d71920; line-height: 1.3;">WINMART HÀ NỘI</h4>
+                        <h4 style="margin: 0; font-size: 16px; font-weight: 800; color: #d71920; line-height: 1.3;">WINMART TP.HCM & ĐÔNG NAM BỘ</h4>
                         <p style="margin: 0; font-size: 11.5px; color: #444; line-height: 1.4;">Đăng ký hội viên WIN - Tiết kiệm ngay 20% toàn bộ sản phẩm thịt sạch & rau sạch mỗi ngày!</p>
                     </div>
                     <a href="https://winmart.vn" target="_blank" style="background-color: #d71920; color: #fff; text-align: center; text-decoration: none; font-size: 11px; font-weight: bold; padding: 10px; border-radius: 4px; text-transform: uppercase; cursor: pointer; display: block; margin-top: 15px;">Đăng ký Hội viên miễn phí</a>
                 </div>
             </div>
 
-            <!-- BLOCK 5.75: LỊCH BIỂU DIỄN & GIẢI TRÍ HÀ NỘI (MÔ PHỎNG KẾT NỐI API THỜI GIAN THỰC) -->
+            <!-- BLOCK 5.75: LỊCH BIỂU DIỄN & GIẢI TRÍ TP.HCM & ĐÔNG NAM BỘ (MÔ PHỎNG KẾT NỐI API THỜI GIAN THỰC) -->
             <div class="m-top-20" style="display: grid; grid-template-columns: 1.8fr 1.2fr; gap: 20px; font-family: Arial, sans-serif;" class="columns-layout">
                 <!-- Left: Theatre, Circus, Shows -->
                 <div style="background-color: #ffffff; border: 1px solid #e3e3e3; border-radius: 8px; padding: 20px;">
                     <div style="font-size: 14px; font-weight: bold; color: #002d62; text-transform: uppercase; border-bottom: 2px solid #002d62; padding-bottom: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
-                        <span>🎭 Lịch biểu diễn & Nghệ thuật Hà Nội</span>
+                        <span>🎭 Lịch biểu diễn & Nghệ thuật TP.HCM & Đông Nam Bộ</span>
                         <span style="font-size: 9px; color: #28a745; font-weight: bold; border: 1px solid #28a745; padding: 2px 5px; border-radius: 2px;">LIVE API CONNECTED</span>
                     </div>
                     
@@ -733,8 +733,8 @@ middle_part = """
                             </div>
                             <div style="flex-grow: 1;">
                                 <span style="background-color: #f5f5f5; color: #888; border: 1px solid #ddd; padding: 0 3px; font-size: 8px; font-weight: bold; border-radius: 2px; margin-right: 4px;">PR Pinned</span>
-                                <h4 style="margin: 0 0 3px 0; font-size: 12px; font-weight: bold; color: #111;">Hòa nhạc giao hưởng: "Đêm mùa thu Hà Nội"</h4>
-                                <span style="font-size: 10.5px; color: #666; display: block;">📍 Nhà hát Lớn Hà Nội | ⏰ 19:30 Tối nay</span>
+                                <h4 style="margin: 0 0 3px 0; font-size: 12px; font-weight: bold; color: #111;">Hòa nhạc giao hưởng: "Đêm mùa thu TP.HCM & Đông Nam Bộ"</h4>
+                                <span style="font-size: 10.5px; color: #666; display: block;">📍 Nhà hát Lớn TP.HCM & Đông Nam Bộ | ⏰ 19:30 Tối nay</span>
                             </div>
                             <a href="https://ticketbox.vn" target="_blank" style="background-color: #002d62; color: #fff; text-decoration: none; padding: 5px 10px; border-radius: 3px; font-size: 10px; font-weight: bold; flex-shrink: 0;">Đặt vé</a>
                         </div>
@@ -767,7 +767,7 @@ middle_part = """
                 <div style="background-color: #ffffff; border: 1px solid #e3e3e3; border-radius: 8px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
                         <div style="font-size: 14px; font-weight: bold; color: #c00000; text-transform: uppercase; border-bottom: 2px solid #c00000; padding-bottom: 6px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
-                            <span>🎬 Suất chiếu phim rạp Hà Nội</span>
+                            <span>🎬 Suất chiếu phim rạp TP.HCM & Đông Nam Bộ</span>
                             <span style="font-size: 9px; color: #888; font-weight: normal; text-transform: none;">CGV & Lotte</span>
                         </div>
                         
@@ -809,7 +809,7 @@ middle_part = """
                         </div>
                         
                         <div id="poll-container">
-                            <h4 style="margin: 0 0 12px 0; font-size: 13.5px; font-weight: bold; color: #333; line-height: 1.45;">Bạn ủng hộ việc tiếp tục mở rộng thêm các tuyến phố đi bộ vào cuối tuần tại Hà Nội không?</h4>
+                            <h4 style="margin: 0 0 12px 0; font-size: 13.5px; font-weight: bold; color: #333; line-height: 1.45;">Bạn ủng hộ việc tiếp tục mở rộng thêm các tuyến phố đi bộ vào cuối tuần tại TP.HCM & Đông Nam Bộ không?</h4>
                             <div style="display: flex; flex-direction: column; gap: 8px;">
                                 <button onclick="submitPollVote('yes')" style="background: #ffffff; border: 1px solid #ddd; padding: 10px; border-radius: 4px; text-align: left; font-size: 12px; cursor: pointer; font-weight: bold; color: #333; transition: all 0.2s;" onmouseover="this.style.borderColor='#002d62'; this.style.backgroundColor='#f7f9fb';" onmouseout="this.style.borderColor='#ddd'; this.style.backgroundColor='#fff';">👍 Đồng ý, cần nhân rộng mô hình này</button>
                                 <button onclick="submitPollVote('no')" style="background: #ffffff; border: 1px solid #ddd; padding: 10px; border-radius: 4px; text-align: left; font-size: 12px; cursor: pointer; font-weight: bold; color: #333; transition: all 0.2s;" onmouseover="this.style.borderColor='#002d62'; this.style.backgroundColor='#f7f9fb';" onmouseout="this.style.borderColor='#ddd'; this.style.backgroundColor='#fff';">👎 Không đồng ý, gây ùn tắc giao thông cục bộ</button>
@@ -855,10 +855,10 @@ middle_part = """
                 </div>
             </div>
 
-            <!-- BLOCK 5.8: CẨM NANG HÀ NỘI: ĂN GÌ - CHƠI GÌ - Ở ĐÂU? (MÔ PHỎNG NATIVE PR ĐỊA PHƯƠNG) -->
+            <!-- BLOCK 5.8: CẨM NANG TP.HCM & ĐÔNG NAM BỘ: ĂN GÌ - CHƠI GÌ - Ở ĐÂU? (MÔ PHỎNG NATIVE PR ĐỊA PHƯƠNG) -->
             <div class="m-top-20" style="background-color: #ffffff; border: 1px solid #e3e3e3; border-radius: 8px; padding: 20px; font-family: Arial, sans-serif;">
                 <div style="font-size: 14px; font-weight: bold; color: #c00000; text-transform: uppercase; border-bottom: 2px solid #c00000; padding-bottom: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
-                    <span>🗺️ Cẩm nang Hà Nội: Ăn gì - Chơi gì - Ở đâu?</span>
+                    <span>🗺️ Cẩm nang TP.HCM & Đông Nam Bộ: Ăn gì - Chơi gì - Ở đâu?</span>
                     <span style="font-size: 11px; color: #888; font-weight: normal; text-transform: none;">Tin cậy • Thực tế • Bản địa</span>
                 </div>
                 
@@ -881,7 +881,7 @@ middle_part = """
                                     <img src="https://images.unsplash.com/photo-1473163928189-364b2c4e1135?auto=format&fit=crop&w=100&q=80" style="width: 100%; height: 100%; object-fit: cover;">
                                 </div>
                                 <div>
-                                    <a href="#" style="font-size: 11.5px; font-weight: bold; color: #333; text-decoration: none; line-height: 1.3;">Bản đồ các quán ốc vỉa hè ngon rẻ thu hút đông đảo giới trẻ Hà Nội</a>
+                                    <a href="#" style="font-size: 11.5px; font-weight: bold; color: #333; text-decoration: none; line-height: 1.3;">Bản đồ các quán ốc vỉa hè ngon rẻ thu hút đông đảo giới trẻ TP.HCM & Đông Nam Bộ</a>
                                 </div>
                             </div>
                         </div>
@@ -957,7 +957,7 @@ middle_part = """
         <a href="https://vinfastauto.com" target="_blank" style="text-decoration: none; display: flex; align-items: center; justify-content: space-between; width: 100%; color: #fff;">
             <div style="display: flex; align-items: center; gap: 15px;">
                 <div style="background-color: #d4af37; color: #0b1a30; font-weight: bold; font-size: 10px; padding: 4px 8px; border-radius: 3px; text-transform: uppercase;">ƯU ĐÃI THỦ ĐÔ</div>
-                <div style="font-size: 13px; font-weight: bold; color: #fff;">Sở hữu xe điện thông minh VinFast hôm nay - Hỗ trợ 100% lệ phí trước bạ & Sạc pin miễn phí 1 năm tại Hà Nội!</div>
+                <div style="font-size: 13px; font-weight: bold; color: #fff;">Sở hữu xe điện thông minh VinFast hôm nay - Hỗ trợ 100% lệ phí trước bạ & Sạc pin miễn phí 1 năm tại TP.HCM & Đông Nam Bộ!</div>
             </div>
             <div style="background-color: #fff; color: #002d62; font-size: 11px; font-weight: bold; padding: 7px 16px; border-radius: 4px; text-transform: uppercase;">Đăng ký ngay</div>
         </a>
@@ -1036,7 +1036,7 @@ middle_part = """
             <!-- System message -->
             <div style="background-color: #e5f1ff; color: #002d62; padding: 10px; border-radius: 8px; border: 1px solid #b6d4ff;">
                 <strong>Kính chào độc giả Thủ đô!</strong><br>
-                Đây là cổng tiếp nhận phản ánh dân sinh và tư vấn pháp luật Lao động tự động của Báo Lao Động Hà Nội.
+                Đây là cổng tiếp nhận phản ánh dân sinh và tư vấn pháp luật Lao động tự động của Báo Lao Động TP.HCM & Đông Nam Bộ.
             </div>
             <!-- AI message -->
             <div style="align-self: flex-start; background-color: #fff; border: 1px solid #e3e3e3; padding: 10px; border-radius: 8px; max-width: 85%; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
@@ -1051,7 +1051,7 @@ middle_part = """
                     <span>⚖️ Bảo vệ quyền lợi Lao động (Bảo hiểm, Lương)</span> <span>➔</span>
                 </button>
                 <button onclick="selectChatOption('jobs')" style="background-color: #fff; border: 1px solid #28a745; color: #28a745; padding: 8px 12px; border-radius: 20px; font-size: 11px; font-weight: bold; text-align: left; cursor: pointer; display: flex; align-items: center; justify-content: space-between;">
-                    <span>💼 Tra cứu Việc làm Hà Nội mới nhất</span> <span>➔</span>
+                    <span>💼 Tra cứu Việc làm TP.HCM & Đông Nam Bộ mới nhất</span> <span>➔</span>
                 </button>
             </div>
         </div>
@@ -1108,15 +1108,15 @@ middle_part = """
         } else if (optionType === 'jobs') {
             container.innerHTML += `
                 <div style="align-self: flex-end; background-color: #28a745; color: #fff; padding: 8px 12px; border-radius: 8px; max-width: 80%; margin-top: 5px;">
-                    Tôi muốn tìm kiếm Việc làm Hà Nội
+                    Tôi muốn tìm kiếm Việc làm TP.HCM & Đông Nam Bộ
                 </div>
                 <div style="align-self: flex-start; background-color: #fff; border: 1px solid #e3e3e3; padding: 10px; border-radius: 8px; max-width: 85%; margin-top: 5px;">
-                    🔍 Tìm thấy <strong>2 việc làm khẩn cấp</strong> trên địa bàn Hà Nội hôm nay:
+                    🔍 Tìm thấy <strong>2 việc làm khẩn cấp</strong> trên địa bàn TP.HCM & Đông Nam Bộ hôm nay:
                     <ul style="padding-left: 15px; margin: 5px 0;">
                         <li><strong>Canon Việt Nam</strong> (KCN Bắc Thăng Long) - Lắp ráp linh kiện điện tử (8.5 - 11 triệu)</li>
-                        <li><strong>Tập đoàn Cơ khí Hà Nội</strong> (CNC Thạch Thất) - Vận hành máy tiện (10 - 13.5 triệu)</li>
+                        <li><strong>Tập đoàn Cơ khí TP.HCM & Đông Nam Bộ</strong> (CNC Thạch Thất) - Vận hành máy tiện (10 - 13.5 triệu)</li>
                     </ul>
-                    Bạn có thể nộp hồ sơ trực tiếp tại bảng "Việc làm tại Hà Nội" nằm ở giữa trang!
+                    Bạn có thể nộp hồ sơ trực tiếp tại bảng "Việc làm tại TP.HCM & Đông Nam Bộ" nằm ở giữa trang!
                 </div>
             `;
         }
@@ -1137,7 +1137,7 @@ middle_part = """
         container.innerHTML += `
             <div style="align-self: flex-start; background-color: #e2f0d9; border: 1.5px dashed #28a745; padding: 10px; border-radius: 8px; margin-top: 5px; color: #1e4620;">
                 ✔ <strong>Gửi phản ánh thành công!</strong><br>
-                Hệ thống đã chuyển thông tin đến <strong>Văn phòng đại diện Báo Lao Động tại Hà Nội</strong> và đồng gửi đến cơ quan quản lý địa bàn. Cảm ơn sự cộng tác dân sinh của bạn.
+                Hệ thống đã chuyển thông tin đến <strong>Văn phòng đại diện Báo Lao Động tại TP.HCM & Đông Nam Bộ</strong> và đồng gửi đến cơ quan quản lý địa bàn. Cảm ơn sự cộng tác dân sinh của bạn.
             </div>
         `;
         container.scrollTop = container.scrollHeight;
@@ -1248,7 +1248,7 @@ middle_part = """
     }
 
     const districtPricesData = {
-        caugiay: [
+        quan1: [
             { name: "🥩 Thịt ba rọi heo sạch MEATDeli", normal: "135.000 đ/kg", winmart: "119.000 đ/kg", discount: "12%" },
             { name: "🥬 Rau muống hữu cơ sông Hồng", normal: "15.000 đ/bó", winmart: "12.000 đ/bó", discount: "20%" },
             { name: "🐟 Cá trắm đen tươi sống Ba Vì", normal: "110.000 đ/kg", winmart: "98.000 đ/kg", discount: "11%" },
@@ -1278,7 +1278,7 @@ middle_part = """
         const tbody = document.getElementById('market-prices-tbody');
         if(!tbody) return;
         
-        const data = districtPricesData[district] || districtPricesData.caugiay;
+        const data = districtPricesData[district] || districtPricesData.quan1;
         let html = '';
         data.forEach(item => {
             html += `
@@ -1321,7 +1321,7 @@ middle_part = """
                     </tr>
                     <tr>
                         <td style="border: 1px solid #ddd; padding: 6px; font-weight: bold;">Lớp 2: Tỉnh/Thành</td>
-                        <td style="border: 1px solid #ddd; padding: 6px;">Hà Nội (Trọng điểm Tầng 1)</td>
+                        <td style="border: 1px solid #ddd; padding: 6px;">TP.HCM & Đông Nam Bộ (Trọng điểm Tầng 1)</td>
                         <td style="border: 1px solid #ddd; padding: 6px;">Canonical cố định tại laodong.vn/vung-mien/ha-noi/</td>
                     </tr>
                     <tr>
@@ -1347,9 +1347,9 @@ middle_part = """
 </div>
 
 <script>
-    const hanoiArticles = PLACEHOLDER_RAW_ARTICLES;
+    const tphcmArticles = PLACEHOLDER_RAW_ARTICLES;
 
-    let featuredArticleId = hanoiArticles[0].id;
+    let featuredArticleId = tphcmArticles[0].id;
     let articlesVolume = 120;
     let isIndexedStatus = true;
 
@@ -1361,7 +1361,7 @@ middle_part = """
     function populateCuratorOptions() {
         const select = document.getElementById('curator-select');
         select.innerHTML = '';
-        hanoiArticles.forEach(a => {
+        tphcmArticles.forEach(a => {
             const opt = document.createElement('option');
             opt.value = a.id;
             opt.innerText = a.title.substring(0, 50) + "...";
@@ -1370,18 +1370,18 @@ middle_part = """
     }
 
     function renderMainCover() {
-        const centerArt = hanoiArticles.find(a => a.id === featuredArticleId) || hanoiArticles[0];
-        const leftSubPool = hanoiArticles.filter(a => a.id !== centerArt.id);
-        const sub1 = leftSubPool[0] || hanoiArticles[1];
-        const sub2 = leftSubPool[1] || hanoiArticles[2];
-        const rightPool = hanoiArticles.filter(a => a.id !== centerArt.id && a.id !== sub1.id && a.id !== sub2.id);
-        const bottom1 = rightPool[0] || hanoiArticles[3];
-        const bottom2 = rightPool[1] || hanoiArticles[4];
-        const bottom3 = rightPool[2] || hanoiArticles[5];
-        const spot1 = rightPool[3] || hanoiArticles[6];
-        const spot2 = rightPool[4] || hanoiArticles[7];
-        const spot3 = rightPool[5] || hanoiArticles[8];
-        const spot4 = rightPool[6] || hanoiArticles[9];
+        const centerArt = tphcmArticles.find(a => a.id === featuredArticleId) || tphcmArticles[0];
+        const leftSubPool = tphcmArticles.filter(a => a.id !== centerArt.id);
+        const sub1 = leftSubPool[0] || tphcmArticles[1];
+        const sub2 = leftSubPool[1] || tphcmArticles[2];
+        const rightPool = tphcmArticles.filter(a => a.id !== centerArt.id && a.id !== sub1.id && a.id !== sub2.id);
+        const bottom1 = rightPool[0] || tphcmArticles[3];
+        const bottom2 = rightPool[1] || tphcmArticles[4];
+        const bottom3 = rightPool[2] || tphcmArticles[5];
+        const spot1 = rightPool[3] || tphcmArticles[6];
+        const spot2 = rightPool[4] || tphcmArticles[7];
+        const spot3 = rightPool[5] || tphcmArticles[8];
+        const spot4 = rightPool[6] || tphcmArticles[9];
 
         document.getElementById('main-cover-container').innerHTML = `
             <article class="v4 cv-001">
@@ -1512,8 +1512,8 @@ middle_part = """
             </article>
         `;
 
-        const commentArt = hanoiArticles.find(a => a.category === "Thời sự" && a.id !== centerArt.id) || hanoiArticles[10];
-        const kindnessArt = hanoiArticles.find(a => a.category === "Xã hội" && a.id !== centerArt.id) || hanoiArticles[12];
+        const commentArt = tphcmArticles.find(a => a.category === "Thời sự" && a.id !== centerArt.id) || tphcmArticles[10];
+        const kindnessArt = tphcmArticles.find(a => a.category === "Xã hội" && a.id !== centerArt.id) || tphcmArticles[12];
         
         document.getElementById('sidebar-commentary-title').innerText = commentArt.title;
         document.getElementById('sidebar-commentary-title').href = commentArt.url;
@@ -1522,7 +1522,7 @@ middle_part = """
     }
 
     function renderMediaSection() {
-        const mediaPool = hanoiArticles.filter(a => a.category === "Xã hội" || a.category === "Thời sự").slice(5, 10);
+        const mediaPool = tphcmArticles.filter(a => a.category === "Xã hội" || a.category === "Thời sự").slice(5, 10);
         if (mediaPool.length < 4) return;
 
         document.getElementById('media-col-1').innerHTML = `
@@ -1571,8 +1571,8 @@ middle_part = """
         const row2Categories = ["Công đoàn", "Bất động sản", "Văn hóa - Giải trí", "Thể thao"];
 
         function makeColumnHtml(categoryName) {
-            const catPool = hanoiArticles.filter(a => a.category === categoryName);
-            const mainCat = catPool[0] || hanoiArticles[12];
+            const catPool = tphcmArticles.filter(a => a.category === categoryName);
+            const mainCat = catPool[0] || tphcmArticles[12];
             const secondaryList = catPool.slice(1, 5);
             
             let listHtml = '';
@@ -1616,7 +1616,7 @@ middle_part = """
     }
 
     function renderEnterpriseBlock() {
-        const prPool = hanoiArticles.filter(a => a.category === "Kinh tế").slice(0, 5);
+        const prPool = tphcmArticles.filter(a => a.category === "Kinh tế").slice(0, 5);
         let html = '';
         
         prPool.forEach(item => {
@@ -1657,13 +1657,13 @@ middle_part = """
     }
 
     function updateSchemaMarkup() {
-        const curFeatured = hanoiArticles.find(a => a.id === featuredArticleId) || hanoiArticles[0];
+        const curFeatured = tphcmArticles.find(a => a.id === featuredArticleId) || tphcmArticles[0];
         const schema = {
             "@context": "https://schema.org",
             "@type": "CollectionPage",
-            "name": "Lao Động Hà Nội - Chuyên trang tin tức Thủ đô",
+            "name": "Lao Động TP.HCM & Đông Nam Bộ - Chuyên trang tin tức Thủ đô",
             "url": "https://laodong.vn/vung-mien/ha-noi/",
-            "description": "Chuyên trang tin tức của Báo Lao Động về Hà Nội, cập nhật tin thời sự, xã hội, công đoàn.",
+            "description": "Chuyên trang tin tức của Báo Lao Động về TP.HCM & Đông Nam Bộ, cập nhật tin thời sự, xã hội, công đoàn.",
             "isPartOf": {
                 "@type": "WebSite",
                 "name": "Báo Lao Động",
@@ -1687,7 +1687,7 @@ middle_part = """
                     {
                         "@type": "ListItem",
                         "position": 3,
-                        "name": "Hà Nội",
+                        "name": "TP.HCM & Đông Nam Bộ",
                         "item": "https://laodong.vn/vung-mien/ha-noi/"
                     }
                 ]
@@ -1738,13 +1738,13 @@ middle_part = """
                     else if (code >= 95) { condition = "Có giông bão"; emoji = "⛈️"; }
                     
                     document.getElementById('weather-temp-span').innerHTML = `
-                        Hà Nội: ${emoji} <strong>${temp}°C</strong> (${condition}) <span style="font-weight: normal; color: #666; margin-left: 5px;">💧 ${humidity}% ẩm</span>
+                        TP.HCM & Đông Nam Bộ: ${emoji} <strong>${temp}°C</strong> (${condition}) <span style="font-weight: normal; color: #666; margin-left: 5px;">💧 ${humidity}% ẩm</span>
                     `;
                 }
             })
             .catch(err => {
                 console.error("Lỗi khi tải thời tiết:", err);
-                document.getElementById('weather-temp-span').innerHTML = "Hà Nội: ⛅ 28°C";
+                document.getElementById('weather-temp-span').innerHTML = "TP.HCM & Đông Nam Bộ: ⛅ 28°C";
             });
     }
 
@@ -1780,7 +1780,7 @@ middle_part = """
         renderCategoryColumns();
         renderEnterpriseBlock();
         updateSchemaMarkup();
-        changeDistrictPrices('caugiay');
+        changeDistrictPrices('quan1');
         fetchHanoiWeather();
         initInfraCarouselAutoplay();
     });
@@ -1899,23 +1899,23 @@ middle_part = middle_part.replace("PLACEHOLDER_RAW_ARTICLES", js_all_articles_st
 # Combine HTML parts
 full_html_content = header_part + middle_part + footer_part
 
-# Save as demo_landing_page_hanoi_ads.html
-ads_html_path = 'c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING PAGE THƯỜNG TRÚ/demo_landing_page_hanoi_ads.html'
+# Save as demo_landing_page_tphcm_ads.html
+ads_html_path = 'c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING PAGE THƯỜNG TRÚ/demo_landing_page_tphcm_ads.html'
 with open(ads_html_path, 'w', encoding='utf-8') as f:
     f.write(full_html_content)
 
-# Save as index_ads.html for easy Vercel routing
-index_ads_path = 'c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING PAGE THƯỜNG TRÚ/index_ads.html'
+# Save as tphcm_index_ads.html for easy Vercel routing
+index_ads_path = 'c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING PAGE THƯỜNG TRÚ/tphcm_index_ads.html'
 with open(index_ads_path, 'w', encoding='utf-8') as f:
     f.write(full_html_content)
 
-# Overwrite original root page demo_landing_page_hanoi.html
-orig_html_path = 'c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING PAGE THƯỜNG TRÚ/demo_landing_page_hanoi.html'
+# Overwrite original root page demo_landing_page_tphcm.html
+orig_html_path = 'c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING PAGE THƯỜNG TRÚ/demo_landing_page_tphcm.html'
 with open(orig_html_path, 'w', encoding='utf-8') as f:
     f.write(full_html_content)
 
-# Overwrite index.html for default Vercel routing
-index_path = 'c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING PAGE THƯỜNG TRÚ/index.html'
+# Overwrite tphcm_index.html for default Vercel routing
+index_path = 'c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING PAGE THƯỜNG TRÚ/tphcm_index.html'
 with open(index_path, 'w', encoding='utf-8') as f:
     f.write(full_html_content)
 

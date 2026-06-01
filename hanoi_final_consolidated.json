@@ -3,7 +3,7 @@
         "id": 0,
         "title": "Công an Hà Nội thăng cấp bậc hàm, nâng lương cho hơn 5.000 cán bộ, chiến sĩ",
         "excerpt": "Hà Nội - Hơn 5.000 cán bộ, chiến sĩ Công an thành phố được thăng cấp bậc hàm, nâng lương năm 2026.",
-        "image": "https://images.unsplash.com/photo-1509060464153-4466739f88c0?auto=format&fit=crop&w=800&q=80",
+        "image": "hanoi_police_promotion.jpg",
         "url": "https://laodong.vn/thoi-su/cong-an-ha-noi-thang-cap-bac-ham-nang-luong-cho-hon-5000-can-bo-chien-si-1709840.ldo",
         "date": "22/05/2026 10:15",
         "office": "VPTT HÀ NỘI",
@@ -21,7 +21,7 @@
         "id": 1,
         "title": "Hà Nội đang đẩy mạnh phát triển nhà ở xã hội, nhà ở cho thuê",
         "excerpt": "Chủ tịch UBND TP Hà Nội Vũ Đại Thắng cho biết, thành phố đang đẩy mạnh phát triển nhà ở xã hội, nhà ở cho thuê.",
-        "image": "https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=800&q=80",
+        "image": "hanoi_housing.png",
         "url": "https://laodong.vn/thoi-su/ha-noi-dang-day-manh-phat-trien-nha-o-xa-hoi-nha-o-cho-thue-1709499.ldo",
         "date": "20/05/2026 10:15",
         "office": "VPTT HÀ NỘI",
@@ -39,7 +39,7 @@
         "id": 2,
         "title": "Các lò nhịn ăn chữa bệnh mọc lên ở Hà Nội, cơ quan quản lý ở đâu?",
         "excerpt": "Loạt “lò” nhịn ăn, uống nước ion kiềm chữa bệnh đang xuất hiện tại Hà Nội, đặt ra nhiều lo ngại về an toàn và trách nhiệm quản lý.",
-        "image": "https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=800&q=80",
+        "image": "hanoi_lake.png",
         "url": "https://laodong.vn/su-kien-binh-luan/cac-lo-nhin-an-chua-benh-moc-len-o-ha-noi-co-quan-quan-ly-o-dau-1708865.ldo",
         "date": "16/05/2026 10:15",
         "office": "VPTT HÀ NỘI",
@@ -57,7 +57,7 @@
         "id": 3,
         "title": "Xây dựng lực lượng vũ trang vững mạnh, sẵn sàng bảo vệ Thủ đô Hà Nội trong mọi tình huống",
         "excerpt": "Đại tướng Phan Văn Giang đề nghị tiếp tục xây dựng lực lượng vũ trang vững mạnh, sẵn sàng bảo vệ vững chắc Thủ đô Hà Nội trong mọi tình...",
-        "image": "https://images.unsplash.com/photo-1599707367072-cd6ada2bc375?auto=format&fit=crop&w=800&q=80",
+        "image": "hanoi_military.png",
         "url": "https://laodong.vn/thoi-su/xay-dung-luc-luong-vu-trang-vung-manh-san-sang-bao-ve-thu-do-ha-noi-trong-moi-tinh-huong-1708741.ldo",
         "date": "15/05/2026 10:15",
         "office": "VPTT HÀ NỘI",
@@ -75,7 +75,7 @@
         "id": 4,
         "title": "Công bố nhiều quyết định về công tác cán bộ tại Hà Nội",
         "excerpt": "Hà Nội - Thành ủy Hà Nội tổ chức hội nghị công bố quyết định của Ban Bí thư Trung ương Đảng và Ban Thường vụ Thành ủy Hà Nội...",
-        "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80",
+        "image": "hanoi_meeting.png",
         "url": "https://laodong.vn/thoi-su/cong-bo-nhieu-quyet-dinh-ve-cong-tac-can-bo-tai-ha-noi-1707679.ldo",
         "date": "20/05/2026 10:15",
         "office": "VPTT HÀ NỘI",
@@ -92,7 +92,7 @@
     {
         "title": "Hà Nội khẩn trương hoàn thành giải phóng mặt bằng dự án Vành đai 4",
         "excerpt": "UBND Thành phố chỉ đạo các quận, huyện tập trung tháo gỡ vướng mắc về giá đền bù đất để bàn giao 100% mặt bằng sạch phục vụ thi công tuyến đường huyết mạch đúng tiến độ.",
-        "image": "https://images.unsplash.com/photo-1509060464153-4466739f88c0?auto=format&fit=crop&w=800&q=80",
+        "image": "hanoi_ringroad.png",
         "url": "https://laodong.vn/thoi-su/ha-noi-day-nhanh-tien-do-vanh-dai-4-1710001.ldo",
         "date": "29/05/2026 08:30",
         "office": "VPTT HÀ NỘI",
@@ -1658,5 +1658,131 @@
         "is_hanoi": true,
         "category": "Thể thao",
         "id": 92
+    },
+    {
+        "title": "Hà Nội phê duyệt đơn giá cho thuê 9 tòa chung cư thương mại tại Khu đô thị Việt Hưng",
+        "excerpt": "Hà Nội  - 9 tòa nhà chung cư thương mại tại Khu đô thị Việt Hưng và 24 tòa chung cư tái định cư vừa được thành phố phê duyệt đơn giá cho thuê.",
+        "image": "https://media-cdn-v2.laodong.vn/storage/newsportal/2026/2/24/1659528/Viet-Hung.jpg?w=800&amp;h=420&amp;crop=auto&amp;scale=both",
+        "url": "https://laodong.vn/bat-dong-san/ha-noi-phe-duyet-don-gia-cho-thue-9-toa-chung-cu-thuong-mai-tai-khu-do-thi-viet-hung-1659528.ldo",
+        "date": "24/02/2026 08:53",
+        "office": "VPTT HÀ NỘI",
+        "tags": [
+            "Hà Nội",
+            "Bất động sản",
+            "Việt Hưng"
+        ],
+        "district": "Long Biên",
+        "is_hanoi": true,
+        "category": "Bất động sản",
+        "matched_by": "việt hưng",
+        "id": 93
+    },
+    {
+        "title": "Công viên ở Long Biên “biến hình” sau nhiều năm bỏ hoang, nhếch nhác",
+        "excerpt": "Hà Nội  -  Công viên Việt Hưng  (quận Long Biên) từng bị bỏ hoang, nhếch nhác nhiều năm, nay đang được chỉnh trang, cải tạo, thay đổi diện mạo.",
+        "image": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/8/2/1223979/A065A118-3B7F-49F1-A.jpeg?w=800&amp;h=420&amp;crop=auto&amp;scale=both",
+        "url": "https://laodong.vn/ban-doc/cong-vien-o-long-bien-bien-hinh-sau-nhieu-nam-bo-hoang-nhech-nhac-1223979.ldo",
+        "date": "06/08/2023 17:42",
+        "office": "VPTT HÀ NỘI",
+        "tags": [
+            "Hà Nội",
+            "Thời sự",
+            "Việt Hưng"
+        ],
+        "district": "Long Biên",
+        "is_hanoi": true,
+        "category": "Thời sự",
+        "matched_by": "việt hưng",
+        "id": 94
+    },
+    {
+        "title": "Dự án bỏ hoang nhiều năm ở Long Biên bắt đầu hoạt động trở lại",
+        "excerpt": "Trạm xử lý nước thải Khu đô thị Việt Hưng (Việt Hưng, Long Biên) bắt đầu hoạt động trở lại sau nhiều năm &#34;nằm im bất động&#34;.",
+        "image": "https://media-cdn-v2.laodong.vn/storage/newsportal/2025/4/3/1486420/Long-Bien-2.jpg?w=800&amp;h=420&amp;crop=auto&amp;scale=both",
+        "url": "https://laodong.vn/y-kien-ban-doc/du-an-bo-hoang-nhieu-nam-o-long-bien-bat-dau-hoat-dong-tro-lai-1486420.ldo",
+        "date": "04/04/2025 08:00",
+        "office": "VPTT HÀ NỘI",
+        "tags": [
+            "Hà Nội",
+            "Thời sự",
+            "Việt Hưng"
+        ],
+        "district": "Long Biên",
+        "is_hanoi": true,
+        "category": "Thời sự",
+        "matched_by": "việt hưng",
+        "id": 95
+    },
+    {
+        "title": "Chốt thời điểm hoạt động của Trạm xử lý nước thải Việt Hưng",
+        "excerpt": "Hà Nội  - Dự kiến Trạm xử lý nước thải Khu đô thị Việt Hưng sẽ được bàn giao chính thức cho Sở Xây dựng, nhà thầu quản lý vận hành trong tháng 4.2025.",
+        "image": "https://media-cdn-v2.laodong.vn/storage/newsportal/2025/3/17/1477883/Nha-May-Xu-Ly-Nuoc-T.jpg?w=800&amp;h=420&amp;crop=auto&amp;scale=both",
+        "url": "https://laodong.vn/ban-doc/chot-thoi-diem-hoat-dong-cua-tram-xu-ly-nuoc-thai-viet-hung-1477883.ldo",
+        "date": "17/03/2025 10:52",
+        "office": "VPTT HÀ NỘI",
+        "tags": [
+            "Hà Nội",
+            "Thời sự",
+            "Việt Hưng"
+        ],
+        "district": "Long Biên",
+        "is_hanoi": true,
+        "category": "Thời sự",
+        "matched_by": "việt hưng",
+        "id": 96
+    },
+    {
+        "title": "Chậm tiến độ 10 năm, khu đô thị mới Việt Hưng vẫn ngổn ngang khó tin",
+        "excerpt": "10 năm sau hạn hoàn thành,  dự án  khu đô thị mới (KĐTM) Việt Hưng tại quận Long Biên - Hà Nội do Tổng Công ty Đầu tư phát triển nhà và đô thị (HUD) làm chủ đầu tư vẫn chưa hoàn thiện và phải xin điều chỉnh tiến độ thực hiện.",
+        "image": "https://media-cdn-v2.laodong.vn/storage/newsportal/2019/4/19/728716/_TAN3258.jpg?w=800&amp;h=420&amp;crop=auto&amp;scale=both",
+        "url": "https://laodong.vn/bat-dong-san/cham-tien-do-10-nam-khu-do-thi-moi-viet-hung-van-ngon-ngang-kho-tin-728716.ldo",
+        "date": "19/04/2019 17:39",
+        "office": "VPTT HÀ NỘI",
+        "tags": [
+            "Hà Nội",
+            "Bất động sản",
+            "Việt Hưng"
+        ],
+        "district": "Long Biên",
+        "is_hanoi": true,
+        "category": "Bất động sản",
+        "matched_by": "việt hưng",
+        "id": 97
+    },
+    {
+        "title": "Người dân Yên Hòa tất bật di dời tài sản, nhường đất cho Vành đai 2,5",
+        "excerpt": "Hà Nội  - Dự án  Vành đai 2,5  qua phường Yên Hòa bước vào cao điểm giải phóng mặt bằng, nhiều hộ tự nguyện di dời, góp phần đẩy nhanh tiến độ.",
+        "image": "https://media-cdn-v2.laodong.vn/storage/newsportal/2026/4/27/1692470/Gpmb-Yen-Hoa.jpg?w=800&amp;h=420&amp;crop=auto&amp;scale=both",
+        "url": "https://laodong.vn/video/nguoi-dan-yen-hoa-tat-bat-di-doi-tai-san-nhuong-dat-cho-vanh-dai-25-1692470.ldo",
+        "date": "27/04/2026 15:59",
+        "office": "VPTT HÀ NỘI",
+        "tags": [
+            "Hà Nội",
+            "Thời sự",
+            "Yên Hòa"
+        ],
+        "district": "Cầu Giấy",
+        "is_hanoi": true,
+        "category": "Thời sự",
+        "matched_by": "yên hòa",
+        "id": 98
+    },
+    {
+        "title": "Nâng thêm 3 tầng chung cư, người dân chờ 15 năm vẫn chưa có sổ hồng",
+        "excerpt": "Dự án chung cư G4, tại khu đô thị mới Yên Hòa (phường Trung Hòa, quận Cầu Giấy, TP Hà Nội) được bàn giao cho người dân từ năm 2008. Tuy nhiên đã 15 năm trôi qua, hầu hết cư dân ở đây vẫn chưa được cấp  sổ hồng , mặc dù đã hoàn thiện hết các thủ tục pháp lý, nghĩa vụ tài chính cho chủ đầu tư.",
+        "image": "https://media-cdn-v2.laodong.vn/storage/newsportal/2023/12/12/1278865/Chung-Cu-G4-Kdt-Yen-.jpg?w=800&amp;h=420&amp;crop=auto&amp;scale=both",
+        "url": "https://laodong.vn/photo/nang-them-3-tang-chung-cu-nguoi-dan-cho-15-nam-van-chua-co-so-hong-1278865.ldo",
+        "date": "12/12/2023 16:24",
+        "office": "VPTT HÀ NỘI",
+        "tags": [
+            "Hà Nội",
+            "Thời sự",
+            "Yên Hòa"
+        ],
+        "district": "Cầu Giấy",
+        "is_hanoi": true,
+        "category": "Thời sự",
+        "matched_by": "yên hòa",
+        "id": 99
     }
 ]
