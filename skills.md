@@ -146,12 +146,15 @@ Quy trình tối ưu kết hợp đặc tả kỹ thuật PRD (Cơ chế 4 lớp
   - Triển khai thành công kiến trúc Hub & Spoke bằng cơ chế Tab Bar động tại giao diện [demo_landing_page_tphcm.html](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/demo_landing_page_tphcm.html) cho TP.HCM & Đông Nam Bộ.
   - Tối ưu hóa scraper quét tin bài thực tế và tích hợp carousel slide "Đọc nhiều nhất" gọn gàng ở sidebar (3 slide xoay vòng tự động).
   - Thiết kế quy trình định tuyến ảo hệ thống bằng cơ chế URL Rewrite (tầng Nginx Proxy Map) và giải thích trực quan hóa mô hình Hub & Spoke URL.
-  - **Mới:** Tích hợp bộ số liệu Chỉ số cạnh tranh cấp tỉnh (PCI), PAPI, PAR Index và thông tin KCN vào cấu trúc "Chân dung Địa phương" ngay dưới thanh lọc địa bàn.
-  - **Mới:** Triển khai cơ chế đồng bộ khung tiện ích Spoke (Context Syncing) thay đổi đồng thời breadcrumbs, thời tiết và link chuyên đề cắt điện theo vị trí địa lý của Spoke đang hoạt động.
+  - Tích hợp bộ số liệu Chỉ số cạnh tranh cấp tỉnh (PCI), PAPI, PAR Index và thông tin KCN vào cấu trúc "Chân dung Địa phương" ngay dưới thanh lọc địa bàn.
+  - Triển khai cơ chế đồng bộ khung tiện ích Spoke (Context Syncing) thay đổi đồng thời breadcrumbs, thời tiết và link chuyên đề cắt điện theo vị trí địa lý của Spoke đang hoạt động.
+  - **Mới:** Thiết kế cơ chế giữ chân độc giả bằng giải pháp **Local Reader Mode (Modal Overlay)**. Đánh chặn các lượt click bài viết tới `laodong.vn` để hiển thị bản đọc nhanh trực quan ngay tại trang chuyên mục kèm sidebar gợi ý tin Hà Nội liên quan.
 * **Kinh nghiệm rút ra:**
   - Đối với các Spoke có dữ liệu ít hơn Hub (như Tây Ninh, Đồng Nai), cơ chế trộn gộp (merge fallback) là rất cần thiết để đảm bảo hiển thị đủ nội dung lưới tin bài.
   - Sử dụng `map` định tuyến trong Nginx thay thế `if` lồng nhau giúp cải thiện hiệu năng và bảo trì dễ dàng khi mở rộng ra 63 tỉnh thành.
   - Thiết kế Spoke Context Sync đồng bộ thời gian thực giúp nâng cao độ chính xác về mặt logic địa lý, tạo cảm giác chuyên nghiệp khi người dùng tương tác chuyển đổi vùng.
+  - Sử dụng giải pháp Event Listener đánh chặn (Click Event Interceptor) ở cấp `document` giúp kiểm soát toàn bộ lượt click mà không cần can thiệp chỉnh sửa hàng chục chuỗi template HTML sinh động.
+
 
 
 
