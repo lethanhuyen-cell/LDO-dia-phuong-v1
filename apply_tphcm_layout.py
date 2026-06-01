@@ -320,16 +320,16 @@ middle_part = """
                     <span style="color: #c00000; font-weight: bold;">TP.HCM & Đông Nam Bộ</span>
                 </div>
                 
-                <!-- Quick Links & Real-time Hanoi Weather Widget Grouped -->
+                 <!-- Quick Links & Real-time TPHCM Weather Widget Grouped -->
                 <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-                    <a href="https://laodong.vn/tags/lich-cat-dien-ha-noi-8541.ldo" target="_blank" style="text-decoration: none; font-size: 12px; color: #c00000; font-weight: bold; display: flex; align-items: center; gap: 3px;">⚡ Lịch cắt điện</a>
+                    <a href="https://laodong.vn/tags/lich-cat-dien-tphcm-8542.ldo" target="_blank" style="text-decoration: none; font-size: 12px; color: #c00000; font-weight: bold; display: flex; align-items: center; gap: 3px;">⚡ Lịch cắt điện</a>
                     <span style="color: #ccc;">|</span>
                     <a href="https://laodong.vn/phap-luat/chinh-sach-moi" target="_blank" style="text-decoration: none; font-size: 12px; color: #002d62; font-weight: bold; display: flex; align-items: center; gap: 3px;">📋 Chính sách mới</a>
                     <span style="color: #ccc;">|</span>
                     <a href="https://laodong.vn/kinh-doanh/gia-vang" target="_blank" style="text-decoration: none; font-size: 12px; color: #b8860b; font-weight: bold; display: flex; align-items: center; gap: 3px;">🪙 Giá vàng</a>
                     <span style="color: #ccc;">|</span>
                     
-                    <a href="https://weather.com/vi-VN/weather/today/l/VMXX0006:1:VM" target="_blank" title="Xem dự báo chi tiết tại Weather.com (Nguồn uy tín)" id="tphcm-weather-widget" style="text-decoration: none; display: flex; align-items: center; gap: 8px; background: rgba(240, 244, 248, 0.85); border: 1px solid #d0e1f9; padding: 4px 12px; border-radius: 20px; font-size: 12px; color: #002d62; box-shadow: 0 1px 3px rgba(0,0,0,0.05); font-weight: bold; transition: all 0.2s ease;" onmouseover="this.style.background='rgba(224, 235, 250, 0.95)'; this.style.transform='translateY(-1px)';" onmouseout="this.style.background='rgba(240, 244, 248, 0.85)'; this.style.transform='none';">
+                    <a href="https://weather.com/vi-VN/weather/today/l/VMXX0007:1:VM" target="_blank" title="Xem dự báo chi tiết tại Weather.com (Nguồn uy tín)" id="tphcm-weather-widget" style="text-decoration: none; display: flex; align-items: center; gap: 8px; background: rgba(240, 244, 248, 0.85); border: 1px solid #d0e1f9; padding: 4px 12px; border-radius: 20px; font-size: 12px; color: #002d62; box-shadow: 0 1px 3px rgba(0,0,0,0.05); font-weight: bold; transition: all 0.2s ease;" onmouseover="this.style.background='rgba(224, 235, 250, 0.95)'; this.style.transform='translateY(-1px)';" onmouseout="this.style.background='rgba(240, 244, 248, 0.85)'; this.style.transform='none';">
                         <span>📅 <span id="current-date-vietnam">Chủ nhật, 31/05/2026</span></span>
                         <span style="color: #ccc;">|</span>
                         <span id="weather-temp-span">📍 TP.HCM & Đông Nam Bộ: Đang tải...</span>
@@ -1317,17 +1317,17 @@ middle_part = """
                 <tbody>
                     <tr>
                         <td style="border: 1px solid #ddd; padding: 6px; font-weight: bold;">Lớp 1: Vùng Miền</td>
-                        <td style="border: 1px solid #ddd; padding: 6px;">Miền Bắc</td>
+                        <td style="border: 1px solid #ddd; padding: 6px;">Đông Nam Bộ</td>
                         <td style="border: 1px solid #ddd; padding: 6px;">Chỉ mục toàn bộ chuyên trang</td>
                     </tr>
                     <tr>
                         <td style="border: 1px solid #ddd; padding: 6px; font-weight: bold;">Lớp 2: Tỉnh/Thành</td>
                         <td style="border: 1px solid #ddd; padding: 6px;">TP.HCM & Đông Nam Bộ (Trọng điểm Tầng 1)</td>
-                        <td style="border: 1px solid #ddd; padding: 6px;">Canonical cố định tại laodong.vn/vung-mien/ha-noi/</td>
+                        <td style="border: 1px solid #ddd; padding: 6px;">Canonical cố định tại laodong.vn/vung-mien/tphcm-va-dong-nam-bo/</td>
                     </tr>
                     <tr>
                         <td style="border: 1px solid #ddd; padding: 6px; font-weight: bold;">Lớp 3: Quận/Huyện</td>
-                        <td style="border: 1px solid #ddd; padding: 6px;" id="schema-district">Quận Hoàn Kiếm</td>
+                        <td style="border: 1px solid #ddd; padding: 6px;" id="schema-district">Quận 1 / TP. Thủ Đức / Biên Hòa...</td>
                         <td style="border: 1px solid #ddd; padding: 6px;">Bản đồ Entity cục bộ</td>
                     </tr>
                     <tr>
@@ -1712,8 +1712,8 @@ middle_part = """
         const schema = {
             "@context": "https://schema.org",
             "@type": "CollectionPage",
-            "name": "Lao Động TP.HCM & Đông Nam Bộ - Chuyên trang tin tức Thủ đô",
-            "url": "https://laodong.vn/vung-mien/ha-noi/",
+            "name": "Lao Động TP.HCM & Đông Nam Bộ - Chuyên trang tin tức vùng Đông Nam Bộ",
+            "url": "https://laodong.vn/vung-mien/tphcm-va-dong-nam-bo/",
             "description": "Chuyên trang tin tức của Báo Lao Động về TP.HCM & Đông Nam Bộ, cập nhật tin thời sự, xã hội, công đoàn.",
             "isPartOf": {
                 "@type": "WebSite",
@@ -1739,7 +1739,7 @@ middle_part = """
                         "@type": "ListItem",
                         "position": 3,
                         "name": "TP.HCM & Đông Nam Bộ",
-                        "item": "https://laodong.vn/vung-mien/ha-noi/"
+                        "item": "https://laodong.vn/vung-mien/tphcm-va-dong-nam-bo/"
                     }
                 ]
             },
@@ -1763,12 +1763,12 @@ middle_part = """
         document.getElementById('json-schema-output').innerText = JSON.stringify(schema, null, 2);
     }
 
-    function fetchHanoiWeather() {
+    function fetchTPHCMWeather() {
         const options = { weekday: 'long', year: 'numeric', month: '2-digit', day: '2-digit' };
         const today = new Date();
         document.getElementById('current-date-vietnam').innerText = today.toLocaleDateString('vi-VN', options);
 
-        const url = "https://api.open-meteo.com/v1/forecast?latitude=21.0285&longitude=105.8542&current=temperature_2m,relative_humidity_2m,weather_code";
+        const url = "https://api.open-meteo.com/v1/forecast?latitude=10.7769&longitude=106.7009&current=temperature_2m,relative_humidity_2m,weather_code";
         fetch(url)
             .then(response => response.json())
             .then(data => {
@@ -1832,7 +1832,7 @@ middle_part = """
         renderEnterpriseBlock();
         updateSchemaMarkup();
         changeDistrictPrices('quan1');
-        fetchHanoiWeather();
+        fetchTPHCMWeather();
         initInfraCarouselAutoplay();
     });
 </script>
@@ -1970,4 +1970,4 @@ index_path = 'c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING 
 with open(index_path, 'w', encoding='utf-8') as f:
     f.write(full_html_content)
 
-print("Demo Hanoi Ads page compiled and merged into root templates successfully!")
+print("Demo TPHCM & Dong Nam Bo landing page compiled successfully!")
