@@ -432,10 +432,6 @@ middle_part = """
                     <div class="subcover-bottom-row" id="subcover-bottom-row" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee;">
                         <!-- JS populated -->
                     </div>
-                    <!-- Additional News Feed under 3 bottom stories to balance sidebar height and fill blank space -->
-                    <div id="left-column-feed-container" style="margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px; display: flex; flex-direction: column; gap: 15px;">
-                        <!-- JS populated -->
-                    </div>
                 </div>
                 
                 <!-- Right Side: Spotlight stories + Sidebar Ad -->
@@ -1539,47 +1535,6 @@ middle_part = """
             </div>
         `;
 
-        document.getElementById('left-column-feed-container').innerHTML = `
-            <div style="display: flex; gap: 12px; padding-bottom: 10px; border-bottom: 1px dashed #eee; align-items: center; font-family: Arial, sans-serif;">
-                <a href="` + feed1.url + `" target="_blank" style="flex: 0 0 75px; width: 75px; height: 47px; overflow: hidden; border-radius: 3px; display: block; background-color: #f0f0f0;">
-                    <img src="` + feed1.image + `" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='none'">
-                </a>
-                <div style="flex: 1;">
-                    <a href="` + feed1.url + `" target="_blank" style="text-decoration: none; display: block;">
-                        <h4 style="font-size: 13px; font-weight: bold; color: #333; margin: 0; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; transition: color 0.2s;" onmouseover="this.style.color='#c00000'" onmouseout="this.style.color='#333'">
-                            ` + feed1.title + `
-                        </h4>
-                    </a>
-                    <div style="font-size: 10px; color: #999; margin-top: 3px;">📅 ` + (feed1.date || '01/06/2026') + `</div>
-                </div>
-            </div>
-            <div style="display: flex; gap: 12px; padding-bottom: 10px; border-bottom: 1px dashed #eee; align-items: center; font-family: Arial, sans-serif;">
-                <a href="` + feed2.url + `" target="_blank" style="flex: 0 0 75px; width: 75px; height: 47px; overflow: hidden; border-radius: 3px; display: block; background-color: #f0f0f0;">
-                    <img src="` + feed2.image + `" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='none'">
-                </a>
-                <div style="flex: 1;">
-                    <a href="` + feed2.url + `" target="_blank" style="text-decoration: none; display: block;">
-                        <h4 style="font-size: 13px; font-weight: bold; color: #333; margin: 0; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; transition: color 0.2s;" onmouseover="this.style.color='#c00000'" onmouseout="this.style.color='#333'">
-                            ` + feed2.title + `
-                        </h4>
-                    </a>
-                    <div style="font-size: 10px; color: #999; margin-top: 3px;">📅 ` + (feed2.date || '01/06/2026') + `</div>
-                </div>
-            </div>
-            <div style="display: flex; gap: 12px; align-items: center; font-family: Arial, sans-serif;">
-                <a href="` + feed3.url + `" target="_blank" style="flex: 0 0 75px; width: 75px; height: 47px; overflow: hidden; border-radius: 3px; display: block; background-color: #f0f0f0;">
-                    <img src="` + feed3.image + `" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='none'">
-                </a>
-                <div style="flex: 1;">
-                    <a href="` + feed3.url + `" target="_blank" style="text-decoration: none; display: block;">
-                        <h4 style="font-size: 13px; font-weight: bold; color: #333; margin: 0; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; transition: color 0.2s;" onmouseover="this.style.color='#c00000'" onmouseout="this.style.color='#333'">
-                            ` + feed3.title + `
-                        </h4>
-                    </a>
-                    <div style="font-size: 10px; color: #999; margin-top: 3px;">📅 ` + (feed3.date || '01/06/2026') + `</div>
-                </div>
-            </div>
-        `;
 
         document.getElementById('spotlight-container').innerHTML = `
             <article class="v4 p2c m001 n-1">
