@@ -1384,7 +1384,7 @@ middle_part = """
                     <tr>
                         <td style="border: 1px solid #ddd; padding: 6px; font-weight: bold;">Lớp 1: Vùng Miền</td>
                         <td style="border: 1px solid #ddd; padding: 6px;">Đông Nam Bộ</td>
-                        <td style="border: 1px solid #ddd; padding: 6px;">Chỉ mục toàn bộ chuyên trang</td>
+                        <td style="border: 1px solid #ddd; padding: 6px;">Chỉ mục toàn bộ trang</td>
                     </tr>
                     <tr>
                         <td style="border: 1px solid #ddd; padding: 6px; font-weight: bold;">Lớp 2: Tỉnh/Thành</td>
@@ -1845,9 +1845,9 @@ middle_part = """
         const schema = {
             "@context": "https://schema.org",
             "@type": "CollectionPage",
-            "name": "Lao Động TP.HCM & Đông Nam Bộ - Chuyên trang tin tức vùng Đông Nam Bộ",
+            "name": "Lao Động TP.HCM & Đông Nam Bộ - Trang tin tức vùng Đông Nam Bộ",
             "url": "https://laodong.vn/vung-mien/tphcm-va-dong-nam-bo/",
-            "description": "Chuyên trang tin tức của Báo Lao Động về TP.HCM & Đông Nam Bộ, cập nhật tin thời sự, xã hội, công đoàn.",
+            "description": "Trang tin tức của Báo Lao Động về TP.HCM & Đông Nam Bộ, cập nhật tin thời sự, xã hội, công đoàn.",
             "isPartOf": {
                 "@type": "WebSite",
                 "name": "Báo Lao Động",

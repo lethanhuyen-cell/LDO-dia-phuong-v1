@@ -394,7 +394,7 @@ middle_part = """
             <!-- NATIVE LAO DONG BREADCRUMBS / TITLE SECTION -->
             <div class="breadcrums" style="border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 15px;">
                 <h1 style="margin: 0; font-size: 22px; font-weight: bold; font-family: Arial, sans-serif;">
-                    <a class="main-cat-lnk" href="#" style="color: #000000; text-decoration: none;" id="dynamic-page-title">Chuyên trang Hà Nội</a>
+                    <a class="main-cat-lnk" href="#" style="color: #000000; text-decoration: none;" id="dynamic-page-title">Trang Hà Nội</a>
                 </h1>
             </div>
 
@@ -1387,7 +1387,7 @@ middle_part = """
                     <tr>
                         <td style="border: 1px solid #ddd; padding: 6px; font-weight: bold;">Lớp 1: Vùng Miền</td>
                         <td style="border: 1px solid #ddd; padding: 6px;">Miền Bắc</td>
-                        <td style="border: 1px solid #ddd; padding: 6px;">Chỉ mục toàn bộ chuyên trang</td>
+                        <td style="border: 1px solid #ddd; padding: 6px;">Chỉ mục toàn bộ trang</td>
                     </tr>
                     <tr>
                         <td style="border: 1px solid #ddd; padding: 6px; font-weight: bold;">Lớp 2: Tỉnh/Thành</td>
@@ -1828,9 +1828,9 @@ middle_part = """
         const schema = {
             "@context": "https://schema.org",
             "@type": "CollectionPage",
-            "name": "Lao Động Hà Nội - Chuyên trang tin tức Thủ đô",
+            "name": "Lao Động Hà Nội - Trang tin tức Thủ đô",
             "url": "https://laodong.vn/vung-mien/ha-noi/",
-            "description": "Chuyên trang tin tức của Báo Lao Động về Hà Nội, cập nhật tin thời sự, xã hội, công đoàn.",
+            "description": "Trang tin tức của Báo Lao Động về Hà Nội, cập nhật tin thời sự, xã hội, công đoàn.",
             "isPartOf": {
                 "@type": "WebSite",
                 "name": "Báo Lao Động",
@@ -2058,7 +2058,7 @@ middle_part = """
         const pageTitle = document.getElementById('dynamic-page-title');
         if (district === 'all') {
             hanoiArticles = [...originalHanoiArticles];
-            if (pageTitle) pageTitle.innerText = "Chuyên trang Hà Nội";
+            if (pageTitle) pageTitle.innerText = "Trang Hà Nội";
         } else if (district === 'noi-thanh') {
             hanoiArticles = originalHanoiArticles.filter(a => a.district && (
                 a.district.includes('Hoàn Kiếm') || a.district.includes('Ba Đình') || 
