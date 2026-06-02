@@ -3011,11 +3011,11 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
     }
 
     function renderMediaSection() {
-        let mediaPool = tphcmArticles.filter(a => a.category === "Xã hội" || a.category === "Thời sự").slice(5, 10);
-        if (mediaPool.length < 4) {
-            mediaPool = originalTphcmArticles.filter(a => a.category === "Xã hội" || a.category === "Thời sự").slice(5, 10);
+        let mediaPool = tphcmArticles.filter(a => a.category === "Xã hội" || a.category === "Thời sự").slice(5, 11);
+        if (mediaPool.length < 6) {
+            mediaPool = originalTphcmArticles.filter(a => a.category === "Xã hội" || a.category === "Thời sự").slice(5, 11);
         }
-        if (mediaPool.length < 4) return;
+        if (mediaPool.length < 6) return;
 
         document.getElementById('media-col-1').innerHTML = `
             <div style="background-color:#ffffff; border:1px solid #ddd; border-radius:4px; padding:10px; display:flex; gap:10px;">
@@ -3032,9 +3032,6 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
                 </div>
                 <a href="` + mediaPool[1].url + `" target="_blank" style="text-decoration:none; font-size:12px; font-weight:bold; color:#111; line-height:1.3; display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical; overflow:hidden;">` + mediaPool[1].title + `</a>
             </div>
-        `;
-        
-        document.getElementById('media-col-2').innerHTML = `
             <div style="background-color:#ffffff; border:1px solid #ddd; border-radius:4px; padding:10px; display:flex; gap:10px;">
                 <div style="width:100px; height:65px; overflow:hidden; border-radius:3px; flex-shrink:0; position:relative;">
                     <img src="` + mediaPool[2].image + `" style="width:100%; height:100%; object-fit:cover;">
@@ -3042,12 +3039,29 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
                 </div>
                 <a href="` + mediaPool[2].url + `" target="_blank" style="text-decoration:none; font-size:12px; font-weight:bold; color:#111; line-height:1.3; display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical; overflow:hidden;">` + mediaPool[2].title + `</a>
             </div>
+        `;
+        
+        document.getElementById('media-col-2').innerHTML = `
             <div style="background-color:#ffffff; border:1px solid #ddd; border-radius:4px; padding:10px; display:flex; gap:10px;">
                 <div style="width:100px; height:65px; overflow:hidden; border-radius:3px; flex-shrink:0; position:relative;">
                     <img src="` + mediaPool[3].image + `" style="width:100%; height:100%; object-fit:cover;">
                     <div style="position:absolute; bottom:3px; left:3px; color:red; font-size:12px;"><i class="fa fa-video-camera"></i></div>
                 </div>
                 <a href="` + mediaPool[3].url + `" target="_blank" style="text-decoration:none; font-size:12px; font-weight:bold; color:#111; line-height:1.3; display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical; overflow:hidden;">` + mediaPool[3].title + `</a>
+            </div>
+            <div style="background-color:#ffffff; border:1px solid #ddd; border-radius:4px; padding:10px; display:flex; gap:10px;">
+                <div style="width:100px; height:65px; overflow:hidden; border-radius:3px; flex-shrink:0; position:relative;">
+                    <img src="` + mediaPool[4].image + `" style="width:100%; height:100%; object-fit:cover;">
+                    <div style="position:absolute; bottom:3px; left:3px; color:red; font-size:12px;"><i class="fa fa-video-camera"></i></div>
+                </div>
+                <a href="` + mediaPool[4].url + `" target="_blank" style="text-decoration:none; font-size:12px; font-weight:bold; color:#111; line-height:1.3; display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical; overflow:hidden;">` + mediaPool[4].title + `</a>
+            </div>
+            <div style="background-color:#ffffff; border:1px solid #ddd; border-radius:4px; padding:10px; display:flex; gap:10px;">
+                <div style="width:100px; height:65px; overflow:hidden; border-radius:3px; flex-shrink:0; position:relative;">
+                    <img src="` + mediaPool[5].image + `" style="width:100%; height:100%; object-fit:cover;">
+                    <div style="position:absolute; bottom:3px; left:3px; color:red; font-size:12px;"><i class="fa fa-video-camera"></i></div>
+                </div>
+                <a href="` + mediaPool[5].url + `" target="_blank" style="text-decoration:none; font-size:12px; font-weight:bold; color:#111; line-height:1.3; display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical; overflow:hidden;">` + mediaPool[5].title + `</a>
             </div>
         `;
         
