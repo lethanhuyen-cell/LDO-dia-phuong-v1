@@ -374,6 +374,35 @@ middle_part = """
                 <h1 style="font-size: 16px; font-weight: bold; color: #c00000; margin: 0; text-transform: uppercase; letter-spacing: 1px;">TRANG THÔNG TIN ĐỊA BÀN HÀ NỘI CỦA BÁO LAO ĐỘNG (BẢN QUY HOẠCH QUẢNG CÁO)</h1>
             </div>
 
+            <!-- HUB & SPOKE DISTRICT FILTER TAB BAR -->
+            <div style="background-color: #ffffff; border: 1px solid #e3e3e3; padding: 10px 15px; margin-top: 15px; font-family: Arial, sans-serif; border-radius: 4px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 1px 3px rgba(0,0,0,0.05); flex-wrap: wrap; gap: 10px;">
+                <div style="font-size: 12px; font-weight: bold; color: #555; text-transform: uppercase; display: flex; align-items: center; gap: 6px;">
+                    📂 Phân tuyến địa bàn (Hub &amp; Spoke):
+                </div>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap;" id="hub-spoke-tabs">
+                    <button class="spoke-tab" onclick="filterSpokeDistrict('all')" style="background-color: #c00000; color: #ffffff; border: 1px solid #c00000; padding: 6px 14px; border-radius: 3px; font-size: 12px; font-weight: bold; cursor: pointer; transition: all 0.2s;">
+                        🌐 Toàn địa bàn Hà Nội (Hub)
+                    </button>
+                    <button class="spoke-tab" onclick="filterSpokeDistrict('noi-thanh')" style="background-color: #f7f7f7; color: #333; border: 1px solid #ddd; padding: 6px 14px; border-radius: 3px; font-size: 12px; font-weight: bold; cursor: pointer; transition: all 0.2s;">
+                        📍 Nội thành (Spoke)
+                    </button>
+                    <button class="spoke-tab" onclick="filterSpokeDistrict('ha-dong')" style="background-color: #f7f7f7; color: #333; border: 1px solid #ddd; padding: 6px 14px; border-radius: 3px; font-size: 12px; font-weight: bold; cursor: pointer; transition: all 0.2s;">
+                        📍 Hà Đông (Spoke)
+                    </button>
+                    <button class="spoke-tab" onclick="filterSpokeDistrict('gia-lam')" style="background-color: #f7f7f7; color: #333; border: 1px solid #ddd; padding: 6px 14px; border-radius: 3px; font-size: 12px; font-weight: bold; cursor: pointer; transition: all 0.2s;">
+                        📍 Gia Lâm mới (Spoke)
+                    </button>
+                    <button class="spoke-tab" onclick="filterSpokeDistrict('dong-anh')" style="background-color: #f7f7f7; color: #333; border: 1px solid #ddd; padding: 6px 14px; border-radius: 3px; font-size: 12px; font-weight: bold; cursor: pointer; transition: all 0.2s;">
+                        📍 Đông Anh (Spoke)
+                    </button>
+                </div>
+            </div>
+
+            <!-- DYNAMIC PROVINCIAL PROFILE & GOVERNANCE WIDGET -->
+            <div id="provincial-profile-widget" style="background-color: #ffffff; border: 1px solid #e3e3e3; border-left: 4px solid #002d62; padding: 15px 20px; margin-top: 15px; font-family: Arial, sans-serif; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: grid; grid-template-columns: 1.2fr 1.8fr; gap: 20px; align-items: start; box-sizing: border-box;">
+                <!-- JS populated dynamically -->
+            </div>
+
             <!-- AD SLOT 01: TOP BILLBOARD (970x250) -->
             <div style="width: 100%; max-width: 1000px; margin: 15px auto 0 auto; text-align: center; font-family: Arial, sans-serif; position: relative;">
                 <div style="position: absolute; top: 2px; left: 5px; font-size: 8px; color: #fff; background-color: #c00000; padding: 2px 5px; font-weight: bold; border-radius: 2px; z-index: 5;">QC GIẢ LẬP</div>
@@ -404,6 +433,10 @@ middle_part = """
                     </div>
                     <!-- Row of 3 bottom stories -->
                     <div class="subcover-bottom-row" id="subcover-bottom-row" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee;">
+                        <!-- JS populated -->
+                    </div>
+                    <!-- Additional News Feed under 3 bottom stories to balance sidebar height and fill blank space -->
+                    <div id="left-column-feed-container" style="margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px; display: flex; flex-direction: column; gap: 15px;">
                         <!-- JS populated -->
                     </div>
                 </div>
@@ -439,6 +472,19 @@ middle_part = """
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- DYNAMIC FULL-WIDTH MOST READ CAROUSEL (Balances page flow) -->
+            <div style="background-color: #fcfcfc; border: 1px solid #eef1f5; border-radius: 8px; padding: 15px 20px; margin-top: 20px; font-family: Arial, sans-serif; box-shadow: 0 1px 3px rgba(0,0,0,0.02);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 2px solid #c00000; padding-bottom: 6px;">
+                    <span style="font-size: 14px; font-weight: bold; color: #c00000; text-transform: uppercase; letter-spacing: 0.5px;">Đọc nhiều nhất</span>
+                    <div id="most-read-dots" style="display: flex; gap: 6px; align-items: center;">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+                <div id="most-read-container" style="position: relative; min-height: 110px; overflow: hidden;">
+                    <!-- JS populated dynamically -->
                 </div>
             </div>
 
@@ -1379,7 +1425,8 @@ middle_part = """
 </div>
 
 <script>
-    const hanoiArticles = PLACEHOLDER_RAW_ARTICLES;
+    const originalHanoiArticles = PLACEHOLDER_RAW_ARTICLES;
+    let hanoiArticles = [...originalHanoiArticles];
 
     let featuredArticleId = hanoiArticles[0].id;
     let articlesVolume = 120;
@@ -1402,18 +1449,31 @@ middle_part = """
     }
 
     function renderMainCover() {
-        const centerArt = hanoiArticles.find(a => a.id === featuredArticleId) || hanoiArticles[0];
+        const centerArt = hanoiArticles.find(a => a.id === featuredArticleId) || hanoiArticles[0] || originalHanoiArticles[0];
         const leftSubPool = hanoiArticles.filter(a => a.id !== centerArt.id);
-        const sub1 = leftSubPool[0] || hanoiArticles[1];
-        const sub2 = leftSubPool[1] || hanoiArticles[2];
+        const sub1 = leftSubPool[0] || originalHanoiArticles[1];
+        const sub2 = leftSubPool[1] || originalHanoiArticles[2];
         const rightPool = hanoiArticles.filter(a => a.id !== centerArt.id && a.id !== sub1.id && a.id !== sub2.id);
-        const bottom1 = rightPool[0] || hanoiArticles[3];
-        const bottom2 = rightPool[1] || hanoiArticles[4];
-        const bottom3 = rightPool[2] || hanoiArticles[5];
-        const spot1 = rightPool[3] || hanoiArticles[6];
-        const spot2 = rightPool[4] || hanoiArticles[7];
-        const spot3 = rightPool[5] || hanoiArticles[8];
-        const spot4 = rightPool[6] || hanoiArticles[9];
+        const bottom1 = rightPool[0] || originalHanoiArticles[3];
+        const bottom2 = rightPool[1] || originalHanoiArticles[4];
+        const bottom3 = rightPool[2] || originalHanoiArticles[5];
+        const spot1 = rightPool[3] || originalHanoiArticles[6];
+        const spot2 = rightPool[4] || originalHanoiArticles[7];
+        const spot3 = rightPool[5] || originalHanoiArticles[8];
+        const spot4 = rightPool[6] || originalHanoiArticles[9];
+
+        // Gather all featured/cover/spotlight IDs to exclude them from other sections
+        const displayedIds = new Set([centerArt.id, sub1.id, sub2.id, bottom1.id, bottom2.id, bottom3.id, spot1.id, spot2.id, spot3.id, spot4.id]);
+
+        // Most Read Pool (15 items) - Must not duplicate featured/spotlight articles
+        const mostReadPool = hanoiArticles.filter(a => !displayedIds.has(a.id)).slice(0, 15);
+        const mostReadIds = new Set(mostReadPool.map(a => a.id));
+
+        // Latest News Feed (3 items) - Must not duplicate featured/spotlight AND must not duplicate most read
+        const latestNewsPool = hanoiArticles.filter(a => !displayedIds.has(a.id) && !mostReadIds.has(a.id));
+        const feed1 = latestNewsPool[0] || originalHanoiArticles[10];
+        const feed2 = latestNewsPool[1] || originalHanoiArticles[11];
+        const feed3 = latestNewsPool[2] || originalHanoiArticles[12];
 
         document.getElementById('main-cover-container').innerHTML = `
             <article class="v4 cv-001">
@@ -1544,13 +1604,121 @@ middle_part = """
             </article>
         `;
 
-        const commentArt = hanoiArticles.find(a => a.category === "Thời sự" && a.id !== centerArt.id) || hanoiArticles[10];
-        const kindnessArt = hanoiArticles.find(a => a.category === "Xã hội" && a.id !== centerArt.id) || hanoiArticles[12];
+        const commentArt = hanoiArticles.find(a => a.category === "Thời sự" && a.id !== centerArt.id) || originalHanoiArticles[10];
+        const kindnessArt = hanoiArticles.find(a => a.category === "Xã hội" && a.id !== centerArt.id) || originalHanoiArticles[12];
         
         document.getElementById('sidebar-commentary-title').innerText = commentArt.title;
         document.getElementById('sidebar-commentary-title').href = commentArt.url;
         document.getElementById('sidebar-kindness-title').innerText = kindnessArt.title;
         document.getElementById('sidebar-kindness-title').href = kindnessArt.url;
+
+        // Render left-column feed (3 additional articles below 3-bottom-row)
+        const feedContainer = document.getElementById('left-column-feed-container');
+        if (feedContainer && feed1) {
+            feedContainer.innerHTML = `
+                <div style="display: flex; gap: 12px; padding-bottom: 10px; border-bottom: 1px dashed #eee; align-items: center; font-family: Arial, sans-serif;">
+                    <a href="` + feed1.url + `" target="_blank" style="flex: 0 0 75px; width: 75px; height: 47px; overflow: hidden; border-radius: 3px; display: block; background-color: #f0f0f0;">
+                        <img src="` + feed1.image + `" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='none'">
+                    </a>
+                    <div style="flex: 1;">
+                        <a href="` + feed1.url + `" target="_blank" style="text-decoration: none; display: block;">
+                            <h4 style="font-size: 13px; font-weight: bold; color: #333; margin: 0; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; transition: color 0.2s;" onmouseover="this.style.color='#c00000'" onmouseout="this.style.color='#333'">
+                                ` + feed1.title + `
+                            </h4>
+                        </a>
+                        <div style="font-size: 10px; color: #999; margin-top: 3px;">📅 ` + (feed1.date || '') + `</div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 12px; padding-bottom: 10px; border-bottom: 1px dashed #eee; align-items: center; font-family: Arial, sans-serif;">
+                    <a href="` + feed2.url + `" target="_blank" style="flex: 0 0 75px; width: 75px; height: 47px; overflow: hidden; border-radius: 3px; display: block; background-color: #f0f0f0;">
+                        <img src="` + feed2.image + `" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='none'">
+                    </a>
+                    <div style="flex: 1;">
+                        <a href="` + feed2.url + `" target="_blank" style="text-decoration: none; display: block;">
+                            <h4 style="font-size: 13px; font-weight: bold; color: #333; margin: 0; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; transition: color 0.2s;" onmouseover="this.style.color='#c00000'" onmouseout="this.style.color='#333'">
+                                ` + feed2.title + `
+                            </h4>
+                        </a>
+                        <div style="font-size: 10px; color: #999; margin-top: 3px;">📅 ` + (feed2.date || '') + `</div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 12px; align-items: center; font-family: Arial, sans-serif;">
+                    <a href="` + feed3.url + `" target="_blank" style="flex: 0 0 75px; width: 75px; height: 47px; overflow: hidden; border-radius: 3px; display: block; background-color: #f0f0f0;">
+                        <img src="` + feed3.image + `" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='none'">
+                    </a>
+                    <div style="flex: 1;">
+                        <a href="` + feed3.url + `" target="_blank" style="text-decoration: none; display: block;">
+                            <h4 style="font-size: 13px; font-weight: bold; color: #333; margin: 0; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; transition: color 0.2s;" onmouseover="this.style.color='#c00000'" onmouseout="this.style.color='#333'">
+                                ` + feed3.title + `
+                            </h4>
+                        </a>
+                        <div style="font-size: 10px; color: #999; margin-top: 3px;">📅 ` + (feed3.date || '') + `</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Render Most Read Carousel
+        const mostReadContainer = document.getElementById('most-read-container');
+        const mostReadDotsEl = document.getElementById('most-read-dots');
+        if (mostReadContainer && mostReadPool.length > 0) {
+            let containerHtml = '';
+            let dotsHtml = '';
+            const slideCount = Math.ceil(mostReadPool.length / 5);
+            
+            for (let s = 0; s < slideCount; s++) {
+                const slideArticles = mostReadPool.slice(s * 5, (s + 1) * 5);
+                let slideItemsHtml = '';
+                slideArticles.forEach((item, idx) => {
+                    const globalIdx = s * 5 + idx + 1;
+                    slideItemsHtml += `
+                        <div style="display: flex; gap: 10px; align-items: flex-start; padding: 10px; background: #ffffff; border: 1px solid #eef1f5; border-radius: 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.02); height: 100%; box-sizing: border-box;">
+                            <span style="font-size: 16px; font-weight: 800; color: #c00000; line-height: 1.1; min-width: 18px;">` + globalIdx + `</span>
+                            <a href="` + item.url + `" target="_blank" style="font-size: 12px; color: #333; text-decoration: none; font-weight: bold; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; height: 3.6em;" onmouseover="this.style.color='#c00000'" onmouseout="this.style.color='#333'">` + item.title + `</a>
+                        </div>
+                    `;
+                });
+                
+                containerHtml += `
+                    <div id="most-read-slide-` + s + `" class="most-read-slide" style="display: ` + (s === 0 ? 'grid' : 'none') + `; grid-template-columns: repeat(5, 1fr); gap: 15px; opacity: ` + (s === 0 ? '1' : '0') + `; transition: opacity 0.4s ease;">
+                        ` + slideItemsHtml + `
+                    </div>
+                `;
+                
+                dotsHtml += `
+                    <span id="most-read-dot-` + s + `" onclick="switchMostReadSlide(` + s + `)" style="width: 8px; height: 8px; border-radius: 50%; background-color: ` + (s === 0 ? '#c00000' : '#ccc') + `; display: inline-block; cursor: pointer; transition: background-color 0.2s;"></span>
+                `;
+            }
+            
+            mostReadContainer.innerHTML = containerHtml;
+            if (mostReadDotsEl) mostReadDotsEl.innerHTML = dotsHtml;
+            
+            if (!window.switchMostReadSlide) {
+                window.currentMostReadSlide = 0;
+                window.switchMostReadSlide = function(slideIndex) {
+                    const slides = document.querySelectorAll('.most-read-slide');
+                    slides.forEach((slide, idx) => {
+                        const el = document.getElementById('most-read-slide-' + idx);
+                        const dot = document.getElementById('most-read-dot-' + idx);
+                        if (idx === slideIndex) {
+                            el.style.display = window.innerWidth <= 850 ? 'block' : 'grid';
+                            setTimeout(() => { el.style.opacity = '1'; }, 20);
+                            if (dot) dot.style.backgroundColor = '#c00000';
+                        } else {
+                            el.style.opacity = '0';
+                            el.style.display = 'none';
+                            if (dot) dot.style.backgroundColor = '#ccc';
+                        }
+                    });
+                    window.currentMostReadSlide = slideIndex;
+                };
+                
+                setInterval(() => {
+                    let nextSlide = (window.currentMostReadSlide + 1) % slideCount;
+                    window.switchMostReadSlide(nextSlide);
+                }, 5000);
+            }
+        }
     }
 
     function renderMediaSection() {
@@ -1603,8 +1771,12 @@ middle_part = """
         const row2Categories = ["Công đoàn", "Bất động sản", "Văn hóa - Giải trí", "Thể thao"];
 
         function makeColumnHtml(categoryName) {
-            const catPool = hanoiArticles.filter(a => a.category === categoryName);
-            const mainCat = catPool[0] || hanoiArticles[12];
+            let catPool = hanoiArticles.filter(a => a.category === categoryName);
+            if (catPool.length < 5) {
+                const generalCatPool = originalHanoiArticles.filter(a => a.category === categoryName);
+                catPool = catPool.concat(generalCatPool.filter(ga => !catPool.some(ca => ca.id === ga.id))).slice(0, 5);
+            }
+            const mainCat = catPool[0] || originalHanoiArticles[12];
             const secondaryList = catPool.slice(1, 5);
             
             let listHtml = '';
@@ -1648,7 +1820,11 @@ middle_part = """
     }
 
     function renderEnterpriseBlock() {
-        const prPool = hanoiArticles.filter(a => a.category === "Kinh tế").slice(0, 5);
+        let prPool = hanoiArticles.filter(a => a.category === "Kinh tế").slice(0, 5);
+        if (prPool.length < 5) {
+            const generalPrPool = originalHanoiArticles.filter(a => a.category === "Kinh tế");
+            prPool = prPool.concat(generalPrPool.filter(gp => !prPool.some(p => p.id === gp.id))).slice(0, 5);
+        }
         let html = '';
         
         prPool.forEach(item => {
@@ -1780,6 +1956,184 @@ middle_part = """
             });
     }
 
+    const provincialProfiles = {
+        all: {
+            title: "HÀ NỘI - THỦ ĐÔ VÀ TRUNG TÂM KINH TẾ - CHÍNH TRỊ QUỐC GIA",
+            profileHtml: `
+                <div style="font-size: 11.5px; line-height: 1.6; color: #333;">
+                    • <strong>Diện tích:</strong> 3.359 km² (Lớn nhất cả nước sau sáp nhập với Hà Tây)<br>
+                    • <strong>Dân số:</strong> 8.5 triệu người (Đông thứ 2 cả nước)<br>
+                    • <strong>Quy mô kinh tế (GRDP):</strong> Đứng thứ 2 cả nước, trung tâm tài chính - ngân hàng, thương mại và dịch vụ.<br>
+                    • <strong>Hạ tầng chiến lược:</strong> Vành đai 4 đang thi công, sân bay Nội Bài mở rộng, 8 tuyến đường sắt đô thị quy hoạch.
+                </div>
+            `,
+            indicatorHtml: `
+                <div style="font-size: 11.5px; line-height: 1.6; color: #333;">
+                    • <strong>Năng lực cạnh tranh (PCI 2025):</strong> Hạng 25/63 tỉnh thành (65.80 điểm) - Nhóm Khá.<br>
+                    • <strong>Hiệu quả quản trị hành chính (PAPI 2025):</strong> Nằm trong nhóm Trung bình Cao - cải thiện mạnh về cung ứng dịch vụ công.<br>
+                    • <strong>Thế mạnh:</strong> Trung tâm giáo dục, y tế, văn hóa, hành chính quốc gia. Hub kinh tế số và đổi mới sáng tạo.<br>
+                    • <strong>Khuyến nghị:</strong> Rút ngắn thời gian cấp phép xây dựng, giảm ùn tắc giao thông, đẩy nhanh chuyển đổi số dịch vụ công.
+                </div>
+            `
+        },
+        'noi-thanh': {
+            title: "HÀ NỘI NỘI THÀNH - TRUNG TÂM ĐÔ THỊ",
+            profileHtml: `
+                <div style="font-size: 11.5px; line-height: 1.6; color: #333;">
+                    • <strong>Các quận nội thành:</strong> Hoàn Kiếm, Ba Đình, Đống Đa, Hai Bà Trưng, Cầu Giấy, Thanh Xuân, Tây Hồ, Hoàng Mai, Long Biên, Nam Từ Liêm, Bắc Từ Liêm.<br>
+                    • <strong>Mật độ dân số:</strong> Cao nhất cả nước, trung bình 20.000-45.000 người/km².<br>
+                    • <strong>Thế mạnh kinh tế:</strong> Thương mại, dịch vụ, tài chính - ngân hàng, giáo dục đại học, y tế chuyên sâu.
+                </div>
+            `,
+            indicatorHtml: `
+                <div style="font-size: 11.5px; line-height: 1.6; color: #333;">
+                    • <strong>Hạ tầng đặc thù:</strong> Trục đường sắt Cát Linh - Hà Đông, Nhổn - Ga Hà Nội đang vận hành & hoàn thiện.<br>
+                    • <strong>Bất động sản:</strong> Mặt bằng giá ở mức cao, trung tâm thị trường nhà ở toàn khu vực phía Bắc.<br>
+                    • <strong>Áp lực:</strong> Quá tải hạ tầng giao thông giờ cao điểm, tắc nghẽn ngõ phố, môi trường không khí cần cải thiện.
+                </div>
+            `
+        },
+        'ha-dong': {
+            title: "HÀ ĐÔNG & PHỤ CẬN - ĐÔ THỊ VỆ TINH PHÍA TÂY",
+            profileHtml: `
+                <div style="font-size: 11.5px; line-height: 1.6; color: #333;">
+                    • <strong>Phạm vi:</strong> Quận Hà Đông, Huyện Thanh Oai, Chương Mỹ, Mỹ Đức (sáp nhập vào Hà Nội năm 2008).<br>
+                    • <strong>Dân số:</strong> Hơn 1.2 triệu người, tốc độ đô thị hóa nhanh nhất Hà Nội.<br>
+                    • <strong>Thế mạnh kinh tế:</strong> Trung tâm thương mại dịch vụ khu vực phía Tây, làng nghề truyền thống, bất động sản vệ tinh.
+                </div>
+            `,
+            indicatorHtml: `
+                <div style="font-size: 11.5px; line-height: 1.6; color: #333;">
+                    • <strong>Hạ tầng chiến lược:</strong> Đường sắt Cát Linh - Hà Đông (đã vận hành), Vành đai 4 qua khu vực phía Tây.<br>
+                    • <strong>Quy hoạch:</strong> Đô thị vệ tinh Hòa Lạc và Xuân Mai quy hoạch trở thành trung tâm đổi mới sáng tạo.<br>
+                    • <strong>Làng nghề nổi bật:</strong> Hàng Gai - Hà Đông (lụa), Vạn Phúc (lụa tơ tằm), La Phù (đan len).
+                </div>
+            `
+        },
+        'gia-lam': {
+            title: "GIA LÂM MỚI & ĐÔNG BẮC HÀ NỘI - CỬA NGÕ PHÍA ĐÔNG",
+            profileHtml: `
+                <div style="font-size: 11.5px; line-height: 1.6; color: #333;">
+                    • <strong>Phạm vi:</strong> Huyện Gia Lâm (đang lên Quận), Quận Long Biên, Huyện Đông Anh, Huyện Sóc Sơn.<br>
+                    • <strong>Dân số:</strong> Hơn 1.5 triệu người, tốc độ tăng dân số cơ học cao do nhập cư.<br>
+                    • <strong>Thế mạnh kinh tế:</strong> Công nghiệp chế biến, logistics, cảng hàng không Nội Bài (Sóc Sơn), khu công nghiệp Thăng Long.
+                </div>
+            `,
+            indicatorHtml: `
+                <div style="font-size: 11.5px; line-height: 1.6; color: #333;">
+                    • <strong>Hạ tầng chiến lược:</strong> Cầu Vĩnh Tuy 2, Cầu Đuống mới, Vành đai 3.5, cao tốc Hà Nội - Hải Phòng.<br>
+                    • <strong>KCN trọng điểm:</strong> KCN Thăng Long (Đông Anh), KCN Quang Minh (Mê Linh), Khu CNC Hòa Lạc.<br>
+                    • <strong>Tiềm năng:</strong> Gia Lâm dự kiến lên quận năm 2026, thúc đẩy bất động sản khu vực phía Đông Hà Nội.
+                </div>
+            `
+        },
+        'dong-anh': {
+            title: "ĐÔNG ANH & PHÍA BẮC HÀ NỘI - TRUNG TÂM CÔNG NGHIỆP MỚI",
+            profileHtml: `
+                <div style="font-size: 11.5px; line-height: 1.6; color: #333;">
+                    • <strong>Phạm vi:</strong> Huyện Đông Anh (đang lên quận), Huyện Mê Linh, Huyện Sóc Sơn.<br>
+                    • <strong>Dân số:</strong> Hơn 900.000 người, tập trung lao động khu công nghiệp.<br>
+                    • <strong>Thế mạnh kinh tế:</strong> KCN Thăng Long - Toyota, Honda, Canon; Sân bay Nội Bài (logistics hàng không); Nông nghiệp công nghệ cao.
+                </div>
+            `,
+            indicatorHtml: `
+                <div style="font-size: 11.5px; line-height: 1.6; color: #333;">
+                    • <strong>Hạ tầng chiến lược:</strong> Vành đai 4 đang thi công đoạn qua Đông Anh - Mê Linh, đường Nhật Tân - Nội Bài.<br>
+                    • <strong>KCN nổi bật:</strong> KCN Thăng Long I,II,III (thu hút FDI Nhật Bản lớn nhất phía Bắc), KCN Quang Minh.<br>
+                    • <strong>Quy hoạch:</strong> Đông Anh dự kiến lên quận 2026; xây dựng khu đô thị thông minh ven sông Hồng.
+                </div>
+            `
+        }
+    };
+
+    function updateProvincialProfileWidget(district) {
+        const widget = document.getElementById('provincial-profile-widget');
+        if (!widget) return;
+        const profile = provincialProfiles[district] || provincialProfiles.all;
+        
+        widget.innerHTML = `
+            <div style="border-right: 1px solid #eee; padding-right: 20px;">
+                <h4 style="margin: 0 0 10px 0; font-size: 12px; font-weight: bold; color: #002d62; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;">
+                    📌 ${profile.title}
+                </h4>
+                ${profile.profileHtml}
+            </div>
+            <div>
+                <h4 style="margin: 0 0 10px 0; font-size: 12px; font-weight: bold; color: #c00000; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;">
+                    📊 CHỈ SỐ CẢI CÁCH &amp; CẠNH TRANH CHÍNH THỐNG
+                </h4>
+                ${profile.indicatorHtml}
+            </div>
+        `;
+    }
+
+    window.filterSpokeDistrict = function(district) {
+        const tabs = document.querySelectorAll('.spoke-tab');
+        tabs.forEach(tab => {
+            tab.style.backgroundColor = '#f7f7f7';
+            tab.style.color = '#333';
+            tab.style.borderColor = '#ddd';
+        });
+        
+        const eventTarget = window.event ? window.event.target : null;
+        if (eventTarget) {
+            eventTarget.style.backgroundColor = '#c00000';
+            eventTarget.style.color = '#ffffff';
+            eventTarget.style.borderColor = '#c00000';
+        }
+
+        if (district === 'all') {
+            hanoiArticles = [...originalHanoiArticles];
+            document.querySelector('.hanoi-intro-badge h1').innerText = "TRANG THÔNG TIN ĐỊA BÀN HÀ NỘI CỦA BÁO LAO ĐỘNG (BẢN QUY HOẠCH QUẢNG CÁO)";
+        } else if (district === 'noi-thanh') {
+            const noithanh = originalHanoiArticles.filter(a => a.district && (
+                a.district.includes('Hoàn Kiếm') || a.district.includes('Ba Đình') || 
+                a.district.includes('Đống Đa') || a.district.includes('Hai Bà Trưng') ||
+                a.district.includes('Cầu Giấy') || a.district.includes('Thanh Xuân') ||
+                a.district.includes('Tây Hồ') || a.district.includes('Long Biên') ||
+                a.district.includes('Nam Từ Liêm') || a.district.includes('Bắc Từ Liêm') ||
+                a.district.includes('Hoàng Mai')
+            ));
+            hanoiArticles = noithanh.length >= 10 ? noithanh : [...originalHanoiArticles];
+            document.querySelector('.hanoi-intro-badge h1').innerText = "PHÂN TUYẾN ĐỊA BÀN: HÀ NỘI NỘI THÀNH";
+        } else if (district === 'ha-dong') {
+            const hadong = originalHanoiArticles.filter(a => a.district && (
+                a.district.includes('Hà Đông') || a.district.includes('Thanh Oai') || 
+                a.district.includes('Chương Mỹ') || a.district.includes('Mỹ Đức')
+            ));
+            hanoiArticles = hadong.length >= 5 ? hadong : [...originalHanoiArticles];
+            document.querySelector('.hanoi-intro-badge h1').innerText = "PHÂN TUYẾN ĐỊA BÀN: HÀ ĐÔNG &amp; PHỤ CẬN";
+        } else if (district === 'gia-lam') {
+            const gialamnew = originalHanoiArticles.filter(a => a.district && (
+                a.district.includes('Gia Lâm') || a.district.includes('Đông Anh') ||
+                a.district.includes('Sóc Sơn') || a.district.includes('Mê Linh')
+            ));
+            hanoiArticles = gialamnew.length >= 5 ? gialamnew : [...originalHanoiArticles];
+            document.querySelector('.hanoi-intro-badge h1').innerText = "PHÂN TUYẾN ĐỊA BÀN: GIA LÂM MỚI &amp; ĐÔNG BẮC HÀ NỘI";
+        } else if (district === 'dong-anh') {
+            const donganh = originalHanoiArticles.filter(a => a.district && (
+                a.district.includes('Đông Anh') || a.district.includes('Mê Linh') ||
+                a.district.includes('Sóc Sơn')
+            ));
+            hanoiArticles = donganh.length >= 5 ? donganh : [...originalHanoiArticles];
+            document.querySelector('.hanoi-intro-badge h1').innerText = "PHÂN TUYẾN ĐỊA BÀN: ĐÔNG ANH &amp; PHÍA BẮC HÀ NỘI";
+        }
+
+        updateProvincialProfileWidget(district);
+        featuredArticleId = hanoiArticles[0] ? hanoiArticles[0].id : originalHanoiArticles[0].id;
+        
+        populateCuratorOptions();
+        renderMainCover();
+        renderMediaSection();
+        renderCategoryColumns();
+        renderEnterpriseBlock();
+        updateSchemaMarkup();
+        
+        if (window.switchMostReadSlide) {
+            window.switchMostReadSlide(0);
+        }
+    };
+
     function openSchemaModal() {
         document.getElementById('schema-modal').style.display = 'flex';
         updateSchemaMarkup();
@@ -1814,6 +2168,7 @@ middle_part = """
         updateSchemaMarkup();
         changeDistrictPrices('caugiay');
         fetchHanoiWeather();
+        updateProvincialProfileWidget('all');
         initInfraCarouselAutoplay();
     });
 </script>

@@ -5,51 +5,92 @@
 > 1. Mỗi khi kết thúc một yêu cầu hoặc kết thúc phiên làm việc, **AI PHẢI tự động cập nhật** file [session_state.md](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/session_state.md) (về tiến độ) và [skills.md](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/skills.md) (về kinh nghiệm kỹ thuật/bài học rút ra) mà không cần người dùng nhắc nhở.
 > 2. Khi bắt đầu một phiên làm việc mới, bạn chỉ cần gõ: **`làm-tiếp`**. AI sẽ đọc file này để nắm bắt bối cảnh lập tức.
 
+> [!CAUTION]
+> **🔒 KHUNG CHAT CHÍNH DỰ ÁN (MASTER CHAT)**
+> Conversation ID: `1be5f1f6-24da-484d-8983-4229c6fefd6f`
+> Mọi cập nhật kỹ thuật, deploy, chỉnh sửa code, và cập nhật tài liệu dự án **CHỈ ĐƯỢC THỰC HIỆN** từ khung chat này. Không thực hiện thay đổi dự án từ bất kỳ conversation nào khác.
+
 ---
 
 ## 📅 Cập nhật cuối cùng
-- Thời gian: 2026-06-01T21:20:00+07:00
-- Trạng thái hiện tại: Đã hoàn thành việc thêm dải Tin mới nhất (Latest News Ticker Bar) ngay dưới thanh Breadcrumbs theo phong cách CafeF cho tất cả các trang địa phương (Hà Nội, TPHCM & Đông Nam Bộ).
+- Thời gian: 2026-06-01T21:32:00+07:00
+- Trạng thái hiện tại: ✅ **ĐÃ DEPLOY VERCEL** - Hoàn thành và đóng gói buổi làm việc 01/06/2026
 
 ---
 
 ## 🛠️ Trạng thái Dự án & Bối cảnh Hiện tại
 
-### 1. Các tài liệu hiện có trong thư mục làm việc:
-- **Tài liệu Kỹ năng & Trạng thái làm việc:**
-  - [session_state.md](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/session_state.md)
-  - [skills.md](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/skills.md)
-- **Tài liệu mới vùng Đông Nam Bộ:**
-  - [tphcm_dongnambo_administrative_units.md](file:///C:/Users/Admin/.gemini/antigravity/brain/1be5f1f6-24da-484d-8983-4229c6fefd6f/tphcm_dongnambo_administrative_units.md)
-  - [tphcm_dongnambo_landmarks.md](file:///C:/Users/Admin/.gemini/antigravity/brain/1be5f1f6-24da-484d-8983-4229c6fefd6f/tphcm_dongnambo_landmarks.md)
-  - [tphcm_dongnambo_grouping_rules.md](file:///C:/Users/Admin/.gemini/antigravity/brain/1be5f1f6-24da-484d-8983-4229c6fefd6f/tphcm_dongnambo_grouping_rules.md)
-- **Chiến lược & Kế hoạch:**
-  - [1_chien_luoc_va_ke_hoach_pilot.md](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/1_chien_luoc_va_ke_hoach_pilot.md)
-  - [2_sop_bien_tap_va_van_hanh.md](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/2_sop_bien_tap_va_van_hanh.md)
-  - [7_tai_lieu_chuan_hoa_quy_trinh_trien_khai.md](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/7_tai_lieu_chuan_hoa_quy_trinh_trien_khai.md)
-- **Kỹ thuật & SEO:**
-  - [3_dac_ta_ky_thuat_va_seo.md](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/3_dac_ta_ky_thuat_va_seo.md)
-  - [6_quy_trinh_toa_soan_va_seo_tag.md](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/6_quy_trinh_toa_soan_va_seo_tag.md)
-- **Sản phẩm / Mockup:**
-  - [demo_landing_page_tphcm.html](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/demo_landing_page_tphcm.html)
-  - [demo_landing_page_tphcm_ads.html](file:///c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING%20PAGE%20THƯỜNG%20TRÚ/demo_landing_page_tphcm_ads.html)
+### Vercel Production URLs
+- **Hà Nội:** https://laodong-hanoi.vercel.app (= `index.html`)
+- **TPHCM & Đông Nam Bộ:** https://laodong-hanoi.vercel.app/tphcm_index.html
 
-- **Mới:** Triển khai thanh chạy tin mới nhất (Latest News Ticker Bar) gồm tiêu đề bài viết và nhãn thời gian, tự động chạy cuộn ngang vô hạn (seamless infinite marquee CSS) và dừng lại khi hover.
-- **Mới:** Biên dịch đồng bộ thanh chạy tin này cho toàn bộ các bản demo Hà Nội và TP.HCM qua các file Python (`apply_ads_layout.py`, `apply_tphcm_layout.py`, `apply_tphcm_layout_opt1.py`, `apply_tphcm_layout_opt2.py`).
-- **Mới:** Tích hợp trực tiếp sự kiện click trên thanh chạy tin để mở bài đọc nhanh qua Local Reader Modal (Modal Overlay) giúp độc giả không bị điều hướng ra khỏi trang địa phương.
-- **Mới:** Triển khai thành công và cập nhật lên Vercel production: https://laodong-hanoi.vercel.app
+### Các file cốt lõi:
+| File | Vai trò | Trạng thái |
+|------|---------|------------|
+| `apply_ads_layout.py` | Script build trang Hà Nội | ✅ Cập nhật |
+| `apply_tphcm_layout.py` | Script build trang TPHCM & ĐNB | ✅ Cập nhật |
+| `demo_landing_page_hanoi_clean.html` | Template sạch Hà Nội | ✅ |
+| `hanoi_final_consolidated.json` | Dữ liệu bài viết Hà Nội | ✅ |
+| `tphcm_dongnambo_consolidated.json` | Dữ liệu bài viết TPHCM+ĐNB | ✅ |
+| `index.html` | Production Hà Nội | ✅ Deployed |
+| `tphcm_index.html` | Production TPHCM & ĐNB | ✅ Deployed |
 
 ---
 
-## 📝 Nhiệm vụ tiếp theo cần xử lý (To-Do List)
-- [ ] Mở rộng kiểm thử hiển thị modal reader và ticker trên thiết bị di động để tối ưu trải nghiệm kéo cuộn.
-- [ ] Tích hợp tính năng lưu vị trí đọc (scroll restoration) khi đóng mở modal.e gốc `demo_landing_page_hanoi_clean.html` trước khi biên dịch hàng loạt.
-- **Mới:** Deploy thành công toàn bộ thay đổi lên Vercel production: https://laodong-hanoi.vercel.app
+## 📋 Tóm tắt buổi làm việc 01/06/2026 (hôm nay)
+
+### Sáng: Triển khai Hub & Spoke TPHCM & Đông Nam Bộ
+- ✅ Cào quét 64 bài viết thực tế từ TPHCM, Đồng Nai, Tây Ninh
+- ✅ Xây dựng tab bar Hub & Spoke lọc theo tỉnh (all/tphcm/dongnai/tayninh)
+- ✅ Provincial Profile Widget hiển thị thông tin lãnh đạo, dân số, kinh tế theo tab
+- ✅ Lịch cắt điện liên kết động theo tỉnh đang xem
+
+### Chiều: Tối ưu layout bố cục
+- ✅ **Fix khoảng trắng lớn top giao diện** → Thêm `#left-column-feed-container` bổ sung 3 tin nhỏ kiểu sidebar bên dưới 3 tin bottom row để cân bằng chiều cao cột trái với sidebar phải
+- ✅ **Cụm Đọc nhiều nhất**: Chuyển sang carousel 3 slide x 5 bài (gọn, tự chuyển mỗi 5 giây, có dots navigation) — bố trí NGANG bên dưới khối main cover trong `infra-block`
+- ✅ **Tin mới nhất (News Ticker Bar)**: Dải marquee cuộn ngang vô hạn ngay DƯỚI dải breadcrumbs, kiểu CafeF
+  - Tự động loại trừ bài đã hiển thị ở Tiêu điểm + Main Cover + Đọc nhiều
+  - Click mở Local Reader Modal (không rời trang)
+  - Dừng cuộn khi hover
+
+### Tối: Đồng bộ sang Hà Nội & Deploy
+- ✅ Áp dụng đầy đủ các skill TPHCM sang trang Hà Nội
+- ✅ Rebuild cả 6 file HTML output
+- ✅ Commit & Push → Vercel auto-deploy
 
 ---
 
-## 📝 Nhiệm vụ tiếp theo cần xử lý (To-Do List)
-- [ ] Mở rộng kiểm thử hiển thị modal reader trên thiết bị di động để tối ưu trải nghiệm kéo cuộn.
-- [ ] Tích hợp tính năng lưu vị trí đọc (scroll restoration) khi đóng mở modal.
+## 🏗️ Kiến trúc Layout hiện tại (cả 2 trang)
 
+```
+[HEADER - Nav Báo Lao Động]
+[BREADCRUMBS] ← [TICKER BAR cuộn ngang tin mới loại trừ trùng] →
+[INTRO BADGE: "Trang thông tin địa bàn..."]
+[HUB & SPOKE TAB BAR] (chỉ có ở TPHCM)
+[AD SLOT 01: Billboard 970x250]
+[BLOCK 1: MAIN COVER]
+  ├─ CỘT TRÁI (.pl):
+  │   ├─ subcover-container (2 tin stacked)
+  │   ├─ main-cover-container (1 tin lớn)
+  │   ├─ subcover-bottom-row (3 tin grid)
+  │   └─ left-column-feed-container (3 tin nhỏ thumbnail bù chiều cao)
+  └─ CỘT PHẢI (.pr):
+      ├─ Tiêu điểm (4 tin spotlight)
+      ├─ AD SLOT 02: Sidebar 300x250
+      └─ Sự kiện bình luận + Người Việt tử tế
+[INFRA BLOCK: Đọc nhiều nhất carousel 3 slide x 5 bài]
+[BLOCK 2: Media Section]
+[BLOCK 3: Category Columns]
+[...]
+[FOOTER]
+```
 
+---
+
+## 📝 Việc cần làm buổi tiếp theo
+
+- [ ] Kiểm tra trực tiếp trên Vercel: Ticker bar, Carousel đọc nhiều, left-column-feed
+- [ ] Mở rộng test trên mobile (responsive)
+- [ ] Thêm PCI Index / Governance Score widget vào trang địa phương (đã phê duyệt chiều nay)
+- [ ] Triển khai thêm các trang spoke mới (Bình Dương, Bình Phước cho ĐNB)
+- [ ] Tích hợp tính năng lưu vị trí đọc (scroll restoration) khi đóng mở Reader Modal
