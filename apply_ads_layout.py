@@ -636,17 +636,29 @@ middle_part = """
                                 </div>
                             </a>
                         </div>
-                        
-                        <div style="margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px;">
-                            <div style="border-left: 3px solid #c00000; padding-left: 8px; margin-bottom: 10px;">
-                                <strong style="font-size: 12px; text-transform: uppercase; color: #c00000;">Sự kiện bình luận</strong>
-                                <a href="https://laodong.vn" style="display: block; font-size: 13px; font-weight: bold; color: #333; margin-top: 4px; text-decoration: none;" id="sidebar-commentary-title">...</a>
+
+                        <!-- Interactive Poll (Khảo sát dư luận) -->
+                        <div class="premium-card" style="box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; margin-top: 15px;">
+                            <div>
+                                <div style="font-size: 13.5px; font-weight: bold; color: #002d62; text-transform: uppercase; border-bottom: 2px solid #002d62; padding-bottom: 6px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
+                                    <span>📊 Khảo sát Dư luận Thủ đô</span>
+                                    <span style="font-size: 9px; color: #c00000; font-weight: bold; border: 1px solid #c00000; padding: 2px 5px; border-radius: 2px;">VOTE</span>
+                                </div>
+                                
+                                <div id="poll-container">
+                                    <h4 style="margin: 0 0 12px 0; font-size: 12.5px; font-weight: bold; color: #333; line-height: 1.45;">Bạn ủng hộ việc tiếp tục mở rộng thêm các tuyến phố đi bộ vào cuối tuần tại Hà Nội không?</h4>
+                                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                                        <button onclick="submitPollVote('yes')" style="background: #ffffff; border: 1px solid #ddd; padding: 10px; border-radius: 4px; text-align: left; font-size: 11.5px; cursor: pointer; font-weight: bold; color: #333; transition: all 0.2s;" onmouseover="this.style.borderColor='#002d62'; this.style.backgroundColor='#f7f9fb';" onmouseout="this.style.borderColor='#ddd'; this.style.backgroundColor='#fff';">👍 Đồng ý, cần nhân rộng mô hình này</button>
+                                        <button onclick="submitPollVote('no')" style="background: #ffffff; border: 1px solid #ddd; padding: 10px; border-radius: 4px; text-align: left; font-size: 11.5px; cursor: pointer; font-weight: bold; color: #333; transition: all 0.2s;" onmouseover="this.style.borderColor='#002d62'; this.style.backgroundColor='#f7f9fb';" onmouseout="this.style.borderColor='#ddd'; this.style.backgroundColor='#fff';">👎 Không đồng ý, gây ùn tắc giao thông cục bộ</button>
+                                        <button onclick="submitPollVote('neutral')" style="background: #ffffff; border: 1px solid #ddd; padding: 10px; border-radius: 4px; text-align: left; font-size: 11.5px; cursor: pointer; font-weight: bold; color: #333; transition: all 0.2s;" onmouseover="this.style.borderColor='#002d62'; this.style.backgroundColor='#f7f9fb';" onmouseout="this.style.borderColor='#ddd'; this.style.backgroundColor='#fff';">😐 Đồng ý nhưng cần quy hoạch bãi đỗ xe hợp lý</button>
+                                    </div>
+                                </div>
                             </div>
-                            <div style="border-left: 3px solid #002d62; padding-left: 8px;">
-                                <strong style="font-size: 12px; text-transform: uppercase; color: #002d62;">Người Việt tử tế</strong>
-                                <a href="https://laodong.vn" style="display: block; font-size: 13px; font-weight: bold; color: #333; margin-top: 4px; text-decoration: none;" id="sidebar-kindness-title">...</a>
+                            <div style="font-size: 9px; color: #888; margin-top: 15px; border-top: 1px solid #eee; padding-top: 8px; text-align: center;">
+                                Khảo sát mang tính chất tham khảo dư luận phục vụ bài viết chuyên đề.
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -943,47 +955,94 @@ middle_part = """
 
             <!-- BLOCK 5.75: LỊCH BIỂU DIỄN & GIẢI TRÍ HÀ NỘI (MÔ PHỎNG KẾT NỐI API THỜI GIAN THỰC) -->
             <div class="m-top-20 columns-layout" style="display: grid; grid-template-columns: 1.8fr 1.2fr; gap: 20px; font-family: Arial, sans-serif;">
-                <!-- Left: Theatre, Circus, Shows -->
+                <!-- Left: Theatre, Circus, Shows + Exhibitions & Events -->
                 <div class="premium-card">
                     <div style="font-size: 14px; font-weight: bold; color: #002d62; text-transform: uppercase; border-bottom: 2px solid #002d62; padding-bottom: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
-                        <span>🎭 Lịch biểu diễn & Nghệ thuật Hà Nội</span>
+                        <span>🎭 Lịch biểu diễn & Triển lãm Hà Nội</span>
                         <span style="font-size: 9px; color: #28a745; font-weight: bold; border: 1px solid #28a745; padding: 2px 5px; border-radius: 2px;">LIVE API CONNECTED</span>
                     </div>
                     
-                    <div style="display: flex; flex-direction: column; gap: 12px;">
-                        <!-- Show 1 -->
-                        <div style="display: flex; gap: 12px; align-items: center; border-bottom: 1px solid #f5f5f5; padding-bottom: 10px;">
-                            <div style="background-color: #ffeef0; color: #d71920; font-size: 10px; font-weight: bold; padding: 8px; text-align: center; border-radius: 4px; width: 50px; flex-shrink: 0; line-height: 1.2;">
-                                30<br><span style="font-size: 8px; font-weight: normal;">Th5</span>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;" class="columns-layout">
+                        <!-- Column 1: Sân khấu & Nghệ thuật -->
+                        <div style="border-right: 1px solid #eee; padding-right: 15px;">
+                            <div style="font-size: 11.5px; font-weight: bold; color: #c00000; text-transform: uppercase; margin-bottom: 10px;">🎭 Sân khấu & Ca nhạc</div>
+                            <div style="display: flex; flex-direction: column; gap: 12px;">
+                                <!-- Show 1 -->
+                                <div style="display: flex; gap: 10px; align-items: center; border-bottom: 1px solid #f9f9f9; padding-bottom: 8px;">
+                                    <div style="background-color: #ffeef0; color: #d71920; font-size: 9.5px; font-weight: bold; padding: 6px; text-align: center; border-radius: 4px; width: 42px; flex-shrink: 0; line-height: 1.2;">
+                                        30<br><span style="font-size: 7.5px; font-weight: normal;">Th5</span>
+                                    </div>
+                                    <div style="flex-grow: 1;">
+                                        <span style="background-color: #f5f5f5; color: #888; border: 1px solid #ddd; padding: 0 3px; font-size: 7.5px; font-weight: bold; border-radius: 2px; margin-right: 4px;">PR Pinned</span>
+                                        <h4 style="margin: 0 0 2px 0; font-size: 11.5px; font-weight: bold; color: #111; line-height: 1.3;">Hòa nhạc: "Đêm mùa thu Hà Nội"</h4>
+                                        <span style="font-size: 9.5px; color: #666; display: block;">📍 Nhà hát Lớn | ⏰ 19:30</span>
+                                    </div>
+                                    <a href="https://ticketbox.vn" target="_blank" style="background-color: #002d62; color: #fff; text-decoration: none; padding: 4px 8px; border-radius: 3px; font-size: 9.5px; font-weight: bold; flex-shrink: 0;">Đặt vé</a>
+                                </div>
+                                <!-- Show 2 -->
+                                <div style="display: flex; gap: 10px; align-items: center; border-bottom: 1px solid #f9f9f9; padding-bottom: 8px;">
+                                    <div style="background-color: #e5f1ff; color: #00458e; font-size: 9.5px; font-weight: bold; padding: 6px; text-align: center; border-radius: 4px; width: 42px; flex-shrink: 0; line-height: 1.2;">
+                                        31<br><span style="font-size: 7.5px; font-weight: normal;">Th5</span>
+                                    </div>
+                                    <div style="flex-grow: 1;">
+                                        <h4 style="margin: 0 0 2px 0; font-size: 11.5px; font-weight: bold; color: #111; line-height: 1.3;">Kịch xiếc: "Vòng quay diệu kỳ"</h4>
+                                        <span style="font-size: 9.5px; color: #666; display: block;">📍 Rạp xiếc TW | ⏰ 10:00 & 20:00</span>
+                                    </div>
+                                    <a href="https://ticketbox.vn" target="_blank" style="background-color: #002d62; color: #fff; text-decoration: none; padding: 4px 8px; border-radius: 3px; font-size: 9.5px; font-weight: bold; flex-shrink: 0;">Đặt vé</a>
+                                </div>
+                                <!-- Show 3 -->
+                                <div style="display: flex; gap: 10px; align-items: center;">
+                                    <div style="background-color: #f6f0ff; color: #7a22ff; font-size: 9.5px; font-weight: bold; padding: 6px; text-align: center; border-radius: 4px; width: 42px; flex-shrink: 0; line-height: 1.2;">
+                                        01<br><span style="font-size: 7.5px; font-weight: normal;">Th6</span>
+                                    </div>
+                                    <div style="flex-grow: 1;">
+                                        <h4 style="margin: 0 0 2px 0; font-size: 11.5px; font-weight: bold; color: #111; line-height: 1.3;">Múa rối nước cổ truyền (Dành cho 1/6)</h4>
+                                        <span style="font-size: 9.5px; color: #666; display: block;">📍 Rạp Thăng Long | ⏰ 15:00 & 17:00</span>
+                                    </div>
+                                    <a href="https://ticketbox.vn" target="_blank" style="background-color: #002d62; color: #fff; text-decoration: none; padding: 4px 8px; border-radius: 3px; font-size: 9.5px; font-weight: bold; flex-shrink: 0;">Đặt vé</a>
+                                </div>
                             </div>
-                            <div style="flex-grow: 1;">
-                                <span style="background-color: #f5f5f5; color: #888; border: 1px solid #ddd; padding: 0 3px; font-size: 8px; font-weight: bold; border-radius: 2px; margin-right: 4px;">PR Pinned</span>
-                                <h4 style="margin: 0 0 3px 0; font-size: 12px; font-weight: bold; color: #111;">Hòa nhạc giao hưởng: "Đêm mùa thu Hà Nội"</h4>
-                                <span style="font-size: 10.5px; color: #666; display: block;">📍 Nhà hát Lớn Hà Nội | ⏰ 19:30 Tối nay</span>
-                            </div>
-                            <a href="https://ticketbox.vn" target="_blank" style="background-color: #002d62; color: #fff; text-decoration: none; padding: 5px 10px; border-radius: 3px; font-size: 10px; font-weight: bold; flex-shrink: 0;">Đặt vé</a>
                         </div>
-                        <!-- Show 2 -->
-                        <div style="display: flex; gap: 12px; align-items: center; border-bottom: 1px solid #f5f5f5; padding-bottom: 10px;">
-                            <div style="background-color: #e5f1ff; color: #00458e; font-size: 10px; font-weight: bold; padding: 8px; text-align: center; border-radius: 4px; width: 50px; flex-shrink: 0; line-height: 1.2;">
-                                31<br><span style="font-size: 8px; font-weight: normal;">Th5</span>
+                        
+                        <!-- Column 2: Triển lãm & Sự kiện khác -->
+                        <div>
+                            <div style="font-size: 11.5px; font-weight: bold; color: #002d62; text-transform: uppercase; margin-bottom: 10px;">🖼️ Triển lãm & Sự kiện khác</div>
+                            <div style="display: flex; flex-direction: column; gap: 12px;">
+                                <!-- Event 1 -->
+                                <div style="display: flex; gap: 10px; align-items: center; border-bottom: 1px solid #f9f9f9; padding-bottom: 8px;">
+                                    <div style="background-color: #eafaf1; color: #2ecc71; font-size: 9.5px; font-weight: bold; padding: 6px; text-align: center; border-radius: 4px; width: 42px; flex-shrink: 0; line-height: 1.2;">
+                                        30<br><span style="font-size: 7.5px; font-weight: normal;">Th5</span>
+                                    </div>
+                                    <div style="flex-grow: 1;">
+                                        <span style="background-color: #e8f5e9; color: #2e7d32; padding: 0 4px; font-size: 7.5px; font-weight: bold; border-radius: 2px; margin-right: 4px;">Free Entry</span>
+                                        <h4 style="margin: 0 0 2px 0; font-size: 11.5px; font-weight: bold; color: #111; line-height: 1.3;">Triển lãm tranh: "Sắc màu Hà Nội"</h4>
+                                        <span style="font-size: 9.5px; color: #666; display: block;">📍 Bảo tàng Mỹ thuật VN | ⏰ 9:00 - 17:00</span>
+                                    </div>
+                                    <a href="https://ticketbox.vn" target="_blank" style="background-color: #002d62; color: #fff; text-decoration: none; padding: 4px 8px; border-radius: 3px; font-size: 9.5px; font-weight: bold; flex-shrink: 0;">Chi tiết</a>
+                                </div>
+                                <!-- Event 2 -->
+                                <div style="display: flex; gap: 10px; align-items: center; border-bottom: 1px solid #f9f9f9; padding-bottom: 8px;">
+                                    <div style="background-color: #fff9db; color: #f59f00; font-size: 9.5px; font-weight: bold; padding: 6px; text-align: center; border-radius: 4px; width: 42px; flex-shrink: 0; line-height: 1.2;">
+                                        31<br><span style="font-size: 7.5px; font-weight: normal;">Th5</span>
+                                    </div>
+                                    <div style="flex-grow: 1;">
+                                        <h4 style="margin: 0 0 2px 0; font-size: 11.5px; font-weight: bold; color: #111; line-height: 1.3;">Lễ hội ẩm thực: "Hương vị Thủ đô"</h4>
+                                        <span style="font-size: 9.5px; color: #666; display: block;">📍 CV Thống Nhất | ⏰ 8:00 - 22:00</span>
+                                    </div>
+                                    <a href="https://ticketbox.vn" target="_blank" style="background-color: #002d62; color: #fff; text-decoration: none; padding: 4px 8px; border-radius: 3px; font-size: 9.5px; font-weight: bold; flex-shrink: 0;">Đăng ký</a>
+                                </div>
+                                <!-- Event 3 -->
+                                <div style="display: flex; gap: 10px; align-items: center;">
+                                    <div style="background-color: #fff0f6; color: #d6336c; font-size: 9.5px; font-weight: bold; padding: 6px; text-align: center; border-radius: 4px; width: 42px; flex-shrink: 0; line-height: 1.2;">
+                                        02<br><span style="font-size: 7.5px; font-weight: normal;">Th6</span>
+                                    </div>
+                                    <div style="flex-grow: 1;">
+                                        <h4 style="margin: 0 0 2px 0; font-size: 11.5px; font-weight: bold; color: #111; line-height: 1.3;">Triển lãm ảnh: "Ký ức Hà Nội xưa"</h4>
+                                        <span style="font-size: 9.5px; color: #666; display: block;">📍 Triển lãm Đinh Tiên Hoàng | ⏰ 8:30</span>
+                                    </div>
+                                    <a href="https://ticketbox.vn" target="_blank" style="background-color: #002d62; color: #fff; text-decoration: none; padding: 4px 8px; border-radius: 3px; font-size: 9.5px; font-weight: bold; flex-shrink: 0;">Chi tiết</a>
+                                </div>
                             </div>
-                            <div style="flex-grow: 1;">
-                                <h4 style="margin: 0 0 3px 0; font-size: 12px; font-weight: bold; color: #111;">Kịch xiếc nghệ thuật: "Vòng quay diệu kỳ"</h4>
-                                <span style="font-size: 10.5px; color: #666; display: block;">📍 Rạp xiếc Trung ương | ⏰ 10:00 & 20:00 Ngày mai</span>
-                            </div>
-                            <a href="https://ticketbox.vn" target="_blank" style="background-color: #002d62; color: #fff; text-decoration: none; padding: 5px 10px; border-radius: 3px; font-size: 10px; font-weight: bold; flex-shrink: 0;">Đặt vé</a>
-                        </div>
-                        <!-- Show 3 -->
-                        <div style="display: flex; gap: 12px; align-items: center; padding-bottom: 5px;">
-                            <div style="background-color: #f6f0ff; color: #7a22ff; font-size: 10px; font-weight: bold; padding: 8px; text-align: center; border-radius: 4px; width: 50px; flex-shrink: 0; line-height: 1.2;">
-                                01<br><span style="font-size: 8px; font-weight: normal;">Th6</span>
-                            </div>
-                            <div style="flex-grow: 1;">
-                                <h4 style="margin: 0 0 3px 0; font-size: 12px; font-weight: bold; color: #111;">Biểu diễn Múa rối nước cổ truyền (Dành cho 1/6)</h4>
-                                <span style="font-size: 10.5px; color: #666; display: block;">📍 Nhà hát Múa rối nước Thăng Long | ⏰ 15:00 & 17:00</span>
-                            </div>
-                            <a href="https://ticketbox.vn" target="_blank" style="background-color: #002d62; color: #fff; text-decoration: none; padding: 5px 10px; border-radius: 3px; font-size: 10px; font-weight: bold; flex-shrink: 0;">Đặt vé</a>
                         </div>
                     </div>
                 </div>
@@ -1024,31 +1083,9 @@ middle_part = """
             </div>
 
             <!-- BLOCK 5.76: GÓC TƯƠNG TÁC ĐỘC GIẢ (BÁO CHÍ TƯƠNG TÁC DỰ LIỆU) -->
-            <div class="m-top-20" style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 20px; font-family: Arial, sans-serif;" class="columns-layout">
-                <!-- Left: Interactive Poll (Khảo sát dư luận) -->
-                <div class="premium-card" style="box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between;">
-                    <div>
-                        <div style="font-size: 14px; font-weight: bold; color: #002d62; text-transform: uppercase; border-bottom: 2px solid #002d62; padding-bottom: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
-                            <span>📊 Khảo sát Dư luận Thủ đô</span>
-                            <span style="font-size: 9px; color: #c00000; font-weight: bold; border: 1px solid #c00000; padding: 2px 5px; border-radius: 2px;">VOTE</span>
-                        </div>
-                        
-                        <div id="poll-container">
-                            <h4 style="margin: 0 0 12px 0; font-size: 13.5px; font-weight: bold; color: #333; line-height: 1.45;">Bạn ủng hộ việc tiếp tục mở rộng thêm các tuyến phố đi bộ vào cuối tuần tại Hà Nội không?</h4>
-                            <div style="display: flex; flex-direction: column; gap: 8px;">
-                                <button onclick="submitPollVote('yes')" style="background: #ffffff; border: 1px solid #ddd; padding: 10px; border-radius: 4px; text-align: left; font-size: 12px; cursor: pointer; font-weight: bold; color: #333; transition: all 0.2s;" onmouseover="this.style.borderColor='#002d62'; this.style.backgroundColor='#f7f9fb';" onmouseout="this.style.borderColor='#ddd'; this.style.backgroundColor='#fff';">👍 Đồng ý, cần nhân rộng mô hình này</button>
-                                <button onclick="submitPollVote('no')" style="background: #ffffff; border: 1px solid #ddd; padding: 10px; border-radius: 4px; text-align: left; font-size: 12px; cursor: pointer; font-weight: bold; color: #333; transition: all 0.2s;" onmouseover="this.style.borderColor='#002d62'; this.style.backgroundColor='#f7f9fb';" onmouseout="this.style.borderColor='#ddd'; this.style.backgroundColor='#fff';">👎 Không đồng ý, gây ùn tắc giao thông cục bộ</button>
-                                <button onclick="submitPollVote('neutral')" style="background: #ffffff; border: 1px solid #ddd; padding: 10px; border-radius: 4px; text-align: left; font-size: 12px; cursor: pointer; font-weight: bold; color: #333; transition: all 0.2s;" onmouseover="this.style.borderColor='#002d62'; this.style.backgroundColor='#f7f9fb';" onmouseout="this.style.borderColor='#ddd'; this.style.backgroundColor='#fff';">😐 Đồng ý nhưng cần quy hoạch bãi đỗ xe hợp lý</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="font-size: 9.5px; color: #888; margin-top: 15px; border-top: 1px solid #eee; padding-top: 8px; text-align: center;">
-                        Khảo sát mang tính chất tham khảo dư luận phục vụ bài viết chuyên đề.
-                    </div>
-                </div>
-
-                <!-- Right: Labor Overtime Pay Calculator (Tính lương tăng ca tự động) -->
-                <div class="premium-card" style="box-sizing: border-box;">
+            <div class="m-top-20" style="font-family: Arial, sans-serif;">
+                <!-- Labor Overtime Pay Calculator (Tính lương tăng ca tự động) -->
+                <div class="premium-card" style="box-sizing: border-box; max-width: 100%;">
                     <div style="font-size: 14px; font-weight: bold; color: #c00000; text-transform: uppercase; border-bottom: 2px solid #c00000; padding-bottom: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
                         <span>⚖️ Tự tính Lương tăng ca (Luật LĐ 2019)</span>
                         <span style="font-size: 9px; color: #28a745; font-weight: bold; border: 1px solid #28a745; padding: 2px 5px; border-radius: 2px;">TIỆN ÍCH LAO ĐỘNG</span>
@@ -1057,15 +1094,15 @@ middle_part = """
                     <div style="display: flex; flex-direction: column; gap: 12px; font-size: 12px;">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <label style="font-weight: bold; color: #333;">Lương cơ bản (đồng/giờ):</label>
-                            <input type="number" id="labor-hourly-wage" value="30000" style="width: 100px; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-weight: bold; text-align: right; color: #002d62;">
+                            <input type="number" id="labor-hourly-wage" value="30000" style="width: 120px; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-weight: bold; text-align: right; color: #002d62;">
                         </div>
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <label style="font-weight: bold; color: #333;">Số giờ làm thêm:</label>
-                            <input type="number" id="labor-overtime-hours" value="4" style="width: 100px; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-weight: bold; text-align: right; color: #002d62;">
+                            <input type="number" id="labor-overtime-hours" value="4" style="width: 120px; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-weight: bold; text-align: right; color: #002d62;">
                         </div>
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <label style="font-weight: bold; color: #333;">Thời điểm tăng ca:</label>
-                            <select id="labor-overtime-type" style="width: 120px; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-weight: bold; color: #002d62;">
+                            <select id="labor-overtime-type" style="width: 140px; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-weight: bold; color: #002d62;">
                                 <option value="weekday">Ngày thường (+150%)</option>
                                 <option value="weekend">Ngày chủ nhật (+200%)</option>
                                 <option value="holiday">Ngày lễ, Tết (+300%)</option>
@@ -1766,10 +1803,14 @@ middle_part = """
         const kindnessPool = hanoiArticles.filter(a => a.category === "Xã hội" && a.id !== centerArt.id);
         const kindnessArt = getSafeArticle(kindnessPool, 0, 12);
         
-        document.getElementById('sidebar-commentary-title').innerText = commentArt.title;
-        document.getElementById('sidebar-commentary-title').href = commentArt.url;
-        document.getElementById('sidebar-kindness-title').innerText = kindnessArt.title;
-        document.getElementById('sidebar-kindness-title').href = kindnessArt.url;
+        if (document.getElementById('sidebar-commentary-title')) {
+            document.getElementById('sidebar-commentary-title').innerText = commentArt.title;
+            document.getElementById('sidebar-commentary-title').href = commentArt.url;
+        }
+        if (document.getElementById('sidebar-kindness-title')) {
+            document.getElementById('sidebar-kindness-title').innerText = kindnessArt.title;
+            document.getElementById('sidebar-kindness-title').href = kindnessArt.url;
+        }
 
 
 
