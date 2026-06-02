@@ -426,38 +426,33 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
                 </div>
             </div>
 
-            <!-- REGIONAL INTRO BADGE -->
-            <div class="hanoi-intro-badge" style="background-color: #ffffff; border: 1px solid #e3e3e3; border-top: 3px solid #c00000; padding: 12px 15px; margin-top: 15px; font-family: Arial, sans-serif; border-radius: 4px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-                <h1 style="font-size: 16px; font-weight: bold; color: #c00000; margin: 0; text-transform: uppercase; letter-spacing: 1px;">TRANG THÔNG TIN ĐỊA BÀN HÀ NỘI CỦA BÁO LAO ĐỘNG (BẢN QUY HOẠCH QUẢNG CÁO)</h1>
-            </div>
-
-            <!-- HUB & SPOKE DISTRICT FILTER TAB BAR -->
-            <div style="background-color: #ffffff; border: 1px solid #e3e3e3; padding: 10px 15px; margin-top: 15px; font-family: Arial, sans-serif; border-radius: 4px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 1px 3px rgba(0,0,0,0.05); flex-wrap: wrap; gap: 10px;">
-                <div style="font-size: 12px; font-weight: bold; color: #555; text-transform: uppercase; display: flex; align-items: center; gap: 6px;">
-                    📂 Phân tuyến địa bàn (Hub &amp; Spoke):
-                </div>
-                <div style="display: flex; gap: 8px; flex-wrap: wrap;" id="hub-spoke-tabs">
-                    <button class="spoke-tab" onclick="filterSpokeDistrict('all')" style="background-color: #c00000; color: #ffffff; border: 1px solid #c00000; padding: 6px 14px; border-radius: 3px; font-size: 12px; font-weight: bold; cursor: pointer; transition: all 0.2s;">
-                        🌐 Toàn địa bàn Hà Nội (Hub)
-                    </button>
-                    <button class="spoke-tab" onclick="filterSpokeDistrict('noi-thanh')" style="background-color: #f7f7f7; color: #333; border: 1px solid #ddd; padding: 6px 14px; border-radius: 3px; font-size: 12px; font-weight: bold; cursor: pointer; transition: all 0.2s;">
-                        📍 Nội thành (Spoke)
-                    </button>
-                    <button class="spoke-tab" onclick="filterSpokeDistrict('ha-dong')" style="background-color: #f7f7f7; color: #333; border: 1px solid #ddd; padding: 6px 14px; border-radius: 3px; font-size: 12px; font-weight: bold; cursor: pointer; transition: all 0.2s;">
-                        📍 Hà Đông (Spoke)
-                    </button>
-                    <button class="spoke-tab" onclick="filterSpokeDistrict('gia-lam')" style="background-color: #f7f7f7; color: #333; border: 1px solid #ddd; padding: 6px 14px; border-radius: 3px; font-size: 12px; font-weight: bold; cursor: pointer; transition: all 0.2s;">
-                        📍 Gia Lâm mới (Spoke)
-                    </button>
-                    <button class="spoke-tab" onclick="filterSpokeDistrict('dong-anh')" style="background-color: #f7f7f7; color: #333; border: 1px solid #ddd; padding: 6px 14px; border-radius: 3px; font-size: 12px; font-weight: bold; cursor: pointer; transition: all 0.2s;">
-                        📍 Đông Anh (Spoke)
-                    </button>
+            <!-- NATIVE LAO DONG BREADCRUMBS / TITLE SECTION -->
+            <div class="breadcrums" style="border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 15px;">
+                <h1 style="margin: 0; font-size: 22px; font-weight: bold; font-family: Arial, sans-serif;">
+                    <a class="main-cat-lnk" href="#" style="color: #000000; text-decoration: none;" id="dynamic-page-title">Chuyên trang Hà Nội</a>
+                </h1>
+                <div class="children-cats" style="margin-top: 10px;">
+                    <div class="list" id="hub-spoke-tabs" style="display: flex; gap: 15px; flex-wrap: wrap; font-family: Arial, sans-serif; font-size: 13px;">
+                        <a href="#" class="item active" onclick="filterSpokeDistrict('all'); return false;" style="color: #c00000; font-weight: bold; text-decoration: none; padding-bottom: 2px; border-bottom: 2px solid #c00000;">Toàn bộ Hà Nội</a>
+                        <a href="#" class="item" onclick="filterSpokeDistrict('noi-thanh'); return false;" style="color: #555; text-decoration: none; padding-bottom: 2px;">Nội thành</a>
+                        <a href="#" class="item" onclick="filterSpokeDistrict('ha-dong'); return false;" style="color: #555; text-decoration: none; padding-bottom: 2px;">Hà Đông &amp; Phụ cận</a>
+                        <a href="#" class="item" onclick="filterSpokeDistrict('gia-lam'); return false;" style="color: #555; text-decoration: none; padding-bottom: 2px;">Gia Lâm mới</a>
+                        <a href="#" class="item" onclick="filterSpokeDistrict('dong-anh'); return false;" style="color: #555; text-decoration: none; padding-bottom: 2px;">Đông Anh</a>
+                    </div>
                 </div>
             </div>
 
-            <!-- DYNAMIC PROVINCIAL PROFILE & GOVERNANCE WIDGET -->
-            <div id="provincial-profile-widget" style="background-color: #ffffff; border: 1px solid #e3e3e3; border-left: 4px solid #002d62; padding: 15px 20px; margin-top: 15px; font-family: Arial, sans-serif; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: grid; grid-template-columns: 1.2fr 1.8fr; gap: 20px; align-items: start; box-sizing: border-box;">
-                <!-- JS populated dynamically -->
+            <!-- COLLAPSIBLE PROVINCIAL PROFILE ACCORDION -->
+            <div style="margin-top: 15px; font-family: Arial, sans-serif;">
+                <div onclick="toggleProvincialProfile()" style="background-color: #f7f9fb; border: 1px solid #e3e3e3; padding: 10px 15px; border-radius: 4px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none;">
+                    <span style="font-weight: bold; color: #002d62; font-size: 13px; display: flex; align-items: center; gap: 8px;">
+                        📊 THÔNG TIN HỒ SƠ & CHỈ SỐ CẢI CÁCH ĐỊA PHƯƠNG
+                    </span>
+                    <span id="profile-toggle-icon" style="font-weight: bold; color: #888; font-size: 14px;">Mở rộng ▾</span>
+                </div>
+                <div id="provincial-profile-widget" style="background-color: #ffffff; border: 1px solid #e3e3e3; border-top: none; border-left: 4px solid #002d62; padding: 15px 20px; font-family: Arial, sans-serif; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: none; grid-template-columns: 1.2fr 1.8fr; gap: 20px; align-items: start; box-sizing: border-box;">
+                    <!-- JS populated dynamically -->
+                </div>
             </div>
 
 
@@ -4023,24 +4018,39 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
         `;
     }
 
+    window.toggleProvincialProfile = function() {
+        const widget = document.getElementById('provincial-profile-widget');
+        const icon = document.getElementById('profile-toggle-icon');
+        if (widget.style.display === 'none' || widget.style.display === '') {
+            widget.style.display = 'grid';
+            icon.innerText = 'Thu gọn ▴';
+        } else {
+            widget.style.display = 'none';
+            icon.innerText = 'Mở rộng ▾';
+        }
+    }
+
     window.filterSpokeDistrict = function(district) {
-        const tabs = document.querySelectorAll('.spoke-tab');
+        const tabs = document.querySelectorAll('#hub-spoke-tabs .item');
         tabs.forEach(tab => {
-            tab.style.backgroundColor = '#f7f7f7';
-            tab.style.color = '#333';
-            tab.style.borderColor = '#ddd';
+            tab.style.color = '#555';
+            tab.style.fontWeight = 'normal';
+            tab.style.borderBottom = 'none';
+            tab.classList.remove('active');
         });
         
         const eventTarget = window.event ? window.event.target : null;
         if (eventTarget) {
-            eventTarget.style.backgroundColor = '#c00000';
-            eventTarget.style.color = '#ffffff';
-            eventTarget.style.borderColor = '#c00000';
+            eventTarget.style.color = '#c00000';
+            eventTarget.style.fontWeight = 'bold';
+            eventTarget.style.borderBottom = '2px solid #c00000';
+            eventTarget.classList.add('active');
         }
 
+        const pageTitle = document.getElementById('dynamic-page-title');
         if (district === 'all') {
             hanoiArticles = [...originalHanoiArticles];
-            document.querySelector('.hanoi-intro-badge h1').innerText = "TRANG THÔNG TIN ĐỊA BÀN HÀ NỘI CỦA BÁO LAO ĐỘNG (BẢN QUY HOẠCH QUẢNG CÁO)";
+            if (pageTitle) pageTitle.innerText = "Chuyên trang Hà Nội";
         } else if (district === 'noi-thanh') {
             hanoiArticles = originalHanoiArticles.filter(a => a.district && (
                 a.district.includes('Hoàn Kiếm') || a.district.includes('Ba Đình') || 
@@ -4050,25 +4060,25 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
                 a.district.includes('Nam Từ Liêm') || a.district.includes('Bắc Từ Liêm') ||
                 a.district.includes('Hoàng Mai')
             ));
-            document.querySelector('.hanoi-intro-badge h1').innerText = "PHÂN TUYẾN ĐỊA BÀN: HÀ NỘI NỘI THÀNH";
+            if (pageTitle) pageTitle.innerText = "Hà Nội Nội thành";
         } else if (district === 'ha-dong') {
             hanoiArticles = originalHanoiArticles.filter(a => a.district && (
                 a.district.includes('Hà Đông') || a.district.includes('Thanh Oai') || 
                 a.district.includes('Chương Mỹ') || a.district.includes('Mỹ Đức')
             ));
-            document.querySelector('.hanoi-intro-badge h1').innerText = "PHÂN TUYẾN ĐỊA BÀN: HÀ ĐÔNG &amp; PHỤ CẬN";
+            if (pageTitle) pageTitle.innerText = "Khu vực Hà Đông";
         } else if (district === 'gia-lam') {
             hanoiArticles = originalHanoiArticles.filter(a => a.district && (
                 a.district.includes('Gia Lâm') || a.district.includes('Đông Anh') ||
                 a.district.includes('Sóc Sơn') || a.district.includes('Mê Linh')
             ));
-            document.querySelector('.hanoi-intro-badge h1').innerText = "PHÂN TUYẾN ĐỊA BÀN: GIA LÂM MỚI &amp; ĐÔNG BẮC HÀ NỘI";
+            if (pageTitle) pageTitle.innerText = "Khu vực Gia Lâm mới";
         } else if (district === 'dong-anh') {
             hanoiArticles = originalHanoiArticles.filter(a => a.district && (
                 a.district.includes('Đông Anh') || a.district.includes('Mê Linh') ||
                 a.district.includes('Sóc Sơn')
             ));
-            document.querySelector('.hanoi-intro-badge h1').innerText = "PHÂN TUYẾN ĐỊA BÀN: ĐÔNG ANH &amp; PHÍA BẮC HÀ NỘI";
+            if (pageTitle) pageTitle.innerText = "Huyện Đông Anh";
         }
 
         updateProvincialProfileWidget(district);
