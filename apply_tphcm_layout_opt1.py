@@ -881,6 +881,7 @@ middle_part = """
                         <!-- Loaded dynamically via JS -->
                     </div>
                 </div>
+            </div>
                 
 
             <!-- BLOCK 5.7: BẢNG GIÁ THỊ TRƯỜNG DÂN SINH TP.HCM & ĐÔNG NAM BỘ (MÔ PHỎNG TIẾP THỊ LIÊN KẾT & TÀI TRỢ SIÊU THỊ) -->
