@@ -164,9 +164,13 @@ Quy trình tối ưu kết hợp đặc tả kỹ thuật PRD (Cơ chế 4 lớp
   - Khắc phục triệt để lỗi hiển thị vỡ khung layout trên toàn bộ các trang địa phương do việc replace chuỗi `<style>` không an toàn trước đó.
   - Thiết kế patcher Option A tối ưu hóa giao diện an toàn bằng cách định vị và chèn quy tắc CSS mobile chính xác thông qua Regex neo biên giới (anchor) `</style>\s*<!-- WALLPAPER AD SLOTS -->`.
   - Thay đổi an toàn breakpoint wallpaper ads và JS checks từ `1400px` lên `1540px`, cùng tăng font size bài viết từ `11.5px` lên `13px`.
+  - **Sửa lỗi hiển thị cuối trang (Mobile Responsiveness):** Khắc phục lỗi hiển thị co quắp/móp méo các khối "Dân sinh & Đời sống", "Kết nối Tiêu dùng" và "Bảng giá thị trường" trên di động. Gom gộp thuộc tính class trùng lặp (`class="m-top-20" ... class="columns-layout"`) thành một attribute chuẩn (`class="m-top-20 columns-layout"`), đồng thời thêm các quy tắc CSS `@media` cho phép các grid-layout 2 cột này tự động thu hẹp và xếp chồng thành 1 cột mượt mà trên Mobile (màn hình `<768px` và `<576px`).
 * **Kinh nghiệm rút ra:**
   - Tuyệt đối không sử dụng replace chuỗi tĩnh quá chung chung (như `<style>`) trên mã nguồn Python để tiêm CSS vào mẫu HTML, vì điều đó dễ trùng khớp với các biến chuỗi HTML định nghĩa ở đầu tệp.
   - Luôn sử dụng Regex neo biên giới kết hợp với các bình luận HTML đặc thù (ví dụ: `<!-- WALLPAPER AD SLOTS -->`) để định vị điểm tiêm mã cực kỳ chính xác.
+  - Tránh khai báo lặp lại thuộc tính `class` trên cùng một thẻ HTML vì trình duyệt sẽ bỏ qua thuộc tính khai báo sau.
+  - Mọi bố cục Grid/Flexbox dạng cột ghép đôi (như bảng giá đi kèm banner tài trợ) bắt buộc phải tích hợp sẵn quy tắc thu gọn (stacking) bằng CSS `@media` để đảm bảo trải nghiệm hiển thị an toàn trên thiết bị cầm tay.
+
 
 
 
