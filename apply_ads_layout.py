@@ -47,7 +47,7 @@ if body_index != -1:
 # Inject skin ads styling into header part
 ad_styles = """
 <style>
-    @media (min-width: 1400px) {
+    @media (min-width: 1540px) {
         body {
             background-color: #f7f9fb !important;
             padding-left: 160px;
@@ -326,6 +326,22 @@ ad_styles = """
             }
         }
     }
+    @media (max-width: 768px) {
+        #provincial-profile-widget {
+            grid-template-columns: 1fr !important;
+        }
+        #provincial-profile-widget > div {
+            border-right: none !important;
+            padding-right: 0 !important;
+            margin-bottom: 15px;
+        }
+    }
+    #provincial-profile-widget table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
 </style>
 <!-- WALLPAPER AD SLOTS -->
 <div class="wallpaper-ad-left" style="display: none;">
@@ -342,7 +358,7 @@ ad_styles = """
 </div>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        if(window.innerWidth >= 1400) {
+        if(window.innerWidth >= 1540) {
             document.querySelector(".wallpaper-ad-left").style.display = "block";
             document.querySelector(".wallpaper-ad-right").style.display = "block";
         }

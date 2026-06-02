@@ -93,7 +93,7 @@ if(typeof google!=='undefined'&&google.accounts){google.accounts.id.initialize({
 btnAccountIconHeader.click(function(){var menuAccountHeader=$("#menu-account-header");if(menuAccountHeader.hasClass('show')){menuAccountHeader.removeClass('show');}
 else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div></div></header>
 <style>
-    @media (min-width: 1400px) {
+    @media (min-width: 1540px) {
         body {
             background-color: #f7f9fb !important;
             padding-left: 160px;
@@ -372,6 +372,22 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
             }
         }
     }
+    @media (max-width: 768px) {
+        #provincial-profile-widget {
+            grid-template-columns: 1fr !important;
+        }
+        #provincial-profile-widget > div {
+            border-right: none !important;
+            padding-right: 0 !important;
+            margin-bottom: 15px;
+        }
+    }
+    #provincial-profile-widget table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
 </style>
 <!-- WALLPAPER AD SLOTS -->
 <div class="wallpaper-ad-left" style="display: none;">
@@ -388,7 +404,7 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
 </div>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        if(window.innerWidth >= 1400) {
+        if(window.innerWidth >= 1540) {
             document.querySelector(".wallpaper-ad-left").style.display = "block";
             document.querySelector(".wallpaper-ad-right").style.display = "block";
         }

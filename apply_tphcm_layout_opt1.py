@@ -22,10 +22,32 @@ if header_match == -1:
     sys.exit(1)
 header_part = content[:header_match + len('</header>')]
 
+# Insert top billboard ad at the very top of body (above header/masthead)
+body_tag = '<body ng-app="web-app">'
+body_index = header_part.find(body_tag)
+if body_index != -1:
+    insert_pos = body_index + len(body_tag)
+    top_billboard_html = """
+    <!-- AD SLOT 01: TOP BILLBOARD (970x250) - PLACED ABOVE MASTHEAD -->
+    <div style="width: 100%; max-width: 1000px; margin: 10px auto; text-align: center; font-family: Arial, sans-serif; position: relative; z-index: 1000;">
+        <div style="position: absolute; top: 2px; left: 5px; font-size: 8px; color: #fff; background-color: #c00000; padding: 2px 5px; font-weight: bold; border-radius: 2px; z-index: 1005;">QC GIẢ LẬP</div>
+        <a href="https://vinfastauto.com" target="_blank" style="text-decoration: none; display: block; border-radius: 6px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            <div style="background: linear-gradient(90deg, #0b1a30 0%, #00458e 50%, #0b1a30 100%); height: 120px; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; color: #fff; position: relative;">
+                <div style="text-align: left;">
+                    <h2 style="font-size: 22px; font-weight: 800; color: #fff; margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">VINFAST VF9</h2>
+                    <p style="font-size: 11px; margin: 3px 0 0 0; color: #d0e1f9; font-weight: bold; letter-spacing: 0.5px;">ĐƯỜNG ĐẾN TƯƠNG LAI XANH - KIÊN TẠO VỊ THẾ DẪN ĐẦU</p>
+                </div>
+                <div style="border: 2px solid #fff; padding: 6px 15px; font-size: 12px; font-weight: bold; text-transform: uppercase; border-radius: 4px; background: rgba(255,255,255,0.1); cursor: pointer; transition: background 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Đăng ký lái thử</div>
+            </div>
+        </a>
+    </div>
+    """
+    header_part = header_part[:insert_pos] + top_billboard_html + header_part[insert_pos:]
+
 # Inject skin ads styling into header part
 ad_styles = """
 <style>
-    @media (min-width: 1400px) {
+    @media (min-width: 1540px) {
         body {
             background-color: #f7f9fb !important;
             padding-left: 160px;
@@ -34,7 +56,7 @@ ad_styles = """
         .wallpaper-ad-left {
             position: fixed;
             top: 140px;
-            left: calc(50% - 730px);
+            left: calc(50% - 760px);
             width: 140px;
             height: 700px;
             background: linear-gradient(180deg, #0b1a30 0%, #002d62 100%);
@@ -51,7 +73,7 @@ ad_styles = """
         .wallpaper-ad-right {
             position: fixed;
             top: 140px;
-            right: calc(50% - 730px);
+            right: calc(50% - 760px);
             width: 140px;
             height: 700px;
             background: linear-gradient(180deg, #0b1a30 0%, #002d62 100%);
@@ -304,6 +326,22 @@ ad_styles = """
             }
         }
     }
+    @media (max-width: 768px) {
+        #provincial-profile-widget {
+            grid-template-columns: 1fr !important;
+        }
+        #provincial-profile-widget > div {
+            border-right: none !important;
+            padding-right: 0 !important;
+            margin-bottom: 15px;
+        }
+    }
+    #provincial-profile-widget table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
 </style>
 <!-- WALLPAPER AD SLOTS -->
 <div class="wallpaper-ad-left" style="display: none;">
@@ -320,7 +358,7 @@ ad_styles = """
 </div>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        if(window.innerWidth >= 1400) {
+        if(window.innerWidth >= 1540) {
             document.querySelector(".wallpaper-ad-left").style.display = "block";
             document.querySelector(".wallpaper-ad-right").style.display = "block";
         }
@@ -369,50 +407,35 @@ middle_part = """
                 </div>
             </div>
 
-            <!-- REGIONAL INTRO BADGE -->
-            <div class="tphcm-intro-badge" style="background-color: #ffffff; border: 1px solid #e3e3e3; border-top: 3px solid #c00000; padding: 12px 15px; margin-top: 15px; font-family: Arial, sans-serif; border-radius: 4px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-                <h1 style="font-size: 16px; font-weight: bold; color: #c00000; margin: 0; text-transform: uppercase; letter-spacing: 1px;">TRANG THÔNG TIN ĐỊA BÀN TP.HCM & ĐÔNG NAM BỘ CỦA BÁO LAO ĐỘNG (BẢN QUY HOẠCH QUẢNG CÁO)</h1>
-            </div>
-
-            <!-- HUB & SPOKE PROVINCE FILTER TAB BAR (Option 3 Implementation) -->
-            <div style="background-color: #ffffff; border: 1px solid #e3e3e3; padding: 10px 15px; margin-top: 15px; font-family: Arial, sans-serif; border-radius: 4px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 1px 3px rgba(0,0,0,0.05); flex-wrap: wrap; gap: 10px;">
-                <div style="font-size: 12px; font-weight: bold; color: #555; text-transform: uppercase; display: flex; align-items: center; gap: 6px;">
-                    📂 Phân tuyến địa bàn (Hub & Spoke):
-                </div>
-                <div style="display: flex; gap: 8px;" id="hub-spoke-tabs">
-                    <button class="spoke-tab" onclick="filterSpokeProvince('all')" style="background-color: #c00000; color: #ffffff; border: 1px solid #c00000; padding: 6px 14px; border-radius: 3px; font-size: 12px; font-weight: bold; cursor: pointer; transition: all 0.2s;">
-                        🌐 Toàn bộ Đông Nam Bộ (Hub)
-                    </button>
-                    <button class="spoke-tab" onclick="filterSpokeProvince('tphcm')" style="background-color: #f7f7f7; color: #333; border: 1px solid #ddd; padding: 6px 14px; border-radius: 3px; font-size: 12px; font-weight: bold; cursor: pointer; transition: all 0.2s;">
-                        📍 TP. Hồ Chí Minh (Spoke)
-                    </button>
-                    <button class="spoke-tab" onclick="filterSpokeProvince('dongnai')" style="background-color: #f7f7f7; color: #333; border: 1px solid #ddd; padding: 6px 14px; border-radius: 3px; font-size: 12px; font-weight: bold; cursor: pointer; transition: all 0.2s;">
-                        📍 Đồng Nai mới (Spoke)
-                    </button>
-                    <button class="spoke-tab" onclick="filterSpokeProvince('tayninh')" style="background-color: #f7f7f7; color: #333; border: 1px solid #ddd; padding: 6px 14px; border-radius: 3px; font-size: 12px; font-weight: bold; cursor: pointer; transition: all 0.2s;">
-                        📍 Tây Ninh mới (Spoke)
-                    </button>
-                </div>
-            </div>
-
-            <!-- DYNAMIC PROVINCIAL PROFILE & GOVERNANCE WIDGET -->
-            <div id="provincial-profile-widget" style="background-color: #ffffff; border: 1px solid #e3e3e3; border-left: 4px solid #002d62; padding: 15px 20px; margin-top: 15px; font-family: Arial, sans-serif; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: grid; grid-template-columns: 1.2fr 1.8fr; gap: 20px; align-items: start; box-sizing: border-box;">
-                <!-- JS populated dynamically -->
-            </div>
-
-            <!-- AD SLOT 01: TOP BILLBOARD (970x250) -->
-            <div style="width: 100%; max-width: 1000px; margin: 15px auto 0 auto; text-align: center; font-family: Arial, sans-serif; position: relative;">
-                <div style="position: absolute; top: 2px; left: 5px; font-size: 8px; color: #fff; background-color: #c00000; padding: 2px 5px; font-weight: bold; border-radius: 2px; z-index: 5;">QC GIẢ LẬP</div>
-                <a href="https://vinfastauto.com" target="_blank" style="text-decoration: none; display: block; border-radius: 6px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-                    <div style="background: linear-gradient(90deg, #0b1a30 0%, #00458e 50%, #0b1a30 100%); height: 180px; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; color: #fff; position: relative;">
-                        <div style="text-align: left;">
-                            <h2 style="font-size: 26px; font-weight: 800; color: #fff; margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">VINFAST VF9</h2>
-                            <p style="font-size: 13px; margin: 5px 0 0 0; color: #d0e1f9; font-weight: bold; letter-spacing: 0.5px;">ĐƯỜNG ĐẾN TƯƠNG LAI XANH - KIÊN TẠO VỊ THẾ DẪN ĐẦU</p>
-                        </div>
-                        <div style="border: 2px solid #fff; padding: 10px 20px; font-weight: bold; text-transform: uppercase; border-radius: 4px; background: rgba(255,255,255,0.1); cursor: pointer; transition: background 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Đăng ký lái thử</div>
+            <!-- NATIVE LAO DONG BREADCRUMBS / TITLE SECTION -->
+            <div class="breadcrums" style="border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 15px;">
+                <h1 style="margin: 0; font-size: 22px; font-weight: bold; font-family: Arial, sans-serif;">
+                    <a class="main-cat-lnk" href="#" style="color: #000000; text-decoration: none;" id="dynamic-page-title">TP.HCM & Đông Nam Bộ</a>
+                </h1>
+                <div class="children-cats" style="margin-top: 10px;">
+                    <div class="list" id="hub-spoke-tabs" style="display: flex; gap: 15px; flex-wrap: wrap; font-family: Arial, sans-serif; font-size: 13px;">
+                        <a href="#" class="item active" onclick="filterSpokeProvince('all'); return false;" style="color: #c00000; font-weight: bold; text-decoration: none; padding-bottom: 2px; border-bottom: 2px solid #c00000;">Toàn bộ khu vực</a>
+                        <a href="#" class="item" onclick="filterSpokeProvince('tphcm'); return false;" style="color: #555; text-decoration: none; padding-bottom: 2px;">TP. Hồ Chí Minh</a>
+                        <a href="#" class="item" onclick="filterSpokeProvince('dongnai'); return false;" style="color: #555; text-decoration: none; padding-bottom: 2px;">Đồng Nai</a>
+                        <a href="#" class="item" onclick="filterSpokeProvince('tayninh'); return false;" style="color: #555; text-decoration: none; padding-bottom: 2px;">Tây Ninh</a>
                     </div>
-                </a>
+                </div>
             </div>
+
+            <!-- COLLAPSIBLE PROVINCIAL PROFILE ACCORDION -->
+            <div style="margin-top: 15px; font-family: Arial, sans-serif;">
+                <div onclick="toggleProvincialProfile()" style="background-color: #f7f9fb; border: 1px solid #e3e3e3; padding: 10px 15px; border-radius: 4px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none;">
+                    <span style="font-weight: bold; color: #002d62; font-size: 13px; display: flex; align-items: center; gap: 8px;">
+                        📊 THÔNG TIN HỒ SƠ & CHỈ SỐ CẢI CÁCH ĐỊA PHƯƠNG
+                    </span>
+                    <span id="profile-toggle-icon" style="font-weight: bold; color: #888; font-size: 14px;">Mở rộng ▾</span>
+                </div>
+                <div id="provincial-profile-widget" style="background-color: #ffffff; border: 1px solid #e3e3e3; border-top: none; border-left: 4px solid #002d62; padding: 15px 20px; font-family: Arial, sans-serif; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: none; grid-template-columns: 1.2fr 1.8fr; gap: 20px; align-items: start; box-sizing: border-box;">
+                    <!-- JS populated dynamically -->
+                </div>
+            </div>
+
+
 
             <!-- BLOCK 1: MAIN COVER GRID -->
             <div class="blk-10 main-cover m-top-20">
@@ -431,13 +454,6 @@ middle_part = """
                     <!-- Row of 3 bottom stories -->
                     <div class="subcover-bottom-row" id="subcover-bottom-row" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee;">
                         <!-- JS populated -->
-                    </div>
-                    <!-- Additional News Feed under 3 bottom stories to balance sidebar height and fill blank space -->
-                    <div style="margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px;">
-                        <div style="font-size: 13.5px; font-weight: bold; color: #c00000; text-transform: uppercase; margin-bottom: 12px; border-bottom: 2px solid #c00000; padding-bottom: 5px;">Tin mới cập nhật</div>
-                        <div id="left-column-feed-container" style="display: flex; flex-direction: column; gap: 12px;">
-                            <!-- JS populated -->
-                        </div>
                     </div>
                 </div>
                 
@@ -1377,6 +1393,14 @@ middle_part = """
     const originalTphcmArticles = PLACEHOLDER_RAW_ARTICLES;
     let tphcmArticles = [...originalTphcmArticles];
 
+    // Helper to safely fetch articles from the filtered list (looping if we run out)
+    function getSafeArticle(pool, index, globalFallbackIndex) {
+        if (pool && pool.length > 0) {
+            return pool[index % pool.length];
+        }
+        return originalTphcmArticles[globalFallbackIndex % originalTphcmArticles.length];
+    }
+
     let featuredArticleId = tphcmArticles[0].id;
     let articlesVolume = 120;
     let isIndexedStatus = true;
@@ -1398,18 +1422,18 @@ middle_part = """
     }
 
     function renderMainCover() {
-        const centerArt = tphcmArticles.find(a => a.id === featuredArticleId) || tphcmArticles[0] || originalTphcmArticles[0];
+        const centerArt = tphcmArticles.find(a => a.id === featuredArticleId) || getSafeArticle(tphcmArticles, 0, 0);
         const leftSubPool = tphcmArticles.filter(a => a.id !== centerArt.id);
-        const sub1 = leftSubPool[0] || originalTphcmArticles[1];
-        const sub2 = leftSubPool[1] || originalTphcmArticles[2];
+        const sub1 = getSafeArticle(leftSubPool, 0, 1);
+        const sub2 = getSafeArticle(leftSubPool, 1, 2);
         const rightPool = tphcmArticles.filter(a => a.id !== centerArt.id && a.id !== sub1.id && a.id !== sub2.id);
-        const bottom1 = rightPool[0] || originalTphcmArticles[3];
-        const bottom2 = rightPool[1] || originalTphcmArticles[4];
-        const bottom3 = rightPool[2] || originalTphcmArticles[5];
-        const spot1 = rightPool[3] || originalTphcmArticles[6];
-        const spot2 = rightPool[4] || originalTphcmArticles[7];
-        const spot3 = rightPool[5] || originalTphcmArticles[8];
-        const spot4 = rightPool[6] || originalTphcmArticles[9];
+        const bottom1 = getSafeArticle(rightPool, 0, 3);
+        const bottom2 = getSafeArticle(rightPool, 1, 4);
+        const bottom3 = getSafeArticle(rightPool, 2, 5);
+        const spot1 = getSafeArticle(rightPool, 3, 6);
+        const spot2 = getSafeArticle(rightPool, 4, 7);
+        const spot3 = getSafeArticle(rightPool, 5, 8);
+        const spot4 = getSafeArticle(rightPool, 6, 9);
 
         // Gather all featured/cover/spotlight IDs to exclude them from other sections
         const displayedIds = new Set([centerArt.id, sub1.id, sub2.id, bottom1.id, bottom2.id, bottom3.id, spot1.id, spot2.id, spot3.id, spot4.id]);
@@ -1420,9 +1444,9 @@ middle_part = """
 
         // Latest News Feed (3 items) - Must not duplicate featured/spotlight AND must not duplicate most read
         const latestNewsPool = tphcmArticles.filter(a => !displayedIds.has(a.id) && !mostReadIds.has(a.id));
-        const feed1 = latestNewsPool[0] || originalTphcmArticles[10];
-        const feed2 = latestNewsPool[1] || originalTphcmArticles[11];
-        const feed3 = latestNewsPool[2] || originalTphcmArticles[12];
+        const feed1 = getSafeArticle(latestNewsPool, 0, 10);
+        const feed2 = getSafeArticle(latestNewsPool, 1, 11);
+        const feed3 = getSafeArticle(latestNewsPool, 2, 12);
 
         document.getElementById('main-cover-container').innerHTML = `
             <article class="v4 cv-001">
@@ -1494,47 +1518,6 @@ middle_part = """
             </div>
         `;
 
-        document.getElementById('left-column-feed-container').innerHTML = `
-            <div style="display: flex; gap: 12px; padding-bottom: 10px; border-bottom: 1px dashed #eee; align-items: center; font-family: Arial, sans-serif;">
-                <a href="` + feed1.url + `" target="_blank" style="flex: 0 0 75px; width: 75px; height: 47px; overflow: hidden; border-radius: 3px; display: block; background-color: #f0f0f0;">
-                    <img src="` + feed1.image + `" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='none'">
-                </a>
-                <div style="flex: 1;">
-                    <a href="` + feed1.url + `" target="_blank" style="text-decoration: none; display: block;">
-                        <h4 style="font-size: 13px; font-weight: bold; color: #333; margin: 0; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; transition: color 0.2s;" onmouseover="this.style.color='#c00000'" onmouseout="this.style.color='#333'">
-                            ` + feed1.title + `
-                        </h4>
-                    </a>
-                    <div style="font-size: 10px; color: #999; margin-top: 3px;">📅 ` + (feed1.date || '01/06/2026') + `</div>
-                </div>
-            </div>
-            <div style="display: flex; gap: 12px; padding-bottom: 10px; border-bottom: 1px dashed #eee; align-items: center; font-family: Arial, sans-serif;">
-                <a href="` + feed2.url + `" target="_blank" style="flex: 0 0 75px; width: 75px; height: 47px; overflow: hidden; border-radius: 3px; display: block; background-color: #f0f0f0;">
-                    <img src="` + feed2.image + `" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='none'">
-                </a>
-                <div style="flex: 1;">
-                    <a href="` + feed2.url + `" target="_blank" style="text-decoration: none; display: block;">
-                        <h4 style="font-size: 13px; font-weight: bold; color: #333; margin: 0; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; transition: color 0.2s;" onmouseover="this.style.color='#c00000'" onmouseout="this.style.color='#333'">
-                            ` + feed2.title + `
-                        </h4>
-                    </a>
-                    <div style="font-size: 10px; color: #999; margin-top: 3px;">📅 ` + (feed2.date || '01/06/2026') + `</div>
-                </div>
-            </div>
-            <div style="display: flex; gap: 12px; align-items: center; font-family: Arial, sans-serif;">
-                <a href="` + feed3.url + `" target="_blank" style="flex: 0 0 75px; width: 75px; height: 47px; overflow: hidden; border-radius: 3px; display: block; background-color: #f0f0f0;">
-                    <img src="` + feed3.image + `" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='none'">
-                </a>
-                <div style="flex: 1;">
-                    <a href="` + feed3.url + `" target="_blank" style="text-decoration: none; display: block;">
-                        <h4 style="font-size: 13px; font-weight: bold; color: #333; margin: 0; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; transition: color 0.2s;" onmouseover="this.style.color='#c00000'" onmouseout="this.style.color='#333'">
-                            ` + feed3.title + `
-                        </h4>
-                    </a>
-                    <div style="font-size: 10px; color: #999; margin-top: 3px;">📅 ` + (feed3.date || '01/06/2026') + `</div>
-                </div>
-            </div>
-        `;
 
         document.getElementById('spotlight-container').innerHTML = `
             <article class="v4 p2c m001 n-1">
@@ -1709,10 +1692,11 @@ middle_part = """
         function makeColumnHtml(categoryName) {
             let catPool = tphcmArticles.filter(a => a.category === categoryName);
             if (catPool.length < 5) {
-                const generalCatPool = originalTphcmArticles.filter(a => a.category === categoryName);
+                // Only fall back to articles within the filtered province to prevent leakage
+                const generalCatPool = tphcmArticles;
                 catPool = catPool.concat(generalCatPool.filter(ga => !catPool.some(ca => ca.id === ga.id))).slice(0, 5);
             }
-            const mainCat = catPool[0] || originalTphcmArticles[12];
+            const mainCat = getSafeArticle(catPool, 0, 12);
             const secondaryList = catPool.slice(1, 5);
             
             let listHtml = '';
@@ -1758,7 +1742,7 @@ middle_part = """
     function renderEnterpriseBlock() {
         let prPool = tphcmArticles.filter(a => a.category === "Kinh tế").slice(0, 5);
         if (prPool.length < 5) {
-            const generalPrPool = originalTphcmArticles.filter(a => a.category === "Kinh tế");
+            const generalPrPool = tphcmArticles.filter(a => a.category === "Kinh tế");
             prPool = prPool.concat(generalPrPool.filter(gp => !prPool.some(p => p.id === gp.id))).slice(0, 5);
         }
         let html = '';
@@ -1999,45 +1983,60 @@ middle_part = """
         document.getElementById('schema-modal').style.display = 'none';
     }
 
+    window.toggleProvincialProfile = function() {
+        const widget = document.getElementById('provincial-profile-widget');
+        const icon = document.getElementById('profile-toggle-icon');
+        if (widget.style.display === 'none' || widget.style.display === '') {
+            widget.style.display = 'grid';
+            icon.innerText = 'Thu gọn ▴';
+        } else {
+            widget.style.display = 'none';
+            icon.innerText = 'Mở rộng ▾';
+        }
+    }
+
     window.filterSpokeProvince = function(province) {
-        const tabs = document.querySelectorAll('.spoke-tab');
+        const tabs = document.querySelectorAll('#hub-spoke-tabs .item');
         tabs.forEach(tab => {
-            tab.style.backgroundColor = '#f7f7f7';
-            tab.style.color = '#333';
-            tab.style.borderColor = '#ddd';
+            tab.style.color = '#555';
+            tab.style.fontWeight = 'normal';
+            tab.style.borderBottom = 'none';
+            tab.classList.remove('active');
         });
         
         const eventTarget = window.event ? window.event.target : null;
         if (eventTarget) {
-            eventTarget.style.backgroundColor = '#c00000';
-            eventTarget.style.color = '#ffffff';
-            eventTarget.style.borderColor = '#c00000';
+            eventTarget.style.color = '#c00000';
+            eventTarget.style.fontWeight = 'bold';
+            eventTarget.style.borderBottom = '2px solid #c00000';
+            eventTarget.classList.add('active');
         }
 
+        const pageTitle = document.getElementById('dynamic-page-title');
         if (province === 'all') {
             tphcmArticles = [...originalTphcmArticles];
-            document.querySelector('.tphcm-intro-badge h1').innerText = "TRANG THÔNG TIN ĐỊA BÀN TP.HCM & ĐÔNG NAM BỘ CỦA BÁO LAO ĐỘNG (BẢN QUY HOẠCH QUẢNG CÁO)";
+            if (pageTitle) pageTitle.innerText = "TP.HCM & Đông Nam Bộ";
             document.getElementById('dynamic-breadcrumb-spoke').innerHTML = 'TP.HCM & Đông Nam Bộ';
             document.getElementById('dynamic-powercut-link').href = 'https://laodong.vn/tags/lich-cat-dien-tphcm-8542.ldo';
             document.getElementById('tphcm-weather-widget').href = 'https://weather.com/vi-VN/weather/today/l/VMXX0007:1:VM';
             fetchTPHCMWeather(10.7769, 106.7009, 'TP.HCM & Đông Nam Bộ');
         } else if (province === 'tphcm') {
             tphcmArticles = originalTphcmArticles.filter(a => a.is_tphcm);
-            document.querySelector('.tphcm-intro-badge h1').innerText = "PHÂN TUYẾN ĐỊA BÀN: TP. HỒ CHÍ MINH (GỒM BÌNH DƯƠNG, BÀ RỊA - VŨNG TÀU)";
+            if (pageTitle) pageTitle.innerText = "TP. Hồ Chí Minh";
             document.getElementById('dynamic-breadcrumb-spoke').innerHTML = `<a href="#" onclick="filterSpokeProvince('all')" style="color: #666666; text-decoration: none;">TP.HCM & Đông Nam Bộ</a> <span style="color: #ccc;">/</span> TP. Hồ Chí Minh`;
             document.getElementById('dynamic-powercut-link').href = 'https://laodong.vn/tags/lich-cat-dien-tphcm-8542.ldo';
             document.getElementById('tphcm-weather-widget').href = 'https://weather.com/vi-VN/weather/today/l/VMXX0007:1:VM';
             fetchTPHCMWeather(10.7769, 106.7009, 'TP. Hồ Chí Minh');
         } else if (province === 'dongnai') {
             tphcmArticles = originalTphcmArticles.filter(a => a.is_dongnai);
-            document.querySelector('.tphcm-intro-badge h1').innerText = "PHÂN TUYẾN ĐỊA BÀN: TỈNH ĐỒNG NAI MỚI (GỒM ĐỒNG NAI & BÌNH PHƯỚC)";
+            if (pageTitle) pageTitle.innerText = "Tỉnh Đồng Nai";
             document.getElementById('dynamic-breadcrumb-spoke').innerHTML = `<a href="#" onclick="filterSpokeProvince('all')" style="color: #666666; text-decoration: none;">TP.HCM & Đông Nam Bộ</a> <span style="color: #ccc;">/</span> Đồng Nai`;
             document.getElementById('dynamic-powercut-link').href = 'https://laodong.vn/tags/lich-cat-dien-dong-nai-8588.ldo';
             document.getElementById('tphcm-weather-widget').href = 'https://weather.com/vi-VN/weather/today/l/VMXX0004:1:VM';
             fetchTPHCMWeather(10.9575, 106.8427, 'Đồng Nai');
         } else if (province === 'tayninh') {
             tphcmArticles = originalTphcmArticles.filter(a => a.is_tayninh);
-            document.querySelector('.tphcm-intro-badge h1').innerText = "PHÂN TUYẾN ĐỊA BÀN: TỈNH TÂY NINH MỚI (GỒM TÂY NINH & LONG AN)";
+            if (pageTitle) pageTitle.innerText = "Tỉnh Tây Ninh";
             document.getElementById('dynamic-breadcrumb-spoke').innerHTML = `<a href="#" onclick="filterSpokeProvince('all')" style="color: #666666; text-decoration: none;">TP.HCM & Đông Nam Bộ</a> <span style="color: #ccc;">/</span> Tây Ninh`;
             document.getElementById('dynamic-powercut-link').href = 'https://laodong.vn/tags/lich-cat-dien-tay-ninh-8622.ldo';
             document.getElementById('tphcm-weather-widget').href = 'https://weather.com/vi-VN/weather/today/l/VMXX0030:1:VM';
@@ -2045,7 +2044,7 @@ middle_part = """
         }
 
         updateProvincialProfileWidget(province);
-        featuredArticleId = tphcmArticles[0] ? tphcmArticles[0].id : originalTphcmArticles[0].id;
+        featuredArticleId = getSafeArticle(tphcmArticles, 0, 0).id;
         
         populateCuratorOptions();
         renderMainCover();
