@@ -159,6 +159,16 @@ Quy trình tối ưu kết hợp đặc tả kỹ thuật PRD (Cơ chế 4 lớp
   - Để đảm bảo hiệu ứng marquee chạy vô hạn không bị giật (jump) khi lặp lại, tổng chiều rộng nội dung của container con phải khớp chính xác với bước dịch chuyển của Keyframe (dịch chuyển đúng `-50%` của chiều rộng nhân bản kép).
   - Tải tin và sắp xếp theo mốc thời gian thực tế giúp giao diện sống động và cập nhật liên tục đúng với tôn chỉ "Tin mới nhất".
 
+### Ngày 02/06/2026:
+* **Nội dung:** 
+  - Khắc phục triệt để lỗi hiển thị vỡ khung layout trên toàn bộ các trang địa phương do việc replace chuỗi `<style>` không an toàn trước đó.
+  - Thiết kế patcher Option A tối ưu hóa giao diện an toàn bằng cách định vị và chèn quy tắc CSS mobile chính xác thông qua Regex neo biên giới (anchor) `</style>\s*<!-- WALLPAPER AD SLOTS -->`.
+  - Thay đổi an toàn breakpoint wallpaper ads và JS checks từ `1400px` lên `1540px`, cùng tăng font size bài viết từ `11.5px` lên `13px`.
+* **Kinh nghiệm rút ra:**
+  - Tuyệt đối không sử dụng replace chuỗi tĩnh quá chung chung (như `<style>`) trên mã nguồn Python để tiêm CSS vào mẫu HTML, vì điều đó dễ trùng khớp với các biến chuỗi HTML định nghĩa ở đầu tệp.
+  - Luôn sử dụng Regex neo biên giới kết hợp với các bình luận HTML đặc thù (ví dụ: `<!-- WALLPAPER AD SLOTS -->`) để định vị điểm tiêm mã cực kỳ chính xác.
+
+
 
 
 
