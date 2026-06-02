@@ -396,15 +396,6 @@ middle_part = """
                 <h1 style="margin: 0; font-size: 22px; font-weight: bold; font-family: Arial, sans-serif;">
                     <a class="main-cat-lnk" href="#" style="color: #000000; text-decoration: none;" id="dynamic-page-title">Chuyên trang Hà Nội</a>
                 </h1>
-                <div class="children-cats" style="margin-top: 10px;">
-                    <div class="list" id="hub-spoke-tabs" style="display: flex; gap: 15px; flex-wrap: wrap; font-family: Arial, sans-serif; font-size: 13px;">
-                        <a href="#" class="item active" onclick="filterSpokeDistrict('all'); return false;" style="color: #c00000; font-weight: bold; text-decoration: none; padding-bottom: 2px; border-bottom: 2px solid #c00000;">Toàn bộ Hà Nội</a>
-                        <a href="#" class="item" onclick="filterSpokeDistrict('noi-thanh'); return false;" style="color: #555; text-decoration: none; padding-bottom: 2px;">Nội thành</a>
-                        <a href="#" class="item" onclick="filterSpokeDistrict('ha-dong'); return false;" style="color: #555; text-decoration: none; padding-bottom: 2px;">Hà Đông &amp; Phụ cận</a>
-                        <a href="#" class="item" onclick="filterSpokeDistrict('gia-lam'); return false;" style="color: #555; text-decoration: none; padding-bottom: 2px;">Gia Lâm mới</a>
-                        <a href="#" class="item" onclick="filterSpokeDistrict('dong-anh'); return false;" style="color: #555; text-decoration: none; padding-bottom: 2px;">Đông Anh</a>
-                    </div>
-                </div>
             </div>
 
             <!-- COLLAPSIBLE PROVINCIAL PROFILE ACCORDION -->
