@@ -342,6 +342,25 @@ ad_styles = """
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
     }
+    @media (max-width: 768px) {
+        .columns-layout {
+            grid-template-columns: 1fr !important;
+            gap: 20px !important;
+        }
+        .nested-responsive-grid {
+            grid-template-columns: 1fr !important;
+        }
+    }
+    @media (max-width: 576px) {
+        .job-item, [style*="border-left: 3px solid #ffc107"], [style*="border-left: 3px solid #28a745"] {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            gap: 10px !important;
+        }
+        .job-item a, [style*="border-left: 3px solid #ffc107"] span:last-child, [style*="border-left: 3px solid #28a745"] span:last-child {
+            align-self: flex-start !important;
+        }
+    }
 </style>
 <!-- WALLPAPER AD SLOTS -->
 <div class="wallpaper-ad-left" style="display: none;">
@@ -619,11 +638,11 @@ middle_part = """
             </div>
 
             <!-- BLOCK 5.5: HỆ SINH THÁI DÂN SINH & DANH BẠ HỘ KINH DOANH (MÔ PHỎNG CHIẾN LƯỢC ĐUÔI DÀI) -->
-            <div class="m-top-20" style="display: grid; grid-template-columns: 2fr 1fr; gap: 20px; font-family: Arial, sans-serif;" class="columns-layout">
+            <div class="m-top-20 columns-layout" style="display: grid; grid-template-columns: 2fr 1fr; gap: 20px; font-family: Arial, sans-serif;">
                 <!-- Left: Worker Life, Weekend Escapes & Job Board -->
                 <div style="background-color: #ffffff; border: 1px solid #e3e3e3; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
                     <div style="font-size: 14px; font-weight: bold; color: #002d62; text-transform: uppercase; border-bottom: 2px solid #002d62; padding-bottom: 6px; margin-bottom: 15px;">Dân sinh & Đời sống Hà Nội</div>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                    <div class="nested-responsive-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
                         <!-- Item 1: Worker Life -->
                         <div style="border: 1px solid #eee; border-radius: 4px; padding: 10px; position: relative;">
                             <span style="position: absolute; top: 12px; left: 12px; background: rgba(192,0,0,0.85); color: #fff; font-size: 7px; font-weight: bold; padding: 2px 4px; border-radius: 2px; z-index: 2;">QC GIẢ LẬP</span>
@@ -656,7 +675,7 @@ middle_part = """
                         </div>
                         <div style="display: flex; flex-direction: column; gap: 8px;">
                             <!-- Job 1 -->
-                            <div style="display: flex; justify-content: space-between; align-items: center; background-color: #fcfcfc; border: 1px solid #eee; padding: 8px 12px; border-radius: 4px; position: relative;">
+                            <div class="job-item" style="display: flex; justify-content: space-between; align-items: center; background-color: #fcfcfc; border: 1px solid #eee; padding: 8px 12px; border-radius: 4px; position: relative;">
                                 <span style="position: absolute; right: 85px; top: 12px; font-size: 7.5px; color: #d71920; border: 1px solid #d71920; padding: 1px 3px; border-radius: 2px; font-weight: bold; text-transform: uppercase;">Gấp</span>
                                 <div style="text-align: left;">
                                     <strong style="font-size: 11.5px; color: #333; display: block;">Nhân viên lắp ráp linh kiện điện tử (KCN Bắc Thăng Long)</strong>
@@ -665,7 +684,7 @@ middle_part = """
                                 <a href="#" style="background-color: #c00000; color: #fff; text-decoration: none; font-size: 10px; font-weight: bold; padding: 5px 10px; border-radius: 3px;">Nộp hồ sơ</a>
                             </div>
                             <!-- Job 2 -->
-                            <div style="display: flex; justify-content: space-between; align-items: center; background-color: #fcfcfc; border: 1px solid #eee; padding: 8px 12px; border-radius: 4px;">
+                            <div class="job-item" style="display: flex; justify-content: space-between; align-items: center; background-color: #fcfcfc; border: 1px solid #eee; padding: 8px 12px; border-radius: 4px;">
                                 <div style="text-align: left;">
                                     <strong style="font-size: 11.5px; color: #333; display: block;">Kỹ thuật viên vận hành máy tiện cơ khí CNC</strong>
                                     <span style="font-size: 9.5px; color: #666;">Tập đoàn Cơ khí Hà Nội (KCN Thạch Thất) | Thu nhập: 10 - 13.5 triệu VNĐ</span>
@@ -719,7 +738,7 @@ middle_part = """
             </div>
 
             <!-- BLOCK 5.7: BẢNG GIÁ THỊ TRƯỜNG DÂN SINH HÀ NỘI (MÔ PHỎNG TIẾP THỊ LIÊN KẾT & TÀI TRỢ SIÊU THỊ) -->
-            <div class="m-top-20" style="display: grid; grid-template-columns: 2fr 1.2fr; gap: 20px; font-family: Arial, sans-serif;" class="columns-layout">
+            <div class="m-top-20 columns-layout" style="display: grid; grid-template-columns: 2fr 1.2fr; gap: 20px; font-family: Arial, sans-serif;">
                 <!-- Left: Interactive Price Table -->
                 <div style="background-color: #ffffff; border: 1px solid #e3e3e3; border-radius: 8px; padding: 20px; box-sizing: border-box;">
                     <div style="font-size: 14px; font-weight: bold; color: #002d62; text-transform: uppercase; border-bottom: 2px solid #002d62; padding-bottom: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
