@@ -1414,6 +1414,14 @@ middle_part = """
     const originalTphcmArticles = PLACEHOLDER_RAW_ARTICLES;
     let tphcmArticles = [...originalTphcmArticles];
 
+    // Helper to safely fetch articles from the filtered list (looping if we run out)
+    function getSafeArticle(pool, index, globalFallbackIndex) {
+        if (pool && pool.length > 0) {
+            return pool[index % pool.length];
+        }
+        return originalTphcmArticles[globalFallbackIndex % originalTphcmArticles.length];
+    }
+
     let featuredArticleId = tphcmArticles[0].id;
     let articlesVolume = 120;
     let isIndexedStatus = true;
@@ -1435,18 +1443,18 @@ middle_part = """
     }
 
     function renderMainCover() {
-        const centerArt = tphcmArticles.find(a => a.id === featuredArticleId) || tphcmArticles[0] || originalTphcmArticles[0];
+        const centerArt = tphcmArticles.find(a => a.id === featuredArticleId) || getSafeArticle(tphcmArticles, 0, 0);
         const leftSubPool = tphcmArticles.filter(a => a.id !== centerArt.id);
-        const sub1 = leftSubPool[0] || originalTphcmArticles[1];
-        const sub2 = leftSubPool[1] || originalTphcmArticles[2];
+        const sub1 = getSafeArticle(leftSubPool, 0, 1);
+        const sub2 = getSafeArticle(leftSubPool, 1, 2);
         const rightPool = tphcmArticles.filter(a => a.id !== centerArt.id && a.id !== sub1.id && a.id !== sub2.id);
-        const bottom1 = rightPool[0] || originalTphcmArticles[3];
-        const bottom2 = rightPool[1] || originalTphcmArticles[4];
-        const bottom3 = rightPool[2] || originalTphcmArticles[5];
-        const spot1 = rightPool[3] || originalTphcmArticles[6];
-        const spot2 = rightPool[4] || originalTphcmArticles[7];
-        const spot3 = rightPool[5] || originalTphcmArticles[8];
-        const spot4 = rightPool[6] || originalTphcmArticles[9];
+        const bottom1 = getSafeArticle(rightPool, 0, 3);
+        const bottom2 = getSafeArticle(rightPool, 1, 4);
+        const bottom3 = getSafeArticle(rightPool, 2, 5);
+        const spot1 = getSafeArticle(rightPool, 3, 6);
+        const spot2 = getSafeArticle(rightPool, 4, 7);
+        const spot3 = getSafeArticle(rightPool, 5, 8);
+        const spot4 = getSafeArticle(rightPool, 6, 9);
 
         // Gather all featured/cover/spotlight IDs to exclude them from other sections
         const displayedIds = new Set([centerArt.id, sub1.id, sub2.id, bottom1.id, bottom2.id, bottom3.id, spot1.id, spot2.id, spot3.id, spot4.id]);
@@ -1457,9 +1465,9 @@ middle_part = """
 
         // Latest News Feed (3 items) - Must not duplicate featured/spotlight AND must not duplicate most read
         const latestNewsPool = tphcmArticles.filter(a => !displayedIds.has(a.id) && !mostReadIds.has(a.id));
-        const feed1 = latestNewsPool[0] || originalTphcmArticles[10];
-        const feed2 = latestNewsPool[1] || originalTphcmArticles[11];
-        const feed3 = latestNewsPool[2] || originalTphcmArticles[12];
+        const feed1 = getSafeArticle(latestNewsPool, 0, 10);
+        const feed2 = getSafeArticle(latestNewsPool, 1, 11);
+        const feed3 = getSafeArticle(latestNewsPool, 2, 12);
 
         document.getElementById('main-cover-container').innerHTML = `
             <article class="v4 cv-001">
@@ -1746,10 +1754,11 @@ middle_part = """
         function makeColumnHtml(categoryName) {
             let catPool = tphcmArticles.filter(a => a.category === categoryName);
             if (catPool.length < 5) {
-                const generalCatPool = originalTphcmArticles.filter(a => a.category === categoryName);
+                // Only fall back to articles within the filtered province to prevent leakage
+                const generalCatPool = tphcmArticles;
                 catPool = catPool.concat(generalCatPool.filter(ga => !catPool.some(ca => ca.id === ga.id))).slice(0, 5);
             }
-            const mainCat = catPool[0] || originalTphcmArticles[12];
+            const mainCat = getSafeArticle(catPool, 0, 12);
             const secondaryList = catPool.slice(1, 5);
             
             let listHtml = '';
@@ -1795,7 +1804,7 @@ middle_part = """
     function renderEnterpriseBlock() {
         let prPool = tphcmArticles.filter(a => a.category === "Kinh tế").slice(0, 5);
         if (prPool.length < 5) {
-            const generalPrPool = originalTphcmArticles.filter(a => a.category === "Kinh tế");
+            const generalPrPool = tphcmArticles.filter(a => a.category === "Kinh tế");
             prPool = prPool.concat(generalPrPool.filter(gp => !prPool.some(p => p.id === gp.id))).slice(0, 5);
         }
         let html = '';
@@ -2082,7 +2091,7 @@ middle_part = """
         }
 
         updateProvincialProfileWidget(province);
-        featuredArticleId = tphcmArticles[0] ? tphcmArticles[0].id : originalTphcmArticles[0].id;
+        featuredArticleId = getSafeArticle(tphcmArticles, 0, 0).id;
         
         populateCuratorOptions();
         renderMainCover();

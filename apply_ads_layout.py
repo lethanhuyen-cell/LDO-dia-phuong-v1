@@ -1428,6 +1428,14 @@ middle_part = """
     const originalHanoiArticles = PLACEHOLDER_RAW_ARTICLES;
     let hanoiArticles = [...originalHanoiArticles];
 
+    // Helper to safely fetch articles from the filtered list (looping if we run out)
+    function getSafeArticle(pool, index, globalFallbackIndex) {
+        if (pool && pool.length > 0) {
+            return pool[index % pool.length];
+        }
+        return originalHanoiArticles[globalFallbackIndex % originalHanoiArticles.length];
+    }
+
     let featuredArticleId = hanoiArticles[0].id;
     let articlesVolume = 120;
     let isIndexedStatus = true;
@@ -1449,18 +1457,18 @@ middle_part = """
     }
 
     function renderMainCover() {
-        const centerArt = hanoiArticles.find(a => a.id === featuredArticleId) || hanoiArticles[0] || originalHanoiArticles[0];
+        const centerArt = hanoiArticles.find(a => a.id === featuredArticleId) || getSafeArticle(hanoiArticles, 0, 0);
         const leftSubPool = hanoiArticles.filter(a => a.id !== centerArt.id);
-        const sub1 = leftSubPool[0] || originalHanoiArticles[1];
-        const sub2 = leftSubPool[1] || originalHanoiArticles[2];
+        const sub1 = getSafeArticle(leftSubPool, 0, 1);
+        const sub2 = getSafeArticle(leftSubPool, 1, 2);
         const rightPool = hanoiArticles.filter(a => a.id !== centerArt.id && a.id !== sub1.id && a.id !== sub2.id);
-        const bottom1 = rightPool[0] || originalHanoiArticles[3];
-        const bottom2 = rightPool[1] || originalHanoiArticles[4];
-        const bottom3 = rightPool[2] || originalHanoiArticles[5];
-        const spot1 = rightPool[3] || originalHanoiArticles[6];
-        const spot2 = rightPool[4] || originalHanoiArticles[7];
-        const spot3 = rightPool[5] || originalHanoiArticles[8];
-        const spot4 = rightPool[6] || originalHanoiArticles[9];
+        const bottom1 = getSafeArticle(rightPool, 0, 3);
+        const bottom2 = getSafeArticle(rightPool, 1, 4);
+        const bottom3 = getSafeArticle(rightPool, 2, 5);
+        const spot1 = getSafeArticle(rightPool, 3, 6);
+        const spot2 = getSafeArticle(rightPool, 4, 7);
+        const spot3 = getSafeArticle(rightPool, 5, 8);
+        const spot4 = getSafeArticle(rightPool, 6, 9);
 
         // Gather all featured/cover/spotlight IDs to exclude them from other sections
         const displayedIds = new Set([centerArt.id, sub1.id, sub2.id, bottom1.id, bottom2.id, bottom3.id, spot1.id, spot2.id, spot3.id, spot4.id]);
@@ -1471,9 +1479,9 @@ middle_part = """
 
         // Latest News Feed (3 items) - Must not duplicate featured/spotlight AND must not duplicate most read
         const latestNewsPool = hanoiArticles.filter(a => !displayedIds.has(a.id) && !mostReadIds.has(a.id));
-        const feed1 = latestNewsPool[0] || originalHanoiArticles[10];
-        const feed2 = latestNewsPool[1] || originalHanoiArticles[11];
-        const feed3 = latestNewsPool[2] || originalHanoiArticles[12];
+        const feed1 = getSafeArticle(latestNewsPool, 0, 10);
+        const feed2 = getSafeArticle(latestNewsPool, 1, 11);
+        const feed3 = getSafeArticle(latestNewsPool, 2, 12);
 
         document.getElementById('main-cover-container').innerHTML = `
             <article class="v4 cv-001">
@@ -1604,8 +1612,10 @@ middle_part = """
             </article>
         `;
 
-        const commentArt = hanoiArticles.find(a => a.category === "Thời sự" && a.id !== centerArt.id) || originalHanoiArticles[10];
-        const kindnessArt = hanoiArticles.find(a => a.category === "Xã hội" && a.id !== centerArt.id) || originalHanoiArticles[12];
+        const commentPool = hanoiArticles.filter(a => a.category === "Thời sự" && a.id !== centerArt.id);
+        const commentArt = getSafeArticle(commentPool, 0, 10);
+        const kindnessPool = hanoiArticles.filter(a => a.category === "Xã hội" && a.id !== centerArt.id);
+        const kindnessArt = getSafeArticle(kindnessPool, 0, 12);
         
         document.getElementById('sidebar-commentary-title').innerText = commentArt.title;
         document.getElementById('sidebar-commentary-title').href = commentArt.url;
@@ -1773,10 +1783,11 @@ middle_part = """
         function makeColumnHtml(categoryName) {
             let catPool = hanoiArticles.filter(a => a.category === categoryName);
             if (catPool.length < 5) {
-                const generalCatPool = originalHanoiArticles.filter(a => a.category === categoryName);
+                // Only fall back to articles within the filtered district to prevent leakage
+                const generalCatPool = hanoiArticles;
                 catPool = catPool.concat(generalCatPool.filter(ga => !catPool.some(ca => ca.id === ga.id))).slice(0, 5);
             }
-            const mainCat = catPool[0] || originalHanoiArticles[12];
+            const mainCat = getSafeArticle(catPool, 0, 12);
             const secondaryList = catPool.slice(1, 5);
             
             let listHtml = '';
@@ -2086,7 +2097,7 @@ middle_part = """
             hanoiArticles = [...originalHanoiArticles];
             document.querySelector('.hanoi-intro-badge h1').innerText = "TRANG THÔNG TIN ĐỊA BÀN HÀ NỘI CỦA BÁO LAO ĐỘNG (BẢN QUY HOẠCH QUẢNG CÁO)";
         } else if (district === 'noi-thanh') {
-            const noithanh = originalHanoiArticles.filter(a => a.district && (
+            hanoiArticles = originalHanoiArticles.filter(a => a.district && (
                 a.district.includes('Hoàn Kiếm') || a.district.includes('Ba Đình') || 
                 a.district.includes('Đống Đa') || a.district.includes('Hai Bà Trưng') ||
                 a.district.includes('Cầu Giấy') || a.district.includes('Thanh Xuân') ||
@@ -2094,33 +2105,29 @@ middle_part = """
                 a.district.includes('Nam Từ Liêm') || a.district.includes('Bắc Từ Liêm') ||
                 a.district.includes('Hoàng Mai')
             ));
-            hanoiArticles = noithanh.length >= 10 ? noithanh : [...originalHanoiArticles];
             document.querySelector('.hanoi-intro-badge h1').innerText = "PHÂN TUYẾN ĐỊA BÀN: HÀ NỘI NỘI THÀNH";
         } else if (district === 'ha-dong') {
-            const hadong = originalHanoiArticles.filter(a => a.district && (
+            hanoiArticles = originalHanoiArticles.filter(a => a.district && (
                 a.district.includes('Hà Đông') || a.district.includes('Thanh Oai') || 
                 a.district.includes('Chương Mỹ') || a.district.includes('Mỹ Đức')
             ));
-            hanoiArticles = hadong.length >= 5 ? hadong : [...originalHanoiArticles];
             document.querySelector('.hanoi-intro-badge h1').innerText = "PHÂN TUYẾN ĐỊA BÀN: HÀ ĐÔNG &amp; PHỤ CẬN";
         } else if (district === 'gia-lam') {
-            const gialamnew = originalHanoiArticles.filter(a => a.district && (
+            hanoiArticles = originalHanoiArticles.filter(a => a.district && (
                 a.district.includes('Gia Lâm') || a.district.includes('Đông Anh') ||
                 a.district.includes('Sóc Sơn') || a.district.includes('Mê Linh')
             ));
-            hanoiArticles = gialamnew.length >= 5 ? gialamnew : [...originalHanoiArticles];
             document.querySelector('.hanoi-intro-badge h1').innerText = "PHÂN TUYẾN ĐỊA BÀN: GIA LÂM MỚI &amp; ĐÔNG BẮC HÀ NỘI";
         } else if (district === 'dong-anh') {
-            const donganh = originalHanoiArticles.filter(a => a.district && (
+            hanoiArticles = originalHanoiArticles.filter(a => a.district && (
                 a.district.includes('Đông Anh') || a.district.includes('Mê Linh') ||
                 a.district.includes('Sóc Sơn')
             ));
-            hanoiArticles = donganh.length >= 5 ? donganh : [...originalHanoiArticles];
             document.querySelector('.hanoi-intro-badge h1').innerText = "PHÂN TUYẾN ĐỊA BÀN: ĐÔNG ANH &amp; PHÍA BẮC HÀ NỘI";
         }
 
         updateProvincialProfileWidget(district);
-        featuredArticleId = hanoiArticles[0] ? hanoiArticles[0].id : originalHanoiArticles[0].id;
+        featuredArticleId = getSafeArticle(hanoiArticles, 0, 0).id;
         
         populateCuratorOptions();
         renderMainCover();
