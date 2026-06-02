@@ -166,6 +166,8 @@ Quy trình tối ưu kết hợp đặc tả kỹ thuật PRD (Cơ chế 4 lớp
   - Thay đổi an toàn breakpoint wallpaper ads và JS checks từ `1400px` lên `1540px`, cùng tăng font size bài viết từ `11.5px` lên `13px`.
   - **Sửa lỗi hiển thị cuối trang (Mobile Responsiveness):** Khắc phục lỗi hiển thị co quắp/móp méo các khối "Dân sinh & Đời sống", "Kết nối Tiêu dùng" và "Bảng giá thị trường" trên di động. Gom gộp thuộc tính class trùng lặp (`class="m-top-20" ... class="columns-layout"`) thành một attribute chuẩn (`class="m-top-20 columns-layout"`), đồng thời thêm các quy tắc CSS `@media` cho phép các grid-layout 2 cột này tự động thu hẹp và xếp chồng thành 1 cột mượt mà trên Mobile (màn hình `<768px` và `<576px`).
   - **Tích hợp Banner tiếp thị:** Thiết kế hình ảnh và tích hợp banner quảng cáo giả lập cho siêu thị WinMart về chương trình Khuyến mãi mùa hè 2026, cải tiến thiết kế thẻ đồng hành chuyên mục thành cấu trúc card sang trọng kết hợp ảnh nền sắc nét và overlay text gradient.
+  - **Quy hoạch thiết kế Premium nửa cuối trang:** Loại bỏ các hộp thô cứng, viền thô và các khối inline-style xám thô tĩnh. Giới thiệu các class thiết kế chuyên nghiệp như `.premium-card` (có bóng mờ tinh tế, border nhẹ nhàng, hover nâng nhẹ chiều sâu), `.category-card` (tiêu đề chuyên mục phân tuyến dạng line tối giản tinh tế), và cấu trúc bảng biểu `.interactive-table` mượt mà có highlight hover. Sửa triệt để các lỗi thẻ `div` lồng nhau bị unclosed bằng cách đóng chính xác `wrapper` và `b-center` trước thẻ `<script>`.
+
 
 * **Kinh nghiệm rút ra:**
   - Tuyệt đối không sử dụng replace chuỗi tĩnh quá chung chung (như `<style>`) trên mã nguồn Python để tiêm CSS vào mẫu HTML, vì điều đó dễ trùng khớp với các biến chuỗi HTML định nghĩa ở đầu tệp.
