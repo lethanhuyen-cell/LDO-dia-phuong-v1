@@ -687,57 +687,17 @@ middle_part = """
                 </div>
                 
                 <!-- Right: Local Business Directory -->
-                <div style="background-color: #fdfdfd; border: 1px solid #e3e3e3; border-radius: 8px; padding: 20px; display: flex; flex-direction: column;">
-                    <div style="font-size: 14px; font-weight: bold; color: #b8860b; text-transform: uppercase; border-bottom: 2px solid #b8860b; padding-bottom: 6px; margin-bottom: 15px;">Kết nối Tiêu dùng</div>
-                    <div style="display: flex; flex-direction: column; gap: 8px; max-height: 380px; overflow-y: auto; padding-right: 5px;" id="local-directory-list">
-                        <!-- Simulated Directory Listing 1 -->
-                        <div style="background: #fff; border: 1px solid #eee; border-left: 3px solid #b8860b; padding: 6px 10px; border-radius: 3px; position: relative;">
-                            <span style="position: absolute; right: 5px; top: 5px; font-size: 7px; color: #c00000; font-weight: bold; border: 1px solid #c00000; padding: 1px 3px; border-radius: 2px;">Đã duyệt</span>
-                            <strong style="font-size: 11px; color: #333; display: block;">Nha khoa Quốc tế Hà Đông</strong>
-                            <span style="font-size: 9.5px; color: #666; display: block;">📍 145 Quang Trung, Hà Đông | ☎ 0988.xxx.xxx</span>
+                <div style="background-color: #fdfdfd; border: 1px solid #e3e3e3; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; box-sizing: border-box;">
+                    <div style="font-size: 14px; font-weight: bold; color: #b8860b; text-transform: uppercase; border-bottom: 2px solid #b8860b; padding-bottom: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 5px;">
+                        <span>Kết nối Tiêu dùng</span>
+                        <div style="display: flex; align-items: center; gap: 6px; user-select: none;">
+                            <button onclick="prevDirectoryPage()" style="background: #fff; border: 1px solid #ccc; width: 22px; height: 22px; border-radius: 50%; font-size: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #b8860b; transition: all 0.2s;" onmouseover="this.style.background='#f0f0f0';" onmouseout="this.style.background='#fff';">◀</button>
+                            <span id="directory-page-indicator" style="font-size: 11px; color: #666; font-weight: bold;">1/3</span>
+                            <button onclick="nextDirectoryPage()" style="background: #fff; border: 1px solid #ccc; width: 22px; height: 22px; border-radius: 50%; font-size: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #b8860b; transition: all 0.2s;" onmouseover="this.style.background='#f0f0f0';" onmouseout="this.style.background='#fff';">▶</button>
                         </div>
-                        <!-- Simulated Directory Listing 2 -->
-                        <div style="background: #fff; border: 1px solid #eee; border-left: 3px solid #b8860b; padding: 6px 10px; border-radius: 3px; position: relative;">
-                            <span style="position: absolute; right: 5px; top: 5px; font-size: 7px; color: #c00000; font-weight: bold; border: 1px solid #c00000; padding: 1px 3px; border-radius: 2px;">Đã duyệt</span>
-                            <strong style="font-size: 11px; color: #333; display: block;">Trung tâm Gia sư Sư phạm thủ khoa</strong>
-                            <span style="font-size: 9.5px; color: #666; display: block;">📍 Ngõ 192 Lê Trọng Tấn, Thanh Xuân | ☎ 0912.xxx.xxx</span>
-                        </div>
-                        <!-- Simulated Directory Listing 3 -->
-                        <div style="background: #fff; border: 1px solid #eee; border-left: 3px solid #b8860b; padding: 6px 10px; border-radius: 3px; position: relative;">
-                            <span style="position: absolute; right: 5px; top: 5px; font-size: 7px; color: #c00000; font-weight: bold; border: 1px solid #c00000; padding: 1px 3px; border-radius: 2px;">Đã duyệt</span>
-                            <strong style="font-size: 11px; color: #333; display: block;">Gốm sứ Bát Tràng chính gốc - Shop Lộc Phát</strong>
-                            <span style="font-size: 9.5px; color: #666; display: block;">📍 Chợ cổ Bát Tràng, Gia Lâm | ☎ 0945.xxx.xxx</span>
-                        </div>
-                        <!-- Simulated Directory Listing 4: Rescue -->
-                        <div style="background: #fff; border: 1px solid #eee; border-left: 3px solid #b8860b; padding: 6px 10px; border-radius: 3px; position: relative;">
-                            <span style="position: absolute; right: 5px; top: 5px; font-size: 7px; color: #c00000; font-weight: bold; border: 1px solid #c00000; padding: 1px 3px; border-radius: 2px;">Đã duyệt</span>
-                            <strong style="font-size: 11px; color: #333; display: block;">Cứu hộ Giao thông Hà Nội 24/7 (Khu vực Đống Đa - Ba Đình)</strong>
-                            <span style="font-size: 9.5px; color: #666; display: block;">📍 12 Giảng Võ, Đống Đa | ☎ 0904.xxx.xxx</span>
-                        </div>
-                        <!-- Simulated Directory Listing 5: Vocational -->
-                        <div style="background: #fff; border: 1px solid #eee; border-left: 3px solid #b8860b; padding: 6px 10px; border-radius: 3px; position: relative;">
-                            <span style="position: absolute; right: 5px; top: 5px; font-size: 7px; color: #c00000; font-weight: bold; border: 1px solid #c00000; padding: 1px 3px; border-radius: 2px;">Đã duyệt</span>
-                            <strong style="font-size: 11px; color: #333; display: block;">Trường Dạy nghề ẩm thực & pha chế chuyên nghiệp Hanoi Cook</strong>
-                            <span style="font-size: 9.5px; color: #666; display: block;">📍 89 Trần Phú, Hà Đông | ☎ 0916.xxx.xxx</span>
-                        </div>
-                        <!-- Simulated Directory Listing 6: Aesthetic -->
-                        <div style="background: #fff; border: 1px solid #eee; border-left: 3px solid #b8860b; padding: 6px 10px; border-radius: 3px; position: relative;">
-                            <span style="position: absolute; right: 5px; top: 5px; font-size: 7px; color: #c00000; font-weight: bold; border: 1px solid #c00000; padding: 1px 3px; border-radius: 2px;">Đã duyệt</span>
-                            <strong style="font-size: 11px; color: #333; display: block;">Viện Thẩm mỹ Công nghệ cao An Beauty</strong>
-                            <span style="font-size: 9.5px; color: #666; display: block;">📍 24 Kim Mã, Ba Đình | ☎ 0989.xxx.xxx</span>
-                        </div>
-                        <!-- Simulated Directory Listing 7: Medical -->
-                        <div style="background: #fff; border: 1px solid #eee; border-left: 3px solid #b8860b; padding: 6px 10px; border-radius: 3px; position: relative;">
-                            <span style="position: absolute; right: 5px; top: 5px; font-size: 7px; color: #c00000; font-weight: bold; border: 1px solid #c00000; padding: 1px 3px; border-radius: 2px;">Đã duyệt</span>
-                            <strong style="font-size: 11px; color: #333; display: block;">Phòng khám Đông y gia truyền Lãn Ông Đường</strong>
-                            <span style="font-size: 9.5px; color: #666; display: block;">📍 Phố Lãn Ông, Hoàn Kiếm | ☎ 0973.xxx.xxx</span>
-                        </div>
-                        <!-- Simulated Directory Listing 8: Finance / Credit -->
-                        <div style="background: #fff; border: 1px solid #eee; border-left: 3px solid #b8860b; padding: 6px 10px; border-radius: 3px; position: relative;">
-                            <span style="position: absolute; right: 5px; top: 5px; font-size: 7px; color: #c00000; font-weight: bold; border: 1px solid #c00000; padding: 1px 3px; border-radius: 2px;">Đã duyệt</span>
-                            <strong style="font-size: 11px; color: #333; display: block;">Gói vay tín dụng ưu đãi hộ kinh doanh - HDBank Chi nhánh Cầu Giấy</strong>
-                            <span style="font-size: 9.5px; color: #666; display: block;">📍 19 Duy Tân, Cầu Giấy | ☎ 0903.xxx.xxx</span>
-                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 8px; min-height: 480px;" id="local-directory-list">
+                        <!-- Loaded dynamically via JS -->
                     </div>
                 </div>
             </div>
@@ -2129,6 +2089,84 @@ middle_part = """
         }, 5000);
     }
 
+    const directoryListings = [
+        { name: "Nha khoa Quốc tế Hà Đông", address: "145 Quang Trung, Hà Đông", phone: "0988.xxx.xxx" },
+        { name: "Trung tâm Gia sư Sư phạm thủ khoa", address: "Ngõ 192 Lê Trọng Tấn, Thanh Xuân", phone: "0912.xxx.xxx" },
+        { name: "Gốm sứ Bát Tràng chính gốc - Shop Lộc Phát", address: "Chợ cổ Bát Tràng, Gia Lâm", phone: "0945.xxx.xxx" },
+        { name: "Cứu hộ Giao thông Hà Nội 24/7 (Đống Đa - Ba Đình)", address: "12 Giảng Võ, Đống Đa", phone: "0904.xxx.xxx" },
+        { name: "Trường Dạy nghề ẩm thực Hanoi Cook", address: "89 Trần Phú, Hà Đông", phone: "0916.xxx.xxx" },
+        { name: "Viện Thẩm mỹ Công nghệ cao An Beauty", address: "24 Kim Mã, Ba Đình", phone: "0989.xxx.xxx" },
+        { name: "Phòng khám Đông y gia truyền Lãn Ông Đường", address: "Phố Lãn Ông, Hoàn Kiếm", phone: "0973.xxx.xxx" },
+        { name: "Gói vay ưu đãi hộ kinh doanh - HDBank Cầu Giấy", address: "19 Duy Tân, Cầu Giấy", phone: "0903.xxx.xxx" },
+        { name: "Sửa chữa máy tính & Laptop lấy ngay Bách Khoa", address: "56 Tạ Quang Bửu, Hai Bà Trưng", phone: "0985.xxx.xxx" },
+        { name: "Thiết kế thi công nội thất xanh An Cường", address: "218 Hoàng Quốc Việt, Cầu Giấy", phone: "0942.xxx.xxx" },
+        { name: "Buffet chay Hương Thiền", address: "261 Xã Đàn, Đống Đa", phone: "0967.xxx.xxx" },
+        { name: "Cửa hàng hoa tươi Sunny Flower", address: "12 Trần Hưng Đạo, Hoàn Kiếm", phone: "0918.xxx.xxx" },
+        { name: "Giặt là công nghiệp siêu tốc Green Laundry", address: "45 Nguyễn Khánh Toàn, Cầu Giấy", phone: "0936.xxx.xxx" },
+        { name: "Nha khoa nụ cười Việt (Smile Dental)", address: "88 Xã Đàn, Đống Đa", phone: "0977.xxx.xxx" },
+        { name: "Sửa xe máy phân khối lớn & tay ga chuyên nghiệp", address: "102 Đường Láng, Đống Đa", phone: "0909.xxx.xxx" },
+        { name: "Vận tải & chuyển nhà trọn gói Thành Hưng", address: "12 Cầu Diễn, Bắc Từ Liêm", phone: "0915.xxx.xxx" },
+        { name: "Đại lý vé máy bay & du lịch VietTravel Cầu Giấy", address: "165 Xuân Thủy, Cầu Giấy", phone: "0981.xxx.xxx" },
+        { name: "Phòng khám nha khoa quốc tế Paris Cầu Giấy", address: "110 Nguyễn Khánh Toàn, Cầu Giấy", phone: "0982.xxx.xxx" },
+        { name: "Cà phê rang xay nguyên chất Tây Nguyên Coffee", address: "88 Nguyễn Chí Thanh, Láng Hạ", phone: "0947.xxx.xxx" },
+        { name: "Cửa hàng đặc sản giò chả Ước Lễ chính gốc", address: "15 Ngõ Huyện, Hoàn Kiếm", phone: "0914.xxx.xxx" },
+        { name: "Salon tóc & Làm đẹp chuyên nghiệp Minh Huy", address: "78 Chùa Láng, Đống Đa", phone: "0983.xxx.xxx" },
+        { name: "Lớp học vẽ & Mỹ thuật thiếu nhi Art Sun", address: "12 ngõ 45 phố Vọng, Hai Bà Trưng", phone: "0941.xxx.xxx" },
+        { name: "Đại lý yến sào Khánh Hòa chính hãng", address: "210 Phố Huế, Hai Bà Trưng", phone: "0911.xxx.xxx" },
+        { name: "Cửa hàng thực phẩm sạch & rau hữu cơ Organic Mart", address: "44 Phùng Hưng, Hoàn Kiếm", phone: "0984.xxx.xxx" },
+        { name: "Sửa điện lạnh & Điều hòa bách khoa 24h", address: "32 Láng Hạ, Đống Đa", phone: "0902.xxx.xxx" },
+        { name: "Cho thuê vest cưới & Áo dài cô dâu Bella", address: "15 Mai Hắc Đế, Hai Bà Trưng", phone: "0917.xxx.xxx" },
+        { name: "Lớp học tiếng Anh giao tiếp chuẩn Edspace", address: "5 ngõ 106 Hoàng Quốc Việt", phone: "0938.xxx.xxx" },
+        { name: "Dịch vụ hút bể phốt & Thông tắc cống đô thị 24h", address: "99 Định Công, Hoàng Mai", phone: "0906.xxx.xxx" },
+        { name: "Cơm văn phòng sạch & Giao hàng tận nơi Hanoi Bento", address: "15 ngõ 80 Trần Duy Hưng", phone: "0975.xxx.xxx" },
+        { name: "Vàng bạc đá quý Phú Quý Trần Nhân Tông", address: "30 Trần Nhân Tông, Hai Bà Trưng", phone: "0986.xxx.xxx" }
+    ];
+
+    let currentDirectoryPage = 0;
+    const itemsPerDirectoryPage = 10;
+
+    function renderDirectoryPage() {
+        const start = currentDirectoryPage * itemsPerDirectoryPage;
+        const end = start + itemsPerDirectoryPage;
+        const itemsToShow = directoryListings.slice(start, end);
+        const listContainer = document.getElementById('local-directory-list');
+        if (!listContainer) return;
+        
+        let html = '';
+        itemsToShow.forEach(item => {
+            html += `
+                <div style="background: #fff; border: 1px solid #eee; border-left: 3px solid #b8860b; padding: 6px 10px; border-radius: 3px; box-shadow: 0 1px 3px rgba(0,0,0,0.02); transition: all 0.2s;" onmouseover="this.style.transform='translateX(2px)'; this.style.borderColor='#b8860b';" onmouseout="this.style.transform='none'; this.style.borderColor='#eee';">
+                    <strong style="font-size: 11.5px; color: #333; display: block; margin-bottom: 2px;">${item.name}</strong>
+                    <span style="font-size: 10px; color: #666; display: block; line-height: 1.3;">📍 ${item.address} | ☎ ${item.phone}</span>
+                </div>
+            `;
+        });
+        listContainer.innerHTML = html;
+        
+        const indicator = document.getElementById('directory-page-indicator');
+        if (indicator) {
+            indicator.innerText = `${currentDirectoryPage + 1}/3`;
+        }
+    }
+
+    window.prevDirectoryPage = function() {
+        if (currentDirectoryPage > 0) {
+            currentDirectoryPage--;
+        } else {
+            currentDirectoryPage = 2;
+        }
+        renderDirectoryPage();
+    };
+
+    window.nextDirectoryPage = function() {
+        if (currentDirectoryPage < 2) {
+            currentDirectoryPage++;
+        } else {
+            currentDirectoryPage = 0;
+        }
+        renderDirectoryPage();
+    };
+
     window.addEventListener('DOMContentLoaded', () => {
         populateCuratorOptions();
         renderMainCover();
@@ -2140,6 +2178,7 @@ middle_part = """
         fetchHanoiWeather();
         updateProvincialProfileWidget('all');
         initInfraCarouselAutoplay();
+        renderDirectoryPage();
     });
 </script>
 """
