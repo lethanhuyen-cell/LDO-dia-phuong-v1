@@ -164,9 +164,9 @@ Quy trình tối ưu kết hợp đặc tả kỹ thuật PRD (Cơ chế 4 lớp
   - Khắc phục triệt để lỗi hiển thị vỡ khung layout trên toàn bộ các trang địa phương do việc replace chuỗi `<style>` không an toàn trước đó.
   - Thiết kế patcher Option A tối ưu hóa giao diện an toàn bằng cách định vị và chèn quy tắc CSS mobile chính xác thông qua Regex neo biên giới (anchor) `</style>\s*<!-- WALLPAPER AD SLOTS -->`.
   - Thay đổi an toàn breakpoint wallpaper ads và JS checks từ `1400px` lên `1540px`, cùng tăng font size bài viết từ `11.5px` lên `13px`.
-  - **Sửa lỗi hiển thị cuối trang (Mobile Responsiveness):** Khắc phục lỗi hiển thị co quắp/móp méo các khối "Dân sinh & Đời sống", "Kết nối Tiêu dùng" và "Bảng giá thị trường" trên di động. Gom gộp thuộc tính class trùng lặp (`class="m-top-20" ... class="columns-layout"`) thành một attribute chuẩn (`class="m-top-20 columns-layout"`), đồng thời thêm các quy tắc CSS `@media` cho phép các grid-layout 2 cột này tự động thu hẹp và xếp chồng thành 1 cột mượt mà trên Mobile (màn hình `<768px` và `<576px`).
+  - **Sửa lỗi hiển thị cuối trang (Mobile Responsiveness & Grid Squishing):** Khắc phục lỗi hiển thị co quắp/móp méo các khối "Dân sinh & Đời sống", "Kết nối Tiêu dùng" và "Bảng giá thị trường" trên di động. Đồng thời, tìm và sửa lỗi thiếu thẻ đóng `</div>` ở khối 5.5 trong `apply_tphcm_layout.py` khiến các khối bên dưới bị lồng sai lệch và hiển thị co rúm thành cột dọc hẹp trên desktop.
   - **Tích hợp Banner tiếp thị:** Thiết kế hình ảnh và tích hợp banner quảng cáo giả lập cho siêu thị WinMart về chương trình Khuyến mãi mùa hè 2026, cải tiến thiết kế thẻ đồng hành chuyên mục thành cấu trúc card sang trọng kết hợp ảnh nền sắc nét và overlay text gradient.
-  - **Quy hoạch thiết kế Premium nửa cuối trang:** Loại bỏ các hộp thô cứng, viền thô và các khối inline-style xám thô tĩnh. Giới thiệu các class thiết kế chuyên nghiệp như `.premium-card` (có bóng mờ tinh tế, border nhẹ nhàng, hover nâng nhẹ chiều sâu), `.category-card` (tiêu đề chuyên mục phân tuyến dạng line tối giản tinh tế), và cấu trúc bảng biểu `.interactive-table` mượt mà có highlight hover. Sửa triệt để các lỗi thẻ `div` lồng nhau bị unclosed bằng cách đóng chính xác `wrapper` và `b-center` trước thẻ `<script>`.
+  - **Quy hoạch thiết kế Premium nửa cuối trang:** Loại bỏ các hộp thô cứng, viền thô và các khối inline-style xám thô tĩnh. Giới thiệu các class thiết kế chuyên nghiệp như `.premium-card` (có bóng mờ tinh tế, border nhẹ nhàng, hover nâng nhẹ chiều sâu), `.category-card` (tiêu đề chuyên mục phân tuyến dạng line tối giản tinh tế), và cấu trúc bảng biểu `.interactive-table` mượt mà có highlight hover. Sửa triệt để các lỗi thẻ `div` lồng nhau bị unclosed bằng cách đóng chính xác `wrapper` và `b-center` trước thẻ `<script>` cũng như đóng đúng vị trí `BLOCK 5.5`.
 
 
 * **Kinh nghiệm rút ra:**
@@ -174,6 +174,7 @@ Quy trình tối ưu kết hợp đặc tả kỹ thuật PRD (Cơ chế 4 lớp
   - Luôn sử dụng Regex neo biên giới kết hợp với các bình luận HTML đặc thù (ví dụ: `<!-- WALLPAPER AD SLOTS -->`) để định vị điểm tiêm mã cực kỳ chính xác.
   - Tránh khai báo lặp lại thuộc tính `class` trên cùng một thẻ HTML vì trình duyệt sẽ bỏ qua thuộc tính khai báo sau.
   - Mọi bố cục Grid/Flexbox dạng cột ghép đôi (như bảng giá đi kèm banner tài trợ) bắt buộc phải tích hợp sẵn quy tắc thu gọn (stacking) bằng CSS `@media` để đảm bảo trải nghiệm hiển thị an toàn trên thiết bị cầm tay.
+  - **Quan trọng về HTML Tag Closures:** Chỉ cần thiếu 1 thẻ đóng `</div>` ở phần trên có thể phá hủy hoàn toàn hiển thị của phần dưới trang bằng cách kéo các container con cấp dưới lồng vào trong grid layout có tỉ lệ nhỏ của container cha. Luôn xác thực tính hợp lệ của cây DOM khi xảy ra các lỗi co quắp layout kỳ lạ.
 
 
 
