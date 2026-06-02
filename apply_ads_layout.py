@@ -22,6 +22,28 @@ if header_match == -1:
     sys.exit(1)
 header_part = content[:header_match + len('</header>')]
 
+# Insert top billboard ad at the very top of body (above header/masthead)
+body_tag = '<body ng-app="web-app">'
+body_index = header_part.find(body_tag)
+if body_index != -1:
+    insert_pos = body_index + len(body_tag)
+    top_billboard_html = """
+    <!-- AD SLOT 01: TOP BILLBOARD (970x250) - PLACED ABOVE MASTHEAD -->
+    <div style="width: 100%; max-width: 1000px; margin: 10px auto; text-align: center; font-family: Arial, sans-serif; position: relative; z-index: 1000;">
+        <div style="position: absolute; top: 2px; left: 5px; font-size: 8px; color: #fff; background-color: #c00000; padding: 2px 5px; font-weight: bold; border-radius: 2px; z-index: 1005;">QC GIẢ LẬP</div>
+        <a href="https://vinfastauto.com" target="_blank" style="text-decoration: none; display: block; border-radius: 6px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            <div style="background: linear-gradient(90deg, #0b1a30 0%, #00458e 50%, #0b1a30 100%); height: 120px; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; color: #fff; position: relative;">
+                <div style="text-align: left;">
+                    <h2 style="font-size: 22px; font-weight: 800; color: #fff; margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">VINFAST VF9</h2>
+                    <p style="font-size: 11px; margin: 3px 0 0 0; color: #d0e1f9; font-weight: bold; letter-spacing: 0.5px;">ĐƯỜNG ĐẾN TƯƠNG LAI XANH - KIÊN TẠO VỊ THẾ DẪN ĐẦU</p>
+                </div>
+                <div style="border: 2px solid #fff; padding: 6px 15px; font-size: 12px; font-weight: bold; text-transform: uppercase; border-radius: 4px; background: rgba(255,255,255,0.1); cursor: pointer; transition: background 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Đăng ký lái thử</div>
+            </div>
+        </a>
+    </div>
+    """
+    header_part = header_part[:insert_pos] + top_billboard_html + header_part[insert_pos:]
+
 # Inject skin ads styling into header part
 ad_styles = """
 <style>
@@ -34,7 +56,7 @@ ad_styles = """
         .wallpaper-ad-left {
             position: fixed;
             top: 140px;
-            left: calc(50% - 730px);
+            left: calc(50% - 760px);
             width: 140px;
             height: 700px;
             background: linear-gradient(180deg, #0b1a30 0%, #002d62 100%);
@@ -51,7 +73,7 @@ ad_styles = """
         .wallpaper-ad-right {
             position: fixed;
             top: 140px;
-            right: calc(50% - 730px);
+            right: calc(50% - 760px);
             width: 140px;
             height: 700px;
             background: linear-gradient(180deg, #0b1a30 0%, #002d62 100%);
@@ -403,19 +425,7 @@ middle_part = """
                 <!-- JS populated dynamically -->
             </div>
 
-            <!-- AD SLOT 01: TOP BILLBOARD (970x250) -->
-            <div style="width: 100%; max-width: 1000px; margin: 15px auto 0 auto; text-align: center; font-family: Arial, sans-serif; position: relative;">
-                <div style="position: absolute; top: 2px; left: 5px; font-size: 8px; color: #fff; background-color: #c00000; padding: 2px 5px; font-weight: bold; border-radius: 2px; z-index: 5;">QC GIẢ LẬP</div>
-                <a href="https://vinfastauto.com" target="_blank" style="text-decoration: none; display: block; border-radius: 6px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-                    <div style="background: linear-gradient(90deg, #0b1a30 0%, #00458e 50%, #0b1a30 100%); height: 180px; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; color: #fff; position: relative;">
-                        <div style="text-align: left;">
-                            <h2 style="font-size: 26px; font-weight: 800; color: #fff; margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">VINFAST VF9</h2>
-                            <p style="font-size: 13px; margin: 5px 0 0 0; color: #d0e1f9; font-weight: bold; letter-spacing: 0.5px;">ĐƯỜNG ĐẾN TƯƠNG LAI XANH - KIÊN TẠO VỊ THẾ DẪN ĐẦU</p>
-                        </div>
-                        <div style="border: 2px solid #fff; padding: 10px 20px; font-weight: bold; text-transform: uppercase; border-radius: 4px; background: rgba(255,255,255,0.1); cursor: pointer; transition: background 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">Đăng ký lái thử</div>
-                    </div>
-                </a>
-            </div>
+
 
             <!-- BLOCK 1: MAIN COVER GRID -->
             <div class="blk-10 main-cover m-top-20">
