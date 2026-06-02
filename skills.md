@@ -169,12 +169,16 @@ Quy trình tối ưu kết hợp đặc tả kỹ thuật PRD (Cơ chế 4 lớp
   - **Quy hoạch thiết kế Premium nửa cuối trang:** Loại bỏ các hộp thô cứng, viền thô và các khối inline-style xám thô tĩnh. Giới thiệu các class thiết kế chuyên nghiệp như `.premium-card` (có bóng mờ tinh tế, border nhẹ nhàng, hover nâng nhẹ chiều sâu), `.category-card` (tiêu đề chuyên mục phân tuyến dạng line tối giản tinh tế), và cấu trúc bảng biểu `.interactive-table` mượt mà có highlight hover. Sửa triệt để các lỗi thẻ `div` lồng nhau bị unclosed bằng cách đóng chính xác `wrapper` và `b-center` trước thẻ `<script>` cũng như đóng đúng vị trí `BLOCK 5.5`.
 
 
+  - **Đồng bộ hóa chiều cao & Quy hoạch Media Block (Symmetric Height Alignment):** Phát hiện và khắc phục lỗi lệch chiều cao giữa cụm TV Player (bên trái) và cụm 4 thẻ bài viết (bên phải). Thay đổi cấu trúc lưới từ `1.2fr 1fr 1fr` thành `1.2fr 2fr` và đặt cụm 4 thẻ bài viết vào một wrapper container có thuộc tính `.premium-card` (border, padding, border-radius và white background đồng bộ tuyệt đối với TV Player). Cấu hình flexbox `justify-content: space-between` cho 2 cột thẻ bài viết giúp kéo căng, phân bổ đều 4 thẻ và làm cân bằng chính xác mép chân (bottom align) của cả hai cụm.
+
+
 * **Kinh nghiệm rút ra:**
   - Tuyệt đối không sử dụng replace chuỗi tĩnh quá chung chung (như `<style>`) trên mã nguồn Python để tiêm CSS vào mẫu HTML, vì điều đó dễ trùng khớp với các biến chuỗi HTML định nghĩa ở đầu tệp.
   - Luôn sử dụng Regex neo biên giới kết hợp với các bình luận HTML đặc thù (ví dụ: `<!-- WALLPAPER AD SLOTS -->`) để định vị điểm tiêm mã cực kỳ chính xác.
   - Tránh khai báo lặp lại thuộc tính `class` trên cùng một thẻ HTML vì trình duyệt sẽ bỏ qua thuộc tính khai báo sau.
   - Mọi bố cục Grid/Flexbox dạng cột ghép đôi (như bảng giá đi kèm banner tài trợ) bắt buộc phải tích hợp sẵn quy tắc thu gọn (stacking) bằng CSS `@media` để đảm bảo trải nghiệm hiển thị an toàn trên thiết bị cầm tay.
   - **Quan trọng về HTML Tag Closures:** Chỉ cần thiếu 1 thẻ đóng `</div>` ở phần trên có thể phá hủy hoàn toàn hiển thị của phần dưới trang bằng cách kéo các container con cấp dưới lồng vào trong grid layout có tỉ lệ nhỏ của container cha. Luôn xác thực tính hợp lệ của cây DOM khi xảy ra các lỗi co quắp layout kỳ lạ.
+  - **Thiết kế cân bằng thị giác (Visual Balance):** Khi đặt các cụm nội dung có cách thức hiển thị khác nhau (ví dụ: Video Player và List Cards) đứng cạnh nhau trong lưới Layout, nên nhóm danh sách card vào một container wrapper có styling đồng nhất với cột kế bên để tạo tính gắn kết, sau đó dùng flex layout kéo giãn (stretch/space-between) để tự động triệt tiêu các khoảng trống lệch ở chân trang.
 
 
 
