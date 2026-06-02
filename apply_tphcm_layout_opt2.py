@@ -336,6 +336,155 @@ ad_styles = """
             margin-bottom: 15px;
         }
     }
+    /* Premium Design overrides for the lower half of the page */
+    .premium-card {
+        background: #ffffff !important;
+        border: 1px solid #eef1f6 !important;
+        border-radius: 12px !important;
+        padding: 24px !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
+        transition: all 0.3s ease !important;
+        box-sizing: border-box;
+    }
+    .premium-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+        border-color: #d1d8e0 !important;
+    }
+    .premium-header {
+        font-family: Arial, sans-serif;
+        font-size: 15px !important;
+        font-weight: 800 !important;
+        color: #002d62 !important;
+        text-transform: uppercase;
+        border-bottom: 2px solid #002d62 !important;
+        padding-bottom: 10px !important;
+        margin-bottom: 20px !important;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .premium-header.red-theme {
+        color: #c00000 !important;
+        border-bottom-color: #c00000 !important;
+    }
+    .premium-header.gold-theme {
+        color: #b8860b !important;
+        border-bottom-color: #b8860b !important;
+    }
+    
+    /* Category Columns Premium Styling */
+    .category-card {
+        background: #ffffff !important;
+        border: 1px solid #eef1f6 !important;
+        border-radius: 12px !important;
+        padding: 16px !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02) !important;
+        transition: all 0.3s ease !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        min-height: 400px !important;
+        box-sizing: border-box;
+    }
+    .category-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05) !important;
+        border-color: #d1d8e0 !important;
+    }
+    .category-header {
+        background: linear-gradient(90deg, #f8f9fa 0%, #ffffff 100%) !important;
+        border-left: 3px solid #c00000 !important;
+        border-bottom: 1px solid #eef1f6 !important;
+        padding: 8px 12px !important;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px !important;
+        border-radius: 0 4px 4px 0;
+    }
+    .category-header span:first-child {
+        font-size: 13px !important;
+        font-weight: 800 !important;
+        color: #111 !important;
+    }
+    .category-header span:last-child {
+        color: #c00000 !important;
+    }
+    .category-title {
+        font-size: 14px !important;
+        font-weight: 800 !important;
+        color: #111 !important;
+        line-height: 1.45 !important;
+        margin-top: 5px !important;
+        transition: color 0.2s;
+    }
+    .category-title:hover {
+        color: #c00000 !important;
+    }
+    .category-list-item {
+        display: flex;
+        gap: 10px;
+        border-top: 1px dashed #eef1f6 !important;
+        padding-top: 10px !important;
+        margin-top: 10px !important;
+        min-height: 48px;
+        align-items: center;
+    }
+    .category-list-link {
+        font-size: 13px !important;
+        color: #333 !important;
+        text-decoration: none !important;
+        font-weight: 700 !important;
+        line-height: 1.4 !important;
+        transition: color 0.2s;
+    }
+    .category-list-link:hover {
+        color: #c00000 !important;
+    }
+    
+    /* Interactive Market Table */
+    .interactive-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px !important;
+        text-align: left;
+    }
+    .interactive-table th {
+        padding: 12px 10px !important;
+        color: #444 !important;
+        font-weight: 800 !important;
+        background-color: #f8f9fa !important;
+        border-bottom: 2px solid #eef1f6 !important;
+    }
+    .interactive-table td {
+        padding: 12px 10px !important;
+        border-bottom: 1px solid #f1f3f7 !important;
+        color: #333 !important;
+    }
+    .interactive-table tr:hover td {
+        background-color: #fafbfc !important;
+    }
+    
+    .interactive-select {
+        padding: 6px 12px !important;
+        font-size: 12.5px !important;
+        border: 1px solid #d1d8e0 !important;
+        border-radius: 6px !important;
+        font-weight: bold !important;
+        color: #002d62 !important;
+        background-color: #ffffff !important;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        outline: none;
+        cursor: pointer;
+        transition: border-color 0.2s;
+    }
+    .interactive-select:focus {
+        border-color: #002d62 !important;
+    }
+
     #provincial-profile-widget table {
         display: block;
         width: 100%;
@@ -645,7 +794,7 @@ middle_part = """
             <!-- BLOCK 5.5: HỆ SINH THÁI DÂN SINH & DANH BẠ HỘ KINH DOANH (MÔ PHỎNG CHIẾN LƯỢC ĐUÔI DÀI) -->
             <div class="m-top-20 columns-layout" style="display: grid; grid-template-columns: 2fr 1fr; gap: 20px; font-family: Arial, sans-serif;">
                 <!-- Left: Worker Life, Weekend Escapes & Job Board -->
-                <div style="background-color: #ffffff; border: 1px solid #e3e3e3; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div class="premium-card" style="display: flex; flex-direction: column; justify-content: space-between;">
                     <div style="font-size: 14px; font-weight: bold; color: #002d62; text-transform: uppercase; border-bottom: 2px solid #002d62; padding-bottom: 6px; margin-bottom: 15px;">Dân sinh & Đời sống TP.HCM & Đông Nam Bộ</div>
                     <div class="nested-responsive-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
                         <!-- Item 1: Worker Life -->
@@ -727,7 +876,7 @@ middle_part = """
                 </div>
                 
                                 <!-- Right: Local Business Directory -->
-                <div style="background-color: #fdfdfd; border: 1px solid #e3e3e3; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; box-sizing: border-box;">
+                <div class="premium-card" style="display: flex; flex-direction: column; box-sizing: border-box;">
                     <div style="font-size: 14px; font-weight: bold; color: #b8860b; text-transform: uppercase; border-bottom: 2px solid #b8860b; padding-bottom: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 5px;">
                         <span>Kết nối Tiêu dùng</span>
                         <div style="display: flex; align-items: center; gap: 6px; user-select: none;">
@@ -745,12 +894,12 @@ middle_part = """
             <!-- BLOCK 5.7: BẢNG GIÁ THỊ TRƯỜNG DÂN SINH TP.HCM & ĐÔNG NAM BỘ (MÔ PHỎNG TIẾP THỊ LIÊN KẾT & TÀI TRỢ SIÊU THỊ) -->
             <div class="m-top-20 columns-layout" style="display: grid; grid-template-columns: 2fr 1.2fr; gap: 20px; font-family: Arial, sans-serif;">
                 <!-- Left: Interactive Price Table -->
-                <div style="background-color: #ffffff; border: 1px solid #e3e3e3; border-radius: 8px; padding: 20px; box-sizing: border-box;">
+                <div class="premium-card" style="box-sizing: border-box;">
                     <div style="font-size: 14px; font-weight: bold; color: #002d62; text-transform: uppercase; border-bottom: 2px solid #002d62; padding-bottom: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
                         <span>📊 Bảng giá thị trường dân sinh TP.HCM & Đông Nam Bộ</span>
                         <div style="display: flex; align-items: center; gap: 5px;">
                             <span style="font-size: 11px; color: #555; font-weight: normal; text-transform: none;">Khu vực:</span>
-                            <select id="price-district-select" onchange="changeDistrictPrices(this.value)" style="padding: 3px 8px; font-size: 11.5px; border: 1px solid #ccc; border-radius: 3px; font-weight: bold; color: #002d62;">
+                            <select id="price-district-select" onchange="changeDistrictPrices(this.value)" class="interactive-select">
                                 <option value="quan1" selected>Quận 1 (TP.HCM)</option>
                                 <option value="thuduc">TP. Thủ Đức</option>
                                 <option value="bienhoa">TP. Biên Hòa</option>
@@ -759,7 +908,7 @@ middle_part = """
                         </div>
                     </div>
                     
-                    <table style="width: 100%; border-collapse: collapse; font-size: 12px; text-align: left;">
+                    <table class="interactive-table">
                         <thead>
                             <tr style="background-color: #f7f9fb; border-bottom: 2px solid #eee;">
                                 <th style="padding: 10px; color: #555;">Mặt hàng (Sạch/OCOP)</th>
@@ -796,9 +945,9 @@ middle_part = """
             </div>
 
             <!-- BLOCK 5.75: LỊCH BIỂU DIỄN & GIẢI TRÍ TP.HCM & ĐÔNG NAM BỘ (MÔ PHỎNG KẾT NỐI API THỜI GIAN THỰC) -->
-            <div class="m-top-20" style="display: grid; grid-template-columns: 1.8fr 1.2fr; gap: 20px; font-family: Arial, sans-serif;" class="columns-layout">
+            <div class="m-top-20 columns-layout" style="display: grid; grid-template-columns: 1.8fr 1.2fr; gap: 20px; font-family: Arial, sans-serif;">
                 <!-- Left: Theatre, Circus, Shows -->
-                <div style="background-color: #ffffff; border: 1px solid #e3e3e3; border-radius: 8px; padding: 20px;">
+                <div class="premium-card">
                     <div style="font-size: 14px; font-weight: bold; color: #002d62; text-transform: uppercase; border-bottom: 2px solid #002d62; padding-bottom: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
                         <span>🎭 Lịch biểu diễn & Nghệ thuật TP.HCM & Đông Nam Bộ</span>
                         <span style="font-size: 9px; color: #28a745; font-weight: bold; border: 1px solid #28a745; padding: 2px 5px; border-radius: 2px;">LIVE API CONNECTED</span>
@@ -843,7 +992,7 @@ middle_part = """
                 </div>
                 
                 <!-- Right: Cinema Cinema / Showtimes -->
-                <div style="background-color: #ffffff; border: 1px solid #e3e3e3; border-radius: 8px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between;">
+                <div class="premium-card" style="box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
                         <div style="font-size: 14px; font-weight: bold; color: #c00000; text-transform: uppercase; border-bottom: 2px solid #c00000; padding-bottom: 6px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
                             <span>🎬 Suất chiếu phim rạp TP.HCM & Đông Nam Bộ</span>
@@ -880,7 +1029,7 @@ middle_part = """
             <!-- BLOCK 5.76: GÓC TƯƠNG TÁC ĐỘC GIẢ (BÁO CHÍ TƯƠNG TÁC DỰ LIỆU) -->
             <div class="m-top-20" style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 20px; font-family: Arial, sans-serif;" class="columns-layout">
                 <!-- Left: Interactive Poll (Khảo sát dư luận) -->
-                <div style="background-color: #ffffff; border: 1px solid #e3e3e3; border-radius: 8px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between;">
+                <div class="premium-card" style="box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
                         <div style="font-size: 14px; font-weight: bold; color: #002d62; text-transform: uppercase; border-bottom: 2px solid #002d62; padding-bottom: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
                             <span>📊 Khảo sát Dư luận Thủ đô</span>
@@ -902,7 +1051,7 @@ middle_part = """
                 </div>
 
                 <!-- Right: Labor Overtime Pay Calculator (Tính lương tăng ca tự động) -->
-                <div style="background-color: #ffffff; border: 1px solid #e3e3e3; border-radius: 8px; padding: 20px; box-sizing: border-box;">
+                <div class="premium-card" style="box-sizing: border-box;">
                     <div style="font-size: 14px; font-weight: bold; color: #c00000; text-transform: uppercase; border-bottom: 2px solid #c00000; padding-bottom: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
                         <span>⚖️ Tự tính Lương tăng ca (Luật LĐ 2019)</span>
                         <span style="font-size: 9px; color: #28a745; font-weight: bold; border: 1px solid #28a745; padding: 2px 5px; border-radius: 2px;">TIỆN ÍCH LAO ĐỘNG</span>
@@ -1424,6 +1573,8 @@ middle_part = """
         </div>
     </div>
 </div>
+</div> <!-- Close b-center wrapper -->
+</div> <!-- Close body-content wrapper -->
 
 <script>
     const originalTphcmArticles = PLACEHOLDER_RAW_ARTICLES;
@@ -1738,26 +1889,26 @@ middle_part = """
             let listHtml = '';
             secondaryList.forEach(item => {
                 listHtml += `
-                    <div style="display:flex; gap:8px; border-top:1px solid #eee; padding-top:8px; margin-top:8px; min-height: 48px; line-height: 1.45;">
+                    <div class="category-list-item">
                         <a href="` + item.url + `" target="_blank" style="width: 50px; height: 35px; overflow:hidden; display:block; flex-shrink:0; border-radius: 2px;">
                             <img src="` + item.image + `" style="width:100%; height:100%; object-fit:cover;">
                         </a>
-                        <a href="` + item.url + `" target="_blank" style="font-size:11.5px; color:#333; text-decoration:none; font-weight:bold; line-height:1.35; display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical; overflow:hidden; flex-grow: 1;">` + item.title + `</a>
+                        <a href="` + item.url + `" target="_blank" class="category-list-link" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical; overflow:hidden; flex-grow: 1;">` + item.title + `</a>
                     </div>
                 `;
             });
             
             return `
-                <div style="background-color:#ffffff; border:1px solid #e3e3e3; border-radius:4px; padding:12px; font-family:Arial, sans-serif; display:flex; flex-direction:column; justify-content:flex-start; min-height: 380px; box-sizing: border-box;">
-                    <div style="background-color:#f5f5f5; border-bottom:2px solid #c00000; padding:6px 10px; display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-                        <span style="font-size:12px; font-weight:bold; color:#c00000; text-transform:uppercase;">` + categoryName + `</span>
-                        <span style="color:#888; font-weight:bold; font-size:11px;">&gt;</span>
+                <div class="category-card">
+                    <div class="category-header">
+                        <span>` + categoryName + `</span>
+                        <span>&gt;</span>
                     </div>
-                    <a href="` + mainCat.url + `" target="_blank" style="display:block; overflow:hidden; height:105px; border-radius:3px; flex-shrink: 0; margin-bottom: 8px;">
+                    <a href="` + mainCat.url + `" target="_blank" style="display:block; overflow:hidden; height:120px; border-radius:6px; flex-shrink: 0; margin-bottom: 8px;">
                         <img src="` + mainCat.image + `" style="width:100%; height:100%; object-fit:cover; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
                     </a>
                     <a href="` + mainCat.url + `" target="_blank" style="text-decoration:none; display:block; margin-bottom:10px; flex-shrink: 0;">
-                        <h4 style="margin:0; font-size:13px; font-weight:bold; color:#111; line-height:1.4;">` + mainCat.title + `</h4>
+                        <h4 class="category-title">` + mainCat.title + `</h4>
                     </a>
                     <div style="display:flex; flex-direction:column; gap:4px; margin-top:auto;">
                         ` + listHtml + `
