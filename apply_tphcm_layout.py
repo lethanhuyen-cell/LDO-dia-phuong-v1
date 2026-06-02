@@ -32,7 +32,7 @@ if body_index != -1:
     <div style="width: 100%; max-width: 1000px; margin: 10px auto; text-align: center; font-family: Arial, sans-serif; position: relative; z-index: 1000;">
         <div style="position: absolute; top: 2px; left: 5px; font-size: 8px; color: #fff; background-color: #c00000; padding: 2px 5px; font-weight: bold; border-radius: 2px; z-index: 1005;">QC GIẢ LẬP</div>
         <a href="https://vinfastauto.com" target="_blank" style="text-decoration: none; display: block; border-radius: 6px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-            <div style="background: linear-gradient(90deg, #0b1a30 0%, #00458e 50%, #0b1a30 100%); height: 120px; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; color: #fff; position: relative;">
+            <div class="top-billboard-ad" style="background: linear-gradient(90deg, #0b1a30 0%, #00458e 50%, #0b1a30 100%); height: 120px; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; color: #fff; position: relative;">
                 <div style="text-align: left;">
                     <h2 style="font-size: 22px; font-weight: 800; color: #fff; margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">VINFAST VF9</h2>
                     <p style="font-size: 11px; margin: 3px 0 0 0; color: #d0e1f9; font-weight: bold; letter-spacing: 0.5px;">ĐƯỜNG ĐẾN TƯƠNG LAI XANH - KIÊN TẠO VỊ THẾ DẪN ĐẦU</p>

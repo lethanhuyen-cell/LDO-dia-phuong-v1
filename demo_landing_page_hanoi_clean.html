@@ -7,7 +7,16 @@ gtag('js',new Date());gtag('config','G-9XPGNV7HPY');gtag('config','G-RQZZ2QCVHK'
         /* Mobile and PC Responsive overrides */
         @media (max-width: 850px) {
             .columns-layout {
+                display: flex !important;
                 flex-direction: column !important;
+                gap: 15px !important;
+            }
+            .columns-layout > div {
+                width: 100% !important;
+                border-right: none !important;
+                border-left: none !important;
+                padding-right: 0 !important;
+                padding-left: 0 !important;
             }
             .left-main-column, .right-sidebar-column {
                 flex: 1 1 100% !important;
@@ -22,6 +31,19 @@ gtag('js',new Date());gtag('config','G-9XPGNV7HPY');gtag('config','G-RQZZ2QCVHK'
             }
             .v4.p2c.m001 ._thumb {
                 height: 100% !important;
+            }
+            .top-billboard-ad {
+                flex-direction: column !important;
+                height: auto !important;
+                padding: 15px !important;
+                gap: 10px !important;
+                text-align: center !important;
+            }
+            .top-billboard-ad div {
+                text-align: center !important;
+            }
+            .top-billboard-ad h2 {
+                font-size: 18px !important;
             }
         }
 
