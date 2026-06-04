@@ -923,6 +923,87 @@ middle_part = """
                                 
             </div>
 
+            <!-- BLOCK 5.8: CẨM NANG TP.HCM & ĐÔNG NAM BỘ: ĂN GÌ - CHƠI GÌ - Ở ĐÂU? (MÔ PHỎNG NATIVE PR ĐỊA PHƯƠNG) -->
+            <div class="m-top-20" style="background-color: #ffffff; border: 1px solid #e3e3e3; border-radius: 8px; padding: 20px; font-family: Arial, sans-serif;">
+                <div style="font-size: 14px; font-weight: bold; color: #c00000; text-transform: uppercase; border-bottom: 2px solid #c00000; padding-bottom: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
+                    <span>🗺️ Cẩm nang TP.HCM & Đông Nam Bộ: Ăn gì - Chơi gì - Ở đâu?</span>
+                    <span style="font-size: 9.5px; color: #888; font-weight: normal; text-transform: none;">Tin cậy • Thực tế • Bản địa</span>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;" class="columns-layout">
+                    <!-- Column 1: ĂN GÌ? -->
+                    <div style="border-bottom: 2px dashed #eee; padding-bottom: 15px; border-right: none; padding-right: 0;">
+                        <h3 style="font-size: 13.5px; font-weight: bold; color: #002d62; text-transform: uppercase; margin: 0 0 10px 0; border-left: 3px solid #002d62; padding-left: 8px;">🍽️ Ăn gì?</h3>
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <div style="display: flex; gap: 8px; align-items: center; position: relative;">
+                                <div style="width: 50px; height: 35px; overflow: hidden; border-radius: 2px; flex-shrink: 0;">
+                                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=100&q=80" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div style="flex-grow: 1;">
+                                    <span style="background-color: #f5f5f5; color: #888; border: 1px solid #ddd; padding: 0 3px; font-size: 8px; font-weight: bold; border-radius: 2px; margin-right: 4px;">PR</span>
+                                    <a href="#" style="font-size: 11.5px; font-weight: bold; color: #333; text-decoration: none; line-height: 1.3;">5 quán phở đêm trứ danh phố cổ làm ấm lòng thực khách Thủ đô</a>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 8px; align-items: center;">
+                                <div style="width: 50px; height: 35px; overflow: hidden; border-radius: 2px; flex-shrink: 0;">
+                                    <img src="https://images.unsplash.com/photo-1473163928189-364b2c4e1135?auto=format&fit=crop&w=100&q=80" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div>
+                                    <a href="#" style="font-size: 11.5px; font-weight: bold; color: #333; text-decoration: none; line-height: 1.3;">Bản đồ các quán ốc vỉa hè ngon rẻ thu hút đông đảo giới trẻ TP.HCM & Đông Nam Bộ</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Column 2: CHƠI GÌ? -->
+                    <div style="border-bottom: 2px dashed #eee; padding-bottom: 15px; border-right: none; padding-right: 0;">
+                        <h3 style="font-size: 13.5px; font-weight: bold; color: #002d62; text-transform: uppercase; margin: 0 0 10px 0; border-left: 3px solid #002d62; padding-left: 8px;">🚴 Chơi gì?</h3>
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <div style="display: flex; gap: 8px; align-items: center;">
+                                <div style="width: 50px; height: 35px; overflow: hidden; border-radius: 2px; flex-shrink: 0;">
+                                    <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=100&q=80" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div>
+                                    <a href="#" style="font-size: 11.5px; font-weight: bold; color: #333; text-decoration: none; line-height: 1.3;">Những tọa độ ngắm hoàng hôn Hồ Tây lãng mạn và yên bình ít người biết</a>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 8px; align-items: center; position: relative;">
+                                <div style="width: 50px; height: 35px; overflow: hidden; border-radius: 2px; flex-shrink: 0;">
+                                    <img src="https://images.unsplash.com/photo-1513407030348-c983a97b98d8?auto=format&fit=crop&w=100&q=80" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div style="flex-grow: 1;">
+                                    <span style="background-color: #f5f5f5; color: #888; border: 1px solid #ddd; padding: 0 3px; font-size: 8px; font-weight: bold; border-radius: 2px; margin-right: 4px;">PR</span>
+                                    <a href="#" style="font-size: 11.5px; font-weight: bold; color: #333; text-decoration: none; line-height: 1.3;">Trải nghiệm tour xe đạp đêm khám phá các di tích văn hóa lịch sử trung tâm</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Column 3: Ở ĐÂU? -->
+                    <div>
+                        <h3 style="font-size: 13.5px; font-weight: bold; color: #002d62; text-transform: uppercase; margin: 0 0 10px 0; border-left: 3px solid #002d62; padding-left: 8px;">🏨 Ở đâu?</h3>
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <div style="display: flex; gap: 8px; align-items: center; position: relative;">
+                                <div style="width: 50px; height: 35px; overflow: hidden; border-radius: 2px; flex-shrink: 0;">
+                                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=100&q=80" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div style="flex-grow: 1;">
+                                    <span style="background-color: #f5f5f5; color: #888; border: 1px solid #ddd; padding: 0 3px; font-size: 8px; font-weight: bold; border-radius: 2px; margin-right: 4px;">PR</span>
+                                    <a href="#" style="font-size: 11.5px; font-weight: bold; color: #333; text-decoration: none; line-height: 1.3;">Review khu nghỉ dưỡng sinh thái xanh mát cực chill tại Trảng Bom, Đồng Nai</a>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 8px; align-items: center;">
+                                <div style="width: 50px; height: 35px; overflow: hidden; border-radius: 2px; flex-shrink: 0;">
+                                    <img src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=100&q=80" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div>
+                                    <a href="#" style="font-size: 11.5px; font-weight: bold; color: #333; text-decoration: none; line-height: 1.3;">Top khách sạn boutique sang trọng mang đậm kiến trúc Đông Dương giữa lòng Quận 1</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- BLOCK 6: THÔNG TIN DOANH NGHIỆP -->
             <div class="m-top-20" style="background-color: #f7f7f7; padding: 20px; border-radius: 8px; border: 1px solid #e3e3e3; font-family: Arial, sans-serif;">
                 <div style="font-size: 14px; font-weight: bold; color: #8b0000; text-transform: uppercase; border-bottom: 2px solid #8b0000; padding-bottom: 6px; margin-bottom: 15px;">Thông tin doanh nghiệp</div>
@@ -1283,89 +1364,6 @@ middle_part = """
             </div>
 
                 
-            <!-- BLOCK 5.8: CẨM NANG TP.HCM & ĐÔNG NAM BỘ: ĂN GÌ - CHƠI GÌ - Ở ĐÂU? (MÔ PHỎNG NATIVE PR ĐỊA PHƯƠNG) -->
-            <div class="m-top-20" style="background-color: #ffffff; border: 1px solid #e3e3e3; border-radius: 8px; padding: 20px; font-family: Arial, sans-serif;">
-                <div style="font-size: 14px; font-weight: bold; color: #c00000; text-transform: uppercase; border-bottom: 2px solid #c00000; padding-bottom: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
-                    <span>🗺️ Cẩm nang TP.HCM & Đông Nam Bộ: Ăn gì - Chơi gì - Ở đâu?</span>
-                    <span style="font-size: 9.5px; color: #888; font-weight: normal; text-transform: none;">Tin cậy • Thực tế • Bản địa</span>
-                </div>
-                
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;" class="columns-layout">
-                    <!-- Column 1: ĂN GÌ? -->
-                    <div style="border-bottom: 2px dashed #eee; padding-bottom: 15px; border-right: none; padding-right: 0;">
-                        <h3 style="font-size: 13.5px; font-weight: bold; color: #002d62; text-transform: uppercase; margin: 0 0 10px 0; border-left: 3px solid #002d62; padding-left: 8px;">🍽️ Ăn gì?</h3>
-                        <div style="display: flex; flex-direction: column; gap: 12px;">
-                            <div style="display: flex; gap: 8px; align-items: center; position: relative;">
-                                <div style="width: 50px; height: 35px; overflow: hidden; border-radius: 2px; flex-shrink: 0;">
-                                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=100&q=80" style="width: 100%; height: 100%; object-fit: cover;">
-                                </div>
-                                <div style="flex-grow: 1;">
-                                    <span style="background-color: #f5f5f5; color: #888; border: 1px solid #ddd; padding: 0 3px; font-size: 8px; font-weight: bold; border-radius: 2px; margin-right: 4px;">PR</span>
-                                    <a href="#" style="font-size: 11.5px; font-weight: bold; color: #333; text-decoration: none; line-height: 1.3;">5 quán phở đêm trứ danh phố cổ làm ấm lòng thực khách Thủ đô</a>
-                                </div>
-                            </div>
-                            <div style="display: flex; gap: 8px; align-items: center;">
-                                <div style="width: 50px; height: 35px; overflow: hidden; border-radius: 2px; flex-shrink: 0;">
-                                    <img src="https://images.unsplash.com/photo-1473163928189-364b2c4e1135?auto=format&fit=crop&w=100&q=80" style="width: 100%; height: 100%; object-fit: cover;">
-                                </div>
-                                <div>
-                                    <a href="#" style="font-size: 11.5px; font-weight: bold; color: #333; text-decoration: none; line-height: 1.3;">Bản đồ các quán ốc vỉa hè ngon rẻ thu hút đông đảo giới trẻ TP.HCM & Đông Nam Bộ</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Column 2: CHƠI GÌ? -->
-                    <div style="border-bottom: 2px dashed #eee; padding-bottom: 15px; border-right: none; padding-right: 0;">
-                        <h3 style="font-size: 13.5px; font-weight: bold; color: #002d62; text-transform: uppercase; margin: 0 0 10px 0; border-left: 3px solid #002d62; padding-left: 8px;">🚴 Chơi gì?</h3>
-                        <div style="display: flex; flex-direction: column; gap: 12px;">
-                            <div style="display: flex; gap: 8px; align-items: center;">
-                                <div style="width: 50px; height: 35px; overflow: hidden; border-radius: 2px; flex-shrink: 0;">
-                                    <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=100&q=80" style="width: 100%; height: 100%; object-fit: cover;">
-                                </div>
-                                <div>
-                                    <a href="#" style="font-size: 11.5px; font-weight: bold; color: #333; text-decoration: none; line-height: 1.3;">Những tọa độ ngắm hoàng hôn Hồ Tây lãng mạn và yên bình ít người biết</a>
-                                </div>
-                            </div>
-                            <div style="display: flex; gap: 8px; align-items: center; position: relative;">
-                                <div style="width: 50px; height: 35px; overflow: hidden; border-radius: 2px; flex-shrink: 0;">
-                                    <img src="https://images.unsplash.com/photo-1513407030348-c983a97b98d8?auto=format&fit=crop&w=100&q=80" style="width: 100%; height: 100%; object-fit: cover;">
-                                </div>
-                                <div style="flex-grow: 1;">
-                                    <span style="background-color: #f5f5f5; color: #888; border: 1px solid #ddd; padding: 0 3px; font-size: 8px; font-weight: bold; border-radius: 2px; margin-right: 4px;">PR</span>
-                                    <a href="#" style="font-size: 11.5px; font-weight: bold; color: #333; text-decoration: none; line-height: 1.3;">Trải nghiệm tour xe đạp đêm khám phá các di tích văn hóa lịch sử trung tâm</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Column 3: Ở ĐÂU? -->
-                    <div>
-                        <h3 style="font-size: 13.5px; font-weight: bold; color: #002d62; text-transform: uppercase; margin: 0 0 10px 0; border-left: 3px solid #002d62; padding-left: 8px;">🏨 Ở đâu?</h3>
-                        <div style="display: flex; flex-direction: column; gap: 12px;">
-                            <div style="display: flex; gap: 8px; align-items: center; position: relative;">
-                                <div style="width: 50px; height: 35px; overflow: hidden; border-radius: 2px; flex-shrink: 0;">
-                                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=100&q=80" style="width: 100%; height: 100%; object-fit: cover;">
-                                </div>
-                                <div style="flex-grow: 1;">
-                                    <span style="background-color: #f5f5f5; color: #888; border: 1px solid #ddd; padding: 0 3px; font-size: 8px; font-weight: bold; border-radius: 2px; margin-right: 4px;">PR</span>
-                                    <a href="#" style="font-size: 11.5px; font-weight: bold; color: #333; text-decoration: none; line-height: 1.3;">Review khu nghỉ dưỡng sinh thái xanh mát cực chill tại Trảng Bom, Đồng Nai</a>
-                                </div>
-                            </div>
-                            <div style="display: flex; gap: 8px; align-items: center;">
-                                <div style="width: 50px; height: 35px; overflow: hidden; border-radius: 2px; flex-shrink: 0;">
-                                    <img src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=100&q=80" style="width: 100%; height: 100%; object-fit: cover;">
-                                </div>
-                                <div>
-                                    <a href="#" style="font-size: 11.5px; font-weight: bold; color: #333; text-decoration: none; line-height: 1.3;">Top khách sạn boutique sang trọng mang đậm kiến trúc Đông Dương giữa lòng Quận 1</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            
             </div>  <!-- /sidebar-col -->
             </div>  <!-- /two-col-layout -->
 
