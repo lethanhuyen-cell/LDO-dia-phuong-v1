@@ -1091,7 +1091,7 @@ middle_part = """
             </div>
 
             <!-- BLOCK 5.76: GÓC TƯƠNG TÁC ĐỘC GIẢ (BÁO CHÍ TƯƠNG TÁC DỰ LIỆU) -->
-            <div class="m-top-20" style="font-family: Arial, sans-serif;">
+            <div class="m-top-20 columns-layout" style="font-family: Arial, sans-serif; display: grid; grid-template-columns: 1.2fr 1fr; gap: 20px;">
                 <!-- Labor Overtime Pay Calculator (Tính lương tăng ca tự động) -->
                 <div class="premium-card" style="box-sizing: border-box; max-width: 100%;">
                     <div style="font-size: 14px; font-weight: bold; color: #c00000; text-transform: uppercase; border-bottom: 2px solid #c00000; padding-bottom: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
@@ -1119,6 +1119,33 @@ middle_part = """
                         <button onclick="calculateLaborOvertime()" style="background-color: #c00000; color: #ffffff; border: none; padding: 8px; border-radius: 4px; font-weight: bold; cursor: pointer; text-transform: uppercase;">Tính toán quyền lợi</button>
                         
                         <div id="labor-calc-result" style="background-color: #f7f9fb; border: 1px dashed #ccc; padding: 10px; border-radius: 4px; display: none;">
+                            <!-- Calculated result populated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Land Price Lookup widget -->
+                <div class="premium-card" style="box-sizing: border-box; max-width: 100%;">
+                    <div style="font-size: 14px; font-weight: bold; color: #c00000; text-transform: uppercase; border-bottom: 2px solid #c00000; padding-bottom: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
+                        <span>📍 Tra cứu giá đất địa phương</span>
+                        <span style="font-size: 9px; color: #002d62; font-weight: bold; border: 1px solid #002d62; padding: 2px 5px; border-radius: 2px;">BATDONGSAN.COM.VN COOP</span>
+                    </div>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 12px; font-size: 12px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <label style="font-weight: bold; color: #333;">Chọn Quận/Huyện:</label>
+                            <select id="land-district" onchange="updateLandStreets()" style="width: 150px; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-weight: bold; color: #002d62;">
+                                <!-- Will populate dynamically -->
+                            </select>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <label style="font-weight: bold; color: #333;">Chọn tuyến đường:</label>
+                            <select id="land-street" onchange="showLandPrice()" style="width: 150px; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-weight: bold; color: #002d62;">
+                                <!-- Will populate dynamically -->
+                            </select>
+                        </div>
+                        
+                        <div id="land-price-result" style="background-color: #f7f9fb; border: 1px dashed #ccc; padding: 10px; border-radius: 4px; display: none;">
                             <!-- Calculated result populated here -->
                         </div>
                     </div>
@@ -1563,6 +1590,157 @@ middle_part = """
             `;
         });
         tbody.innerHTML = html;
+    }
+
+    // --- LAND PRICE LOOKUP WIDGET DATA & FUNCTIONS ---
+    const landPriceDatabase = {
+        hanoi: {
+            caugiay: {
+                name: "Quận Cầu Giấy",
+                streets: {
+                    "Xuân Thủy": { state: 32000000, market: 180000000, trend: "hot", change: 12 },
+                    "Cầu Giấy": { state: 40000000, market: 250000000, trend: "stable", change: 0 },
+                    "Duy Tân": { state: 28000000, market: 140000000, trend: "up", change: 5 }
+                }
+            },
+            hoankiem: {
+                name: "Quận Hoàn Kiếm",
+                streets: {
+                    "Đinh Tiên Hoàng": { state: 162000000, market: 1200000000, trend: "hot", change: 15 },
+                    "Hàng Ngang": { state: 120000000, market: 950000000, trend: "up", change: 4 },
+                    "Tràng Tiền": { state: 162000000, market: 1100000000, trend: "stable", change: 0 }
+                }
+            },
+            haibatrung: {
+                name: "Quận Hai Bà Trưng",
+                streets: {
+                    "Phố Huế": { state: 80000000, market: 450000000, trend: "up", change: 6 },
+                    "Bạch Mai": { state: 35000000, market: 190000000, trend: "stable", change: 0 },
+                    "Minh Khai": { state: 26000000, market: 120000000, trend: "down", change: -3 }
+                }
+            },
+            dongda: {
+                name: "Quận Đống Đa",
+                streets: {
+                    "Nguyễn Chí Thanh": { state: 50000000, market: 300000000, trend: "up", change: 7 },
+                    "Chùa Bộc": { state: 45000000, market: 280000000, trend: "hot", change: 10 },
+                    "Xã Đàn": { state: 62000000, market: 380000000, trend: "stable", change: 0 }
+                }
+            }
+        },
+        tphcm: {
+            quan1: {
+                name: "Quận 1",
+                streets: {
+                    "Đồng Khởi": { state: 162000000, market: 1300000000, trend: "hot", change: 18 },
+                    "Nguyễn Huệ": { state: 162000000, market: 1250000000, trend: "stable", change: 0 },
+                    "Lê Lợi": { state: 150000000, market: 980000000, trend: "up", change: 6 }
+                }
+            },
+            binhthanh: {
+                name: "Quận Bình Thạnh",
+                streets: {
+                    "Điện Biên Phủ": { state: 40000000, market: 220000000, trend: "up", change: 5 },
+                    "Nguyễn Hữu Cảnh": { state: 45000000, market: 240000000, trend: "hot", change: 10 },
+                    "Lê Quang Định": { state: 28000000, market: 130000000, trend: "stable", change: 0 }
+                }
+            },
+            thuduc: {
+                name: "Thành phố Thủ Đức",
+                streets: {
+                    "Trần Não": { state: 35000000, market: 210000000, trend: "hot", change: 14 },
+                    "Song Hành": { state: 28000000, market: 150000000, trend: "up", change: 8 },
+                    "Võ Văn Ngân": { state: 30000000, market: 160000000, trend: "stable", change: 0 }
+                }
+            }
+        }
+    };
+
+    let currentRegion = 'hanoi';
+
+    window.initLandPriceWidget = function(region) {
+        currentRegion = region;
+        const districtSelect = document.getElementById('land-district');
+        if (!districtSelect) return;
+        
+        districtSelect.innerHTML = '';
+        const districts = landPriceDatabase[region];
+        for (const key in districts) {
+            const opt = document.createElement('option');
+            opt.value = key;
+            opt.innerText = districts[key].name;
+            districtSelect.appendChild(opt);
+        }
+        updateLandStreets();
+    }
+
+    window.updateLandStreets = function() {
+        const districtSelect = document.getElementById('land-district');
+        const streetSelect = document.getElementById('land-street');
+        if (!districtSelect || !streetSelect) return;
+        
+        const districtKey = districtSelect.value;
+        const streets = landPriceDatabase[currentRegion][districtKey].streets;
+        
+        streetSelect.innerHTML = '';
+        for (const key in streets) {
+            const opt = document.createElement('option');
+            opt.value = key;
+            opt.innerText = key;
+            streetSelect.appendChild(opt);
+        }
+        showLandPrice();
+    }
+
+    const slugify = (text) => text.toString().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[đĐ]/g, 'd').replace(/[^a-z0-9 -]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-');
+
+    window.showLandPrice = function() {
+        const districtSelect = document.getElementById('land-district');
+        const streetSelect = document.getElementById('land-street');
+        const resultDiv = document.getElementById('land-price-result');
+        if (!districtSelect || !streetSelect || !resultDiv) return;
+        
+        const districtKey = districtSelect.value;
+        const streetKey = streetSelect.value;
+        const districtName = landPriceDatabase[currentRegion][districtKey].name;
+        const streetData = landPriceDatabase[currentRegion][districtKey].streets[streetKey];
+        
+        if (!streetData) return;
+        
+        let trendIcon = '➖';
+        let trendColor = '#888';
+        let trendText = 'Ổn định';
+        if (streetData.trend === 'hot') {
+            trendIcon = '🔥';
+            trendColor = '#d71920';
+            trendText = `Tăng nóng (+${streetData.change}%)`;
+        } else if (streetData.trend === 'up') {
+            trendIcon = '📈';
+            trendColor = '#28a745';
+            trendText = `Tăng (+${streetData.change}%)`;
+        } else if (streetData.trend === 'down') {
+            trendIcon = '📉';
+            trendColor = '#007bff';
+            trendText = `Giảm nhẹ (${streetData.change}%)`;
+        }
+        
+        const bdsLink = `https://batdongsan.com.vn/nha-dat-ban-${slugify(streetKey)}-${slugify(districtName)}`;
+        
+        resultDiv.style.display = 'block';
+        resultDiv.innerHTML = `
+            <div style="color: #002d62; font-weight: bold; margin-bottom: 5px; display: flex; justify-content: space-between;">
+                <span>✔ Kết quả tra cứu:</span>
+                <span style="color: ${trendColor}; font-size: 11px; font-weight: bold;">${trendIcon} ${trendText}</span>
+            </div>
+            <div style="line-height: 1.6; font-size: 11.5px; color: #333;">
+                • Bảng giá Nhà nước: <strong>${(streetData.state).toLocaleString()} đ/m²</strong><br>
+                • Giá thực tế batdongsan.com.vn: <strong style="color: #d71920;">${(streetData.market).toLocaleString()} đ/m²</strong><br>
+                • Chênh lệch thực tế: <strong>x${(streetData.market / streetData.state).toFixed(1)} lần</strong><br>
+                <div style="margin-top: 8px; text-align: center;">
+                    <a href="${bdsLink}" target="_blank" style="background-color: #002d62; color: #fff; text-decoration: none; padding: 6px 12px; border-radius: 4px; font-weight: bold; display: inline-block; width: 80%; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">Xem tin rao bán tại tuyến đường này</a>
+                </div>
+            </div>
+        `;
     }
 </script>
 
@@ -2403,11 +2581,12 @@ middle_part = """
         renderCategoryColumns();
         renderEnterpriseBlock();
         updateSchemaMarkup();
-        changeDistrictPrices('caugiay');
+        changeDistrictPrices('quan1');
         fetchHanoiWeather();
         updateProvincialProfileWidget('all');
         initInfraCarouselAutoplay();
         renderDirectoryPage();
+        initLandPriceWidget('tphcm');
     });
 </script>
 """
