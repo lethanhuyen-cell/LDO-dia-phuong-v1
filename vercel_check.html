@@ -195,7 +195,7 @@ btnAccountIconHeader.click(function(){var menuAccountHeader=$("#menu-account-hea
 else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div></div></header>
 <style>
 
-    @media (max-width: 576px) {
+    @media (max-width: 992px) {
         .two-col-layout {
             grid-template-columns: 1fr !important;
         }
@@ -1150,7 +1150,7 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
             </div>
 
             <!-- BLOCK 5.5: HỆ SINH THÁI DÂN SINH & DANH BẠ HỘ KINH DOANH (MÔ PHỎNG CHIẾN LƯỢC ĐUÔI DÀI) -->
-            <div class="m-top-20 columns-layout" style="display: flex; flex-direction: column; gap: 20px; font-family: Arial, sans-serif;">
+            <div class="m-top-20 columns-layout" style="display: grid; grid-template-columns: 2fr 1fr; gap: 20px; font-family: Arial, sans-serif;">
                 <!-- Left: Worker Life, Weekend Escapes & Job Board -->
                 <div class="premium-card" style="display: flex; flex-direction: column; justify-content: space-between;">
                     <div style="font-size: 14px; font-weight: bold; color: #002d62; text-transform: uppercase; border-bottom: 2px solid #002d62; padding-bottom: 6px; margin-bottom: 15px;">Không gian sống</div>
@@ -1179,7 +1179,77 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
                         </div>
                     </div>
                     </div>
-                
+                <!-- Right: Local Business Directory -->
+                <div class="premium-card" style="display: flex; flex-direction: column; box-sizing: border-box;">
+                    <div style="font-size: 14px; font-weight: bold; color: #002d62; text-transform: uppercase; border-bottom: 2px solid #002d62; padding-bottom: 6px; margin-bottom: 15px;">
+                        🛠️ TIỆN ÍCH DÂN SINH
+                    </div>
+                    <!-- JOB BOARD: VIỆC LÀM HÀ NỘI -->
+                    <div style="border-top: 1px solid #eee; padding-top: 15px; margin-bottom: 15px;">
+                        <div style="font-size: 13px; font-weight: bold; color: #c00000; text-transform: uppercase; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;">
+                            <span>💼 Việc làm tại Hà Nội (Tuyển dụng nhanh)</span>
+                            <span style="font-size: 9.5px; color: #666; font-weight: normal; text-transform: none;">Liên kết: Trung tâm Dịch vụ việc làm Hà Nội</span>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 5px;">
+                            <!-- Job 1 -->
+                            <div class="job-item" style="display: flex; justify-content: space-between; align-items: center; background-color: #fcfcfc; border: 1px solid #eee; padding: 8px 12px; border-radius: 4px; position: relative;">
+                                <span style="position: absolute; right: 85px; top: 12px; font-size: 7.5px; color: #d71920; border: 1px solid #d71920; padding: 1px 3px; border-radius: 2px; font-weight: bold; text-transform: uppercase;">Gấp</span>
+                                <div style="text-align: left;">
+                                    <strong style="font-size: 11.5px; color: #333; display: block;">Nhân viên lắp ráp linh kiện điện tử (KCN Bắc Thăng Long)</strong>
+                                    <span style="font-size: 9.5px; color: #666;">Công ty TNHH Canon Việt Nam | Thu nhập: 8.5 - 11 triệu VNĐ</span>
+                                </div>
+                                <a href="#" style="background-color: #c00000; color: #fff; text-decoration: none; font-size: 10px; font-weight: bold; padding: 5px 10px; border-radius: 3px;">Nộp hồ sơ</a>
+                            </div>
+                            <!-- Job 2 -->
+                            <div class="job-item" style="display: flex; justify-content: space-between; align-items: center; background-color: #fcfcfc; border: 1px solid #eee; padding: 8px 12px; border-radius: 4px;">
+                                <div style="text-align: left;">
+                                    <strong style="font-size: 11.5px; color: #333; display: block;">Kỹ thuật viên vận hành máy tiện cơ khí CNC</strong>
+                                    <span style="font-size: 9.5px; color: #666;">Tập đoàn Cơ khí Hà Nội (KCN Thạch Thất) | Thu nhập: 10 - 13.5 triệu VNĐ</span>
+                                </div>
+                                <a href="#" style="background-color: #c00000; color: #fff; text-decoration: none; font-size: 10px; font-weight: bold; padding: 5px 10px; border-radius: 3px;">Nộp hồ sơ</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CITIZEN REPORTS FEED: NHẬT KÝ PHẢN ÁNH DÂN SINH -->
+                    <div style="border-top: 1px solid #eee; padding-top: 15px;">
+                        <div style="font-size: 13px; font-weight: bold; color: #002d62; text-transform: uppercase; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;">
+                            <span>📢 Nhật ký Phản ánh Dân sinh</span>
+                            <span style="font-size: 9.5px; color: #28a745; font-weight: bold; text-transform: uppercase;">Live Feed</span>
+                        </div>
+                        <div id="citizen-reports-feed-container" style="display: flex; flex-direction: column; gap: 8px; max-height: 180px; overflow-y: auto;">
+                            <!-- Seed Report 1 -->
+                            <div style="background-color: #fafbfc; border: 1px solid #e9ecef; border-left: 3px solid #ffc107; padding: 8px 12px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <strong style="font-size: 9.5px; color: #333; display: block;">Hố ga mất nắp gây nguy hiểm tại ngã tư Lê Văn Lương - Hoàng Minh Giám</strong>
+                                    <span style="font-size: 9px; color: #666;">Độc giả 098****321 | ⏰ 15 phút trước</span>
+                                </div>
+                                <span style="background-color: #fff3cd; color: #856404; border: 1px solid #ffeeba; font-size: 9px; padding: 2px 6px; border-radius: 3px; font-weight: bold; flex-shrink: 0;">Đang xử lý</span>
+                            </div>
+                            <!-- Seed Report 2 -->
+                            <div style="background-color: #fafbfc; border: 1px solid #e9ecef; border-left: 3px solid #28a745; padding: 8px 12px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <strong style="font-size: 9.5px; color: #333; display: block;">Rác thải sinh hoạt ùn ứ gây mùi hôi thối cạnh trường Tiểu học Dịch Vọng</strong>
+                                    <span style="font-size: 9px; color: #666;">Độc giả 090****888 | ⏰ 2 giờ trước</span>
+                                </div>
+                                <span style="background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; font-size: 9px; padding: 2px 6px; border-radius: 3px; font-weight: bold; flex-shrink: 0;">Đã giải quyết</span>
+                            </div>
+                        </div>
+                    
+                    <div style="border-top: 1px solid #eee; padding-top: 15px; margin-top: 15px;"></div>
+
+                    <div style="font-size: 13px; font-weight: bold; color: #b8860b; text-transform: uppercase; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 5px;">
+                        <span>Kết nối Tiêu dùng</span>
+                        <div style="display: flex; align-items: center; gap: 6px; user-select: none;">
+                            <button onclick="prevDirectoryPage()" style="background: #fff; border: 1px solid #ccc; width: 22px; height: 22px; border-radius: 50%; font-size: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #b8860b; transition: all 0.2s;" onmouseover="this.style.background='#f0f0f0';" onmouseout="this.style.background='#fff';">◀</button>
+                            <span id="directory-page-indicator" style="font-size: 9.5px; color: #666; font-weight: bold;">1/3</span>
+                            <button onclick="nextDirectoryPage()" style="background: #fff; border: 1px solid #ccc; width: 22px; height: 22px; border-radius: 50%; font-size: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #b8860b; transition: all 0.2s;" onmouseover="this.style.background='#f0f0f0';" onmouseout="this.style.background='#fff';">▶</button>
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 8px; min-height: 480px;" id="local-directory-list">
+                        <!-- Loaded dynamically via JS -->
+                    </div>
+                </div>
             </div>
 
             <!-- BLOCK 5.8: CẨM NANG HÀ NỘI: ĂN GÌ - CHƠI GÌ - Ở ĐÂU? (MÔ PHỎNG NATIVE PR ĐỊA PHƯƠNG) -->
@@ -1263,6 +1333,7 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
                     </div>
                 </div>
             </div>
+
             <!-- BLOCK 6: THÔNG TIN DOANH NGHIỆP -->
             <div class="m-top-20" style="background-color: #f7f7f7; padding: 20px; border-radius: 8px; border: 1px solid #e3e3e3; font-family: Arial, sans-serif;">
                 <div style="font-size: 14px; font-weight: bold; color: #8b0000; text-transform: uppercase; border-bottom: 2px solid #8b0000; padding-bottom: 6px; margin-bottom: 15px;">Thông tin doanh nghiệp</div>
@@ -1275,79 +1346,6 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
 
                 <!-- ===== CỘT PHẢI: SIDEBAR TIỆN ÍCH (STICKY) ===== -->
                 <div class="sidebar-col" style="align-self: start; display: flex; flex-direction: column; gap: 20px;">
-
-                <!-- Right: Local Business Directory -->
-                <div class="premium-card" style="display: flex; flex-direction: column; box-sizing: border-box;">
-                    <div style="font-size: 14px; font-weight: bold; color: #002d62; text-transform: uppercase; border-bottom: 2px solid #002d62; padding-bottom: 6px; margin-bottom: 15px;">
-                        🛠️ TIỆN ÍCH DÂN SINH
-                    </div>
-                    <!-- JOB BOARD: VIỆC LÀM HÀ NỘI -->
-                    <div style="border-top: 1px solid #eee; padding-top: 15px; margin-bottom: 15px;">
-                        <div style="font-size: 13px; font-weight: bold; color: #c00000; text-transform: uppercase; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;">
-                            <span>💼 Việc làm tại Hà Nội (Tuyển dụng nhanh)</span>
-                            <span style="font-size: 9.5px; color: #666; font-weight: normal; text-transform: none;">Liên kết: Trung tâm Dịch vụ việc làm Hà Nội</span>
-                        </div>
-                        <div style="display: flex; flex-direction: column; gap: 5px;">
-                            <!-- Job 1 -->
-                            <div class="job-item" style="display: flex; justify-content: space-between; align-items: center; background-color: #fcfcfc; border: 1px solid #eee; padding: 8px 12px; border-radius: 4px; position: relative;">
-                                <span style="position: absolute; right: 85px; top: 12px; font-size: 7.5px; color: #d71920; border: 1px solid #d71920; padding: 1px 3px; border-radius: 2px; font-weight: bold; text-transform: uppercase;">Gấp</span>
-                                <div style="text-align: left;">
-                                    <strong style="font-size: 11.5px; color: #333; display: block;">Nhân viên lắp ráp linh kiện điện tử (KCN Bắc Thăng Long)</strong>
-                                    <span style="font-size: 9.5px; color: #666;">Công ty TNHH Canon Việt Nam | Thu nhập: 8.5 - 11 triệu VNĐ</span>
-                                </div>
-                                <a href="#" style="background-color: #c00000; color: #fff; text-decoration: none; font-size: 10px; font-weight: bold; padding: 5px 10px; border-radius: 3px;">Nộp hồ sơ</a>
-                            </div>
-                            <!-- Job 2 -->
-                            <div class="job-item" style="display: flex; justify-content: space-between; align-items: center; background-color: #fcfcfc; border: 1px solid #eee; padding: 8px 12px; border-radius: 4px;">
-                                <div style="text-align: left;">
-                                    <strong style="font-size: 11.5px; color: #333; display: block;">Kỹ thuật viên vận hành máy tiện cơ khí CNC</strong>
-                                    <span style="font-size: 9.5px; color: #666;">Tập đoàn Cơ khí Hà Nội (KCN Thạch Thất) | Thu nhập: 10 - 13.5 triệu VNĐ</span>
-                                </div>
-                                <a href="#" style="background-color: #c00000; color: #fff; text-decoration: none; font-size: 10px; font-weight: bold; padding: 5px 10px; border-radius: 3px;">Nộp hồ sơ</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CITIZEN REPORTS FEED: NHẬT KÝ PHẢN ÁNH DÂN SINH -->
-                    <div style="border-top: 1px solid #eee; padding-top: 15px;">
-                        <div style="font-size: 13px; font-weight: bold; color: #002d62; text-transform: uppercase; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;">
-                            <span>📢 Nhật ký Phản ánh Dân sinh</span>
-                            <span style="font-size: 9.5px; color: #28a745; font-weight: bold; text-transform: uppercase;">Live Feed</span>
-                        </div>
-                        <div id="citizen-reports-feed-container" style="display: flex; flex-direction: column; gap: 8px; max-height: 180px; overflow-y: auto;">
-                            <!-- Seed Report 1 -->
-                            <div style="background-color: #fafbfc; border: 1px solid #e9ecef; border-left: 3px solid #ffc107; padding: 8px 12px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center;">
-                                <div>
-                                    <strong style="font-size: 9.5px; color: #333; display: block;">Hố ga mất nắp gây nguy hiểm tại ngã tư Lê Văn Lương - Hoàng Minh Giám</strong>
-                                    <span style="font-size: 9px; color: #666;">Độc giả 098****321 | ⏰ 15 phút trước</span>
-                                </div>
-                                <span style="background-color: #fff3cd; color: #856404; border: 1px solid #ffeeba; font-size: 9px; padding: 2px 6px; border-radius: 3px; font-weight: bold; flex-shrink: 0;">Đang xử lý</span>
-                            </div>
-                            <!-- Seed Report 2 -->
-                            <div style="background-color: #fafbfc; border: 1px solid #e9ecef; border-left: 3px solid #28a745; padding: 8px 12px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center;">
-                                <div>
-                                    <strong style="font-size: 9.5px; color: #333; display: block;">Rác thải sinh hoạt ùn ứ gây mùi hôi thối cạnh trường Tiểu học Dịch Vọng</strong>
-                                    <span style="font-size: 9px; color: #666;">Độc giả 090****888 | ⏰ 2 giờ trước</span>
-                                </div>
-                                <span style="background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; font-size: 9px; padding: 2px 6px; border-radius: 3px; font-weight: bold; flex-shrink: 0;">Đã giải quyết</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div style="border-top: 1px solid #eee; padding-top: 15px; margin-top: 15px;"></div>
-
-                    <div style="font-size: 13px; font-weight: bold; color: #b8860b; text-transform: uppercase; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 5px;">
-                        <span>Kết nối Tiêu dùng</span>
-                        <div style="display: flex; align-items: center; gap: 6px; user-select: none;">
-                            <button onclick="prevDirectoryPage()" style="background: #fff; border: 1px solid #ccc; width: 22px; height: 22px; border-radius: 50%; font-size: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #b8860b; transition: all 0.2s;" onmouseover="this.style.background='#f0f0f0';" onmouseout="this.style.background='#fff';">◀</button>
-                            <span id="directory-page-indicator" style="font-size: 9.5px; color: #666; font-weight: bold;">1/3</span>
-                            <button onclick="nextDirectoryPage()" style="background: #fff; border: 1px solid #ccc; width: 22px; height: 22px; border-radius: 50%; font-size: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #b8860b; transition: all 0.2s;" onmouseover="this.style.background='#f0f0f0';" onmouseout="this.style.background='#fff';">▶</button>
-                        </div>
-                    </div>
-                    <div style="display: flex; flex-direction: column; gap: 8px; min-height: 480px;" id="local-directory-list">
-                        <!-- Loaded dynamically via JS -->
-                    </div>
-                </div>
 
                 <!-- SÁNG KIẾN 1: Trung tâm Tra cứu Nhanh -->
                 <div class="premium-card m-top-20" style="box-sizing: border-box; max-width: 100%; border-top: 3px solid #002d62;">
@@ -1623,8 +1621,7 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
                 </div>
             </div>
 
-                
-            </div>  <!-- /sidebar-col -->
+                </div>  <!-- /sidebar-col -->
             </div>  <!-- /two-col-layout -->
 
 
@@ -1743,7 +1740,7 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
 
 <style>
 
-    @media (max-width: 576px) {
+    @media (max-width: 992px) {
         .two-col-layout {
             grid-template-columns: 1fr !important;
         }

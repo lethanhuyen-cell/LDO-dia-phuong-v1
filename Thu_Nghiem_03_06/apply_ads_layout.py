@@ -48,7 +48,7 @@ if body_index != -1:
 ad_styles = """
 <style>
 
-    @media (max-width: 768px) {
+    @media (max-width: 576px) {
         .two-col-layout {
             grid-template-columns: 1fr !important;
         }
@@ -1478,7 +1478,7 @@ middle_part = """
 
 <style>
 
-    @media (max-width: 768px) {
+    @media (max-width: 576px) {
         .two-col-layout {
             grid-template-columns: 1fr !important;
         }
