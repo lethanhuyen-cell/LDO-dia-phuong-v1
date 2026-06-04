@@ -1,0 +1,38 @@
+{
+    "an_gi": [
+        {
+            "title": "Bản đồ các món ăn vặt vỉa hè ngon rẻ tại phố cổ Hà Nội",
+            "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=100&q=80",
+            "url": "https://laodong.vn/van-hoa-giai-tri/ban-do-cac-mon-an-vat-via-he-ngon-re-tai-pho-co-ha-noi-1701122.ldo"
+        },
+        {
+            "title": "Top 5 quán phở đêm trứ danh phố cổ làm ấm lòng thực khách Thủ đô",
+            "image": "https://images.unsplash.com/photo-1473163928189-364b2c4e1135?auto=format&fit=crop&w=100&q=80",
+            "url": "https://laodong.vn/van-hoa-giai-tri/top-5-quan-pho-dem-tru-danh-pho-co-ha-noi-1702233.ldo"
+        }
+    ],
+    "choi_gi": [
+        {
+            "title": "Những tọa độ ngắm hoàng hôn Hồ Tây lãng mạn và yên bình ít người biết",
+            "image": "https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=100&q=80",
+            "url": "https://laodong.vn/van-hoa-giai-tri/toa-do-ngam-hoang-hon-ho-tay-lang-man-it-nguoi-biet-1703344.ldo"
+        },
+        {
+            "title": "Trải nghiệm tour xe đạp đêm khám phá các di tích lịch sử trung tâm Hà Nội",
+            "image": "https://images.unsplash.com/photo-1513407030348-c983a97b98d8?auto=format&fit=crop&w=100&q=80",
+            "url": "https://laodong.vn/van-hoa-giai-tri/tour-xe-dap-dem-kham-pha-di-tich-lich-su-ha-noi-1704455.ldo"
+        }
+    ],
+    "o_dau": [
+        {
+            "title": "Review biệt thự sinh thái Ba Vì ngập tràn cây xanh dành cho kỳ nghỉ gia đình",
+            "image": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=100&q=80",
+            "url": "https://laodong.vn/van-hoa-giai-tri/review-biet-thu-sinh-thai-ba-vi-ngap-tran-cay-xanh-1705566.ldo"
+        },
+        {
+            "title": "Top khách sạn boutique mang đậm kiến trúc Pháp cổ ngay cạnh hồ Hoàn Kiếm",
+            "image": "https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=100&q=80",
+            "url": "https://laodong.vn/van-hoa-giai-tri/khach-san-boutique-phap-co-canh-ho-hoan-kiem-1706677.ldo"
+        }
+    ]
+}
