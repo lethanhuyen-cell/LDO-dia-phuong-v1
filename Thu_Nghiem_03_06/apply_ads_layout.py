@@ -920,7 +920,7 @@ PLACEHOLDER_STATIC_INFRASTRUCTURE
                 </div>  <!-- /main-content-col -->
 
                 <!-- ===== CỘT PHẢI: SIDEBAR TIỆN ÍCH (STICKY) ===== -->
-                <div class="sidebar-col" style="align-self: start; display: flex; flex-direction: column; gap: 20px;">
+                <div class="sidebar-col" style="align-self: start; position: sticky; top: calc(100vh - 100%); display: flex; flex-direction: column; gap: 20px;">
 
 <!-- KHỐI MỤC LỤC TIỆN ÍCH (Thay thế QC Vietcombank) -->
                         <div class="premium-card" style="margin: 15px 0; box-sizing: border-box; display: flex; flex-direction: column; border-top: 3px solid #002d62;">
