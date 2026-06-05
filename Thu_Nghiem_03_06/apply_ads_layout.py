@@ -620,10 +620,11 @@ middle_part = """
                     <!-- JS populated dynamically -->
                 </div>
             </div>
-
-
-
-            <!-- BLOCK 1: MAIN COVER GRID -->
+            <!-- ========== BẮT ĐẦU LAYOUT 2 CỘT (VNEXPRESS-STYLE) ========== -->
+            <div class="m-top-20 two-col-layout" style="display: grid; grid-template-columns: 2.2fr 1fr; gap: 25px; font-family: Arial, sans-serif;">
+                <!-- ===== CỘT TRÁI: NỘI DUNG CHÍNH ===== -->
+                <div class="main-content-col">
+                        <!-- BLOCK 1: MAIN COVER GRID -->
             <div class="blk-10 main-cover m-top-20">
                 <div class="pl">
                     <div class="blk-10-1">
@@ -651,91 +652,7 @@ middle_part = """
                             <!-- JS populated -->
                         </div>
                         
-                        <!-- KHỐI MỤC LỤC TIỆN ÍCH (Thay thế QC Vietcombank) -->
-                        <div class="premium-card" style="margin: 15px 0; box-sizing: border-box; display: flex; flex-direction: column; border-top: 3px solid #002d62;">
-                            <div style="font-size: 13.5px; font-weight: bold; color: #002d62; text-transform: uppercase; border-bottom: 1px solid #eee; padding-bottom: 8px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
-                                <span>📌 DANH MỤC TIỆN ÍCH TỔNG HỢP</span>
-                            </div>
-                            <div style="display: flex; flex-direction: column; gap: 8px; font-family: Arial, sans-serif;">
-                                
-                                <!-- Nhóm 1 -->
-                                <div>
-                                    <div style="font-size: 9.5px; font-weight: bold; color: #c00000; margin-bottom: 3px; text-transform: uppercase;">1. Dịch vụ Công & Tra cứu</div>
-                                    <div style="display: flex; flex-wrap: wrap; gap: 4px;">
-                                        <a href="#" onclick="alert('Cuộn đến: Phạt nguội & BHXH'); return false;" style="background-color: #f7f9fb; border: 1px solid #e3e3e3; padding: 3px 6px; border-radius: 20px; text-decoration: none; color: #333; font-size: 9.5px; font-weight: bold; transition: all 0.2s; display: inline-flex; align-items: center; gap: 5px;" onmouseover="this.style.borderColor='#002d62'; this.style.backgroundColor='#eef2f7';" onmouseout="this.style.borderColor='#e3e3e3'; this.style.backgroundColor='#f7f9fb';">
-                                            🔍 Phạt nguội & BHXH
-                                        </a>
-                                        <a href="#" onclick="alert('Cuộn đến: Giá đất địa phương'); return false;" style="background-color: #f7f9fb; border: 1px solid #e3e3e3; padding: 3px 6px; border-radius: 20px; text-decoration: none; color: #333; font-size: 9.5px; font-weight: bold; transition: all 0.2s; display: inline-flex; align-items: center; gap: 5px;" onmouseover="this.style.borderColor='#002d62'; this.style.backgroundColor='#eef2f7';" onmouseout="this.style.borderColor='#e3e3e3'; this.style.backgroundColor='#f7f9fb';">
-                                            📍 Giá đất Hà Nội
-                                        </a>
-                                        <a href="#" onclick="alert('Cuộn đến: Khảo sát Dư luận'); return false;" style="background-color: #f7f9fb; border: 1px solid #e3e3e3; padding: 3px 6px; border-radius: 20px; text-decoration: none; color: #333; font-size: 9.5px; font-weight: bold; transition: all 0.2s; display: inline-flex; align-items: center; gap: 5px;" onmouseover="this.style.borderColor='#002d62'; this.style.backgroundColor='#eef2f7';" onmouseout="this.style.borderColor='#e3e3e3'; this.style.backgroundColor='#f7f9fb';">
-                                            📊 Khảo sát Dư luận
-                                        </a>
-                                        <a href="#" onclick="alert('Cuộn đến: Nhật ký Phản ánh Dân sinh'); return false;" style="background-color: #f7f9fb; border: 1px solid #e3e3e3; padding: 3px 6px; border-radius: 20px; text-decoration: none; color: #333; font-size: 9.5px; font-weight: bold; transition: all 0.2s; display: inline-flex; align-items: center; gap: 5px;" onmouseover="this.style.borderColor='#002d62'; this.style.backgroundColor='#eef2f7';" onmouseout="this.style.borderColor='#e3e3e3'; this.style.backgroundColor='#f7f9fb';">
-                                            📢 Phản ánh Dân sinh
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <!-- Nhóm 2 -->
-                                <div>
-                                    <div style="font-size: 9.5px; font-weight: bold; color: #28a745; margin-bottom: 3px; text-transform: uppercase;">2. Đời sống & Tiêu dùng</div>
-                                    <div style="display: flex; flex-wrap: wrap; gap: 4px;">
-                                        <a href="#" onclick="alert('Cuộn đến: Kết nối Tiêu dùng'); return false;" style="background-color: #f0fff4; border: 1px solid #c3e6cb; padding: 3px 6px; border-radius: 20px; text-decoration: none; color: #155724; font-size: 9.5px; font-weight: bold; transition: all 0.2s; display: inline-flex; align-items: center; gap: 5px;" onmouseover="this.style.borderColor='#28a745'; this.style.backgroundColor='#d4edda';" onmouseout="this.style.borderColor='#c3e6cb'; this.style.backgroundColor='#f0fff4';">
-                                            🛒 Kết nối Tiêu dùng
-                                        </a>
-                                        <a href="#" onclick="alert('Cuộn đến: Việc làm tuyển dụng nhanh'); return false;" style="background-color: #f0fff4; border: 1px solid #c3e6cb; padding: 3px 6px; border-radius: 20px; text-decoration: none; color: #155724; font-size: 9.5px; font-weight: bold; transition: all 0.2s; display: inline-flex; align-items: center; gap: 5px;" onmouseover="this.style.borderColor='#28a745'; this.style.backgroundColor='#d4edda';" onmouseout="this.style.borderColor='#c3e6cb'; this.style.backgroundColor='#f0fff4';">
-                                            💼 Việc làm (24h)
-                                        </a>
-                                        <a href="#" onclick="alert('Cuộn đến: Lịch cắt điện'); return false;" style="background-color: #f0fff4; border: 1px solid #c3e6cb; padding: 3px 6px; border-radius: 20px; text-decoration: none; color: #155724; font-size: 9.5px; font-weight: bold; transition: all 0.2s; display: inline-flex; align-items: center; gap: 5px;" onmouseover="this.style.borderColor='#28a745'; this.style.backgroundColor='#d4edda';" onmouseout="this.style.borderColor='#c3e6cb'; this.style.backgroundColor='#f0fff4';">
-                                            ⚡ Lịch cắt điện
-                                        </a>
-                                        <a href="#" onclick="alert('Cuộn đến: Chợ Công Đoàn - Deal Hot'); return false;" style="background-color: #f0fff4; border: 1px solid #c3e6cb; padding: 3px 6px; border-radius: 20px; text-decoration: none; color: #155724; font-size: 9.5px; font-weight: bold; transition: all 0.2s; display: inline-flex; align-items: center; gap: 5px;" onmouseover="this.style.borderColor='#28a745'; this.style.backgroundColor='#d4edda';" onmouseout="this.style.borderColor='#c3e6cb'; this.style.backgroundColor='#f0fff4';">
-                                            🔥 Deal HOT (Chợ Công Đoàn)
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <!-- Nhóm 3 -->
-                                <div>
-                                    <div style="font-size: 9.5px; font-weight: bold; color: #002d62; margin-bottom: 3px; text-transform: uppercase;">3. Giải trí & Cẩm nang</div>
-                                    <div style="display: flex; flex-wrap: wrap; gap: 4px;">
-                                        <a href="#" onclick="alert('Cuộn đến: Lịch Sự kiện & Triển lãm'); return false;" style="background-color: #e8f4fd; border: 1px solid #b8daff; padding: 3px 6px; border-radius: 20px; text-decoration: none; color: #004085; font-size: 9.5px; font-weight: bold; transition: all 0.2s; display: inline-flex; align-items: center; gap: 5px;" onmouseover="this.style.borderColor='#002d62'; this.style.backgroundColor='#cce5ff';" onmouseout="this.style.borderColor='#b8daff'; this.style.backgroundColor='#e8f4fd';">
-                                            🎭 Sự kiện & Triển lãm
-                                        </a>
-                                        <a href="#" onclick="alert('Cuộn đến: Suất chiếu Phim rạp'); return false;" style="background-color: #e8f4fd; border: 1px solid #b8daff; padding: 3px 6px; border-radius: 20px; text-decoration: none; color: #004085; font-size: 9.5px; font-weight: bold; transition: all 0.2s; display: inline-flex; align-items: center; gap: 5px;" onmouseover="this.style.borderColor='#002d62'; this.style.backgroundColor='#cce5ff';" onmouseout="this.style.borderColor='#b8daff'; this.style.backgroundColor='#e8f4fd';">
-                                            🎬 Suất chiếu Phim rạp
-                                        </a>
-                                        <a href="#" onclick="alert('Cuộn đến: Cẩm nang Ẩm thực, Giải trí'); return false;" style="background-color: #e8f4fd; border: 1px solid #b8daff; padding: 3px 6px; border-radius: 20px; text-decoration: none; color: #004085; font-size: 9.5px; font-weight: bold; transition: all 0.2s; display: inline-flex; align-items: center; gap: 5px;" onmouseover="this.style.borderColor='#002d62'; this.style.backgroundColor='#cce5ff';" onmouseout="this.style.borderColor='#b8daff'; this.style.backgroundColor='#e8f4fd';">
-                                            🗺️ Cẩm nang Ăn Chơi
-                                        </a>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <!-- Interactive Poll (Khảo sát dư luận) -->
-                        <div class="premium-card" style="box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; margin-top: 15px;">
-                            <div>
-                                <div style="font-size: 13.5px; font-weight: bold; color: #002d62; text-transform: uppercase; border-bottom: 2px solid #002d62; padding-bottom: 6px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
-                                    <span>📊 Khảo sát Dư luận</span>
-                                    <span style="font-size: 9px; color: #c00000; font-weight: bold; border: 1px solid #c00000; padding: 2px 5px; border-radius: 2px;">VOTE</span>
-                                </div>
-                                
-                                <div id="poll-container">
-                                    <h4 style="margin: 0 0 8px 0; font-size: 11.5px; font-weight: bold; color: #333; line-height: 1.45;">Bạn ủng hộ việc tiếp tục mở rộng thêm các tuyến phố đi bộ vào cuối tuần tại Hà Nội không?</h4>
-                                    <div style="display: flex; flex-direction: column; gap: 5px;">
-                                        <button onclick="submitPollVote('yes')" style="background: #ffffff; border: 1px solid #ddd; padding: 6px 8px; border-radius: 4px; text-align: left; font-size: 10.5px; cursor: pointer; font-weight: bold; color: #333; transition: all 0.2s;" onmouseover="this.style.borderColor='#002d62'; this.style.backgroundColor='#f7f9fb';" onmouseout="this.style.borderColor='#ddd'; this.style.backgroundColor='#fff';">👍 Đồng ý, cần nhân rộng mô hình này</button>
-                                        <button onclick="submitPollVote('no')" style="background: #ffffff; border: 1px solid #ddd; padding: 6px 8px; border-radius: 4px; text-align: left; font-size: 10.5px; cursor: pointer; font-weight: bold; color: #333; transition: all 0.2s;" onmouseover="this.style.borderColor='#002d62'; this.style.backgroundColor='#f7f9fb';" onmouseout="this.style.borderColor='#ddd'; this.style.backgroundColor='#fff';">👎 Không đồng ý, gây ùn tắc giao thông cục bộ</button>
-                                        <button onclick="submitPollVote('neutral')" style="background: #ffffff; border: 1px solid #ddd; padding: 6px 8px; border-radius: 4px; text-align: left; font-size: 10.5px; cursor: pointer; font-weight: bold; color: #333; transition: all 0.2s;" onmouseover="this.style.borderColor='#002d62'; this.style.backgroundColor='#f7f9fb';" onmouseout="this.style.borderColor='#ddd'; this.style.backgroundColor='#fff';">😐 Đồng ý nhưng cần quy hoạch bãi đỗ xe hợp lý</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div style="font-size: 8.5px; color: #888; margin-top: 10px; border-top: 1px solid #eee; padding-top: 6px; text-align: center;">
-                                Khảo sát mang tính chất tham khảo dư luận phục vụ bài viết chuyên đề.
-                            </div>
-                        </div>
+                        
 
                     </div>
                 </div>
@@ -793,13 +710,7 @@ middle_part = """
                     </div>
                 </div>
             </div>
-
-
-            <!-- ========== BẮT ĐẦU LAYOUT 2 CỘT (VNEXPRESS-STYLE) ========== -->
-            <div class="m-top-20 two-col-layout" style="display: grid; grid-template-columns: 2.2fr 1fr; gap: 25px; font-family: Arial, sans-serif;">
-                <!-- ===== CỘT TRÁI: NỘI DUNG CHÍNH ===== -->
-                <div class="main-content-col">
-            PLACEHOLDER_STATIC_INFRASTRUCTURE
+PLACEHOLDER_STATIC_INFRASTRUCTURE
 
             <!-- AD SLOT 03: MID-PAGE BANNER (728x90) -->
             <div style="width: 100%; max-width: 1000px; margin: 20px auto; text-align: center; font-family: Arial, sans-serif; position: relative;">
@@ -1010,6 +921,93 @@ middle_part = """
 
                 <!-- ===== CỘT PHẢI: SIDEBAR TIỆN ÍCH (STICKY) ===== -->
                 <div class="sidebar-col" style="align-self: start; display: flex; flex-direction: column; gap: 20px;">
+
+<!-- KHỐI MỤC LỤC TIỆN ÍCH (Thay thế QC Vietcombank) -->
+                        <div class="premium-card" style="margin: 15px 0; box-sizing: border-box; display: flex; flex-direction: column; border-top: 3px solid #002d62;">
+                            <div style="font-size: 13.5px; font-weight: bold; color: #002d62; text-transform: uppercase; border-bottom: 1px solid #eee; padding-bottom: 8px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
+                                <span>📌 DANH MỤC TIỆN ÍCH TỔNG HỢP</span>
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: 8px; font-family: Arial, sans-serif;">
+                                
+                                <!-- Nhóm 1 -->
+                                <div>
+                                    <div style="font-size: 9.5px; font-weight: bold; color: #c00000; margin-bottom: 3px; text-transform: uppercase;">1. Dịch vụ Công & Tra cứu</div>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+                                        <a href="#" onclick="alert('Cuộn đến: Phạt nguội & BHXH'); return false;" style="background-color: #f7f9fb; border: 1px solid #e3e3e3; padding: 3px 6px; border-radius: 20px; text-decoration: none; color: #333; font-size: 9.5px; font-weight: bold; transition: all 0.2s; display: inline-flex; align-items: center; gap: 5px;" onmouseover="this.style.borderColor='#002d62'; this.style.backgroundColor='#eef2f7';" onmouseout="this.style.borderColor='#e3e3e3'; this.style.backgroundColor='#f7f9fb';">
+                                            🔍 Phạt nguội & BHXH
+                                        </a>
+                                        <a href="#" onclick="alert('Cuộn đến: Giá đất địa phương'); return false;" style="background-color: #f7f9fb; border: 1px solid #e3e3e3; padding: 3px 6px; border-radius: 20px; text-decoration: none; color: #333; font-size: 9.5px; font-weight: bold; transition: all 0.2s; display: inline-flex; align-items: center; gap: 5px;" onmouseover="this.style.borderColor='#002d62'; this.style.backgroundColor='#eef2f7';" onmouseout="this.style.borderColor='#e3e3e3'; this.style.backgroundColor='#f7f9fb';">
+                                            📍 Giá đất Hà Nội
+                                        </a>
+                                        <a href="#" onclick="alert('Cuộn đến: Khảo sát Dư luận'); return false;" style="background-color: #f7f9fb; border: 1px solid #e3e3e3; padding: 3px 6px; border-radius: 20px; text-decoration: none; color: #333; font-size: 9.5px; font-weight: bold; transition: all 0.2s; display: inline-flex; align-items: center; gap: 5px;" onmouseover="this.style.borderColor='#002d62'; this.style.backgroundColor='#eef2f7';" onmouseout="this.style.borderColor='#e3e3e3'; this.style.backgroundColor='#f7f9fb';">
+                                            📊 Khảo sát Dư luận
+                                        </a>
+                                        <a href="#" onclick="alert('Cuộn đến: Nhật ký Phản ánh Dân sinh'); return false;" style="background-color: #f7f9fb; border: 1px solid #e3e3e3; padding: 3px 6px; border-radius: 20px; text-decoration: none; color: #333; font-size: 9.5px; font-weight: bold; transition: all 0.2s; display: inline-flex; align-items: center; gap: 5px;" onmouseover="this.style.borderColor='#002d62'; this.style.backgroundColor='#eef2f7';" onmouseout="this.style.borderColor='#e3e3e3'; this.style.backgroundColor='#f7f9fb';">
+                                            📢 Phản ánh Dân sinh
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Nhóm 2 -->
+                                <div>
+                                    <div style="font-size: 9.5px; font-weight: bold; color: #28a745; margin-bottom: 3px; text-transform: uppercase;">2. Đời sống & Tiêu dùng</div>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+                                        <a href="#" onclick="alert('Cuộn đến: Kết nối Tiêu dùng'); return false;" style="background-color: #f0fff4; border: 1px solid #c3e6cb; padding: 3px 6px; border-radius: 20px; text-decoration: none; color: #155724; font-size: 9.5px; font-weight: bold; transition: all 0.2s; display: inline-flex; align-items: center; gap: 5px;" onmouseover="this.style.borderColor='#28a745'; this.style.backgroundColor='#d4edda';" onmouseout="this.style.borderColor='#c3e6cb'; this.style.backgroundColor='#f0fff4';">
+                                            🛒 Kết nối Tiêu dùng
+                                        </a>
+                                        <a href="#" onclick="alert('Cuộn đến: Việc làm tuyển dụng nhanh'); return false;" style="background-color: #f0fff4; border: 1px solid #c3e6cb; padding: 3px 6px; border-radius: 20px; text-decoration: none; color: #155724; font-size: 9.5px; font-weight: bold; transition: all 0.2s; display: inline-flex; align-items: center; gap: 5px;" onmouseover="this.style.borderColor='#28a745'; this.style.backgroundColor='#d4edda';" onmouseout="this.style.borderColor='#c3e6cb'; this.style.backgroundColor='#f0fff4';">
+                                            💼 Việc làm (24h)
+                                        </a>
+                                        <a href="#" onclick="alert('Cuộn đến: Lịch cắt điện'); return false;" style="background-color: #f0fff4; border: 1px solid #c3e6cb; padding: 3px 6px; border-radius: 20px; text-decoration: none; color: #155724; font-size: 9.5px; font-weight: bold; transition: all 0.2s; display: inline-flex; align-items: center; gap: 5px;" onmouseover="this.style.borderColor='#28a745'; this.style.backgroundColor='#d4edda';" onmouseout="this.style.borderColor='#c3e6cb'; this.style.backgroundColor='#f0fff4';">
+                                            ⚡ Lịch cắt điện
+                                        </a>
+                                        <a href="#" onclick="alert('Cuộn đến: Chợ Công Đoàn - Deal Hot'); return false;" style="background-color: #f0fff4; border: 1px solid #c3e6cb; padding: 3px 6px; border-radius: 20px; text-decoration: none; color: #155724; font-size: 9.5px; font-weight: bold; transition: all 0.2s; display: inline-flex; align-items: center; gap: 5px;" onmouseover="this.style.borderColor='#28a745'; this.style.backgroundColor='#d4edda';" onmouseout="this.style.borderColor='#c3e6cb'; this.style.backgroundColor='#f0fff4';">
+                                            🔥 Deal HOT (Chợ Công Đoàn)
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Nhóm 3 -->
+                                <div>
+                                    <div style="font-size: 9.5px; font-weight: bold; color: #002d62; margin-bottom: 3px; text-transform: uppercase;">3. Giải trí & Cẩm nang</div>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+                                        <a href="#" onclick="alert('Cuộn đến: Lịch Sự kiện & Triển lãm'); return false;" style="background-color: #e8f4fd; border: 1px solid #b8daff; padding: 3px 6px; border-radius: 20px; text-decoration: none; color: #004085; font-size: 9.5px; font-weight: bold; transition: all 0.2s; display: inline-flex; align-items: center; gap: 5px;" onmouseover="this.style.borderColor='#002d62'; this.style.backgroundColor='#cce5ff';" onmouseout="this.style.borderColor='#b8daff'; this.style.backgroundColor='#e8f4fd';">
+                                            🎭 Sự kiện & Triển lãm
+                                        </a>
+                                        <a href="#" onclick="alert('Cuộn đến: Suất chiếu Phim rạp'); return false;" style="background-color: #e8f4fd; border: 1px solid #b8daff; padding: 3px 6px; border-radius: 20px; text-decoration: none; color: #004085; font-size: 9.5px; font-weight: bold; transition: all 0.2s; display: inline-flex; align-items: center; gap: 5px;" onmouseover="this.style.borderColor='#002d62'; this.style.backgroundColor='#cce5ff';" onmouseout="this.style.borderColor='#b8daff'; this.style.backgroundColor='#e8f4fd';">
+                                            🎬 Suất chiếu Phim rạp
+                                        </a>
+                                        <a href="#" onclick="alert('Cuộn đến: Cẩm nang Ẩm thực, Giải trí'); return false;" style="background-color: #e8f4fd; border: 1px solid #b8daff; padding: 3px 6px; border-radius: 20px; text-decoration: none; color: #004085; font-size: 9.5px; font-weight: bold; transition: all 0.2s; display: inline-flex; align-items: center; gap: 5px;" onmouseover="this.style.borderColor='#002d62'; this.style.backgroundColor='#cce5ff';" onmouseout="this.style.borderColor='#b8daff'; this.style.backgroundColor='#e8f4fd';">
+                                            🗺️ Cẩm nang Ăn Chơi
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Interactive Poll (Khảo sát dư luận) -->
+                        <div class="premium-card" style="box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; margin-top: 15px;">
+                            <div>
+                                <div style="font-size: 13.5px; font-weight: bold; color: #002d62; text-transform: uppercase; border-bottom: 2px solid #002d62; padding-bottom: 6px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
+                                    <span>📊 Khảo sát Dư luận</span>
+                                    <span style="font-size: 9px; color: #c00000; font-weight: bold; border: 1px solid #c00000; padding: 2px 5px; border-radius: 2px;">VOTE</span>
+                                </div>
+                                
+                                <div id="poll-container">
+                                    <h4 style="margin: 0 0 8px 0; font-size: 11.5px; font-weight: bold; color: #333; line-height: 1.45;">Bạn ủng hộ việc tiếp tục mở rộng thêm các tuyến phố đi bộ vào cuối tuần tại Hà Nội không?</h4>
+                                    <div style="display: flex; flex-direction: column; gap: 5px;">
+                                        <button onclick="submitPollVote('yes')" style="background: #ffffff; border: 1px solid #ddd; padding: 6px 8px; border-radius: 4px; text-align: left; font-size: 10.5px; cursor: pointer; font-weight: bold; color: #333; transition: all 0.2s;" onmouseover="this.style.borderColor='#002d62'; this.style.backgroundColor='#f7f9fb';" onmouseout="this.style.borderColor='#ddd'; this.style.backgroundColor='#fff';">👍 Đồng ý, cần nhân rộng mô hình này</button>
+                                        <button onclick="submitPollVote('no')" style="background: #ffffff; border: 1px solid #ddd; padding: 6px 8px; border-radius: 4px; text-align: left; font-size: 10.5px; cursor: pointer; font-weight: bold; color: #333; transition: all 0.2s;" onmouseover="this.style.borderColor='#002d62'; this.style.backgroundColor='#f7f9fb';" onmouseout="this.style.borderColor='#ddd'; this.style.backgroundColor='#fff';">👎 Không đồng ý, gây ùn tắc giao thông cục bộ</button>
+                                        <button onclick="submitPollVote('neutral')" style="background: #ffffff; border: 1px solid #ddd; padding: 6px 8px; border-radius: 4px; text-align: left; font-size: 10.5px; cursor: pointer; font-weight: bold; color: #333; transition: all 0.2s;" onmouseover="this.style.borderColor='#002d62'; this.style.backgroundColor='#f7f9fb';" onmouseout="this.style.borderColor='#ddd'; this.style.backgroundColor='#fff';">😐 Đồng ý nhưng cần quy hoạch bãi đỗ xe hợp lý</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="font-size: 8.5px; color: #888; margin-top: 10px; border-top: 1px solid #eee; padding-top: 6px; text-align: center;">
+                                Khảo sát mang tính chất tham khảo dư luận phục vụ bài viết chuyên đề.
+                            </div>
+                        </div>
+
 
                 <!-- Right: Local Business Directory -->
                 <div class="premium-card" style="display: flex; flex-direction: column; box-sizing: border-box;">
