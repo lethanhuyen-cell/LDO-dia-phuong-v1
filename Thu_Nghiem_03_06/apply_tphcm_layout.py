@@ -802,38 +802,6 @@ PLACEHOLDER_STATIC_INFRASTRUCTURE
                 <!-- JS populated Row 2 (4 columns) -->
             </div>
 
-            <!-- BLOCK 5.5: HỆ SINH THÁI DÂN SINH & DANH BẠ HỘ KINH DOANH (MÔ PHỎNG CHIẾN LƯỢC ĐUÔI DÀI) -->
-            <div class="m-top-20 columns-layout" style="display: flex; flex-direction: column; gap: 20px; font-family: Arial, sans-serif;">
-                <!-- Left: Worker Life, Weekend Escapes & Job Board -->
-                <div class="premium-card" style="display: flex; flex-direction: column; justify-content: space-between;">
-                    <div style="font-size: 14px; font-weight: bold; color: #002d62; text-transform: uppercase; border-bottom: 2px solid #002d62; padding-bottom: 6px; margin-bottom: 15px;">Không gian sống</div>
-                    <div class="nested-responsive-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
-                        <!-- Item 1: Worker Life -->
-                        <div style="border: 1px solid #eee; border-radius: 4px; padding: 10px; position: relative;">
-                            <span style="position: absolute; top: 12px; left: 12px; background: rgba(192,0,0,0.85); color: #fff; font-size: 7px; font-weight: bold; padding: 2px 4px; border-radius: 2px; z-index: 2;">QC GIẢ LẬP</span>
-                            <div style="height: 100px; overflow: hidden; border-radius: 3px;">
-                                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" style="width: 100%; height: 100%; object-fit: cover;">
-                            </div>
-                            <h4 style="margin: 8px 0 0 0; font-size: 12px; font-weight: bold; line-height: 1.3;">
-                                <span style="color: #002d62; font-size: 9px; font-weight: bold; display: block; text-transform: uppercase; margin-bottom: 2px;">Cẩm nang Công nhân KCN</span>
-                                Danh sách nhà trọ an toàn, giá rẻ cho công nhân tại KCN Biên Hòa 2 & Amata năm 2026
-                            </h4>
-                        </div>
-                        <!-- Item 2: Weekend Escape -->
-                        <div style="border: 1px solid #eee; border-radius: 4px; padding: 10px; position: relative;">
-                            <span style="position: absolute; top: 12px; left: 12px; background: rgba(192,0,0,0.85); color: #fff; font-size: 7px; font-weight: bold; padding: 2px 4px; border-radius: 2px; z-index: 2;">QC GIẢ LẬP</span>
-                            <div style="height: 100px; overflow: hidden; border-radius: 3px;">
-                                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" style="width: 100%; height: 100%; object-fit: cover;">
-                            </div>
-                            <h4 style="margin: 8px 0 0 0; font-size: 12px; font-weight: bold; line-height: 1.3;">
-                                <span style="color: #28a745; font-size: 9px; font-weight: bold; display: block; text-transform: uppercase; margin-bottom: 2px;">Trốn phố cuối tuần</span>
-                                Top 5 địa điểm camping, khu sinh thái xanh mát mắt tại Đồng Nai lý tưởng cuối tuần
-                            </h4>
-                        </div>
-                    </div>
-                                
-            </div>
-
             <!-- BLOCK 5.8: CẨM NANG TP.HCM & ĐÔNG NAM BỘ: ĂN GÌ - CHƠI GÌ - Ở ĐÂU? (MÔ PHỎNG NATIVE PR ĐỊA PHƯƠNG) -->
             <div class="m-top-20" style="background-color: #ffffff; border: 1px solid #e3e3e3; border-radius: 8px; padding: 20px; font-family: Arial, sans-serif;">
                 <div style="font-size: 14px; font-weight: bold; color: #c00000; text-transform: uppercase; border-bottom: 2px solid #c00000; padding-bottom: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
@@ -1121,7 +1089,40 @@ PLACEHOLDER_STATIC_INFRASTRUCTURE
                 </div>
 
 
-            <!-- BLOCK 5.76: GÓC TƯƠNG TÁC ĐỘC GIẢ (BÁO CHÍ TƯƠNG TÁC DỰ LIỆU) -->
+            
+                <!-- POWER OUTAGE WIDGET -->
+                <div class="premium-card" style="box-sizing: border-box; max-width: 100%;">
+                    <div style="font-size: 14px; font-weight: bold; color: #ff8c00; text-transform: uppercase; border-bottom: 2px solid #ff8c00; padding-bottom: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
+                        <span>⚡ Lịch cắt điện</span>
+                        <span style="font-size: 9px; color: #fff; background-color: #ff8c00; font-weight: bold; padding: 2px 5px; border-radius: 2px;">EVN HANOI</span>
+                    </div>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 8px; font-size: 12px; font-family: Arial, sans-serif;">
+                        <div style="background-color: #fff9f0; border: 1px solid #ffeeba; padding: 10px; border-radius: 4px;">
+                            <div style="font-weight: bold; margin-bottom: 5px; color: #856404;">Tra cứu theo khu vực:</div>
+                            <select style="width: 100%; padding: 6px; border: 1px solid #ccc; border-radius: 3px; font-size: 11px; margin-bottom: 8px;">
+                                <option>-- Chọn Quận/Huyện --</option>
+                                <option>Quận Hoàn Kiếm</option>
+                                <option>Quận Ba Đình</option>
+                                <option>Quận Đống Đa</option>
+                                <option>Quận Cầu Giấy</option>
+                            </select>
+                            <button style="width: 100%; padding: 6px; background-color: #ff8c00; color: white; border: none; border-radius: 3px; font-weight: bold; cursor: pointer;">Tra cứu lịch cắt điện</button>
+                        </div>
+                        <div style="font-size: 11px; margin-top: 5px;">
+                            <div style="display: flex; align-items: flex-start; gap: 5px; margin-bottom: 5px;">
+                                <span style="color: #ff8c00;">⚠️</span>
+                                <span><strong>Cầu Giấy:</strong> Cắt điện từ 08:00 - 16:00 ngày mai (khu vực Dịch Vọng Hậu).</span>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; gap: 5px;">
+                                <span style="color: #28a745;">✅</span>
+                                <span>Các khu vực khác cung cấp điện bình thường.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+<!-- BLOCK 5.76: GÓC TƯƠNG TÁC ĐỘC GIẢ (BÁO CHÍ TƯƠNG TÁC DỰ LIỆU) -->
             <div class="m-top-20 columns-layout" style="font-family: Arial, sans-serif; display: flex; flex-direction: column; gap: 20px;">
                 <!-- Land Price Lookup widget -->
                 <div class="premium-card" style="box-sizing: border-box; max-width: 100%;">
@@ -1362,7 +1363,41 @@ PLACEHOLDER_STATIC_INFRASTRUCTURE
             </div>
 
                 
-            </div>  <!-- /sidebar-col -->
+            
+<!-- BLOCK 5.5: HỆ SINH THÁI DÂN SINH & DANH BẠ HỘ KINH DOANH (MÔ PHỎNG CHIẾN LƯỢC ĐUÔI DÀI) -->
+            <div class="m-top-20 columns-layout" style="display: flex; flex-direction: column; gap: 20px; font-family: Arial, sans-serif;">
+                <!-- Left: Worker Life, Weekend Escapes & Job Board -->
+                <div class="premium-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div style="font-size: 14px; font-weight: bold; color: #002d62; text-transform: uppercase; border-bottom: 2px solid #002d62; padding-bottom: 6px; margin-bottom: 15px;">Không gian sống</div>
+                    <div class="nested-responsive-grid" style="display: grid; grid-template-columns: 1fr; gap: 15px; margin-bottom: 15px;">
+                        <!-- Item 1: Worker Life -->
+                        <div style="border: 1px solid #eee; border-radius: 4px; padding: 10px; position: relative;">
+                            <span style="position: absolute; top: 12px; left: 12px; background: rgba(192,0,0,0.85); color: #fff; font-size: 7px; font-weight: bold; padding: 2px 4px; border-radius: 2px; z-index: 2;">QC GIẢ LẬP</span>
+                            <div style="height: 100px; overflow: hidden; border-radius: 3px;">
+                                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <h4 style="margin: 8px 0 0 0; font-size: 12px; font-weight: bold; line-height: 1.3;">
+                                <span style="color: #002d62; font-size: 9px; font-weight: bold; display: block; text-transform: uppercase; margin-bottom: 2px;">Cẩm nang Công nhân KCN</span>
+                                Danh sách nhà trọ an toàn, giá rẻ cho công nhân tại KCN Biên Hòa 2 & Amata năm 2026
+                            </h4>
+                        </div>
+                        <!-- Item 2: Weekend Escape -->
+                        <div style="border: 1px solid #eee; border-radius: 4px; padding: 10px; position: relative;">
+                            <span style="position: absolute; top: 12px; left: 12px; background: rgba(192,0,0,0.85); color: #fff; font-size: 7px; font-weight: bold; padding: 2px 4px; border-radius: 2px; z-index: 2;">QC GIẢ LẬP</span>
+                            <div style="height: 100px; overflow: hidden; border-radius: 3px;">
+                                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <h4 style="margin: 8px 0 0 0; font-size: 12px; font-weight: bold; line-height: 1.3;">
+                                <span style="color: #28a745; font-size: 9px; font-weight: bold; display: block; text-transform: uppercase; margin-bottom: 2px;">Trốn phố cuối tuần</span>
+                                Top 5 địa điểm camping, khu sinh thái xanh mát mắt tại Đồng Nai lý tưởng cuối tuần
+                            </h4>
+                        </div>
+                    </div>
+                                
+            </div>
+
+            
+</div>  <!-- /sidebar-col -->
             </div>  <!-- /two-col-layout -->
 
 
