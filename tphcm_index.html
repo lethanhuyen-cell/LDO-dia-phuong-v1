@@ -1452,7 +1452,7 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
                 <div class="premium-card" style="box-sizing: border-box; max-width: 100%;">
                     <div style="font-size: 14px; font-weight: bold; color: #ff8c00; text-transform: uppercase; border-bottom: 2px solid #ff8c00; padding-bottom: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
                         <span>⚡ Lịch cắt điện</span>
-                        <span style="font-size: 9px; color: #fff; background-color: #ff8c00; font-weight: bold; padding: 2px 5px; border-radius: 2px;">EVN HANOI</span>
+                        <span style="font-size: 9px; color: #fff; background-color: #ff8c00; font-weight: bold; padding: 2px 5px; border-radius: 2px;">EVN TPHCM</span>
                     </div>
                     
                     <div style="display: flex; flex-direction: column; gap: 8px; font-size: 12px; font-family: Arial, sans-serif;">
@@ -1882,8 +1882,8 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
                 <div style="align-self: flex-start; background-color: #fff; border: 1px solid #e3e3e3; padding: 10px; border-radius: 8px; max-width: 85%; margin-top: 5px;">
                     🔍 Tìm thấy <strong>2 việc làm khẩn cấp</strong> trên địa bàn TP.HCM & Đông Nam Bộ hôm nay:
                     <ul style="padding-left: 15px; margin: 5px 0;">
-                        <li><strong>Canon Việt Nam</strong> (KCN Bắc Thăng Long) - Lắp ráp linh kiện điện tử (8.5 - 11 triệu)</li>
-                        <li><strong>Tập đoàn Cơ khí TP.HCM & Đông Nam Bộ</strong> (CNC Thạch Thất) - Vận hành máy tiện (10 - 13.5 triệu)</li>
+                        <li><strong>Canon Việt Nam</strong> (Khu công nghệ cao TP.HCM) - Lắp ráp linh kiện điện tử (8.5 - 11 triệu)</li>
+                        <li><strong>Tập đoàn Cơ khí TP.HCM & Đông Nam Bộ</strong> (KCN Vĩnh Lộc) - Vận hành máy tiện (10 - 13.5 triệu)</li>
                     </ul>
                     Bạn có thể nộp hồ sơ trực tiếp tại bảng "Việc làm tại TP.HCM & Đông Nam Bộ" nằm ở giữa trang!
                 </div>
@@ -2066,7 +2066,7 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
 
     // --- LAND PRICE LOOKUP WIDGET DATA & FUNCTIONS ---
     const landPriceDatabase = {
-        hanoi: {
+        tphcm: {
             caugiay: {
                 name: "Quận Cầu Giấy",
                 streets: {
@@ -2128,7 +2128,7 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
         }
     };
 
-    let currentRegion = 'hanoi';
+    let currentRegion = 'tphcm';
 
     window.initLandPriceWidget = function(region) {
         currentRegion = region;
@@ -4081,7 +4081,7 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
         renderEnterpriseBlock();
         updateSchemaMarkup();
         changeDistrictPrices('quan1');
-        fetchHanoiWeather();
+        fetchTPHCMWeather(10.7769, 106.7009, 'TP.HCM & Đông Nam Bộ');
         updateProvincialProfileWidget('all');
         initInfraCarouselAutoplay();
         renderDirectoryPage();
