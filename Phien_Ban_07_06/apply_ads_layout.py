@@ -5,13 +5,13 @@ import os
 sys.stdout.reconfigure(encoding='utf-8')
 
 # Read consolidated 100% Hanoi articles
-with open('c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING PAGE THƯỜNG TRÚ/Thu_Nghiem_03_06/hanoi_final_consolidated.json', 'r', encoding='utf-8') as f:
+with open('c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING PAGE THƯỜNG TRÚ/Phien_Ban_07_06/hanoi_final_consolidated.json', 'r', encoding='utf-8') as f:
     articles = json.load(f)
 
 js_all_articles_str = json.dumps(articles, ensure_ascii=False, indent=8)
 
 # Read the HTML template
-html_path = 'c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING PAGE THƯỜNG TRÚ/Thu_Nghiem_03_06/demo_landing_page_hanoi_clean.html'
+html_path = 'c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING PAGE THƯỜNG TRÚ/Phien_Ban_07_06/demo_landing_page_hanoi_clean.html'
 with open(html_path, 'r', encoding='utf-8') as f:
     content = f.read()
 
@@ -2936,23 +2936,23 @@ middle_part = middle_part.replace("PLACEHOLDER_RAW_ARTICLES", js_all_articles_st
 # Combine HTML parts
 full_html_content = header_part + middle_part + footer_part
 
-# Save as Thu_Nghiem_03_06/demo_landing_page_hanoi_ads.html
-ads_html_path = 'c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING PAGE THƯỜNG TRÚ/Thu_Nghiem_03_06/demo_landing_page_hanoi_ads.html'
+# Save as Phien_Ban_07_06/demo_landing_page_hanoi_ads.html
+ads_html_path = 'c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING PAGE THƯỜNG TRÚ/Phien_Ban_07_06/demo_landing_page_hanoi_ads.html'
 with open(ads_html_path, 'w', encoding='utf-8') as f:
     f.write(full_html_content)
 
-# Save as Thu_Nghiem_03_06/index_ads.html for easy Vercel routing
-index_ads_path = 'c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING PAGE THƯỜNG TRÚ/Thu_Nghiem_03_06/index_ads.html'
+# Save as Phien_Ban_07_06/index_ads.html for easy Vercel routing
+index_ads_path = 'c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING PAGE THƯỜNG TRÚ/Phien_Ban_07_06/index_ads.html'
 with open(index_ads_path, 'w', encoding='utf-8') as f:
     f.write(full_html_content)
 
-# Overwrite original Thu_Nghiem_03_06/demo_landing_page_hanoi.html
-orig_html_path = 'c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING PAGE THƯỜNG TRÚ/Thu_Nghiem_03_06/demo_landing_page_hanoi.html'
+# Overwrite original Phien_Ban_07_06/demo_landing_page_hanoi.html
+orig_html_path = 'c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING PAGE THƯỜNG TRÚ/Phien_Ban_07_06/demo_landing_page_hanoi.html'
 with open(orig_html_path, 'w', encoding='utf-8') as f:
     f.write(full_html_content)
 
-# Overwrite Thu_Nghiem_03_06/index.html for default Vercel routing
-index_path = 'c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING PAGE THƯỜNG TRÚ/Thu_Nghiem_03_06/index.html'
+# Overwrite Phien_Ban_07_06/index.html for default Vercel routing
+index_path = 'c:/Users/Admin/Documents/Work_Folders/4_Hoat_Dong_Ca_Nhan/LANDING PAGE THƯỜNG TRÚ/Phien_Ban_07_06/index.html'
 with open(index_path, 'w', encoding='utf-8') as f:
     f.write(full_html_content)
 
