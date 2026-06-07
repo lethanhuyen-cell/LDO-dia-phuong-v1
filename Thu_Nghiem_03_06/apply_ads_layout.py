@@ -1185,9 +1185,9 @@ PLACEHOLDER_STATIC_INFRASTRUCTURE
             <!-- SÁNG KIẾN 3: CHỢ CÔNG ĐOÀN - DEAL GIẢM GIÁ (AFFILIATE) -->
             <div class="m-top-20 columns-layout" style="display: flex; flex-direction: column; gap: 20px; font-family: Arial, sans-serif;">
                 <div class="premium-card" style="box-sizing: border-box;">
-                    <div style="font-size: 14px; font-weight: bold; color: #c00000; text-transform: uppercase; border-bottom: 2px solid #c00000; padding-bottom: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                    <div style="font-size: 14px; font-weight: bold; color: #ee4d2d; text-transform: uppercase; border-bottom: 2px solid #ee4d2d; padding-bottom: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
                         <span>🛒 CHỢ CÔNG ĐOÀN - DEAL HOT</span>
-                        <span style="font-size: 10px; color: #fff; background-color: #d71920; padding: 2px 6px; border-radius: 3px;">TÀI TRỢ BỞI WINMART</span>
+                        <span style="font-size: 10px; color: #fff; background-color: #ee4d2d; padding: 2px 6px; border-radius: 3px;">TÀI TRỢ BỞI SHOPEE</span>
                     </div>
                     
                     <div style="display: flex; flex-direction: column; gap: 12px;">
@@ -1199,9 +1199,9 @@ PLACEHOLDER_STATIC_INFRASTRUCTURE
                                 <div style="display: flex; justify-content: space-between; align-items: flex-end;">
                                     <div>
                                         <div style="text-decoration: line-through; color: #999; font-size: 10px;">150.000đ</div>
-                                        <div style="color: #d71920; font-weight: bold; font-size: 14px;">119.000đ</div>
+                                        <div style="color: #ee4d2d; font-weight: bold; font-size: 14px;">119.000đ</div>
                                     </div>
-                                    <button onclick="alert('Đang chuyển hướng tới trang mua hàng Affiliate...')" style="background: #d71920; color: #fff; border: none; padding: 4px 8px; border-radius: 3px; font-size: 10px; font-weight: bold; cursor: pointer;">MUA NGAY</button>
+                                    <button onclick="alert('Đang chuyển hướng tới trang mua hàng Affiliate...')" style="background: #ee4d2d; color: #fff; border: none; padding: 4px 8px; border-radius: 3px; font-size: 10px; font-weight: bold; cursor: pointer;">MUA NGAY</button>
                                 </div>
                             </div>
                         </div>
@@ -1214,9 +1214,9 @@ PLACEHOLDER_STATIC_INFRASTRUCTURE
                                 <div style="display: flex; justify-content: space-between; align-items: flex-end;">
                                     <div>
                                         <div style="text-decoration: line-through; color: #999; font-size: 10px;">65.000đ</div>
-                                        <div style="color: #d71920; font-weight: bold; font-size: 14px;">49.000đ</div>
+                                        <div style="color: #ee4d2d; font-weight: bold; font-size: 14px;">49.000đ</div>
                                     </div>
-                                    <button onclick="alert('Đang chuyển hướng tới trang mua hàng Affiliate...')" style="background: #d71920; color: #fff; border: none; padding: 4px 8px; border-radius: 3px; font-size: 10px; font-weight: bold; cursor: pointer;">MUA NGAY</button>
+                                    <button onclick="alert('Đang chuyển hướng tới trang mua hàng Affiliate...')" style="background: #ee4d2d; color: #fff; border: none; padding: 4px 8px; border-radius: 3px; font-size: 10px; font-weight: bold; cursor: pointer;">MUA NGAY</button>
                                 </div>
                             </div>
                         </div>
@@ -1229,9 +1229,9 @@ PLACEHOLDER_STATIC_INFRASTRUCTURE
                                 <div style="display: flex; justify-content: space-between; align-items: flex-end;">
                                     <div>
                                         <div style="text-decoration: line-through; color: #999; font-size: 10px;">45.000đ</div>
-                                        <div style="color: #d71920; font-weight: bold; font-size: 14px;">32.000đ</div>
+                                        <div style="color: #ee4d2d; font-weight: bold; font-size: 14px;">32.000đ</div>
                                     </div>
-                                    <button onclick="alert('Đang chuyển hướng tới trang mua hàng Affiliate...')" style="background: #d71920; color: #fff; border: none; padding: 4px 8px; border-radius: 3px; font-size: 10px; font-weight: bold; cursor: pointer;">MUA NGAY</button>
+                                    <button onclick="alert('Đang chuyển hướng tới trang mua hàng Affiliate...')" style="background: #ee4d2d; color: #fff; border: none; padding: 4px 8px; border-radius: 3px; font-size: 10px; font-weight: bold; cursor: pointer;">MUA NGAY</button>
                                 </div>
                             </div>
                         </div>
@@ -1245,7 +1245,7 @@ PLACEHOLDER_STATIC_INFRASTRUCTURE
                 <div style="background-color: #ffffff; border: 1px solid #e3e3e3; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; position: relative; min-height: 380px; box-sizing: border-box;">
                     <span style="position: absolute; top: 10px; left: 10px; background: rgba(192,0,0,0.85); color: #fff; font-size: 7px; font-weight: bold; padding: 2px 5px; border-radius: 2px; z-index: 10;">QC GIẢ LẬP</span>
                     <div style="position: relative; height: 180px; overflow: hidden; width: 100%;">
-                        <img src="winmart_summer_banner.png" alt="Khuyến mãi mùa hè 2026" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="shopee_summer_banner.png" alt="Khuyến mãi mùa hè 2026" style="width: 100%; height: 100%; object-fit: cover;">
                         <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 60%; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%); z-index: 2;"></div>
                         <div style="position: absolute; bottom: 12px; left: 15px; z-index: 5; color: #fff;">
                             <span style="font-size: 9px; font-weight: bold; color: #ffeb3b; text-transform: uppercase; letter-spacing: 0.5px;">Chương trình đặc biệt</span>
@@ -1254,10 +1254,10 @@ PLACEHOLDER_STATIC_INFRASTRUCTURE
                     </div>
                     <div style="padding: 15px; display: flex; flex-direction: column; gap: 8px; flex-grow: 1; justify-content: space-between;">
                         <div>
-                            <div style="font-size: 9.5px; font-weight: bold; color: #d71920; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px;">Đồng hành chuyên mục</div>
-                            <p style="margin: 0; font-size: 12px; color: #444; line-height: 1.45;">Đón hè rực rỡ cùng hàng ngàn ưu đãi giải nhiệt từ siêu thị WinMart Hà Nội! Tiết kiệm lên tới 20% các mặt hàng tươi sống, thịt sạch & rau sạch mỗi ngày!</p>
+                            <div style="font-size: 9.5px; font-weight: bold; color: #ee4d2d; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px;">Đồng hành chuyên mục</div>
+                            <p style="margin: 0; font-size: 12px; color: #444; line-height: 1.45;">Đón hè rực rỡ cùng hàng ngàn ưu đãi giải nhiệt từ siêu thị Shopee Hà Nội! Tiết kiệm lên tới 20% các mặt hàng tươi sống, thịt sạch & rau sạch mỗi ngày!</p>
                         </div>
-                        <a href="https://winmart.vn" target="_blank" style="background-color: #d71920; color: #ffffff; text-decoration: none; font-size: 9.5px; font-weight: bold; padding: 10px 0; border-radius: 4px; text-transform: uppercase; text-align: center; display: block; box-shadow: 0 2px 5px rgba(215,25,32,0.2); transition: all 0.2s;" onmouseover="this.style.backgroundColor='#bd141b';" onmouseout="this.style.backgroundColor='#d71920';">Đăng ký hội viên miễn phí</a>
+                        <a href="https://shopee.vn" target="_blank" style="background-color: #ee4d2d; color: #ffffff; text-decoration: none; font-size: 9.5px; font-weight: bold; padding: 10px 0; border-radius: 4px; text-transform: uppercase; text-align: center; display: block; box-shadow: 0 2px 5px rgba(215,25,32,0.2); transition: all 0.2s;" onmouseover="this.style.backgroundColor='#d73211';" onmouseout="this.style.backgroundColor='#ee4d2d';">Đăng ký hội viên miễn phí</a>
                     </div>
                 </div>
             </div>
