@@ -924,6 +924,65 @@ PLACEHOLDER_STATIC_INFRASTRUCTURE
                 <!-- ===== CỘT PHẢI: SIDEBAR TIỆN ÍCH (STICKY) ===== -->
                 <div class="sidebar-col" style="align-self: start; position: sticky; top: calc(100vh - 100%); display: flex; flex-direction: column; gap: 20px;">
 
+<!-- SÁNG KIẾN 3: CHỢ CÔNG ĐOÀN - DEAL HOT -->
+<div class="premium-card" style="box-sizing: border-box;">
+                    <div style="font-size: 14px; font-weight: bold; color: #ee4d2d; text-transform: uppercase; border-bottom: 2px solid #ee4d2d; padding-bottom: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                        <span>🛒 CHỢ CÔNG ĐOÀN - DEAL HOT</span>
+                        <span style="font-size: 10px; color: #fff; background-color: #ee4d2d; padding: 2px 6px; border-radius: 3px;">TÀI TRỢ BỞI SHOPEE</span>
+                    </div>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <!-- Item 1 -->
+                        <div style="display: flex; border: 1px solid #eee; border-radius: 4px; overflow: hidden; background: #fff;">
+                            <img src="https://placehold.co/80x80?text=Gao+ST25" alt="Gạo ST25" style="width: 80px; height: 80px; object-fit: cover; border-right: 1px solid #eee; background: #ccc;">
+                            <div style="padding: 8px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                                <div style="font-size: 12px; font-weight: bold; color: #333; line-height: 1.3;">Gạo thơm ST25 Bao 5kg - Chuẩn OCOP</div>
+                                <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                                    <div>
+                                        <div style="text-decoration: line-through; color: #999; font-size: 10px;">150.000đ</div>
+                                        <div style="color: #ee4d2d; font-weight: bold; font-size: 14px;">119.000đ</div>
+                                    </div>
+                                    <button onclick="alert('Đang chuyển hướng tới trang mua hàng Affiliate...')" style="background: #ee4d2d; color: #fff; border: none; padding: 4px 8px; border-radius: 3px; font-size: 10px; font-weight: bold; cursor: pointer;">MUA NGAY</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 2 -->
+                        <div style="display: flex; border: 1px solid #eee; border-radius: 4px; overflow: hidden; background: #fff;">
+                            <img src="https://placehold.co/80x80?text=Dau+An" alt="Dầu ăn" style="width: 80px; height: 80px; object-fit: cover; border-right: 1px solid #eee; background: #ccc;">
+                            <div style="padding: 8px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                                <div style="font-size: 12px; font-weight: bold; color: #333; line-height: 1.3;">Dầu ăn thực vật 1 Lít (Mua 2 tặng 1)</div>
+                                <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                                    <div>
+                                        <div style="text-decoration: line-through; color: #999; font-size: 10px;">65.000đ</div>
+                                        <div style="color: #ee4d2d; font-weight: bold; font-size: 14px;">49.000đ</div>
+                                    </div>
+                                    <button onclick="alert('Đang chuyển hướng tới trang mua hàng Affiliate...')" style="background: #ee4d2d; color: #fff; border: none; padding: 4px 8px; border-radius: 3px; font-size: 10px; font-weight: bold; cursor: pointer;">MUA NGAY</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 3 -->
+                        <div style="display: flex; border: 1px solid #eee; border-radius: 4px; overflow: hidden; background: #fff;">
+                            <img src="https://placehold.co/80x80?text=Nuoc+Mam" alt="Nước mắm" style="width: 80px; height: 80px; object-fit: cover; border-right: 1px solid #eee; background: #ccc;">
+                            <div style="padding: 8px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                                <div style="font-size: 12px; font-weight: bold; color: #333; line-height: 1.3;">Nước mắm truyền thống 40 độ đạm 750ml</div>
+                                <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                                    <div>
+                                        <div style="text-decoration: line-through; color: #999; font-size: 10px;">45.000đ</div>
+                                        <div style="color: #ee4d2d; font-weight: bold; font-size: 14px;">32.000đ</div>
+                                    </div>
+                                    <button onclick="alert('Đang chuyển hướng tới trang mua hàng Affiliate...')" style="background: #ee4d2d; color: #fff; border: none; padding: 4px 8px; border-radius: 3px; font-size: 10px; font-weight: bold; cursor: pointer;">MUA NGAY</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 5px;">
+                            <a href="#" style="color: #002d62; font-size: 9.5px; text-decoration: none; font-weight: bold;">Xem thêm 99+ khuyến mãi hôm nay &raquo;</a>
+                        </div>
+                    </div>
+                </div>
+
 <!-- KHỐI MỤC LỤC TIỆN ÍCH (Thay thế QC Vietcombank) -->
                         <div class="premium-card" style="margin: 15px 0; box-sizing: border-box; display: flex; flex-direction: column; border-top: 3px solid #002d62;">
                             <div style="font-size: 13.5px; font-weight: bold; color: #002d62; text-transform: uppercase; border-bottom: 1px solid #eee; padding-bottom: 8px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
@@ -1184,64 +1243,7 @@ PLACEHOLDER_STATIC_INFRASTRUCTURE
             
             <!-- SÁNG KIẾN 3: CHỢ CÔNG ĐOÀN - DEAL GIẢM GIÁ (AFFILIATE) -->
             <div class="m-top-20 columns-layout" style="display: flex; flex-direction: column; gap: 20px; font-family: Arial, sans-serif;">
-                <div class="premium-card" style="box-sizing: border-box;">
-                    <div style="font-size: 14px; font-weight: bold; color: #ee4d2d; text-transform: uppercase; border-bottom: 2px solid #ee4d2d; padding-bottom: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-                        <span>🛒 CHỢ CÔNG ĐOÀN - DEAL HOT</span>
-                        <span style="font-size: 10px; color: #fff; background-color: #ee4d2d; padding: 2px 6px; border-radius: 3px;">TÀI TRỢ BỞI SHOPEE</span>
-                    </div>
-                    
-                    <div style="display: flex; flex-direction: column; gap: 12px;">
-                        <!-- Item 1 -->
-                        <div style="display: flex; border: 1px solid #eee; border-radius: 4px; overflow: hidden; background: #fff;">
-                            <img src="https://placehold.co/80x80?text=Gao+ST25" alt="Gạo ST25" style="width: 80px; height: 80px; object-fit: cover; border-right: 1px solid #eee; background: #ccc;">
-                            <div style="padding: 8px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                                <div style="font-size: 12px; font-weight: bold; color: #333; line-height: 1.3;">Gạo thơm ST25 Bao 5kg - Chuẩn OCOP</div>
-                                <div style="display: flex; justify-content: space-between; align-items: flex-end;">
-                                    <div>
-                                        <div style="text-decoration: line-through; color: #999; font-size: 10px;">150.000đ</div>
-                                        <div style="color: #ee4d2d; font-weight: bold; font-size: 14px;">119.000đ</div>
-                                    </div>
-                                    <button onclick="alert('Đang chuyển hướng tới trang mua hàng Affiliate...')" style="background: #ee4d2d; color: #fff; border: none; padding: 4px 8px; border-radius: 3px; font-size: 10px; font-weight: bold; cursor: pointer;">MUA NGAY</button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Item 2 -->
-                        <div style="display: flex; border: 1px solid #eee; border-radius: 4px; overflow: hidden; background: #fff;">
-                            <img src="https://placehold.co/80x80?text=Dau+An" alt="Dầu ăn" style="width: 80px; height: 80px; object-fit: cover; border-right: 1px solid #eee; background: #ccc;">
-                            <div style="padding: 8px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                                <div style="font-size: 12px; font-weight: bold; color: #333; line-height: 1.3;">Dầu ăn thực vật 1 Lít (Mua 2 tặng 1)</div>
-                                <div style="display: flex; justify-content: space-between; align-items: flex-end;">
-                                    <div>
-                                        <div style="text-decoration: line-through; color: #999; font-size: 10px;">65.000đ</div>
-                                        <div style="color: #ee4d2d; font-weight: bold; font-size: 14px;">49.000đ</div>
-                                    </div>
-                                    <button onclick="alert('Đang chuyển hướng tới trang mua hàng Affiliate...')" style="background: #ee4d2d; color: #fff; border: none; padding: 4px 8px; border-radius: 3px; font-size: 10px; font-weight: bold; cursor: pointer;">MUA NGAY</button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Item 3 -->
-                        <div style="display: flex; border: 1px solid #eee; border-radius: 4px; overflow: hidden; background: #fff;">
-                            <img src="https://placehold.co/80x80?text=Nuoc+Mam" alt="Nước mắm" style="width: 80px; height: 80px; object-fit: cover; border-right: 1px solid #eee; background: #ccc;">
-                            <div style="padding: 8px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                                <div style="font-size: 12px; font-weight: bold; color: #333; line-height: 1.3;">Nước mắm truyền thống 40 độ đạm 750ml</div>
-                                <div style="display: flex; justify-content: space-between; align-items: flex-end;">
-                                    <div>
-                                        <div style="text-decoration: line-through; color: #999; font-size: 10px;">45.000đ</div>
-                                        <div style="color: #ee4d2d; font-weight: bold; font-size: 14px;">32.000đ</div>
-                                    </div>
-                                    <button onclick="alert('Đang chuyển hướng tới trang mua hàng Affiliate...')" style="background: #ee4d2d; color: #fff; border: none; padding: 4px 8px; border-radius: 3px; font-size: 10px; font-weight: bold; cursor: pointer;">MUA NGAY</button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div style="text-align: center; margin-top: 5px;">
-                            <a href="#" style="color: #002d62; font-size: 9.5px; text-decoration: none; font-weight: bold;">Xem thêm 99+ khuyến mãi hôm nay &raquo;</a>
-                        </div>
-                    </div>
-                </div>
-<!-- Right: Supermarket Sponsorship Hub -->
+                <!-- Right: Supermarket Sponsorship Hub -->
                 <div style="background-color: #ffffff; border: 1px solid #e3e3e3; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; position: relative; min-height: 380px; box-sizing: border-box;">
                     <span style="position: absolute; top: 10px; left: 10px; background: rgba(192,0,0,0.85); color: #fff; font-size: 7px; font-weight: bold; padding: 2px 5px; border-radius: 2px; z-index: 10;">QC GIẢ LẬP</span>
                     <div style="position: relative; height: 180px; overflow: hidden; width: 100%;">
