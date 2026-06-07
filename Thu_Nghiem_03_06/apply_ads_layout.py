@@ -614,9 +614,9 @@ middle_part = """
                     <span style="font-weight: bold; color: #002d62; font-size: 13px; display: flex; align-items: center; gap: 8px;">
                         📊 THÔNG TIN HỒ SƠ & CHỈ SỐ CẢI CÁCH ĐỊA PHƯƠNG
                     </span>
-                    <span id="profile-toggle-icon" style="font-weight: bold; color: #888; font-size: 14px;">Mở rộng ▾</span>
+                    <span id="profile-toggle-icon" style="font-weight: bold; color: #888; font-size: 12px;">Mở rộng ▾</span>
                 </div>
-                <div id="provincial-profile-widget" style="background-color: #ffffff; border: 1px solid #e3e3e3; border-top: none; border-left: 4px solid #002d62; padding: 15px 20px; font-family: Arial, sans-serif; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: none; grid-template-columns: 1.2fr 1.8fr; gap: 20px; align-items: start; box-sizing: border-box;">
+                <div id="provincial-profile-widget" style="background-color: #ffffff; border: 1px solid #e3e3e3; border-top: none; border-left: 4px solid #002d62; padding: 10px 15px; font-family: Arial, sans-serif; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: none; grid-template-columns: 1.2fr 1.8fr; gap: 20px; align-items: start; box-sizing: border-box;">
                     <!-- JS populated dynamically -->
                 </div>
             </div>
@@ -659,7 +659,7 @@ middle_part = """
             </div>
 
             <!-- DYNAMIC FULL-WIDTH MOST READ CAROUSEL (Balances page flow) -->
-            <div style="background-color: #fcfcfc; border: 1px solid #eef1f5; border-radius: 8px; padding: 15px 20px; margin-top: 20px; font-family: Arial, sans-serif; box-shadow: 0 1px 3px rgba(0,0,0,0.02);">
+            <div style="background-color: #fcfcfc; border: 1px solid #eef1f5; border-radius: 8px; padding: 10px 15px; margin-top: 20px; font-family: Arial, sans-serif; box-shadow: 0 1px 3px rgba(0,0,0,0.02);">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 2px solid #c00000; padding-bottom: 6px;">
                     <span style="font-size: 14px; font-weight: bold; color: #c00000; text-transform: uppercase; letter-spacing: 0.5px;">Đọc nhiều nhất</span>
                     <div id="most-read-dots" style="display: flex; gap: 6px; align-items: center;">
@@ -2479,7 +2479,7 @@ PLACEHOLDER_STATIC_INFRASTRUCTURE
 
     const provincialProfiles = {
         all: {
-            title: "HÀ NỘI - THỦ ĐÔ VÀ TRUNG TÂM KINH TẾ - CHÍNH TRỊ QUỐC GIA",
+            title: "HÀ NỘI - TRUNG TÂM KINH TẾ - CHÍNH TRỊ QUỐC GIA",
             profileHtml: `
                 <div style="font-size: 11.5px; line-height: 1.6; color: #333;">
                     • <strong>Diện tích:</strong> 3.359 km² (Lớn nhất cả nước sau sáp nhập với Hà Tây)<br>
