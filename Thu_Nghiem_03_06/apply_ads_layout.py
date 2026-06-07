@@ -795,6 +795,41 @@ PLACEHOLDER_STATIC_INFRASTRUCTURE
                 <!-- JS populated Row 2 (4 columns) -->
             </div>
 
+            <!-- BLOCK 5.5: HỆ SINH THÁI DÂN SINH & DANH BẠ HỘ KINH DOANH (MÔ PHỎNG CHIẾN LƯỢC ĐUÔI DÀI) -->
+            <div class="m-top-20 " style=" font-family: Arial, sans-serif;">
+                <!-- Left: Worker Life, Weekend Escapes & Job Board -->
+                <div class="premium-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div style="font-size: 14px; font-weight: bold; color: #002d62; text-transform: uppercase; border-bottom: 2px solid #002d62; padding-bottom: 6px; margin-bottom: 15px;">Không gian sống</div>
+                    <div class="nested-responsive-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                        <!-- Item 1: Worker Life -->
+                        <div style="border: 1px solid #eee; border-radius: 4px; padding: 10px; position: relative;">
+                            <span style="position: absolute; top: 12px; left: 12px; background: rgba(192,0,0,0.85); color: #fff; font-size: 7px; font-weight: bold; padding: 2px 4px; border-radius: 2px; z-index: 2;">QC GIẢ LẬP</span>
+                            <div style="height: 100px; overflow: hidden; border-radius: 3px;">
+                                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <h4 style="margin: 8px 0 0 0; font-size: 12px; font-weight: bold; line-height: 1.3;">
+                                <span style="color: #002d62; font-size: 9px; font-weight: bold; display: block; text-transform: uppercase; margin-bottom: 2px;">Cẩm nang Công nhân KCN</span>
+                                Danh sách nhà trọ an toàn, giá rẻ cho công nhân tại KCN Bắc Thăng Long năm 2026
+                            </h4>
+                        </div>
+                        <!-- Item 2: Weekend Escape -->
+                        <div style="border: 1px solid #eee; border-radius: 4px; padding: 10px; position: relative;">
+                            <span style="position: absolute; top: 12px; left: 12px; background: rgba(192,0,0,0.85); color: #fff; font-size: 7px; font-weight: bold; padding: 2px 4px; border-radius: 2px; z-index: 2;">QC GIẢ LẬP</span>
+                            <div style="height: 100px; overflow: hidden; border-radius: 3px;">
+                                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <h4 style="margin: 8px 0 0 0; font-size: 12px; font-weight: bold; line-height: 1.3;">
+                                <span style="color: #28a745; font-size: 9px; font-weight: bold; display: block; text-transform: uppercase; margin-bottom: 2px;">Trốn phố cuối tuần</span>
+                                Top 5 khu cắm trại và homestay dịch vụ xanh cực đẹp tại Ba Vì cho gia đình
+                            </h4>
+                        </div>
+                    </div>
+                    </div>
+                
+            </div>
+
+            
+
             <!-- BLOCK 5.8: CẨM NANG HÀ NỘI: ĂN GÌ - CHƠI GÌ - Ở ĐÂU? (MÔ PHỎNG NATIVE PR ĐỊA PHƯƠNG) -->
             <div class="m-top-20" style="background-color: #ffffff; border: 1px solid #e3e3e3; border-radius: 8px; padding: 20px; font-family: Arial, sans-serif;">
                 <div style="font-size: 14px; font-weight: bold; color: #c00000; text-transform: uppercase; border-bottom: 2px solid #c00000; padding-bottom: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
@@ -1357,40 +1392,6 @@ PLACEHOLDER_STATIC_INFRASTRUCTURE
             </div>
 
                 
-            
-<!-- BLOCK 5.5: HỆ SINH THÁI DÂN SINH & DANH BẠ HỘ KINH DOANH (MÔ PHỎNG CHIẾN LƯỢC ĐUÔI DÀI) -->
-            <div class="m-top-20 columns-layout" style="display: flex; flex-direction: column; gap: 20px; font-family: Arial, sans-serif;">
-                <!-- Left: Worker Life, Weekend Escapes & Job Board -->
-                <div class="premium-card" style="display: flex; flex-direction: column; justify-content: space-between;">
-                    <div style="font-size: 14px; font-weight: bold; color: #002d62; text-transform: uppercase; border-bottom: 2px solid #002d62; padding-bottom: 6px; margin-bottom: 15px;">Không gian sống</div>
-                    <div class="nested-responsive-grid" style="display: grid; grid-template-columns: 1fr; gap: 15px; margin-bottom: 15px;">
-                        <!-- Item 1: Worker Life -->
-                        <div style="border: 1px solid #eee; border-radius: 4px; padding: 10px; position: relative;">
-                            <span style="position: absolute; top: 12px; left: 12px; background: rgba(192,0,0,0.85); color: #fff; font-size: 7px; font-weight: bold; padding: 2px 4px; border-radius: 2px; z-index: 2;">QC GIẢ LẬP</span>
-                            <div style="height: 100px; overflow: hidden; border-radius: 3px;">
-                                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" style="width: 100%; height: 100%; object-fit: cover;">
-                            </div>
-                            <h4 style="margin: 8px 0 0 0; font-size: 12px; font-weight: bold; line-height: 1.3;">
-                                <span style="color: #002d62; font-size: 9px; font-weight: bold; display: block; text-transform: uppercase; margin-bottom: 2px;">Cẩm nang Công nhân KCN</span>
-                                Danh sách nhà trọ an toàn, giá rẻ cho công nhân tại KCN Bắc Thăng Long năm 2026
-                            </h4>
-                        </div>
-                        <!-- Item 2: Weekend Escape -->
-                        <div style="border: 1px solid #eee; border-radius: 4px; padding: 10px; position: relative;">
-                            <span style="position: absolute; top: 12px; left: 12px; background: rgba(192,0,0,0.85); color: #fff; font-size: 7px; font-weight: bold; padding: 2px 4px; border-radius: 2px; z-index: 2;">QC GIẢ LẬP</span>
-                            <div style="height: 100px; overflow: hidden; border-radius: 3px;">
-                                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" style="width: 100%; height: 100%; object-fit: cover;">
-                            </div>
-                            <h4 style="margin: 8px 0 0 0; font-size: 12px; font-weight: bold; line-height: 1.3;">
-                                <span style="color: #28a745; font-size: 9px; font-weight: bold; display: block; text-transform: uppercase; margin-bottom: 2px;">Trốn phố cuối tuần</span>
-                                Top 5 khu cắm trại và homestay dịch vụ xanh cực đẹp tại Ba Vì cho gia đình
-                            </h4>
-                        </div>
-                    </div>
-                    </div>
-                
-            </div>
-
             
 </div>  <!-- /sidebar-col -->
             </div>  <!-- /two-col-layout -->
