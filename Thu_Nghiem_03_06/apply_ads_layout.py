@@ -1262,7 +1262,42 @@ PLACEHOLDER_STATIC_INFRASTRUCTURE
                 </div>
             </div>
 
-            <!-- BLOCK 5.75: LỊCH BIỂU DIỄN & GIẢI TRÍ HÀ NỘI (MÔ PHỎNG KẾT NỐI API THỜI GIAN THỰC) -->
+            
+            <!-- WIDGET THỊ TRƯỜNG & GIÁ CẢ / TRADINGVIEW -->
+            <div class="premium-card m-top-20" style="box-sizing: border-box; max-width: 100%; border-top: 3px solid #002d62; font-family: Arial, sans-serif;">
+                <div style="font-size: 14px; font-weight: bold; color: #002d62; text-transform: uppercase; border-bottom: 1px solid #eee; padding-bottom: 8px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
+                    <span>📈 THỊ TRƯỜNG & GIÁ CẢ</span>
+                </div>
+                <div style="display: flex; gap: 10px; font-size: 12px; font-weight: bold; margin-bottom: 10px; color: #555;">
+                    <a href="#" style="color: #333; text-decoration: none;">Giá vàng Kim Gia Bảo</a> | 
+                    <a href="#" style="color: #333; text-decoration: none;">Vàng SJC</a> | 
+                    <a href="#" style="color: #c00000; text-decoration: none;">Thế giới</a>
+                </div>
+                
+                <div style="height: 350px; width: 100%; overflow: hidden; border-radius: 4px; border: 1px solid #ddd; position: relative;">
+                    <!-- TradingView Widget BEGIN -->
+                    <div class="tradingview-widget-container" style="height: 100%; width: 100%;">
+                      <div class="tradingview-widget-container__widget" style="height:calc(100% - 32px); width:100%;"></div>
+                      <div class="tradingview-widget-copyright" style="text-align:center; padding:5px 0;"><a href="https://vn.tradingview.com/" rel="noopener nofollow" target="_blank" style="font-size: 11px; text-decoration: none; color: #2962ff;">Theo dõi mọi thị trường trên TradingView</a></div>
+                      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                      {
+                      "symbol": "TVC:GOLD",
+                      "width": "100%",
+                      "height": "100%",
+                      "locale": "vi_VN",
+                      "dateRange": "1M",
+                      "colorTheme": "light",
+                      "isTransparent": false,
+                      "autosize": true,
+                      "largeChartUrl": ""
+                    }
+                      </script>
+                    </div>
+                    <!-- TradingView Widget END -->
+                </div>
+            </div>
+
+<!-- BLOCK 5.75: LỊCH BIỂU DIỄN & GIẢI TRÍ HÀ NỘI (MÔ PHỎNG KẾT NỐI API THỜI GIAN THỰC) -->
             <div class="m-top-20 columns-layout" style="display: flex; flex-direction: column; gap: 20px; font-family: Arial, sans-serif;">
                 <!-- Left: Theatre, Circus, Shows + Exhibitions & Events -->
                 <div class="premium-card">
