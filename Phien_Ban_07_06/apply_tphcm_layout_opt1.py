@@ -2075,7 +2075,6 @@ middle_part = """
                 window.switchMostReadSlide(nextSlide);
             }, 5000);
         }
-    }
 
     function renderMediaSection() {
         let mediaPool = tphcmArticles.filter(a => a.category === "Xã hội" || a.category === "Thời sự").slice(5, 11);
