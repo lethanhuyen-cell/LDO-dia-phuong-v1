@@ -1855,7 +1855,8 @@ middle_part = """
         const feed2 = getSafeArticle(latestNewsPool, 1, 11);
         const feed3 = getSafeArticle(latestNewsPool, 2, 12);
 
-        document.getElementById('main-cover-container').innerHTML = `
+        let el_main_cover_container = document.getElementById('main-cover-container');
+        if (el_main_cover_container) el_main_cover_container.innerHTML = `
             <article class="v4 cv-001">
                 <a class="link-img" href="` + centerArt.url + `" target="_blank">
                     <figure class="_thumb">
@@ -1869,7 +1870,8 @@ middle_part = """
             </article>
         `;
 
-        document.getElementById('subcover-container').innerHTML = `
+        let el_subcover_container = document.getElementById('subcover-container');
+        if (el_subcover_container) el_subcover_container.innerHTML = `
             <article class="v4 nm-001 item n-1">
                 <a class="link-img" href="` + sub1.url + `" target="_blank">
                     <figure class="_thumb">
@@ -1892,7 +1894,8 @@ middle_part = """
             </article>
         `;
 
-        document.getElementById('subcover-bottom-row').innerHTML = `
+        let el_subcover_bottom_row = document.getElementById('subcover-bottom-row');
+        if (el_subcover_bottom_row) el_subcover_bottom_row.innerHTML = `
             <div style="display: flex; flex-direction: column; width: 100%; box-sizing: border-box;">
                 <a href="` + bottom1.url + `" target="_blank" style="display: block; width: 100%; aspect-ratio: 16/10; overflow: hidden; border-radius: 4px; background-color: #f0f0f0;">
                     <img src="` + bottom1.image + `" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='none'">
@@ -1926,7 +1929,8 @@ middle_part = """
         `;
 
 
-        document.getElementById('spotlight-container').innerHTML = `
+        let el_spotlight_container = document.getElementById('spotlight-container');
+        if (el_spotlight_container) el_spotlight_container.innerHTML = `
             <article class="v4 p2c m001 n-1">
                 <div class="pl">
                     <a class="link-img" href="` + spot1.url + `" target="_blank">
@@ -2014,8 +2018,10 @@ middle_part = """
             `;
         }
         
-        document.getElementById('most-read-container').innerHTML = containerHtml;
-        document.getElementById('most-read-dots').innerHTML = dotsHtml;
+        let el_most_read_container = document.getElementById('most-read-container');
+        if (el_most_read_container) el_most_read_container.innerHTML = containerHtml;
+        let el_most_read_dots = document.getElementById('most-read-dots');
+        if (el_most_read_dots) el_most_read_dots.innerHTML = dotsHtml;
         
         if (!window.switchMostReadSlide) {
             window.currentMostReadSlide = 0;
@@ -2051,7 +2057,8 @@ middle_part = """
         }
         if (mediaPool.length < 6) return;
 
-        document.getElementById('media-col-1').innerHTML = `
+        let el_media_col_1 = document.getElementById('media-col-1');
+        if (el_media_col_1) el_media_col_1.innerHTML = `
             <div style="background-color:#ffffff; border:1px solid #ddd; border-radius:4px; padding:10px; display:flex; gap:10px;">
                 <div style="width:100px; height:65px; overflow:hidden; border-radius:3px; flex-shrink:0; position:relative;">
                     <img src="` + mediaPool[0].image + `" style="width:100%; height:100%; object-fit:cover;">
@@ -2075,7 +2082,8 @@ middle_part = """
             </div>
         `;
         
-        document.getElementById('media-col-2').innerHTML = `
+        let el_media_col_2 = document.getElementById('media-col-2');
+        if (el_media_col_2) el_media_col_2.innerHTML = `
             <div style="background-color:#ffffff; border:1px solid #ddd; border-radius:4px; padding:10px; display:flex; gap:10px;">
                 <div style="width:100px; height:65px; overflow:hidden; border-radius:3px; flex-shrink:0; position:relative;">
                     <img src="` + mediaPool[3].image + `" style="width:100%; height:100%; object-fit:cover;">
@@ -2102,7 +2110,8 @@ middle_part = """
         let activeIdx = 0;
         setInterval(() => {
             activeIdx = (activeIdx + 1) % mediaPool.length;
-            document.getElementById('tv-player-img').src = mediaPool[activeIdx].image;
+            let el_tv_player_img = document.getElementById('tv-player-img');
+        if (el_tv_player_img) el_tv_player_img.src = mediaPool[activeIdx].image;
         }, 5000);
     }
 
@@ -2153,11 +2162,13 @@ middle_part = """
 
         let row1Html = '';
         row1Categories.forEach(cat => { row1Html += makeColumnHtml(cat); });
-        document.getElementById('categories-grid-row1').innerHTML = row1Html;
+        let el_categories_grid_row1 = document.getElementById('categories-grid-row1');
+        if (el_categories_grid_row1) el_categories_grid_row1.innerHTML = row1Html;
 
         let row2Html = '';
         row2Categories.forEach(cat => { row2Html += makeColumnHtml(cat); });
-        document.getElementById('categories-grid-row2').innerHTML = row2Html;
+        let el_categories_grid_row2 = document.getElementById('categories-grid-row2');
+        if (el_categories_grid_row2) el_categories_grid_row2.innerHTML = row2Html;
     }
 
     function renderEnterpriseBlock() {
@@ -2180,7 +2191,8 @@ middle_part = """
                 </div>
             `;
         });
-        document.getElementById('enterprise-grid-container').innerHTML = html;
+        let el_enterprise_grid_container = document.getElementById('enterprise-grid-container');
+        if (el_enterprise_grid_container) el_enterprise_grid_container.innerHTML = html;
     }
 
     function pinFeaturedStory(idStr) {
@@ -2191,7 +2203,8 @@ middle_part = """
 
     function updateThresholdDemo(val) {
         articlesVolume = parseInt(val);
-        document.getElementById('threshold-val').innerText = val + " bài/tháng";
+        let el_threshold_val = document.getElementById('threshold-val');
+        if (el_threshold_val) el_threshold_val.innerText = val + " bài/tháng";
         const badge = document.getElementById('index-badge-status');
         if (articlesVolume >= 100) {
             isIndexedStatus = true;
@@ -2258,13 +2271,15 @@ middle_part = """
                 }
             }
         };
-        document.getElementById('json-schema-output').innerText = JSON.stringify(schema, null, 2);
+        let el_json_schema_output = document.getElementById('json-schema-output');
+        if (el_json_schema_output) el_json_schema_output.innerText = JSON.stringify(schema, null, 2);
     }
 
     function fetchTPHCMWeather(lat = 10.7769, lon = 106.7009, name = "TP.HCM & Đông Nam Bộ") {
         const options = { weekday: 'long', year: 'numeric', month: '2-digit', day: '2-digit' };
         const today = new Date();
-        document.getElementById('current-date-vietnam').innerText = today.toLocaleDateString('vi-VN', options);
+        let el_current_date_vietnam = document.getElementById('current-date-vietnam');
+        if (el_current_date_vietnam) el_current_date_vietnam.innerText = today.toLocaleDateString('vi-VN', options);
 
         const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,weather_code`;
         fetch(url)
@@ -2286,14 +2301,16 @@ middle_part = """
                     else if (code >= 80 && code <= 82) { condition = "Mưa rào"; emoji = "🌦️"; }
                     else if (code >= 95) { condition = "Có giông bão"; emoji = "⛈️"; }
                     
-                    document.getElementById('weather-temp-span').innerHTML = `
+                    let el_weather_temp_span = document.getElementById('weather-temp-span');
+        if (el_weather_temp_span) el_weather_temp_span.innerHTML = `
                         ${name}: ${emoji} <strong>${temp}°C</strong> (${condition}) <span style="font-weight: normal; color: #666; margin-left: 5px;">💧 ${humidity}% ẩm</span>
                     `;
                 }
             })
             .catch(err => {
                 console.error("Lỗi khi tải thời tiết:", err);
-                document.getElementById('weather-temp-span').innerHTML = `${name}: ⛅ 28°C`;
+                let el_weather_temp_span = document.getElementById('weather-temp-span');
+        if (el_weather_temp_span) el_weather_temp_span.innerHTML = `${name}: ⛅ 28°C`;
             });
     }
 
@@ -2437,28 +2454,32 @@ middle_part = """
         if (province === 'all') {
             tphcmArticles = [...originalTphcmArticles];
             if (pageTitle) pageTitle.innerText = "TP.HCM & Đông Nam Bộ";
-            document.getElementById('dynamic-breadcrumb-spoke').innerHTML = 'TP.HCM & Đông Nam Bộ';
+            let el_dynamic_breadcrumb_spoke = document.getElementById('dynamic-breadcrumb-spoke');
+        if (el_dynamic_breadcrumb_spoke) el_dynamic_breadcrumb_spoke.innerHTML = 'TP.HCM & Đông Nam Bộ';
             document.getElementById('dynamic-powercut-link').href = 'https://laodong.vn/tags/lich-cat-dien-tphcm-8542.ldo';
             document.getElementById('tphcm-weather-widget').href = 'https://weather.com/vi-VN/weather/today/l/VMXX0007:1:VM';
             fetchTPHCMWeather(10.7769, 106.7009, 'TP.HCM & Đông Nam Bộ');
         } else if (province === 'tphcm') {
             tphcmArticles = originalTphcmArticles.filter(a => a.is_tphcm);
             if (pageTitle) pageTitle.innerText = "TP. Hồ Chí Minh";
-            document.getElementById('dynamic-breadcrumb-spoke').innerHTML = `<a href="#" onclick="filterSpokeProvince('all')" style="color: #666666; text-decoration: none;">TP.HCM & Đông Nam Bộ</a> <span style="color: #ccc;">/</span> TP. Hồ Chí Minh`;
+            let el_dynamic_breadcrumb_spoke = document.getElementById('dynamic-breadcrumb-spoke');
+        if (el_dynamic_breadcrumb_spoke) el_dynamic_breadcrumb_spoke.innerHTML = `<a href="#" onclick="filterSpokeProvince('all')" style="color: #666666; text-decoration: none;">TP.HCM & Đông Nam Bộ</a> <span style="color: #ccc;">/</span> TP. Hồ Chí Minh`;
             document.getElementById('dynamic-powercut-link').href = 'https://laodong.vn/tags/lich-cat-dien-tphcm-8542.ldo';
             document.getElementById('tphcm-weather-widget').href = 'https://weather.com/vi-VN/weather/today/l/VMXX0007:1:VM';
             fetchTPHCMWeather(10.7769, 106.7009, 'TP. Hồ Chí Minh');
         } else if (province === 'dongnai') {
             tphcmArticles = originalTphcmArticles.filter(a => a.is_dongnai);
             if (pageTitle) pageTitle.innerText = "Tỉnh Đồng Nai";
-            document.getElementById('dynamic-breadcrumb-spoke').innerHTML = `<a href="#" onclick="filterSpokeProvince('all')" style="color: #666666; text-decoration: none;">TP.HCM & Đông Nam Bộ</a> <span style="color: #ccc;">/</span> Đồng Nai`;
+            let el_dynamic_breadcrumb_spoke = document.getElementById('dynamic-breadcrumb-spoke');
+        if (el_dynamic_breadcrumb_spoke) el_dynamic_breadcrumb_spoke.innerHTML = `<a href="#" onclick="filterSpokeProvince('all')" style="color: #666666; text-decoration: none;">TP.HCM & Đông Nam Bộ</a> <span style="color: #ccc;">/</span> Đồng Nai`;
             document.getElementById('dynamic-powercut-link').href = 'https://laodong.vn/tags/lich-cat-dien-dong-nai-8588.ldo';
             document.getElementById('tphcm-weather-widget').href = 'https://weather.com/vi-VN/weather/today/l/VMXX0004:1:VM';
             fetchTPHCMWeather(10.9575, 106.8427, 'Đồng Nai');
         } else if (province === 'tayninh') {
             tphcmArticles = originalTphcmArticles.filter(a => a.is_tayninh);
             if (pageTitle) pageTitle.innerText = "Tỉnh Tây Ninh";
-            document.getElementById('dynamic-breadcrumb-spoke').innerHTML = `<a href="#" onclick="filterSpokeProvince('all')" style="color: #666666; text-decoration: none;">TP.HCM & Đông Nam Bộ</a> <span style="color: #ccc;">/</span> Tây Ninh`;
+            let el_dynamic_breadcrumb_spoke = document.getElementById('dynamic-breadcrumb-spoke');
+        if (el_dynamic_breadcrumb_spoke) el_dynamic_breadcrumb_spoke.innerHTML = `<a href="#" onclick="filterSpokeProvince('all')" style="color: #666666; text-decoration: none;">TP.HCM & Đông Nam Bộ</a> <span style="color: #ccc;">/</span> Tây Ninh`;
             document.getElementById('dynamic-powercut-link').href = 'https://laodong.vn/tags/lich-cat-dien-tay-ninh-8622.ldo';
             document.getElementById('tphcm-weather-widget').href = 'https://weather.com/vi-VN/weather/today/l/VMXX0030:1:VM';
             fetchTPHCMWeather(11.3121, 106.1009, 'Tây Ninh');
