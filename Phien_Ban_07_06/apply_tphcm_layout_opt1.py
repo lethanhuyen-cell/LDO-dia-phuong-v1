@@ -814,12 +814,15 @@ middle_part = """
                 <div class="main-content-col">
 
             <!-- BLOCK 5: MULTI-COLUMN CATEGORY GRIDS -->
-            <div class="m-top-20" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;" id="categories-grid-row1">
+            <div class="m-top-20" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;" id="categories-grid-row1">
                 <!-- JS populated Row 1 (4 columns) -->
             </div>
             
-            <div class="m-top-20" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;" id="categories-grid-row2">
+            <div class="m-top-20" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;" id="categories-grid-row2">
                 <!-- JS populated Row 2 (4 columns) -->
+            </div>
+            <div class="m-top-20" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;" id="categories-grid-row3">
+                <!-- JS populated Row 3 (3 columns) -->
             </div>
 
             <!-- BLOCK 5.5: HỆ SINH THÁI DÂN SINH & DANH BẠ HỘ KINH DOANH (MÔ PHỎNG CHIẾN LƯỢC ĐUÔI DÀI) -->
@@ -2139,9 +2142,9 @@ middle_part = """
     }
 
     function renderCategoryColumns() {
-        const row1Categories = ["Thời sự", "Xã hội", "Giáo dục", "Kinh tế"];
-        const row2Categories = ["Công đoàn", "Bất động sản", "Văn hóa - Giải trí", "Thể thao"];
-
+        const row1Categories = ["Thời sự", "Xã hội", "Giáo dục"];
+        const row2Categories = ["Kinh tế", "Công đoàn", "Bất động sản"];
+        const row3Categories = ["Văn hóa - Giải trí", "Thể thao"];
         function makeColumnHtml(categoryName) {
             let catPool = tphcmArticles.filter(a => a.category === categoryName);
             if (catPool.length < 5) {
@@ -2190,6 +2193,11 @@ middle_part = """
         let row2Html = '';
         row2Categories.forEach(cat => { row2Html += makeColumnHtml(cat); });
         document.getElementById('categories-grid-row2').innerHTML = row2Html;
+
+        let row3Html = '';
+        row3Categories.forEach(cat => { row3Html += makeColumnHtml(cat); });
+        let row3El = document.getElementById('categories-grid-row3');
+        if(row3El) row3El.innerHTML = row3Html;
     }
 
     function renderEnterpriseBlock() {
