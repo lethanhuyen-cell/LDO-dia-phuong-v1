@@ -1892,7 +1892,7 @@ middle_part = """
             <article class="v4 cv-001">
                 <a class="link-img" href="` + centerArt.url + `" target="_blank">
                     <figure class="_thumb">
-                        <img src="` + centerArt.image + `" class="img-art" alt="` + centerArt.title + `" width="560" height="348">
+                        <img src="` + centerArt.image + `" class="img-art" alt="` + centerArt.title + `" style="width: 100%; height: auto; aspect-ratio: 16/10; object-fit: cover; border-radius: 6px;">
                     </figure>
                 </a>
                 <a class="link-title" href="` + centerArt.url + `" target="_blank">
@@ -1906,7 +1906,7 @@ middle_part = """
             <article class="v4 nm-001 item n-1">
                 <a class="link-img" href="` + sub1.url + `" target="_blank">
                     <figure class="_thumb">
-                        <img src="` + sub1.image + `" class="img-art" alt="` + sub1.title + `" width="300" height="130" style="object-fit: cover;">
+                        <img src="` + sub1.image + `" class="img-art" alt="` + sub1.title + `" style="width: 100%; height: auto; aspect-ratio: 16/10; object-fit: cover; border-radius: 4px;">
                     </figure>
                 </a>
                 <a class="link-title" href="` + sub1.url + `" target="_blank">
@@ -1916,7 +1916,7 @@ middle_part = """
             <article class="v4 nm-001 item n-2">
                 <a class="link-img" href="` + sub2.url + `" target="_blank">
                     <figure class="_thumb">
-                        <img src="` + sub2.image + `" class="img-art" alt="` + sub2.title + `" width="300" height="130" style="object-fit: cover;">
+                        <img src="` + sub2.image + `" class="img-art" alt="` + sub2.title + `" style="width: 100%; height: auto; aspect-ratio: 16/10; object-fit: cover; border-radius: 4px;">
                     </figure>
                 </a>
                 <a class="link-title" href="` + sub2.url + `" target="_blank">
