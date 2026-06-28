@@ -194,6 +194,16 @@ if(typeof google!=='undefined'&&google.accounts){google.accounts.id.initialize({
 btnAccountIconHeader.click(function(){var menuAccountHeader=$("#menu-account-header");if(menuAccountHeader.hasClass('show')){menuAccountHeader.removeClass('show');}
 else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div></div></header>
 <style>
+
+    @media (max-width: 992px) {
+        .two-col-layout {
+            grid-template-columns: 1fr !important;
+        }
+        .sidebar-col {
+            position: static !important;
+        }
+    }
+
     @media (min-width: 1540px) {
         body {
             background-color: #f7f9fb !important;
@@ -1071,6 +1081,11 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
                 </div>
             </div>
 
+            <!-- ========== BẮT ĐẦU LAYOUT 2 CỘT (VNEXPRESS-STYLE) ========== -->
+            <div class="m-top-20 two-col-layout" style="display: grid; grid-template-columns: 2.2fr 1fr; gap: 25px; font-family: Arial, sans-serif;">
+                <!-- ===== CỘT TRÁI: NỘI DUNG CHÍNH ===== -->
+                <div class="main-content-col">
+
             <!-- BLOCK 5: MULTI-COLUMN CATEGORY GRIDS -->
             <div class="m-top-20" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;" id="categories-grid-row1">
                 <!-- JS populated Row 1 (4 columns) -->
@@ -1179,10 +1194,166 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
                     </div>
                 </div>
             </div>
+
+            <!-- BLOCK 5.8: CẨM NANG TP.HCM & ĐÔNG NAM BỘ: ĂN GÌ - CHƠI GÌ - Ở ĐÂU? (MÔ PHỎNG NATIVE PR ĐỊA PHƯƠNG) -->
+            <div class="m-top-20" style="background-color: #ffffff; border: 1px solid #e3e3e3; border-radius: 8px; padding: 20px; font-family: Arial, sans-serif;">
+                <div style="font-size: 14px; font-weight: bold; color: #c00000; text-transform: uppercase; border-bottom: 2px solid #c00000; padding-bottom: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
+                    <span>🗺️ Cẩm nang TP.HCM & Đông Nam Bộ: Ăn gì - Chơi gì - Ở đâu?</span>
+                    <span style="font-size: 11px; color: #888; font-weight: normal; text-transform: none;">Tin cậy • Thực tế • Bản địa</span>
+                </div>
                 
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;" class="columns-layout">
+                    <!-- Column 1: ĂN GÌ? -->
+                    <div style="border-right: 1px solid #eee; padding-right: 15px;">
+                        <h3 style="font-size: 13.5px; font-weight: bold; color: #002d62; text-transform: uppercase; margin: 0 0 10px 0; border-left: 3px solid #002d62; padding-left: 8px;">🍽️ Ăn gì?</h3>
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <div style="display: flex; gap: 8px; align-items: center; position: relative;">
+                                <div style="width: 50px; height: 35px; overflow: hidden; border-radius: 2px; flex-shrink: 0;">
+                                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=100&q=80" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div style="flex-grow: 1;">
+                                    <span style="background-color: #f5f5f5; color: #888; border: 1px solid #ddd; padding: 0 3px; font-size: 8px; font-weight: bold; border-radius: 2px; margin-right: 4px;">PR</span>
+                                    <a href="#" style="font-size: 11.5px; font-weight: bold; color: #333; text-decoration: none; line-height: 1.3;">5 quán phở đêm trứ danh phố cổ làm ấm lòng thực khách Thủ đô</a>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 8px; align-items: center;">
+                                <div style="width: 50px; height: 35px; overflow: hidden; border-radius: 2px; flex-shrink: 0;">
+                                    <img src="https://images.unsplash.com/photo-1473163928189-364b2c4e1135?auto=format&fit=crop&w=100&q=80" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div>
+                                    <a href="#" style="font-size: 11.5px; font-weight: bold; color: #333; text-decoration: none; line-height: 1.3;">Bản đồ các quán ốc vỉa hè ngon rẻ thu hút đông đảo giới trẻ TP.HCM & Đông Nam Bộ</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Column 2: CHƠI GÌ? -->
+                    <div style="border-right: 1px solid #eee; padding-right: 15px;">
+                        <h3 style="font-size: 13.5px; font-weight: bold; color: #002d62; text-transform: uppercase; margin: 0 0 10px 0; border-left: 3px solid #002d62; padding-left: 8px;">🚴 Chơi gì?</h3>
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <div style="display: flex; gap: 8px; align-items: center;">
+                                <div style="width: 50px; height: 35px; overflow: hidden; border-radius: 2px; flex-shrink: 0;">
+                                    <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=100&q=80" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div>
+                                    <a href="#" style="font-size: 11.5px; font-weight: bold; color: #333; text-decoration: none; line-height: 1.3;">Những tọa độ ngắm hoàng hôn Hồ Tây lãng mạn và yên bình ít người biết</a>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 8px; align-items: center; position: relative;">
+                                <div style="width: 50px; height: 35px; overflow: hidden; border-radius: 2px; flex-shrink: 0;">
+                                    <img src="https://images.unsplash.com/photo-1513407030348-c983a97b98d8?auto=format&fit=crop&w=100&q=80" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div style="flex-grow: 1;">
+                                    <span style="background-color: #f5f5f5; color: #888; border: 1px solid #ddd; padding: 0 3px; font-size: 8px; font-weight: bold; border-radius: 2px; margin-right: 4px;">PR</span>
+                                    <a href="#" style="font-size: 11.5px; font-weight: bold; color: #333; text-decoration: none; line-height: 1.3;">Trải nghiệm tour xe đạp đêm khám phá các di tích văn hóa lịch sử trung tâm</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Column 3: Ở ĐÂU? -->
+                    <div>
+                        <h3 style="font-size: 13.5px; font-weight: bold; color: #002d62; text-transform: uppercase; margin: 0 0 10px 0; border-left: 3px solid #002d62; padding-left: 8px;">🏨 Ở đâu?</h3>
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <div style="display: flex; gap: 8px; align-items: center; position: relative;">
+                                <div style="width: 50px; height: 35px; overflow: hidden; border-radius: 2px; flex-shrink: 0;">
+                                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=100&q=80" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div style="flex-grow: 1;">
+                                    <span style="background-color: #f5f5f5; color: #888; border: 1px solid #ddd; padding: 0 3px; font-size: 8px; font-weight: bold; border-radius: 2px; margin-right: 4px;">PR</span>
+                                    <a href="#" style="font-size: 11.5px; font-weight: bold; color: #333; text-decoration: none; line-height: 1.3;">Review khu nghỉ dưỡng sinh thái xanh mát cực chill tại Trảng Bom, Đồng Nai</a>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 8px; align-items: center;">
+                                <div style="width: 50px; height: 35px; overflow: hidden; border-radius: 2px; flex-shrink: 0;">
+                                    <img src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=100&q=80" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div>
+                                    <a href="#" style="font-size: 11.5px; font-weight: bold; color: #333; text-decoration: none; line-height: 1.3;">Top khách sạn boutique sang trọng mang đậm kiến trúc Đông Dương giữa lòng Quận 1</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCK 6: THÔNG TIN DOANH NGHIỆP -->
+            <div class="m-top-20" style="background-color: #f7f7f7; padding: 20px; border-radius: 8px; border: 1px solid #e3e3e3; font-family: Arial, sans-serif;">
+                <div style="font-size: 14px; font-weight: bold; color: #8b0000; text-transform: uppercase; border-bottom: 2px solid #8b0000; padding-bottom: 6px; margin-bottom: 15px;">Thông tin doanh nghiệp</div>
+                <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;" class="columns-layout" id="enterprise-grid-container">
+                    <!-- JS populated (5 PR cards) -->
+                </div>
+            </div>
+
+                </div>  <!-- /main-content-col -->
+
+                <!-- ===== CỘT PHẢI: SIDEBAR TIỆN ÍCH (STICKY) ===== -->
+                <div class="sidebar-col" style="position: sticky; top: 15px; align-self: start; display: flex; flex-direction: column; gap: 20px;">
+
+            <!-- BLOCK 5.76: GÓC TƯƠNG TÁC ĐỘC GIẢ (BÁO CHÍ TƯƠNG TÁC DỰ LIỆU) -->
+            <div class="m-top-20 columns-layout" style="font-family: Arial, sans-serif; display: flex; flex-direction: column; gap: 20px;">
+                <!-- Labor Overtime Pay Calculator (Tính lương tăng ca tự động) -->
+                <div class="premium-card" style="box-sizing: border-box; max-width: 100%;">
+                    <div style="font-size: 14px; font-weight: bold; color: #c00000; text-transform: uppercase; border-bottom: 2px solid #c00000; padding-bottom: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
+                        <span>⚖️ Tự tính Lương tăng ca (Luật LĐ 2019)</span>
+                        <span style="font-size: 9px; color: #28a745; font-weight: bold; border: 1px solid #28a745; padding: 2px 5px; border-radius: 2px;">TIỆN ÍCH LAO ĐỘNG</span>
+                    </div>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 12px; font-size: 12px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <label style="font-weight: bold; color: #333;">Lương cơ bản (đồng/giờ):</label>
+                            <input type="number" id="labor-hourly-wage" value="30000" style="width: 120px; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-weight: bold; text-align: right; color: #002d62;">
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <label style="font-weight: bold; color: #333;">Số giờ làm thêm:</label>
+                            <input type="number" id="labor-overtime-hours" value="4" style="width: 120px; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-weight: bold; text-align: right; color: #002d62;">
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <label style="font-weight: bold; color: #333;">Thời điểm tăng ca:</label>
+                            <select id="labor-overtime-type" style="width: 140px; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-weight: bold; color: #002d62;">
+                                <option value="weekday">Ngày thường (+150%)</option>
+                                <option value="weekend">Ngày chủ nhật (+200%)</option>
+                                <option value="holiday">Ngày lễ, Tết (+300%)</option>
+                            </select>
+                        </div>
+                        <button onclick="calculateLaborOvertime()" style="background-color: #c00000; color: #ffffff; border: none; padding: 8px; border-radius: 4px; font-weight: bold; cursor: pointer; text-transform: uppercase;">Tính toán quyền lợi</button>
+                        
+                        <div id="labor-calc-result" style="background-color: #f7f9fb; border: 1px dashed #ccc; padding: 10px; border-radius: 4px; display: none;">
+                            <!-- Calculated result populated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Land Price Lookup widget -->
+                <div class="premium-card" style="box-sizing: border-box; max-width: 100%;">
+                    <div style="font-size: 14px; font-weight: bold; color: #c00000; text-transform: uppercase; border-bottom: 2px solid #c00000; padding-bottom: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
+                        <span>📍 Tra cứu giá đất địa phương</span>
+                        <span style="font-size: 9px; color: #002d62; font-weight: bold; border: 1px solid #002d62; padding: 2px 5px; border-radius: 2px;">BATDONGSAN.COM.VN COOP</span>
+                    </div>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 12px; font-size: 12px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <label style="font-weight: bold; color: #333;">Chọn Quận/Huyện:</label>
+                            <select id="land-district" onchange="updateLandStreets()" style="width: 150px; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-weight: bold; color: #002d62;">
+                                <!-- Will populate dynamically -->
+                            </select>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <label style="font-weight: bold; color: #333;">Chọn tuyến đường:</label>
+                            <select id="land-street" onchange="showLandPrice()" style="width: 150px; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-weight: bold; color: #002d62;">
+                                <!-- Will populate dynamically -->
+                            </select>
+                        </div>
+                        
+                        <div id="land-price-result" style="background-color: #f7f9fb; border: 1px dashed #ccc; padding: 10px; border-radius: 4px; display: none;">
+                            <!-- Calculated result populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- BLOCK 5.7: BẢNG GIÁ THỊ TRƯỜNG DÂN SINH TP.HCM & ĐÔNG NAM BỘ (MÔ PHỎNG TIẾP THỊ LIÊN KẾT & TÀI TRỢ SIÊU THỊ) -->
-            <div class="m-top-20 columns-layout" style="display: grid; grid-template-columns: 2fr 1.2fr; gap: 20px; font-family: Arial, sans-serif;">
+            <div class="m-top-20 columns-layout" style="display: flex; flex-direction: column; gap: 20px; font-family: Arial, sans-serif;">
                 <!-- Left: Interactive Price Table -->
                 <div class="premium-card" style="box-sizing: border-box;">
                     <div style="font-size: 14px; font-weight: bold; color: #002d62; text-transform: uppercase; border-bottom: 2px solid #002d62; padding-bottom: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
@@ -1235,7 +1406,7 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
             </div>
 
             <!-- BLOCK 5.75: LỊCH BIỂU DIỄN & GIẢI TRÍ TP.HCM & ĐÔNG NAM BỘ (MÔ PHỎNG KẾT NỐI API THỜI GIAN THỰC) -->
-            <div class="m-top-20 columns-layout" style="display: grid; grid-template-columns: 1.8fr 1.2fr; gap: 20px; font-family: Arial, sans-serif;">
+            <div class="m-top-20 columns-layout" style="display: flex; flex-direction: column; gap: 20px; font-family: Arial, sans-serif;">
                 <!-- Left: Theatre, Circus, Shows + Exhibitions & Events -->
                 <div class="premium-card">
                     <div style="font-size: 14px; font-weight: bold; color: #002d62; text-transform: uppercase; border-bottom: 2px solid #002d62; padding-bottom: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
@@ -1363,130 +1534,9 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
                 </div>
             </div>
 
-            <!-- BLOCK 5.76: GÓC TƯƠNG TÁC ĐỘC GIẢ (BÁO CHÍ TƯƠNG TÁC DỰ LIỆU) -->
-            <div class="m-top-20" style="font-family: Arial, sans-serif;">
-                <!-- Labor Overtime Pay Calculator (Tính lương tăng ca tự động) -->
-                <div class="premium-card" style="box-sizing: border-box; max-width: 100%;">
-                    <div style="font-size: 14px; font-weight: bold; color: #c00000; text-transform: uppercase; border-bottom: 2px solid #c00000; padding-bottom: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
-                        <span>⚖️ Tự tính Lương tăng ca (Luật LĐ 2019)</span>
-                        <span style="font-size: 9px; color: #28a745; font-weight: bold; border: 1px solid #28a745; padding: 2px 5px; border-radius: 2px;">TIỆN ÍCH LAO ĐỘNG</span>
-                    </div>
-                    
-                    <div style="display: flex; flex-direction: column; gap: 12px; font-size: 12px;">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <label style="font-weight: bold; color: #333;">Lương cơ bản (đồng/giờ):</label>
-                            <input type="number" id="labor-hourly-wage" value="30000" style="width: 120px; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-weight: bold; text-align: right; color: #002d62;">
-                        </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <label style="font-weight: bold; color: #333;">Số giờ làm thêm:</label>
-                            <input type="number" id="labor-overtime-hours" value="4" style="width: 120px; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-weight: bold; text-align: right; color: #002d62;">
-                        </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <label style="font-weight: bold; color: #333;">Thời điểm tăng ca:</label>
-                            <select id="labor-overtime-type" style="width: 140px; padding: 4px; border: 1px solid #ccc; border-radius: 3px; font-weight: bold; color: #002d62;">
-                                <option value="weekday">Ngày thường (+150%)</option>
-                                <option value="weekend">Ngày chủ nhật (+200%)</option>
-                                <option value="holiday">Ngày lễ, Tết (+300%)</option>
-                            </select>
-                        </div>
-                        <button onclick="calculateLaborOvertime()" style="background-color: #c00000; color: #ffffff; border: none; padding: 8px; border-radius: 4px; font-weight: bold; cursor: pointer; text-transform: uppercase;">Tính toán quyền lợi</button>
-                        
-                        <div id="labor-calc-result" style="background-color: #f7f9fb; border: 1px dashed #ccc; padding: 10px; border-radius: 4px; display: none;">
-                            <!-- Calculated result populated here -->
-                        </div>
-                    </div>
-                </div>
-            </div>
+                </div>  <!-- /sidebar-col -->
+            </div>  <!-- /two-col-layout -->
 
-            <!-- BLOCK 5.8: CẨM NANG TP.HCM & ĐÔNG NAM BỘ: ĂN GÌ - CHƠI GÌ - Ở ĐÂU? (MÔ PHỎNG NATIVE PR ĐỊA PHƯƠNG) -->
-            <div class="m-top-20" style="background-color: #ffffff; border: 1px solid #e3e3e3; border-radius: 8px; padding: 20px; font-family: Arial, sans-serif;">
-                <div style="font-size: 14px; font-weight: bold; color: #c00000; text-transform: uppercase; border-bottom: 2px solid #c00000; padding-bottom: 6px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">
-                    <span>🗺️ Cẩm nang TP.HCM & Đông Nam Bộ: Ăn gì - Chơi gì - Ở đâu?</span>
-                    <span style="font-size: 11px; color: #888; font-weight: normal; text-transform: none;">Tin cậy • Thực tế • Bản địa</span>
-                </div>
-                
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;" class="columns-layout">
-                    <!-- Column 1: ĂN GÌ? -->
-                    <div style="border-right: 1px solid #eee; padding-right: 15px;">
-                        <h3 style="font-size: 13.5px; font-weight: bold; color: #002d62; text-transform: uppercase; margin: 0 0 10px 0; border-left: 3px solid #002d62; padding-left: 8px;">🍽️ Ăn gì?</h3>
-                        <div style="display: flex; flex-direction: column; gap: 12px;">
-                            <div style="display: flex; gap: 8px; align-items: center; position: relative;">
-                                <div style="width: 50px; height: 35px; overflow: hidden; border-radius: 2px; flex-shrink: 0;">
-                                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=100&q=80" style="width: 100%; height: 100%; object-fit: cover;">
-                                </div>
-                                <div style="flex-grow: 1;">
-                                    <span style="background-color: #f5f5f5; color: #888; border: 1px solid #ddd; padding: 0 3px; font-size: 8px; font-weight: bold; border-radius: 2px; margin-right: 4px;">PR</span>
-                                    <a href="#" style="font-size: 11.5px; font-weight: bold; color: #333; text-decoration: none; line-height: 1.3;">5 quán phở đêm trứ danh phố cổ làm ấm lòng thực khách Thủ đô</a>
-                                </div>
-                            </div>
-                            <div style="display: flex; gap: 8px; align-items: center;">
-                                <div style="width: 50px; height: 35px; overflow: hidden; border-radius: 2px; flex-shrink: 0;">
-                                    <img src="https://images.unsplash.com/photo-1473163928189-364b2c4e1135?auto=format&fit=crop&w=100&q=80" style="width: 100%; height: 100%; object-fit: cover;">
-                                </div>
-                                <div>
-                                    <a href="#" style="font-size: 11.5px; font-weight: bold; color: #333; text-decoration: none; line-height: 1.3;">Bản đồ các quán ốc vỉa hè ngon rẻ thu hút đông đảo giới trẻ TP.HCM & Đông Nam Bộ</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Column 2: CHƠI GÌ? -->
-                    <div style="border-right: 1px solid #eee; padding-right: 15px;">
-                        <h3 style="font-size: 13.5px; font-weight: bold; color: #002d62; text-transform: uppercase; margin: 0 0 10px 0; border-left: 3px solid #002d62; padding-left: 8px;">🚴 Chơi gì?</h3>
-                        <div style="display: flex; flex-direction: column; gap: 12px;">
-                            <div style="display: flex; gap: 8px; align-items: center;">
-                                <div style="width: 50px; height: 35px; overflow: hidden; border-radius: 2px; flex-shrink: 0;">
-                                    <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=100&q=80" style="width: 100%; height: 100%; object-fit: cover;">
-                                </div>
-                                <div>
-                                    <a href="#" style="font-size: 11.5px; font-weight: bold; color: #333; text-decoration: none; line-height: 1.3;">Những tọa độ ngắm hoàng hôn Hồ Tây lãng mạn và yên bình ít người biết</a>
-                                </div>
-                            </div>
-                            <div style="display: flex; gap: 8px; align-items: center; position: relative;">
-                                <div style="width: 50px; height: 35px; overflow: hidden; border-radius: 2px; flex-shrink: 0;">
-                                    <img src="https://images.unsplash.com/photo-1513407030348-c983a97b98d8?auto=format&fit=crop&w=100&q=80" style="width: 100%; height: 100%; object-fit: cover;">
-                                </div>
-                                <div style="flex-grow: 1;">
-                                    <span style="background-color: #f5f5f5; color: #888; border: 1px solid #ddd; padding: 0 3px; font-size: 8px; font-weight: bold; border-radius: 2px; margin-right: 4px;">PR</span>
-                                    <a href="#" style="font-size: 11.5px; font-weight: bold; color: #333; text-decoration: none; line-height: 1.3;">Trải nghiệm tour xe đạp đêm khám phá các di tích văn hóa lịch sử trung tâm</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Column 3: Ở ĐÂU? -->
-                    <div>
-                        <h3 style="font-size: 13.5px; font-weight: bold; color: #002d62; text-transform: uppercase; margin: 0 0 10px 0; border-left: 3px solid #002d62; padding-left: 8px;">🏨 Ở đâu?</h3>
-                        <div style="display: flex; flex-direction: column; gap: 12px;">
-                            <div style="display: flex; gap: 8px; align-items: center; position: relative;">
-                                <div style="width: 50px; height: 35px; overflow: hidden; border-radius: 2px; flex-shrink: 0;">
-                                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=100&q=80" style="width: 100%; height: 100%; object-fit: cover;">
-                                </div>
-                                <div style="flex-grow: 1;">
-                                    <span style="background-color: #f5f5f5; color: #888; border: 1px solid #ddd; padding: 0 3px; font-size: 8px; font-weight: bold; border-radius: 2px; margin-right: 4px;">PR</span>
-                                    <a href="#" style="font-size: 11.5px; font-weight: bold; color: #333; text-decoration: none; line-height: 1.3;">Review khu nghỉ dưỡng sinh thái xanh mát cực chill tại Trảng Bom, Đồng Nai</a>
-                                </div>
-                            </div>
-                            <div style="display: flex; gap: 8px; align-items: center;">
-                                <div style="width: 50px; height: 35px; overflow: hidden; border-radius: 2px; flex-shrink: 0;">
-                                    <img src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=100&q=80" style="width: 100%; height: 100%; object-fit: cover;">
-                                </div>
-                                <div>
-                                    <a href="#" style="font-size: 11.5px; font-weight: bold; color: #333; text-decoration: none; line-height: 1.3;">Top khách sạn boutique sang trọng mang đậm kiến trúc Đông Dương giữa lòng Quận 1</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- BLOCK 6: THÔNG TIN DOANH NGHIỆP -->
-            <div class="m-top-20" style="background-color: #f7f7f7; padding: 20px; border-radius: 8px; border: 1px solid #e3e3e3; font-family: Arial, sans-serif;">
-                <div style="font-size: 14px; font-weight: bold; color: #8b0000; text-transform: uppercase; border-bottom: 2px solid #8b0000; padding-bottom: 6px; margin-bottom: 15px;">Thông tin doanh nghiệp</div>
-                <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;" class="columns-layout" id="enterprise-grid-container">
-                    <!-- JS populated (5 PR cards) -->
-                </div>
-            </div>
 
         </div>
     </div>
@@ -1602,6 +1652,16 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
 </div>
 
 <style>
+
+    @media (max-width: 992px) {
+        .two-col-layout {
+            grid-template-columns: 1fr !important;
+        }
+        .sidebar-col {
+            position: static !important;
+        }
+    }
+
     @keyframes pulse-ad {
         0% { transform: scale(0.95); opacity: 0.8; }
         50% { transform: scale(1.1); opacity: 0.4; }
@@ -1836,6 +1896,157 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
             `;
         });
         tbody.innerHTML = html;
+    }
+
+    // --- LAND PRICE LOOKUP WIDGET DATA & FUNCTIONS ---
+    const landPriceDatabase = {
+        hanoi: {
+            caugiay: {
+                name: "Quận Cầu Giấy",
+                streets: {
+                    "Xuân Thủy": { state: 32000000, market: 180000000, trend: "hot", change: 12 },
+                    "Cầu Giấy": { state: 40000000, market: 250000000, trend: "stable", change: 0 },
+                    "Duy Tân": { state: 28000000, market: 140000000, trend: "up", change: 5 }
+                }
+            },
+            hoankiem: {
+                name: "Quận Hoàn Kiếm",
+                streets: {
+                    "Đinh Tiên Hoàng": { state: 162000000, market: 1200000000, trend: "hot", change: 15 },
+                    "Hàng Ngang": { state: 120000000, market: 950000000, trend: "up", change: 4 },
+                    "Tràng Tiền": { state: 162000000, market: 1100000000, trend: "stable", change: 0 }
+                }
+            },
+            haibatrung: {
+                name: "Quận Hai Bà Trưng",
+                streets: {
+                    "Phố Huế": { state: 80000000, market: 450000000, trend: "up", change: 6 },
+                    "Bạch Mai": { state: 35000000, market: 190000000, trend: "stable", change: 0 },
+                    "Minh Khai": { state: 26000000, market: 120000000, trend: "down", change: -3 }
+                }
+            },
+            dongda: {
+                name: "Quận Đống Đa",
+                streets: {
+                    "Nguyễn Chí Thanh": { state: 50000000, market: 300000000, trend: "up", change: 7 },
+                    "Chùa Bộc": { state: 45000000, market: 280000000, trend: "hot", change: 10 },
+                    "Xã Đàn": { state: 62000000, market: 380000000, trend: "stable", change: 0 }
+                }
+            }
+        },
+        tphcm: {
+            quan1: {
+                name: "Quận 1",
+                streets: {
+                    "Đồng Khởi": { state: 162000000, market: 1300000000, trend: "hot", change: 18 },
+                    "Nguyễn Huệ": { state: 162000000, market: 1250000000, trend: "stable", change: 0 },
+                    "Lê Lợi": { state: 150000000, market: 980000000, trend: "up", change: 6 }
+                }
+            },
+            binhthanh: {
+                name: "Quận Bình Thạnh",
+                streets: {
+                    "Điện Biên Phủ": { state: 40000000, market: 220000000, trend: "up", change: 5 },
+                    "Nguyễn Hữu Cảnh": { state: 45000000, market: 240000000, trend: "hot", change: 10 },
+                    "Lê Quang Định": { state: 28000000, market: 130000000, trend: "stable", change: 0 }
+                }
+            },
+            thuduc: {
+                name: "Thành phố Thủ Đức",
+                streets: {
+                    "Trần Não": { state: 35000000, market: 210000000, trend: "hot", change: 14 },
+                    "Song Hành": { state: 28000000, market: 150000000, trend: "up", change: 8 },
+                    "Võ Văn Ngân": { state: 30000000, market: 160000000, trend: "stable", change: 0 }
+                }
+            }
+        }
+    };
+
+    let currentRegion = 'hanoi';
+
+    window.initLandPriceWidget = function(region) {
+        currentRegion = region;
+        const districtSelect = document.getElementById('land-district');
+        if (!districtSelect) return;
+        
+        districtSelect.innerHTML = '';
+        const districts = landPriceDatabase[region];
+        for (const key in districts) {
+            const opt = document.createElement('option');
+            opt.value = key;
+            opt.innerText = districts[key].name;
+            districtSelect.appendChild(opt);
+        }
+        updateLandStreets();
+    }
+
+    window.updateLandStreets = function() {
+        const districtSelect = document.getElementById('land-district');
+        const streetSelect = document.getElementById('land-street');
+        if (!districtSelect || !streetSelect) return;
+        
+        const districtKey = districtSelect.value;
+        const streets = landPriceDatabase[currentRegion][districtKey].streets;
+        
+        streetSelect.innerHTML = '';
+        for (const key in streets) {
+            const opt = document.createElement('option');
+            opt.value = key;
+            opt.innerText = key;
+            streetSelect.appendChild(opt);
+        }
+        showLandPrice();
+    }
+
+    const slugify = (text) => text.toString().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[đĐ]/g, 'd').replace(/[^a-z0-9 -]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-');
+
+    window.showLandPrice = function() {
+        const districtSelect = document.getElementById('land-district');
+        const streetSelect = document.getElementById('land-street');
+        const resultDiv = document.getElementById('land-price-result');
+        if (!districtSelect || !streetSelect || !resultDiv) return;
+        
+        const districtKey = districtSelect.value;
+        const streetKey = streetSelect.value;
+        const districtName = landPriceDatabase[currentRegion][districtKey].name;
+        const streetData = landPriceDatabase[currentRegion][districtKey].streets[streetKey];
+        
+        if (!streetData) return;
+        
+        let trendIcon = '➖';
+        let trendColor = '#888';
+        let trendText = 'Ổn định';
+        if (streetData.trend === 'hot') {
+            trendIcon = '🔥';
+            trendColor = '#d71920';
+            trendText = `Tăng nóng (+${streetData.change}%)`;
+        } else if (streetData.trend === 'up') {
+            trendIcon = '📈';
+            trendColor = '#28a745';
+            trendText = `Tăng (+${streetData.change}%)`;
+        } else if (streetData.trend === 'down') {
+            trendIcon = '📉';
+            trendColor = '#007bff';
+            trendText = `Giảm nhẹ (${streetData.change}%)`;
+        }
+        
+        const bdsLink = `https://batdongsan.com.vn/nha-dat-ban-${slugify(streetKey)}-${slugify(districtName)}`;
+        
+        resultDiv.style.display = 'block';
+        resultDiv.innerHTML = `
+            <div style="color: #002d62; font-weight: bold; margin-bottom: 5px; display: flex; justify-content: space-between;">
+                <span>✔ Kết quả tra cứu:</span>
+                <span style="color: ${trendColor}; font-size: 11px; font-weight: bold;">${trendIcon} ${trendText}</span>
+            </div>
+            <div style="line-height: 1.6; font-size: 11.5px; color: #333;">
+                • Bảng giá Nhà nước: <strong>${(streetData.state).toLocaleString()} đ/m²</strong><br>
+                • Giá thực tế batdongsan.com.vn: <strong style="color: #d71920;">${(streetData.market).toLocaleString()} đ/m²</strong><br>
+                • Chênh lệch thực tế: <strong>x${(streetData.market / streetData.state).toFixed(1)} lần</strong><br>
+                <div style="margin-top: 8px; text-align: center;">
+                    <a href="${bdsLink}" target="_blank" style="background-color: #002d62; color: #fff; text-decoration: none; padding: 6px 12px; border-radius: 4px; font-weight: bold; display: inline-block; width: 80%; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">Xem tin rao bán tại tuyến đường này</a>
+                </div>
+            </div>
+        `;
     }
 </script>
 
@@ -2995,7 +3206,7 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
             <article class="v4 nm-001 item n-1">
                 <a class="link-img" href="` + sub1.url + `" target="_blank">
                     <figure class="_thumb">
-                        <img src="` + sub1.image + `" class="img-art" alt="` + sub1.title + `" width="300" height="186">
+                        <img src="` + sub1.image + `" class="img-art" alt="` + sub1.title + `" width="300" height="130" style="object-fit: cover;">
                     </figure>
                 </a>
                 <a class="link-title" href="` + sub1.url + `" target="_blank">
@@ -3005,7 +3216,7 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
             <article class="v4 nm-001 item n-2">
                 <a class="link-img" href="` + sub2.url + `" target="_blank">
                     <figure class="_thumb">
-                        <img src="` + sub2.image + `" class="img-art" alt="` + sub2.title + `" width="300" height="186">
+                        <img src="` + sub2.image + `" class="img-art" alt="` + sub2.title + `" width="300" height="130" style="object-fit: cover;">
                     </figure>
                 </a>
                 <a class="link-title" href="` + sub2.url + `" target="_blank">
@@ -3164,7 +3375,6 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
                 window.switchMostReadSlide(nextSlide);
             }, 5000);
         }
-    }
 
     function renderMediaSection() {
         let mediaPool = tphcmArticles.filter(a => a.category === "Xã hội" || a.category === "Thời sự").slice(5, 11);
@@ -3703,11 +3913,12 @@ else{menuAccountHeader.addClass("show");}});});</script></div></div></div></div>
         renderCategoryColumns();
         renderEnterpriseBlock();
         updateSchemaMarkup();
-        changeDistrictPrices('caugiay');
+        changeDistrictPrices('quan1');
         fetchHanoiWeather();
         updateProvincialProfileWidget('all');
         initInfraCarouselAutoplay();
         renderDirectoryPage();
+        initLandPriceWidget('tphcm');
     });
 </script>
 <footer><div class="footer-a"><div class="wrapper"><div class="rw-1 text-center"><div class="socials"><a href="https://www.facebook.com/laodongonline" target="_blank" class="item fa fa-facebook"></a> <a href="https://zalo.me/1953123341318396123" target="_blank" class="item img-icon"> <img src="https://media-cdn-v2.laodong.vn/laodong/2.0.0.35/images/icons/zalo-icon-64-60.png" height="30" width="32" style="margin-top:-2px"> </a> <a href="https://news.google.com/publications/CAAiEMd7LKx8SFheC7cdYmUKIisqFAgKIhDHeyysfEhYXgu3HWJlCiIr?hl=vi&amp;gl=VN&amp;ceid=VN%3Avi" target="_blank" class="item img-icon"> <img src="https://media-cdn-v2.laodong.vn/laodong/2.0.0.35/images/icons/google-news-icon-64-60.png" height="30" width="32" style="margin-top:-2px"> </a> <a href="https://www.youtube.com/channel/UCr8i-5AIxdiJbI0HdGdUzIA" target="_blank" class="item fa fa-youtube"></a> <a href="mailto:toasoan@laodong.com.vn" class="item fa fa-envelope"></a> <a href="https://laodong.vn/rss" class="item fa fa-rss"></a></div></div><div class="rw-2"><div class="align-items-start cl1"><a href="https://laodong.vn/" target="_self"> <img src="https://media-cdn-v2.laodong.vn/laodong/2.0.0.35/images/logo/ldo_red.png" class="logo-tv" alt="BÁO LAO ĐỘNG" width="210" height="52"> </a></div><div class="cl2"><p>Xuất bản số Báo Lao Động đầu tiên vào ngày 14.8.1929<p><strong>CƠ QUAN CỦA TỔNG LIÊN ĐOÀN LAO ĐỘNG VIỆT NAM</strong><p>Giấy phép số 346/GP-BTTTT do Bộ TTTT cấp ngày 08.07.2022<br> Tổng Biên tập: Nguyễn Ngọc Hiển<p>Địa chỉ liên hệ:<br> Số 6 Phạm Văn Bạch, phường Cầu Giấy, Thành phố Hà Nội</div><div class="cl3"><dl class="title-1"><dt>Thông tin liên hệ:</dt></dl><dl><dt class="title-2">Tòa soạn:<dd>(+84 24) 38252441 - 35330305</dl><dl><dt class="title-2">Báo điện tử:<dd>ĐT: (+84 24) 38303044 <br> Email: toasoan@laodong.com.vn</dl><dl><dt class="title-2">Quảng cáo:<dd>(+84 24) 39232694 (Báo in) <br> (+84 24) 35335237 (online)<br></dl><dl><dt>Đường dây nóng: 096 8383388 * Bạn đọc: (+84 24) 35335235</dt></dl></div></div><div class="rw-3"><div class="download-app text-center"><a href="https://play.google.com/store/apps/details?id=com.ninepoints.ldo.reader" title="Tải ứng dụng Báo Lao Động App"> <img data-src="https://media-cdn-v2.laodong.vn/laodong/2.0.0.35/images/a-download-icon.png" class="lazyload" alt="Tải ứng dụng Báo Lao Động App" width="149" height="31"> </a> <a href="https://apps.apple.com/vn/app/báo-lao-động-app/id1328195523?l=vi" title="Tải ứng dụng Báo Lao Động App"> <img data-src="https://media-cdn-v2.laodong.vn/laodong/2.0.0.35/images/i-download-icon.png" class="lazyload" alt="Tải ứng dụng Báo Lao Động App" width="149" height="31"> </a> <a href="https://laodong.vn//www.dmca.com/Protection/Status.aspx?ID=2a0ef338-d2a6-4097-82db-8db6522e77c5" title="DMCA.com Protection Status" class="dmca-badge"> <img src="https://images.dmca.com/Badges/dmca_copyright_protected150c.png?ID=2a0ef338-d2a6-4097-82db-8db6522e77c5" alt="DMCA.com Protection Status"> </a><script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"></script></div></div></div><div class="power">Báo Lao Động giữ bản quyền nội dung trên website này. Báo điện tử Lao Động được phát triển bởi Lao Động Technologies © {{vm.currentDate | date:'yyyy'}} - Version: 2.0.0.35.61</div></div></footer>
